@@ -13,7 +13,8 @@
 }
 
 .home__top-block {
-  height: 100%;
+  height: 75%;
+  flex: 1 0 75%;
 }
 
 .home__elements-left {
@@ -83,6 +84,8 @@
 
 .home__bottom-block {
   margin-top: vw(65);
+  flex: 0 1 auto;
+  height: fit-content;
 }
 
 .home__desc {
