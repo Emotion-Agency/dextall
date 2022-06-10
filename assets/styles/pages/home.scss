@@ -1,104 +1,197 @@
-.home {
+.home-1 {
+  position: relative;
   height: 100vh;
   padding-top: vw(111);
   padding-bottom: vw(30);
   background-color: var(--bg);
 }
 
-.home__wrapper {
+.home-1__wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: $br1) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
 }
 
-.home__top-block {
-  height: 75%;
-  flex: 1 0 75%;
+.home-1__top-block {
+  @media (min-width: $br1) {
+    flex: 1 0 64%;
+  }
+
+  @media (max-width: $br1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: vw(40);
+  }
+
+  @media (max-width: $br4) {
+    margin-top: 40px;
+  }
 }
 
-.home__elements-left {
+.home-1__elements-left {
   @include col(1, 7);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+  }
 }
 
-.home__big-img {
-  display: block;
+.big-img {
+  border-radius: 10px;
   width: 100%;
-  // height: vh(664);
   height: 100%;
-  object-fit: cover;
 }
 
-.home__big-img--2 {
-  // height: vh(532);
-  height: 82%;
-}
-
-.home__elements-right {
+.home-1__elements-right {
   @include col(8, 15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(2, 2);
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 25px;
+  }
 }
 
-.home__small-buildings {
+.home-1__right-image {
+  @media (max-width: $br1) {
+    display: none;
+  }
+}
+
+.home-1__small-buildings {
   grid-template-columns: repeat(8, 1fr);
   column-gap: vw(20);
+  margin-top: vw(46);
+
+  @media (max-width: $br1) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.home__li {
+.home-1__li {
   &:nth-of-type(1) {
     @include col(1, 1);
   }
 
   &:nth-of-type(2) {
     @include col(4, 4);
+    width: vw(52);
+
+    @media (max-width: $br1) {
+      @include col(2, 2);
+      width: 100%;
+    }
   }
 
   &:nth-of-type(3) {
     @include col(5, 5);
+    width: vw(52);
+
+    @media (max-width: $br1) {
+      @include col(3, 3);
+      width: 100%;
+    }
   }
 
   &:nth-of-type(4) {
     @include col(7, 7);
+    width: vw(52);
+
+    @media (max-width: $br1) {
+      @include col(4, 4);
+      width: 100%;
+    }
   }
 
   &:nth-of-type(5) {
     @include col(8, 8);
+
+    @media (max-width: $br1) {
+      display: none;
+    }
   }
 }
 
-.home__number {
+.home-1__number {
   @include reg;
   text-transform: uppercase;
   font-size: vw(16);
   line-height: 100%;
   margin-bottom: vw(6);
+
+  @media (max-width: $br1) {
+    font-size: size(16, 14);
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: $br1) {
+    font-size: 14px;
+  }
 }
 
-.home__small-img {
+.home-1__small-img {
   display: block;
-  max-width: 100%;
-  height: vh(62);
+  height: vw(62);
+  border-radius: 5px;
+
+  @media (max-width: $br1) {
+    height: 62px;
+  }
 }
 
-.home__bottom-block {
-  margin-top: vw(65);
-  flex: 0 1 auto;
-  height: fit-content;
+.home-1__bottom-block {
+  @media (min-width: $br1) {
+    flex: 0 1 auto;
+    margin-top: vw(65);
+  }
+
+  @media (max-width: $br1) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
 }
 
-.home__desc {
+.home-1__desc {
   @include col(6, 8);
   @include reg;
   font-size: vw(16);
   text-transform: uppercase;
   line-height: 100%;
   color: var(--main);
-  align-self: center;
+
+  @media (max-width: $br1) {
+    align-self: flex-start;
+    font-size: size(16, 14);
+    margin-top: vw(18);
+    max-width: 50%;
+  }
+
+  @media (max-width: $br3) {
+    max-width: 65%;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 14px;
+    margin-top: 18px;
+    max-width: 100%;
+  }
 }
 
-.home__title {
+.home-1__title {
   @include h1;
 
   &:nth-of-type(1) {
@@ -109,6 +202,13 @@
     @include col(9, 15);
     @include italic;
     text-align: end;
+
+    @media (max-width: $br1) {
+      @include col(1, 4);
+      @include row(2, 2);
+      text-align: start;
+      font-style: normal;
+    }
   }
 
   &:nth-of-type(3) {
@@ -116,11 +216,23 @@
     @include row(2, 2);
     text-transform: none;
     @include italic;
+
+    @media (max-width: $br1) {
+      @include col(1, 4);
+      @include row(3, 3);
+      font-style: normal;
+      text-transform: uppercase;
+    }
   }
 
   &:nth-of-type(4) {
     @include col(6, 8);
     @include row(2, 2);
+
+    @media (max-width: $br1) {
+      @include col(1, 2);
+      @include row(4, 4);
+    }
   }
 
   &:nth-of-type(5) {
@@ -129,5 +241,13 @@
     text-align: end;
     text-transform: none;
     @include italic;
+
+    @media (max-width: $br1) {
+      @include col(3, 4);
+      @include row(4, 4);
+      text-align: start;
+      font-style: normal;
+      text-transform: uppercase;
+    }
   }
 }
