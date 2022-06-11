@@ -92,10 +92,10 @@ useTransition()
       </div>
       <div class="grid home-1__bottom-block">
         <span class="home-1__title">Unitized</span>
-        <span class="home-1__title">prefabricated</span>
-        <span class="home-1__title">exterior</span>
-        <span class="home-1__title">Wall</span>
-        <span class="home-1__title">system</span>
+        <span class="home-1__title"> prefabricated</span>
+        <span class="home-1__title"> exterior</span>
+        <span class="home-1__title"> Wall</span>
+        <span class="home-1__title"> system</span>
         <p class="home-1__desc">
           A New Norm To Design. Build. Think. powered by Dextall Studio, the BIM
           Solution software

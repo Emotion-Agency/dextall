@@ -72,10 +72,11 @@
 }
 
 .home-1__small-buildings {
-  grid-template-columns: repeat(8, 1fr);
-  column-gap: vw(20);
-  margin-top: vw(46);
-
+  @media (min-width: $br1) {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: vw(20);
+    margin-top: vw(46);
+  }
   @media (max-width: $br1) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -159,8 +160,7 @@
   }
 
   @media (max-width: $br1) {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     margin-top: 0;
   }
 }
@@ -195,59 +195,42 @@
   @include h1;
 
   &:nth-of-type(1) {
-    @include col(1, 4);
+    @media (min-width: $br1) {
+      @include col(1, 4);
+    }
   }
 
   &:nth-of-type(2) {
-    @include col(9, 15);
-    @include italic;
-    text-align: end;
-
-    @media (max-width: $br1) {
-      @include col(1, 4);
-      @include row(2, 2);
-      text-align: start;
-      font-style: normal;
+    @media (min-width: $br1) {
+      @include col(9, 15);
+      @include italic;
+      text-align: end;
     }
   }
 
   &:nth-of-type(3) {
-    @include col(1, 4);
-    @include row(2, 2);
-    text-transform: none;
-    @include italic;
-
-    @media (max-width: $br1) {
+    @media (min-width: $br1) {
       @include col(1, 4);
-      @include row(3, 3);
-      font-style: normal;
-      text-transform: uppercase;
+      @include row(2, 2);
+      text-transform: none;
+      @include italic;
     }
   }
 
   &:nth-of-type(4) {
-    @include col(6, 8);
-    @include row(2, 2);
-
-    @media (max-width: $br1) {
-      @include col(1, 2);
-      @include row(4, 4);
+    @media (min-width: $br1) {
+      @include col(6, 8);
+      @include row(2, 2);
     }
   }
 
   &:nth-of-type(5) {
-    @include col(12, 15);
-    @include row(2, 2);
-    text-align: end;
-    text-transform: none;
-    @include italic;
-
-    @media (max-width: $br1) {
-      @include col(3, 4);
-      @include row(4, 4);
-      text-align: start;
-      font-style: normal;
-      text-transform: uppercase;
+    @media (min-width: $br1) {
+      @include col(12, 15);
+      @include row(2, 2);
+      text-align: end;
+      text-transform: none;
+      @include italic;
     }
   }
 }
