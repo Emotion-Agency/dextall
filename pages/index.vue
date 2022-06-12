@@ -31,60 +31,35 @@ useTransition()
               <p class="home-1__number">001</p>
               <div
                 class="small-img home-1__small-img"
-                style="
-                  background-image: url('/images/small-building-1.jpg');
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  background-size: cover;
-                "
+                style="background-image: url('/images/small-building-1.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">002</p>
               <div
                 class="small-img home-1__small-img"
-                style="
-                  background-image: url('/images/small-building-2.jpg');
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  background-size: cover;
-                "
+                style="background-image: url('/images/small-building-2.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">003</p>
               <div
                 class="small-img home-1__small-img"
-                style="
-                  background-image: url('/images/small-building-3.jpg');
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  background-size: cover;
-                "
+                style="background-image: url('/images/small-building-3.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">004</p>
               <div
                 class="small-img home-1__small-img"
-                style="
-                  background-image: url('/images/small-building-4.jpg');
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  background-size: cover;
-                "
+                style="background-image: url('/images/small-building-4.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">005</p>
               <div
                 class="small-img home-1__small-img"
-                style="
-                  background-image: url('/images/small-building-5.jpg');
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  background-size: cover;
-                "
+                style="background-image: url('/images/small-building-5.jpg')"
               ></div>
             </li>
           </ul>
