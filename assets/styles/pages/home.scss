@@ -4,6 +4,11 @@
   padding-top: vw(111);
   padding-bottom: vw(30);
   background-color: var(--bg);
+
+  @media (max-width: $br1) {
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
 }
 
 .home-1__wrapper {
@@ -48,6 +53,9 @@
   border-radius: 10px;
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .home-1__elements-right {
@@ -77,6 +85,7 @@
     column-gap: vw(20);
     margin-top: vw(46);
   }
+
   @media (max-width: $br1) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -147,8 +156,12 @@
   display: block;
   height: vw(62);
   border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   @media (max-width: $br1) {
+    width: 100%;
     height: 62px;
   }
 }
