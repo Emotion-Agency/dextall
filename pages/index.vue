@@ -10,7 +10,7 @@ useTransition()
         <div
           class="big-img home-1__elements-left"
           style="
-            background: url('/images/home/big-img-left.jpg');
+            background: url('/images/home/1.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -20,7 +20,7 @@ useTransition()
           <div
             class="big-img home-1__right-image"
             style="
-              background-image: url('/images/home/big-img-right.jpg');
+              background-image: url('/images/home/2.jpg');
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;
@@ -31,35 +31,35 @@ useTransition()
               <p class="home-1__number">001</p>
               <div
                 class="small-img home-1__small-img"
-                style="background-image: url('/images/home/small-img-1.jpg')"
+                style="background-image: url('/images/home/3.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">002</p>
               <div
                 class="small-img home-1__small-img"
-                style="background-image: url('/images/home/small-img-2.jpg')"
+                style="background-image: url('/images/home/4.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">003</p>
               <div
                 class="small-img home-1__small-img"
-                style="background-image: url('/images/home/small-img-3.jpg')"
+                style="background-image: url('/images/home/5.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">004</p>
               <div
                 class="small-img home-1__small-img"
-                style="background-image: url('/images/home/small-img-4.jpg')"
+                style="background-image: url('/images/home/6.jpg')"
               ></div>
             </li>
             <li class="home-1__li">
               <p class="home-1__number">005</p>
               <div
                 class="small-img home-1__small-img"
-                style="background-image: url('/images/home/small-img-5.jpg')"
+                style="background-image: url('/images/home/7.jpg')"
               ></div>
             </li>
           </ul>
@@ -79,7 +79,10 @@ useTransition()
     </div>
   </section>
   <section class="section home-2">
-    <div class="container home-2__wrapper"></div>
+    <div
+      class="container home-2__wrapper"
+      style="background-image: url('/images/home/8.jpg')"
+    > </div>
   </section>
   <section class="section home-3">
     <TheTicker />
@@ -135,7 +138,7 @@ useTransition()
       <div class="home-3__right-block">
         <img
           class="home-3__img"
-          src="/images/home/home3-img.jpg"
+          src="/images/home/9.jpg"
           alt="Building"
         />
       </div>
