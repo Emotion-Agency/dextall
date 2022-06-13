@@ -78,9 +78,9 @@ useTransition()
       </div>
     </div>
   </section>
-  <!-- <section class="section home-2">
+  <section class="section home-2">
     <div class="container home-2__wrapper"></div>
-  </section> -->
+  </section>
   <section class="section home-3">
     <TheTicker />
     <div class="container grid home-3__wrapper">
