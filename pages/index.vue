@@ -82,6 +82,7 @@ useTransition()
     <div class="container home-2__wrapper"></div>
   </section> -->
   <section class="section home-3">
+    <TheTicker />
     <div class="container grid home-3__wrapper">
       <div class="home-3__left-block">
         <p class="home-3__text">
@@ -92,27 +93,41 @@ useTransition()
         <ul class="home-3__list">
           <li class="home-3__li">
             <div class="home-3__line"></div>
-            <p class="home-3__medium-text">80% faster</p>
-            <p class="home-3__regular-text">Exterior Installation</p>
-            <p class="home-3__small-text">
-              Get tenants in faster | Save on carrying costs
-            </p>
+            <div class="grid home-3__content">
+              <p class="home-3__medium-text">80% faster</p>
+              <div class="home-3__group-text">
+                <p class="home-3__regular-text">Exterior Installation</p>
+                <p class="home-3__small-text">
+                  Get tenants in faster | Save on carrying costs
+                </p>
+              </div>
+            </div>
           </li>
           <li class="home-3__li">
             <div class="home-3__line"></div>
-            <p class="home-3__medium-text">15-20% less</p>
-            <p class="home-3__regular-text">
-              Cost Lower than onsite construction
-            </p>
-            <p class="home-3__small-text">
-              Pass savings directly to your client
-            </p>
+            <div class="grid home-3__content">
+              <p class="home-3__medium-text">15-20% less</p>
+              <div class="home-3__group-text">
+                <p class="home-3__regular-text">
+                  Cost Lower than onsite construction
+                </p>
+                <p class="home-3__small-text">
+                  Pass savings directly to your client
+                </p>
+              </div>
+            </div>
           </li>
           <li class="home-3__li">
             <div class="home-3__line"></div>
-            <p class="home-3__medium-text">20 Times Less</p>
-            <p class="home-3__regular-text">Reduce Onsite Labor</p>
-            <p class="home-3__small-text">Lower Cost and Carbon Footprint</p>
+            <div class="grid home-3__content">
+              <p class="home-3__medium-text">20 Times Less</p>
+              <div class="home-3__group-text">
+                <p class="home-3__regular-text">Reduce Onsite Labor</p>
+                <p class="home-3__small-text">
+                  Lower Cost and Carbon Footprint
+                </p>
+              </div>
+            </div>
             <div class="home-3__line"></div>
           </li>
         </ul>
@@ -125,5 +140,8 @@ useTransition()
         />
       </div>
     </div>
+  </section>
+  <section class="section home-4">
+    <div class="container home-4__wrapper"></div>
   </section>
 </template>
