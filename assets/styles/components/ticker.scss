@@ -1,0 +1,29 @@
+.ticker {
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.ticker__wrapper {
+  display: flex;
+  width: fit-content;
+}
+
+.ticker__item {
+  @include default;
+  color: var(--main);
+  font-size: vw(200);
+  line-height: 110%;
+  white-space: nowrap;
+  margin-left: vw(75);
+
+  @media (max-width: $br1) {
+    margin-left: 32px;
+    font-size: 48px;
+  }
+
+  @media (max-width: $br4) {
+    margin-left: 20px;
+  }
+}
