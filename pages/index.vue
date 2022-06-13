@@ -78,4 +78,52 @@ useTransition()
       </div>
     </div>
   </section>
+  <!-- <section class="section home-2">
+    <div class="container home-2__wrapper"></div>
+  </section> -->
+  <section class="section home-3">
+    <div class="container grid home-3__wrapper">
+      <div class="home-3__left-block">
+        <p class="home-3__text">
+          Dextall named as first qualified and approved prefab wall panel
+          provided in sweeping plan to over-clad existing affordable housing
+          projects for the State of New York
+        </p>
+        <ul class="home-3__list">
+          <li class="home-3__li">
+            <div class="home-3__line"></div>
+            <p class="home-3__medium-text">80% faster</p>
+            <p class="home-3__regular-text">Exterior Installation</p>
+            <p class="home-3__small-text">
+              Get tenants in faster | Save on carrying costs
+            </p>
+          </li>
+          <li class="home-3__li">
+            <div class="home-3__line"></div>
+            <p class="home-3__medium-text">15-20% less</p>
+            <p class="home-3__regular-text">
+              Cost Lower than onsite construction
+            </p>
+            <p class="home-3__small-text">
+              Pass savings directly to your client
+            </p>
+          </li>
+          <li class="home-3__li">
+            <div class="home-3__line"></div>
+            <p class="home-3__medium-text">20 Times Less</p>
+            <p class="home-3__regular-text">Reduce Onsite Labor</p>
+            <p class="home-3__small-text">Lower Cost and Carbon Footprint</p>
+            <div class="home-3__line"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="home-3__right-block">
+        <img
+          class="home-3__img"
+          src="/public/images/home3-building.jpg"
+          alt="Building"
+        />
+      </div>
+    </div>
+  </section>
 </template>

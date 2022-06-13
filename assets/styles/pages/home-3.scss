@@ -1,0 +1,29 @@
+.home-3__wrapper {}
+
+.home-3__left-block {
+  @include col(1, 8);
+}
+
+.home-3__text {}
+
+.home-3__list {}
+
+.home-3__li {}
+
+.home-3__line {}
+
+.home-3__medium-text {}
+
+.home-3__regular-text {}
+
+.home-3__small-text {}
+
+.home-3__right-block {
+  @include col(9, 15);
+}
+
+.home-3__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
