@@ -79,10 +79,57 @@ useTransition()
     </div>
   </section>
   <section class="section home-2">
-    <div
-      class="container home-2__wrapper"
+    <div class="container">
+      <div
+        class="home-2__background"
+        style="background-image: url('/images/home/8.jpg')"
+      ></div>
+      <div class="home-2__wrapper">
+        <div class="home-2__block">
+          <p class="home-2__text">
+            Dextall innovative technology solutions empower architects, GCs,
+            business owners and developers to design and build smarter, cost
+            effective, sustainable and more beautiful buildings
+          </p>
+        </div>
+        <div class="home-2__block">
+          <h2 class="home-2__title-block">
+            <span class="home-2__title">Breakthrough</span>
+            <span class="home-2__title"> In BIM</span>
+            <span class="home-2__title"> Technology</span>
+          </h2>
+          <p class="home-2__desc">
+            Architects Fuse Design And Constructability Together, Empowering
+            them to design Mid- To High-Rise Projects by Reducing
+            design-to-installation timelines by more than 80%, providing
+            architects instantaneous data into a whole-project federated model
+          </p>
+        </div>
+        <div class="home-2__block">
+          <p class="home-2__text">
+            Driven by technology innovation we accelerate sustainable building
+            practices TODAY, and bring affordable and efficient solutions to the
+            construction industry
+          </p>
+        </div>
+        <div class="home-2__block">
+          <p class="home-2__text">
+            The most advanced and cost effective exterior prefab solutions and
+            the only BIM solution that utilizes technological advancement to
+            save money, time and recourses
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- <div
+      class="home-2__background"
       style="background-image: url('/images/home/8.jpg')"
-    > </div>
+    >
+      <div class="container home-2__wrapper"></div>
+      <div class="container home-2__wrapper"></div>
+      <div class="container home-2__wrapper"></div>
+      <div class="container home-2__wrapper"></div>
+    </div> -->
   </section>
   <section class="section home-3">
     <TheTicker />
@@ -136,11 +183,7 @@ useTransition()
         </ul>
       </div>
       <div class="home-3__right-block">
-        <img
-          class="home-3__img"
-          src="/images/home/9.jpg"
-          alt="Building"
-        />
+        <img class="home-3__img" src="/images/home/9.jpg" alt="Building" />
       </div>
     </div>
   </section>
