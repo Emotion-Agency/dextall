@@ -79,11 +79,11 @@ useTransition()
     </div>
   </section>
   <section class="section home-2">
+    <div
+      class="home-2__background"
+      style="background-image: url('/images/home/8.jpg')"
+    ></div>
     <div class="container">
-      <div
-        class="home-2__background"
-        style="background-image: url('/images/home/8.jpg')"
-      ></div>
       <div class="home-2__wrapper">
         <div class="home-2__block">
           <p class="home-2__text">
