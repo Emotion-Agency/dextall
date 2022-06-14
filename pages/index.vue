@@ -121,15 +121,6 @@ useTransition()
         </div>
       </div>
     </div>
-    <!-- <div
-      class="home-2__background"
-      style="background-image: url('/images/home/8.jpg')"
-    >
-      <div class="container home-2__wrapper"></div>
-      <div class="container home-2__wrapper"></div>
-      <div class="container home-2__wrapper"></div>
-      <div class="container home-2__wrapper"></div>
-    </div> -->
   </section>
   <section class="section home-3">
     <TheTicker />
@@ -188,6 +179,17 @@ useTransition()
     </div>
   </section>
   <section class="section home-4">
-    <div class="container home-4__wrapper"></div>
+    <div class="container home-4__wrapper">
+      <h2 class="grid home-4__title">
+        <span class="home-4__big-text">Test</span>
+        <span class="home-4__big-text"> &</span>
+        <span class="home-4__big-text"> Engineering</span>
+        <span class="home-4__big-text"> Accreditations</span>
+      </h2>
+      <ThePlates class="home-4__plates" />
+    </div>
+  </section>
+  <section class="section home-5">
+    <div class="container home-5__wrapper"></div>
   </section>
 </template>
