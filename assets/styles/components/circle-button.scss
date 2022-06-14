@@ -1,0 +1,19 @@
+.circle-button {
+  @include default;
+  @include italic;
+  text-transform: none;
+  font-size: vw(20);
+  background-color: transparent;
+  border: 2px solid var(--main);
+  border-radius: 50%;
+  padding: vw(30) vw(58);
+
+  @media (max-width: $br1) {
+    font-size: size(20, 14);
+    padding: 22px 44px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 14px;
+  }
+}

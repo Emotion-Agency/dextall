@@ -93,11 +93,11 @@ useTransition()
           </p>
         </div>
         <div class="home-2__block">
-          <h2 class="home-2__title-block">
+          <h3 class="home-2__title-block">
             <span class="home-2__title">Breakthrough</span>
             <span class="home-2__title"> In BIM</span>
             <span class="home-2__title"> Technology</span>
-          </h2>
+          </h3>
           <p class="home-2__desc">
             Architects Fuse Design And Constructability Together, Empowering
             them to design Mid- To High-Rise Projects by Reducing
@@ -190,6 +190,24 @@ useTransition()
     </div>
   </section>
   <section class="section home-5">
-    <div class="container home-5__wrapper"></div>
+    <div class="container home-5__wrapper">
+      <div class="home-5__line"></div>
+      <div class="home-5__main-block">
+        <h3 class="home-5__title">
+          Dextall wins approved-supplier designation in $30-Million NYSERDA
+          Retrofit Initiative
+        </h3>
+        <p class="home-5__desc">
+          Dextall named as first qualified and approved prefab wall panel
+          provided in sweeping plan to over-clad existing affordable housing
+          projects for the State of New York
+        </p>
+        <CircleButton class="home-5__btn" />
+      </div>
+      <div class="home-5__line"></div>
+    </div>
+  </section>
+  <section class="section home-6">
+    <div class="container home-6__wrapper"></div>
   </section>
 </template>
