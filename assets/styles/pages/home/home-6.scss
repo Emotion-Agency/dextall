@@ -1,0 +1,111 @@
+// @media (max-width: $br1) {
+//   margin: 30px 0;
+// }
+.home-6__wrapper {}
+
+.home-6__text-block {
+  @include col(1, 8);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+  }
+}
+
+.home-6__small-text {
+  @include default;
+  font-size: vw(15);
+
+  @media (max-width: $br1) {
+    font-size: size(15, 12);
+  }
+
+  @media (max-width: $br1) {
+    font-size: 12px;
+  }
+}
+
+.home-6__big-text {
+  @include default;
+  font-size: vw(120);
+
+  @media (max-width: $br1) {
+    font-size: size(120, 35);
+    margin-top: 10px;
+  }
+
+  @media (max-width: $br1) {
+    font-size: 35px;
+  }
+}
+
+.home-6__b-text {
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include italic;
+      text-transform: lowercase;
+    }
+  }
+
+  &:nth-of-type(2) {}
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include italic;
+    }
+  }
+}
+
+.home-6__desc {
+  @include default;
+  margin-top: vw(20);
+  max-width: vw(415);
+
+  @media (max-width: $br1) {
+    max-width: 70%;
+    margin-top: 15px;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
+.home-6__btn {
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}
+
+.home-6__image-top {
+  @include col(9, 15);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(2, 2);
+    margin-top: 40px;
+  }
+}
+
+.home-6__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.home-6__image-bottom {
+  @media (min-width: $br1) {
+    @include col(1, 10);
+    @include row(2, 2);
+    position: relative;
+    top: vw(-142);
+  }
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(3, 3);
+    margin-top: 20px;
+  }
+}

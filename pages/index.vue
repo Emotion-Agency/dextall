@@ -208,6 +208,29 @@ useTransition()
     </div>
   </section>
   <section class="section home-6">
-    <div class="container home-6__wrapper"></div>
+    <div class="container grid home-6__wrapper">
+      <div class="home-6__text-block">
+        <p class="home-6__small-text">Leader in innovation</p>
+        <h2 class="home-6__big-text">
+          <span class="home-6__b-text">latest</span>
+          <span class="home-6__b-text"> Forbes</span>
+          <span class="home-6__b-text"> feature</span>
+        </h2>
+        <p class="home-6__desc">
+          States’ Build Back Better Plans For Affordable Housing Hinge On
+          Innovators
+        </p>
+        <CircleButton class="home-6__btn" />
+      </div>
+      <div class="home-6__image-top">
+        <img class="home-6__img" src="/images/home/10.jpg" alt="Building" />
+      </div>
+      <div class="home-6__image-bottom">
+        <img class="home-6__img" src="/images/home/11.jpg" alt="Building" />
+      </div>
+    </div>
+  </section>
+  <section class="section home-7">
+    <div class="container home-7__wrapper"></div>
   </section>
 </template>
