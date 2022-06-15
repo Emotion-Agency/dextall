@@ -174,11 +174,7 @@ useTransition()
         </ul>
       </div>
       <div class="home-3__right-block">
-        <img
-          class="home-3__img"
-          src="/images/home/9.jpg"
-          alt="Building"
-        />
+        <img class="home-3__img" src="/images/home/9.jpg" alt="Building" />
       </div>
     </div>
   </section>
@@ -227,18 +223,10 @@ useTransition()
         <CircleButton class="home-6__btn" />
       </div>
       <div class="home-6__image-top">
-        <img
-          class="home-6__img"
-          src="/images/home/10.jpg"
-          alt="Building"
-        />
+        <img class="home-6__img" src="/images/home/10.jpg" alt="Building" />
       </div>
       <div class="home-6__image-bottom">
-        <img
-          class="home-6__img"
-          src="/images/home/11.jpg"
-          alt="Building"
-        />
+        <img class="home-6__img" src="/images/home/11.jpg" alt="Building" />
       </div>
     </div>
   </section>

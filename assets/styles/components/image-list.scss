@@ -7,21 +7,23 @@
 }
 
 .image-list__li {
-  row-gap: vw(20);
+  &:nth-of-type(1) {}
 
-  @media (max-width: $br1) {
-    row-gap: 20px;
+  &:nth-of-type(2) {
+    margin-top: vw(20);
+
+    @media (max-width: $br1) {
+      margin-top: 60px;
+    }
   }
+
+  &:nth-of-type(3) {}
 }
 
 .image-list__text {
-  @include col(1, 4);
-  @include row(1, 1);
-  display: flex;
-  flex-direction: column;
-
   @media (min-width: $br1) {
-    justify-content: space-between;
+    position: absolute;
+    max-width: vw(458);
   }
 }
 
@@ -40,9 +42,15 @@
 
 .image-list__desc-wrapper {
   @include default;
+  margin-top: vw(244);
 
   @media (max-width: $br1) {
-    margin-top: 10px;
+    margin-top: 20px;
+    max-width: 80%;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
   }
 }
 
@@ -51,7 +59,7 @@
   bottom: vw(-10);
 
   @media (max-width: $br1) {
-    bottom: -10px;
+    bottom: -8px;
   }
 }
 
@@ -59,7 +67,17 @@
   text-indent: vw(130);
 
   @media (max-width: $br1) {
-    text-indent: 135px;
+    text-indent: 88px;
+  }
+}
+
+.image-list__img-wrapper {
+  row-gap: vw(20);
+
+  @media (max-width: $br1) {
+    display: flex;
+    overflow: scroll;
+    margin-top: 50px;
   }
 }
 
@@ -69,18 +87,9 @@
   height: 100%;
   border-radius: 10px;
 
-
-}
-
-.image-list__link {
   &:nth-of-type(1) {
     @media (min-width: $br1) {
       @include col(1, 4);
-      @include row(2, 2);
-    }
-
-    @media (max-width: $br1) {
-      @include col(1, 2);
       @include row(2, 2);
     }
   }
@@ -90,21 +99,11 @@
       @include col(5, 11);
       @include row(1, 2);
     }
-
-    @media (max-width: $br1) {
-      @include col(3, 4);
-      @include row(2, 2);
-    }
   }
 
   &:nth-of-type(3) {
     @media (min-width: $br1) {
       @include col(12, 15);
-    }
-
-    @media (max-width: $br1) {
-      // @include col(1, 2);
-      // @include row(3, 3);
     }
   }
 
@@ -113,10 +112,47 @@
       @include col(8, 11);
       @include row(3, 3);
     }
+  }
+}
 
-    @media (max-width: $br1) {
-      // @include col(3, 4);
-      // @include row(3, 3);
+.image-list__text-reverse {
+  @media (min-width: $br1) {
+    position: absolute;
+    max-width: vw(458);
+    right: vw(75);
+  }
+}
+
+.image-list__img-reverse {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include col(1, 4);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @media (min-width: $br1) {
+      @include col(5, 11);
+      @include row(1, 2);
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include col(12, 15);
+      @include row(2, 2);
+    }
+  }
+
+  &:nth-of-type(4) {
+    @media (min-width: $br1) {
+      @include col(5, 8);
+      @include row(3, 3);
     }
   }
 }
