@@ -266,6 +266,31 @@ useTransition()
     </div>
   </section>
   <section class="section home-9">
-    <div class="container home-9__wrapper"></div>
+    <div class="container grid home-9__wrapper">
+      <div class="home-9__text-block">
+        <h2 class="home-9__big-text">
+          <span class="home-9__b-text">Architect</span>
+          <span class="home-9__b-text"> Education</span>
+          <span class="home-9__b-text"> and</span>
+          <span class="home-9__b-text"> Installer</span>
+          <span class="home-9__b-text"> Training</span>
+        </h2>
+        <p class="home-9__desc">
+          As an AIA/CES Registered Provider, Dextall offers various programs for
+          Architects and Certified Installer Program (Dextall CIP) that focuses
+          on training for unitized prefab panel installation
+        </p>
+        <CircleButton class="home-9__btn" />
+      </div>
+      <div class="home-9__image-top">
+        <img class="home-9__img" src="/images/home/17.jpg" alt="Building" />
+      </div>
+      <div class="home-9__image-bottom">
+        <img class="home-9__img" src="/images/home/18.jpg" alt="Building" />
+      </div>
+    </div>
+  </section>
+  <section class="section home-10">
+    <div class="container home-10__wrapper"></div>
   </section>
 </template>

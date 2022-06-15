@@ -1,0 +1,115 @@
+.home-9__text-block {
+  @media (min-width: $br1) {
+    @include col(8, 15);
+    position: relative;
+    left: vw(50);
+    max-width: vw(887);
+  }
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+  }
+}
+
+.home-9__small-text {
+  @include default;
+  font-size: vw(15);
+
+  @media (max-width: $br1) {
+    font-size: size(15, 12);
+  }
+
+  @media (max-width: $br1) {
+    font-size: 12px;
+  }
+}
+
+.home-9__big-text {
+  @include default;
+  font-size: vw(120);
+
+  @media (max-width: $br1) {
+    font-size: size(120, 35);
+    margin-top: 10px;
+  }
+
+  @media (max-width: $br1) {
+    font-size: 35px;
+  }
+}
+
+.home-9__b-text {
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include italic;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include italic;
+      text-transform: lowercase;
+    }
+  }
+
+  &:nth-of-type(5) {
+    @media (min-width: $br1) {
+      @include italic;
+    }
+  }
+}
+
+.home-9__desc {
+  @include default;
+  margin-top: vw(20);
+  max-width: vw(557);
+
+  @media (max-width: $br1) {
+    max-width: 70%;
+    margin-top: 15px;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
+.home-9__btn {
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}
+
+.home-9__image-top {
+  @include col(1, 7);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(2, 2);
+    margin-top: 40px;
+  }
+}
+
+.home-9__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.home-9__image-bottom {
+  @media (min-width: $br1) {
+    @include col(6, 15);
+    @include row(2, 2);
+    position: relative;
+    top: vw(-142);
+  }
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(3, 3);
+    margin-top: 20px;
+  }
+}
