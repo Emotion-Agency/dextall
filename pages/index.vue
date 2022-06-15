@@ -231,6 +231,41 @@ useTransition()
     </div>
   </section>
   <section class="section home-7">
-    <div class="container home-7__wrapper"></div>
+    <div class="container home-7__wrapper">
+      <div class="home-7__main-block">
+        <h3 class="home-7__title">
+          <span class="home-7__span-title">our</span>
+          <span class="home-7__span-title"> Projects</span>
+        </h3>
+        <p class="home-7__desc">
+          Highest quality prefab exteriors and BIM Solution that provides
+          affordable, sustainable designs and increases design coordination
+          efficiency
+        </p>
+        <CircleButton class="home-7__btn" />
+      </div>
+      <ImageList />
+    </div>
+  </section>
+  <section class="section home-8">
+    <div class="container home-8__wrapper">
+      <div class="grid home-8__text-block">
+        <h3 class="home-8__title">
+          <span class="home-8__span-top">Latest</span>
+        </h3>
+        <h3 class="home-8__title">
+          <span class="home-8__span-bottom"> News</span>
+        </h3>
+        <p class="home-8__desc">
+          As an AIA/CES Registered Provider, Dextall offers various programs for
+          Architects and Certified Installer Program (Dextall CIP) that focuses
+          on training for unitized prefab panel installation
+        </p>
+      </div>
+      <TheCards class="home-8__cards" />
+    </div>
+  </section>
+  <section class="section home-9">
+    <div class="container home-9__wrapper"></div>
   </section>
 </template>
