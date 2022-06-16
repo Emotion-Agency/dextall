@@ -27,3 +27,14 @@
     margin-left: 20px;
   }
 }
+
+.ticker__icon {
+  display: flex;
+  width: vw(99);
+  height: vw(99);
+
+  @media (max-width: $br1) {
+    width: 36px;
+    height: 36px;
+  }
+}
