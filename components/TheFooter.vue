@@ -68,7 +68,9 @@
         <p class="footer__date">©2022 DEXTALL</p>
         <NuxtLink to="/" class="footer__rules">Terms and conditions</NuxtLink>
         <NuxtLink to="/" class="footer__rules">Privacy Policy</NuxtLink>
-        <a href="#" class="footer__emotion"> by emotion </a>
+        <a href="https://www.emotion-agency.com/" class="footer__emotion">
+          by emotion
+        </a>
       </div>
     </div>
   </footer>

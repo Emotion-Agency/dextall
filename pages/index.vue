@@ -252,8 +252,6 @@ useTransition()
       <div class="grid home-8__text-block">
         <h3 class="home-8__title">
           <span class="home-8__span-top">Latest</span>
-        </h3>
-        <h3 class="home-8__title">
           <span class="home-8__span-bottom"> News</span>
         </h3>
         <p class="home-8__desc">

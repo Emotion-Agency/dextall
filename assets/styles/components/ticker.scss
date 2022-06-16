@@ -12,6 +12,7 @@
 
 .ticker__item {
   @include default;
+  display: flex;
   color: var(--main);
   font-size: vw(200);
   line-height: 110%;
@@ -29,7 +30,7 @@
 }
 
 .ticker__icon {
-  display: flex;
+  display: block;
   width: vw(99);
   height: vw(99);
 

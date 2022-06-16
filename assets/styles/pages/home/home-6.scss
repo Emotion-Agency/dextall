@@ -22,6 +22,7 @@
 .home-6__big-text {
   @include default;
   font-size: vw(120);
+  margin-top: vw(10);
 
   @media (max-width: $br1) {
     font-size: size(120, 35);

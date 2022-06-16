@@ -191,6 +191,11 @@
   line-height: 100%;
   color: var(--main);
 
+  @media (min-width: $br1) {
+    position: relative;
+    top: vw(10);
+  }
+
   @media (max-width: $br1) {
     align-self: flex-start;
     font-size: size(16, 14);

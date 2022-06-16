@@ -9,6 +9,11 @@
   @include default;
   font-size: vw(150);
 
+  @media (min-width: $br1) {
+    position: relative;
+    top: vw(10);
+  }
+
   @media (max-width: $br1) {
     display: inline;
     font-size: size(150, 35);
@@ -32,7 +37,6 @@
 
   @media (min-width: $br1) {
     @include col(11, 15);
-    @include row(2, 2);
     align-self: flex-end;
     max-width: vw(554);
     position: relative;

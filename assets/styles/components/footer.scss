@@ -61,6 +61,11 @@
   }
 }
 
+.footer__social-link {
+  position: relative;
+  top: 1px;
+}
+
 .footer__nav-list {
   @include col(5, 8);
   grid-template-columns: repeat(2, 1fr);
@@ -170,6 +175,10 @@
   width: fit-content;
   font-size: vw(20);
   text-transform: lowercase;
+
+  @media (min-width: $br1) {
+    justify-self: end;
+  }
 
   @media (max-width: $br1) {
     @include col(1, 4);
