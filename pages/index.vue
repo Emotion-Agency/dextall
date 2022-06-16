@@ -290,7 +290,4 @@ useTransition()
       </div>
     </div>
   </section>
-  <section class="section home-10">
-    <div class="container home-10__wrapper"></div>
-  </section>
 </template>

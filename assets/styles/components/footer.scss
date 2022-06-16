@@ -1,0 +1,184 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: vw(27);
+
+  @media (min-width: $br1) {
+    height: 100vh;
+  }
+
+  @media (max-width: $br1) {
+    padding-bottom: 32px;
+  }
+}
+
+.footer__ticker {
+  margin-top: vw(100);
+
+  @media (max-width: $br1) {
+    margin-top: 0;
+  }
+}
+
+.footer__top-wrapper {
+  margin-top: vw(170);
+}
+
+.footer__social-list {
+  @include col(1, 3);
+  display: flex;
+  gap: vw(16);
+  flex-wrap: wrap;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    gap: 15px;
+    max-width: 250px;
+  }
+}
+
+.footer__social-li {
+  @include default;
+  font-size: vw(24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--main);
+  height: vw(60);
+  width: vw(80);
+
+  @media (max-width: $br1) {
+    font-size: size(24, 22);
+    height: 55px;
+    width: 73px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 22px;
+  }
+}
+
+.footer__nav-list {
+  @include col(5, 8);
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(2, 2);
+    margin-top: 40px;
+  }
+}
+
+.footer__nav-li {
+  @include default;
+  @include col(2, 2);
+
+  &:nth-of-type(-n+5) {
+    @include col(1, 1);
+  }
+}
+
+.footer__form {
+  @include col(12, 15);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(3, 3);
+    margin-top: 40px;
+  }
+}
+
+.footer__form-title {
+  @include default;
+  font-size: vw(20);
+
+  @media (max-width: $br1) {
+    font-size: 20px;
+  }
+}
+
+.footer__input {
+  margin-top: vw(50);
+
+  @media (max-width: $br1) {
+    margin-top: 30px;
+  }
+}
+
+.footer__bottom-wrapper {
+  @include default;
+  @include col(1, 15);
+  @include row(2, 2);
+  margin-top: vw(94);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(4, 4);
+    row-gap: 20px;
+    margin-top: 40px;
+  }
+}
+
+.footer__date {
+  @include default;
+  @include col(1, 4);
+  font-size: vw(20);
+
+  @media (max-width: $br1) {
+    font-size: size(20, 16);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}
+
+.footer__rules {
+  @include default;
+  opacity: 0.7;
+  text-transform: none;
+
+  @media (max-width: $br1) {
+    @include row(2, 2);
+    font-size: 16px;
+  }
+
+  &:nth-of-type(1) {
+    @include col(5, 6);
+
+    @media (max-width: $br1) {
+      @include col(1, 2);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @include col(7, 8);
+
+    @media (max-width: $br1) {
+      @include col(3, 4);
+    }
+  }
+
+}
+
+.footer__emotion {
+  @include default;
+  @include col(14, 15);
+  width: fit-content;
+  font-size: vw(20);
+  text-transform: lowercase;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(3, 3);
+    font-size: size(20, 16);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}

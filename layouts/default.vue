@@ -35,5 +35,6 @@ onMounted(async () => {
     <SmoothScroll>
       <slot />
     </SmoothScroll>
+    <TheFooter />
   </div>
 </template>
