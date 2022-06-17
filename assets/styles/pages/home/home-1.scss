@@ -89,7 +89,7 @@
     width: 50%;
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   @media (max-width: $br4) {
     width: 100%;
   }
@@ -193,7 +193,9 @@
 
   @media (min-width: $br1) {
     position: relative;
-    top: vw(10);
+    top: vw(116);
+    left: vw(597);
+    max-width: vw(338);
   }
 
   @media (max-width: $br1) {

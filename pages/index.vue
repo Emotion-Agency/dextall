@@ -10,10 +10,7 @@ useTransition()
         <div
           class="big-img home-1__elements-left"
           style="
-            background: url('/images/home/1.jpg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            background-image: url('/images/home/1.jpg');
           "
         ></div>
         <div class="home-1__elements-right">
@@ -21,9 +18,6 @@ useTransition()
             class="big-img home-1__right-image"
             style="
               background-image: url('/images/home/2.jpg');
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
             "
           ></div>
           <ul class="grid home-1__small-buildings">
@@ -65,17 +59,17 @@ useTransition()
           </ul>
         </div>
       </div>
-      <div class="grid home-1__bottom-block">
+      <p class="home-1__desc">
+        A New Norm To Design. Build. Think. powered by Dextall Studio, the BIM
+        Solution software
+      </p>
+      <h1 class="grid home-1__bottom-block">
         <span class="home-1__title">Unitized</span>
         <span class="home-1__title"> prefabricated</span>
         <span class="home-1__title"> exterior</span>
-        <span class="home-1__title"> Wall</span>
+        <span class="home-1__title"> wall</span>
         <span class="home-1__title"> system</span>
-        <p class="home-1__desc">
-          A New Norm To Design. Build. Think. powered by Dextall Studio, the BIM
-          Solution software
-        </p>
-      </div>
+      </h1>
     </div>
   </section>
   <section class="section home-2">
@@ -174,7 +168,11 @@ useTransition()
         </ul>
       </div>
       <div class="home-3__right-block">
-        <img class="home-3__img" src="/images/home/9.jpg" alt="Building" />
+        <img
+          class="home-3__img"
+          src="/images/home/9.jpg"
+          alt="Building"
+        />
       </div>
     </div>
   </section>
@@ -225,10 +223,18 @@ useTransition()
         <CircleButton class="home-6__btn" />
       </div>
       <div class="home-6__image-top">
-        <img class="home-6__img" src="/images/home/10.jpg" alt="Building" />
+        <img
+          class="home-6__img"
+          src="/images/home/10.jpg"
+          alt="Building"
+        />
       </div>
       <div class="home-6__image-bottom">
-        <img class="home-6__img" src="/images/home/11.jpg" alt="Building" />
+        <img
+          class="home-6__img"
+          src="/images/home/11.jpg"
+          alt="Building"
+        />
       </div>
     </div>
   </section>
@@ -283,10 +289,18 @@ useTransition()
         <CircleButton class="home-9__btn" />
       </div>
       <div class="home-9__image-top">
-        <img class="home-9__img" src="/images/home/17.jpg" alt="Building" />
+        <img
+          class="home-9__img"
+          src="/images/home/17.jpg"
+          alt="Building"
+        />
       </div>
       <div class="home-9__image-bottom">
-        <img class="home-9__img" src="/images/home/18.jpg" alt="Building" />
+        <img
+          class="home-9__img"
+          src="/images/home/18.jpg"
+          alt="Building"
+        />
       </div>
     </div>
   </section>

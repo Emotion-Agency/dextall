@@ -1,7 +1,10 @@
 <template>
   <ul class="image-list">
     <li class="image-list__li">
-      <NuxtLink to="/" class="image-list__link">
+      <NuxtLink
+        to="/"
+        class="image-list__link"
+      >
         <div class="image-list__text">
           <h4 class="image-list__title">The Heritage, NY</h4>
           <div class="image-list__desc-wrapper">
@@ -37,8 +40,11 @@
       </NuxtLink>
     </li>
     <li class="image-list__li">
-      <NuxtLink to="/" class="image-list__link">
-        <div class="image-list__text-reverse">
+      <NuxtLink
+        to="/"
+        class="image-list__link"
+      >
+        <div class="image-list__text">
           <h4 class="image-list__title">116th Str, Queens</h4>
           <div class="image-list__desc-wrapper">
             <p class="image-list__number">(002)</p>
@@ -50,22 +56,22 @@
         </div>
         <div class="grid image-list__img-wrapper">
           <img
-            class="image-list__img-reverse"
+            class="image-list__img"
             src="/images/home/12(2).jpg"
             alt="Building"
           />
           <img
-            class="image-list__img-reverse"
+            class="image-list__img"
             src="/images/home/13(2).jpg"
             alt="Building"
           />
           <img
-            class="image-list__img-reverse"
+            class="image-list__img"
             src="/images/home/14(2).jpg"
             alt="Building"
           />
           <img
-            class="image-list__img-reverse"
+            class="image-list__img"
             src="/images/home/15(2).jpg"
             alt="Building"
           />
