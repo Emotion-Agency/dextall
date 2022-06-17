@@ -7,7 +7,7 @@
           We cant wait to see the building ready! And since its build with our
           DWall 2000, the building process will be fast. Here are the details:
         </p>
-        <CircleButton class="cards__btn" />
+        <CircleButton class="cards__btn"> Read more </CircleButton>
       </div>
       <div class="cards__line-block">
         <p class="cards__date">17.05.2022</p>
@@ -24,7 +24,7 @@
           We cant wait to see the building ready! And since its build with our
           DWall 2000, the building process will be fast. Here are the details:
         </p>
-        <CircleButton class="cards__btn" />
+        <CircleButton class="cards__btn"> Read more </CircleButton>
       </div>
       <div class="cards__line-block">
         <p class="cards__date">17.05.2022</p>
@@ -41,7 +41,7 @@
           We cant wait to see the building ready! And since its build with our
           DWall 2000, the building process will be fast. Here are the details:
         </p>
-        <CircleButton class="cards__btn" />
+        <CircleButton class="cards__btn"> Read more </CircleButton>
       </div>
       <div class="cards__line-block">
         <p class="cards__date">17.05.2022</p>

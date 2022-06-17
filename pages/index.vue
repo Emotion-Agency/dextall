@@ -9,16 +9,12 @@ useTransition()
       <div class="grid home-1__top-block">
         <div
           class="big-img home-1__elements-left"
-          style="
-            background-image: url('/images/home/1.jpg');
-          "
+          style="background-image: url('/images/home/1.jpg')"
         ></div>
         <div class="home-1__elements-right">
           <div
             class="big-img home-1__right-image"
-            style="
-              background-image: url('/images/home/2.jpg');
-            "
+            style="background-image: url('/images/home/2.jpg')"
           ></div>
           <ul class="grid home-1__small-buildings">
             <li class="home-1__li">
@@ -168,11 +164,7 @@ useTransition()
         </ul>
       </div>
       <div class="home-3__right-block">
-        <img
-          class="home-3__img"
-          src="/images/home/9.jpg"
-          alt="Building"
-        />
+        <img class="home-3__img" src="/images/home/9.jpg" alt="Building" />
       </div>
     </div>
   </section>
@@ -202,7 +194,7 @@ useTransition()
           provided in sweeping plan to over-clad existing affordable housing
           projects for the State of New York
         </p>
-        <CircleButton class="home-5__btn" />
+        <CircleButton class="home-5__btn"> Read more </CircleButton>
       </div>
       <div class="home-5__line"></div>
     </div>
@@ -220,21 +212,13 @@ useTransition()
           States’ Build Back Better Plans For Affordable Housing Hinge On
           Innovators
         </p>
-        <CircleButton class="home-6__btn" />
+        <CircleButton class="home-6__btn"> View more </CircleButton>
       </div>
       <div class="home-6__image-top">
-        <img
-          class="home-6__img"
-          src="/images/home/10.jpg"
-          alt="Building"
-        />
+        <img class="home-6__img" src="/images/home/10.jpg" alt="Building" />
       </div>
       <div class="home-6__image-bottom">
-        <img
-          class="home-6__img"
-          src="/images/home/11.jpg"
-          alt="Building"
-        />
+        <img class="home-6__img" src="/images/home/11.jpg" alt="Building" />
       </div>
     </div>
   </section>
@@ -250,7 +234,7 @@ useTransition()
           affordable, sustainable designs and increases design coordination
           efficiency
         </p>
-        <CircleButton class="home-7__btn" />
+        <CircleButton class="home-7__btn"> View all </CircleButton>
       </div>
       <ImageList />
     </div>
@@ -286,21 +270,13 @@ useTransition()
           Architects and Certified Installer Program (Dextall CIP) that focuses
           on training for unitized prefab panel installation
         </p>
-        <CircleButton class="home-9__btn" />
+        <CircleButton class="home-9__btn"> Read more </CircleButton>
       </div>
       <div class="home-9__image-top">
-        <img
-          class="home-9__img"
-          src="/images/home/17.jpg"
-          alt="Building"
-        />
+        <img class="home-9__img" src="/images/home/17.jpg" alt="Building" />
       </div>
       <div class="home-9__image-bottom">
-        <img
-          class="home-9__img"
-          src="/images/home/18.jpg"
-          alt="Building"
-        />
+        <img class="home-9__img" src="/images/home/18.jpg" alt="Building" />
       </div>
     </div>
   </section>

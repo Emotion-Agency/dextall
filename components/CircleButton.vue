@@ -1,3 +1,5 @@
 <template>
-  <button class="circle-button">Read more</button>
+  <button class="circle-button">
+    <slot></slot>
+  </button>
 </template>
