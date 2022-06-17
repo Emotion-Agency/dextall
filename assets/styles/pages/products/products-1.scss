@@ -12,10 +12,6 @@
   }
 }
 
-.products-1__wrapper {}
-
-.products-1__image-block {}
-
 .products-1__img {
   display: block;
   width: 100%;
@@ -129,8 +125,6 @@
 }
 
 .products-1__span-title {
-  &:nth-of-type(1) {}
-
   &:nth-of-type(2) {
     @media (min-width: $br1) {
       @include italic;

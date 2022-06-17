@@ -32,7 +32,29 @@
       </div>
     </div>
   </section>
-  <section class="section section--nm products-1">
-    <div class="container products-1__wrapper"></div>
+  <section class="section products-2">
+    <div class="container grid products-2__wrapper">
+      <h2 class="grid products-2__title">
+        <span class="products-2__big-text">TESTED</span>
+        <span class="products-2__big-text"> &</span>
+        <span class="products-2__big-text"> CERTIFIED</span>
+      </h2>
+      <p class="products-2__desc">
+        Dextal’s proprietary unitized exterior prefab walls feature prime
+        components engineered to meet or exceed all code compliance
+        requirements. Our exclusive innovative design and process technology
+        slashes costs to make projects affordable
+      </p>
+      <FloatingCards class="products-2__floating-cards">
+        <div class="products-2__text-wrapper">
+          <h3 class="products-2__title-cards">Reduce Onsite Waste</h3>
+          <p class="products-2__medium-text">From 30%+ to less than 5% ↓</p>
+          <p class="products-2__small-text">Lower Cost and Carbon Footprint</p>
+        </div>
+      </FloatingCards>
+    </div>
+  </section>
+  <section class="section products-3">
+    <div class="container products-3__wrapper"></div>
   </section>
 </template>
