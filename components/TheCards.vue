@@ -13,9 +13,10 @@
         <p class="cards__date">17.05.2022</p>
         <div class="cards__line"></div>
       </div>
-      <div class="cards__image-block">
-        <img class="cards__img" src="/images/home/16.jpg" alt="Building" />
-      </div>
+      <div
+        class="cards__image-block"
+        style="background-image: url('/images/home/16.jpg')"
+      ></div>
     </li>
     <li class="grid cards__li">
       <div class="cards__text-block">
@@ -30,9 +31,10 @@
         <p class="cards__date">17.05.2022</p>
         <div class="cards__line"></div>
       </div>
-      <div class="cards__image-block">
-        <img class="cards__img" src="/images/home/16.jpg" alt="Building" />
-      </div>
+      <div
+        class="cards__image-block"
+        style="background-image: url('/images/home/16.jpg')"
+      ></div>
     </li>
     <li class="grid cards__li">
       <div class="cards__text-block">
@@ -47,9 +49,10 @@
         <p class="cards__date">17.05.2022</p>
         <div class="cards__line"></div>
       </div>
-      <div class="cards__image-block">
-        <img class="cards__img" src="/images/home/16.jpg" alt="Building" />
-      </div>
+      <div
+        class="cards__image-block"
+        style="background-image: url('/images/home/16.jpg')"
+      ></div>
     </li>
   </ul>
 </template>
