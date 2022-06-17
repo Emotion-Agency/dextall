@@ -186,7 +186,9 @@ useTransition()
         <span class="home-4__big-text"> Engineering</span>
         <span class="home-4__big-text"> Accreditations</span>
       </h2>
-      <ThePlates class="home-4__plates" />
+      <FloatingCards class="home-4__floating-cards">
+        <IconsFloatingCardsImg />
+      </FloatingCards>
     </div>
   </section>
   <section class="section home-5">

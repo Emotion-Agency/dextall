@@ -1,4 +1,4 @@
-.plates {
+.floating-cards {
   row-gap: vw(120);
   grid-auto-flow: row;
 
@@ -12,7 +12,7 @@
   }
 }
 
-.plates__li {
+.floating-cards__li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,7 @@
   width: 100%;
   background-color: var(--main);
   border-radius: 8px;
+
   @media (min-width: $br1) {
     @include col(1, 12);
     width: vw(695);
@@ -41,8 +42,7 @@
   }
 
   &:nth-of-type(4n + 2) {
-    @media (min-width: $br1) {
-    }
+    @media (min-width: $br1) {}
   }
 
   &:nth-of-type(4n + 3) {
@@ -56,16 +56,16 @@
       margin-left: vw(477);
     }
   }
-}
 
-.plates__icon {
-  display: block;
-  width: vw(408);
-  height: vw(76);
+  svg {
+    display: block;
+    width: vw(408);
+    height: vw(76);
 
-  @media (max-width: $br1) {
-    width: fit-content;
-    max-width: 100%;
-    height: 100%;
+    @media (max-width: $br1) {
+      width: fit-content;
+      max-width: 100%;
+      height: 100%;
+    }
   }
 }
