@@ -59,17 +59,17 @@ useTransition()
           </ul>
         </div>
       </div>
-      <div class="grid home-1__bottom-block">
+      <p class="home-1__desc">
+        A New Norm To Design. Build. Think. powered by Dextall Studio, the BIM
+        Solution software
+      </p>
+      <h1 class="grid home-1__bottom-block">
         <span class="home-1__title">Unitized</span>
         <span class="home-1__title"> prefabricated</span>
         <span class="home-1__title"> exterior</span>
-        <span class="home-1__title"> Wall</span>
+        <span class="home-1__title"> wall</span>
         <span class="home-1__title"> system</span>
-        <p class="home-1__desc">
-          A New Norm To Design. Build. Think. powered by Dextall Studio, the BIM
-          Solution software
-        </p>
-      </div>
+      </h1>
     </div>
   </section>
   <section class="section home-2">
