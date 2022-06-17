@@ -36,7 +36,7 @@
   pointer-events: none;
   transform: translate(0px, -50%);
   opacity: 0.7;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
   gap: 8px;
   top: 30%;
   left: 0;
