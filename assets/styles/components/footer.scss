@@ -5,20 +5,8 @@
   position: relative;
   padding-bottom: vw(27);
 
-  @media (min-width: $br1) {
-    height: 100vh;
-  }
-
   @media (max-width: $br1) {
     padding-bottom: 32px;
-  }
-}
-
-.footer__ticker {
-  margin-top: vw(100);
-
-  @media (max-width: $br1) {
-    margin-top: 0;
   }
 }
 
