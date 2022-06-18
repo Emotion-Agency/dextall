@@ -22,22 +22,6 @@
           src="/images/products/4.jpg"
           alt="Building"
         />
-        <!-- <div
-          class="products-1__img"
-          style="background-image: url('/images/products/1.jpg')"
-        ></div>
-        <div
-          class="products-1__img"
-          style="background-image: url('/images/products/2.jpg')"
-        ></div>
-        <div
-          class="products-1__img"
-          style="background-image: url('/images/products/3.jpg')"
-        ></div>
-        <div
-          class="products-1__img"
-          style="background-image: url('/images/products/4.jpg')"
-        ></div> -->
       </div>
       <div class="products-1__text-block">
         <h1 class="products-1__title">

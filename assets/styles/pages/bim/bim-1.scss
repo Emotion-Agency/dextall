@@ -1,0 +1,74 @@
+.bim-1 {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  padding-top: 0;
+}
+
+.bim-1__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
+}
+
+.bim-1__text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  @media (max-width: $br1) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (max-width: $br3) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.bim-1__top-text {
+  @include default;
+  font-size: vw(14);
+
+  @media (max-width: $br1) {
+    font-size: size(14, 12);
+  }
+
+  @media (max-width: $br3) {
+    font-size: 12px;
+  }
+}
+
+.bim-1__bottom-text {
+  @include default;
+  max-width: vw(416);
+  margin-top: vw(30);
+
+  @media (max-width: $br1) {
+    max-width: 70%;
+    margin-top: 15px;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
+.bim-1__btn {
+  align-self: center;
+  margin-top: auto;
+  max-width: fit-content;
+  margin-bottom: vw(20);
+
+  @media (max-width: $br1) {
+    margin-bottom: 20px;
+  }
+}
