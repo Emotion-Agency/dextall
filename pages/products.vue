@@ -1,8 +1,28 @@
 <template>
   <section class="section section--nm products-1">
     <div class="container products-1__wrapper">
-      <div class="grid products-1__image-block">
-        <div
+      <div class="products-1__image-block">
+        <img
+          class="products-1__img"
+          src="/images/products/1.jpg"
+          alt="Building"
+        />
+        <img
+          class="products-1__img"
+          src="/images/products/2.jpg"
+          alt="Building"
+        />
+        <img
+          class="products-1__img"
+          src="/images/products/3.jpg"
+          alt="Building"
+        />
+        <img
+          class="products-1__img"
+          src="/images/products/4.jpg"
+          alt="Building"
+        />
+        <!-- <div
           class="products-1__img"
           style="background-image: url('/images/products/1.jpg')"
         ></div>
@@ -17,7 +37,7 @@
         <div
           class="products-1__img"
           style="background-image: url('/images/products/4.jpg')"
-        ></div>
+        ></div> -->
       </div>
       <div class="products-1__text-block">
         <h1 class="products-1__title">

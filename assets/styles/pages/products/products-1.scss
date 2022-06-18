@@ -12,77 +12,72 @@
   }
 }
 
+.products-1__image-block {
+  position: relative;
+}
+
 .products-1__img {
   display: block;
-  width: 100%;
   border-radius: 10px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: absolute;
 
   &:nth-of-type(1) {
     @media (min-width: $br1) {
-      @include col(2, 3);
       height: vw(305);
+      width: vw(217);
     }
 
     @media (max-width: $br1) {
-      @include col(1, 2);
       height: 145px;
-      width: 70%;
+      width: 103px;
     }
   }
 
   &:nth-of-type(2) {
     @media (min-width: $br1) {
-      @include col(12, 14);
       height: vw(496);
+      width: vw(340);
+      right: vw(124);
+      top: 0;
     }
 
     @media (max-width: $br1) {
-      @include col(3, 4);
       height: 173px;
-      width: 70%;
-      justify-self: end;
-      position: relative;
-      top: 47px;
+      width: 118px;
+      right: 0;
+      top: 50px;
     }
   }
 
   &:nth-of-type(3) {
     @media (min-width: $br1) {
-      @include col(1, 3);
-      @include row(2, 2);
       height: vw(305);
-      position: relative;
-      top: vw(74);
+      width: vw(338);
+      top: vw(570);
+      left: 0;
     }
 
     @media (max-width: $br1) {
-      @include col(1, 2);
-      @include row(2, 2);
       height: 145px;
-      position: relative;
-      top: 235px;
+      width: 161px;
+      top: 455px;
+      left: 0;
     }
   }
 
   &:nth-of-type(4) {
     @media (min-width: $br1) {
-      @include col(13, 15);
-      @include row(2, 2);
       height: vw(274);
-      position: relative;
-      top: vw(163);
+      width: vw(340);
+      top: vw(660);
+      right: 0;
     }
 
     @media (max-width: $br1) {
-      @include col(4, 4);
-      @include row(2, 2);
       height: 95px;
-      position: relative;
-      top: 385px;
-      left: 0;
+      width: 72px;
+      top: 605px;
+      right: 0;
     }
   }
 }
@@ -92,9 +87,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: vw(170);
-    left: vw(382);
+    align-items: center;
+    position: relative;
   }
 
   @media (max-width: $br1) {
@@ -104,7 +98,6 @@
     align-items: center;
     text-align: center;
     position: relative;
-    top: -100px;
   }
 }
 
@@ -136,7 +129,6 @@
   &:nth-of-type(3) {
     @media (min-width: $br1) {
       @include italic;
-      text-align: end;
       margin-left: vw(100);
     }
   }
@@ -147,27 +139,21 @@
   text-align: center;
 
   @media (min-width: $br1) {
-    align-self: center;
     max-width: vw(320);
     margin-top: vw(30);
   }
 
   @media (max-width: $br1) {
-    @include row(2, 2);
     margin-top: 15px;
-    max-width: 335px;
   }
 }
 
 .products-1__btn {
   @media (min-width: $br1) {
     margin-top: vw(212);
-    width: fit-content;
-    align-self: center;
   }
 
   @media (max-width: $br1) {
-    @include row(3, 3);
     margin-top: 245px;
   }
 }
