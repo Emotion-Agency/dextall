@@ -32,7 +32,7 @@
   }
 
   @media (max-width: $br4) {
-    height: 126px;
+    height: fit-content;
   }
 
   &:nth-of-type(4n + 1) {
