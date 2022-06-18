@@ -48,8 +48,8 @@
         <p class="products-1__desc">
           Our products are designed for new and retrofit construction
         </p>
-        <CircleButton class="products-1__btn"> Show products </CircleButton>
       </div>
+      <CircleButton class="products-1__btn"> Show products </CircleButton>
     </div>
   </section>
   <section class="section products-2">

@@ -2,18 +2,22 @@
   position: relative;
   padding-top: vw(147);
   min-height: 100vh;
-
-  @media (min-width: $br1) {
-    height: 100vh;
-  }
+  height: 100vh;
 
   @media (max-width: $br1) {
     padding-top: 115px;
   }
 }
 
+.products-1__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
+}
+
 .products-1__image-block {
   position: relative;
+  z-index: -1;
 }
 
 .products-1__img {
@@ -83,21 +87,29 @@
 }
 
 .products-1__text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
   @media (min-width: $br1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    transform: translate(-50%, -70%);
   }
 
   @media (max-width: $br1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (max-width: $br3) {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -107,6 +119,10 @@
   @include default;
   font-size: vw(120);
   line-height: 110%;
+
+  @media (min-width: $br1) {
+    align-items: flex-start;
+  }
 
   @media (max-width: $br1) {
     font-size: size(120, 36);
@@ -149,11 +165,12 @@
 }
 
 .products-1__btn {
-  @media (min-width: $br1) {
-    margin-top: vw(212);
-  }
+  align-self: center;
+  margin-top: auto;
+  max-width: fit-content;
+  margin-bottom: vw(20);
 
   @media (max-width: $br1) {
-    margin-top: 245px;
+    margin-bottom: 20px;
   }
 }
