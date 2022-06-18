@@ -289,6 +289,14 @@
     </div>
   </section>
   <section class="section products-5">
-    <div class="container products-5__wrapper"></div>
+    <div class="products-5__bg-wrapper">
+      <div
+        class="products-5__bg"
+        style="background-image: url('/images/products/9.jpg')"
+      ></div>
+    </div>
+  </section>
+  <section class="section products-6">
+    <div class="container products-6__wrapper"></div>
   </section>
 </template>
