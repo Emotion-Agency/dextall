@@ -297,6 +297,28 @@
     </div>
   </section>
   <section class="section products-6">
-    <div class="container products-6__wrapper"></div>
+    <div class="container products-6__wrapper">
+      <div class="products-6__line"></div>
+      <div class="products-6__main-block">
+        <h3 class="products-6__title">NYSERDA Approved</h3>
+        <p class="products-6__desc">
+          As a NYSERDA approved and qualified Component Manufacturer, Dextall
+          proves to be a pioneer in the prefabricated wall system industry and a
+          viable solution for New York State Rehabilitation initiatives.
+        </p>
+        <p class="products-6__desc">
+          *Overall building energy spending IS LOWER with Dextall's products.
+        </p>
+        <p class="products-6__desc">
+          *More durable exteriors means passing envelope inspections without the
+          need to spend on ongoing maintenance work.
+        </p>
+        <CircleButton class="products-6__btn"> Read more </CircleButton>
+      </div>
+      <div class="products-6__line"></div>
+    </div>
+  </section>
+  <section class="section products-7">
+    <div class="container products-7__wrapper"></div>
   </section>
 </template>
