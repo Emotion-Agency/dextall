@@ -39,6 +39,84 @@
     ></div>
   </section>
   <section class="section bim-3">
-    <div class="container bim-3__wrapper"></div>
+    <div class="container bim-3__wrapper">
+      <h2 class="grid bim-3__title">
+        <span class="bim-3__span-title">Dextall</span>
+        <span class="bim-3__span-title"> Studio</span>
+        <span class="bim-3__span-title"> Benefits</span>
+      </h2>
+      <ul class="bim-3__list">
+        <li class="bim-3__li">
+          <div class="bim-3__line"></div>
+          <p class="bim-3__text">
+            Software optimization algorithm reduces material waste factor by 30%
+          </p>
+        </li>
+        <li class="bim-3__li">
+          <div class="bim-3__line"></div>
+          <p class="bim-3__text">
+            Exterior system optimized for architectural Revit models
+          </p>
+        </li>
+        <li class="bim-3__li">
+          <div class="bim-3__line"></div>
+          <p class="bim-3__text">
+            Realistic and detailed façade design & Renderings
+          </p>
+        </li>
+        <li class="bim-3__li">
+          <div class="bim-3__line"></div>
+          <p class="bim-3__text">
+            3D high LOD wall section renderings and shop drawings
+          </p>
+        </li>
+        <li class="bim-3__li">
+          <div class="bim-3__line"></div>
+          <p class="bim-3__text">Drawings satisfy specBIM requirements</p>
+        </li>
+        <li class="bim-3__li">
+          <div class="bim-3__line"></div>
+          <p class="bim-3__text">
+            Dashboard for data driven design and analytics
+          </p>
+          <div class="bim-3__line"></div>
+        </li>
+      </ul>
+      <div class="bim-3__slider-wrapper">
+        <div class="bim-3__btns">
+          <button class="bim-3__btn">
+            <IconsArrowLeft class="bim-3__arrow" />
+          </button>
+          <button class="bim-3__btn">
+            <IconsArrowRight class="bim-3__arrow" />
+          </button>
+        </div>
+        <div class="bim-3__slider">
+          <img
+            class="bim-3__slider-img"
+            src="/images/bim/2.jpg"
+            alt="Building"
+          />
+          <img
+            class="bim-3__slider-img"
+            src="/images/bim/3.jpg"
+            alt="Building"
+          />
+          <img
+            class="bim-3__slider-img"
+            src="/images/bim/4.jpg"
+            alt="Building"
+          />
+          <img
+            class="bim-3__slider-img"
+            src="/images/bim/2.jpg"
+            alt="Building"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section bim-4">
+    <div class="container bim-4__wrapper"></div>
   </section>
 </template>
