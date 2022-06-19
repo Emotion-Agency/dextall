@@ -1,0 +1,82 @@
+.bim-2__title {
+  @include default;
+  text-align: center;
+  font-size: vw(120);
+
+  @media (max-width: $br1) {
+    text-align: left;
+    font-size: size(120, 36);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.bim-2__span-title {
+  @include italic;
+  text-transform: lowercase;
+}
+
+.bim-2__content {
+  margin-top: vw(280);
+
+  @media (max-width: $br1) {
+    display: inline;
+    margin-top: 0;
+  }
+}
+
+.bim-2__text {
+  @include default;
+
+  &:nth-of-type(1) {
+    @include col(1, 4);
+    max-width: vw(440);
+
+    @media (max-width: $br1) {
+      max-width: 70%;
+      margin-top: 30px;
+    }
+
+    @media (max-width: $br4) {
+      max-width: 100%;
+    }
+  }
+
+  &:nth-of-type(2) {
+    @include col(7, 9);
+
+    @media (max-width: $br1) {
+      max-width: 70%;
+      margin-top: 20px;
+    }
+
+    @media (max-width: $br4) {
+      max-width: 100%;
+    }
+  }
+}
+
+.bim-2__btn {
+  @include col(14, 15);
+  width: fit-content;
+  justify-self: end;
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}
+
+.bim-2__bg {
+  margin-top: vw(16);
+  height: 200vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
+}
