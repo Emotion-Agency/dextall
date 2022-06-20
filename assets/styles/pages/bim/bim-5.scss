@@ -1,0 +1,61 @@
+.bim-5__bg {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bim-5__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bim-5__title {
+  @include default;
+  font-size: vw(200);
+  color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @media (max-width: $br1) {
+    font-size: size(200, 36);
+    display: inline;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.bim-5__span-title {
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include italic;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.bim-5__desc {
+  @include default;
+  margin-top: vw(30);
+  color: var(--bg);
+
+  @media (max-width: $br1) {
+    margin-top: 15px;
+  }
+}
+
+.bim-5__btn {
+  color: var(--bg);
+  border-color: var(--bg);
+  margin-top: vw(50);
+
+  @media (max-width: $br1) {
+    margin-top: 25px;
+  }
+}

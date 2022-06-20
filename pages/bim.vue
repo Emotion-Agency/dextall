@@ -195,6 +195,15 @@
     </div>
   </section>
   <section class="section bim-5">
-    <div class="container bim-5__wrapper"></div>
+    <div class="bim-5__bg" style="background-image: url('/images/bim/5.jpg')">
+      <div class="container bim-5__wrapper">
+        <h2 class="bim-5__title">
+          <span class="bim-5__span-title">try</span>
+          <span class="bim-5__span-title"> Dextall Studio</span>
+        </h2>
+        <p class="bim-5__desc">Get Access Now!</p>
+        <CircleButton class="bim-5__btn">Register</CircleButton>
+      </div>
+    </div>
   </section>
 </template>
