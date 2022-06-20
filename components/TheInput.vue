@@ -20,8 +20,8 @@
         {{ placeholder }}
         <abbr v-if="required" title="required"> * </abbr>
       </label>
-      <transition name="fade" mode="out-in"> </transition>
-      <button class="input-btn">Send</button>
+      <!-- <transition name="fade" mode="out-in"> </transition> -->
+      <slot />
     </div>
     <small v-if="error" class="input-error">{{ validationText }}</small>
   </div>

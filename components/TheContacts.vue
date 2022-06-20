@@ -1,70 +1,49 @@
 <template>
-  <footer class="section section--nm footer">
-    <TheTicker class="footer__ticker"></TheTicker>
-    <div class="container grid footer__top-wrapper">
-      <TheSocial />
-      <ul class="grid footer__nav-list">
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Home </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Products </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Bim Solution </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Projects </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> News </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> About us </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Careers </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Education and Training </NuxtLink>
-        </li>
-        <li class="footer__nav-li">
-          <NuxtLink to="/"> Contact us </NuxtLink>
-        </li>
-      </ul>
-      <form class="footer__form">
-        <legend class="footer__form-title">Follow us</legend>
+  <div class="contacts">
+    <div class="contacts__backdrop"></div>
+    <div class="container contacts__window">
+      <button class="contacts__close-btn">
+        <span class="contacts__btn-line"></span>
+        <span class="contacts__btn-line"></span>
+      </button>
+      <h2 class="contacts__title">Contact us</h2>
+      <p class="contacts__desc">
+        Our client services team would love to hear from you
+      </p>
+      <form class="grid contacts__form">
         <TheInput
           v-for="input in formData.inputs"
           :id="input.id"
           :key="input.id"
           ref="$inputs"
-          class="footer__input"
+          class="contacts__input"
           :type="input.type"
           :placeholder="input.label"
           :required="input.required"
           :validation-text="input.validationText"
           :validation="input.validation"
           @input-value="onInputValue"
-        >
-          <button class="input-btn">Send</button>
-        </TheInput>
+        />
+        <CircleButton class="contacts__btn">Send</CircleButton>
       </form>
-      <div class="grid footer__bottom-wrapper">
-        <p class="footer__date">©2022 DEXTALL</p>
-        <NuxtLink to="/" class="footer__rules">Terms and conditions</NuxtLink>
-        <NuxtLink to="/" class="footer__rules">Privacy Policy</NuxtLink>
-        <a
-          href="https://www.emotion-agency.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer__emotion"
+      <div class="grid contacts__bottom-block">
+        <TheSocial class="contacts__social" />
+        <div class="contacts__text-wrapper">
+          <p class="contacts__text">
+            Dextall Inc.<br />
+            202-701-3208
+          </p>
+          <p class="contacts__text">
+            Marketing And PR:<br />
+            703-576-8588
+          </p>
+        </div>
+        <TextButton class="contacts__text-btn"
+          >Download DEXTALL MEDIA KIT</TextButton
         >
-          by emotion
-        </a>
       </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -76,12 +55,34 @@ const formData = reactive({
   inputs: [
     {
       required: true,
+      id: 'name',
+      name: 'Name',
+      label: 'Your Name',
+      type: 'text',
+      validation: 'name',
+      validationText: 'incorrect name',
+      error: true,
+      value: '',
+    },
+    {
+      required: true,
       id: 'email',
       name: 'Email',
       label: 'Your Email',
       type: 'email',
       validation: 'email',
       validationText: 'incorrect email',
+      error: true,
+      value: '',
+    },
+    {
+      required: true,
+      id: 'message',
+      name: 'Message',
+      label: 'Your Message',
+      type: 'text',
+      validation: 'message',
+      validationText: 'incorrect message',
       error: true,
       value: '',
     },
