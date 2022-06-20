@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts contacts--open">
+  <div class="contacts contacts">
     <div class="contacts__backdrop"></div>
     <div class="contacts__line"></div>
     <div class="container contacts__window">

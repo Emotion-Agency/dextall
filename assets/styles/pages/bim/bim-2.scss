@@ -62,6 +62,7 @@
   @include col(14, 15);
   width: fit-content;
   justify-self: end;
+  align-self: end;
 
   @media (max-width: $br1) {
     margin-top: 20px;
@@ -78,5 +79,9 @@
 
   @media (max-width: $br1) {
     margin-top: 40px;
+  }
+
+  @media (max-width: $br4) {
+    height: 100vh;
   }
 }
