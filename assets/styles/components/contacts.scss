@@ -1,14 +1,18 @@
 .contacts {
-  position: relative;
-  z-index: 5000;
-
-  @media (min-width: $br1) {
-    height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 101;
+  height: 100vh;
+  display: none;
+  &--open {
+    display: block;
   }
 }
 
 .contacts__backdrop {
-  background-color: #4F4F4F;
+  background-color: #4f4f4f;
   position: absolute;
   top: 0;
   left: 0;
@@ -22,6 +26,7 @@
   background-color: var(--bg);
   height: 80%;
   width: 100%;
+  overflow: auto;
   bottom: 0;
   z-index: 1;
   border-radius: 20px 20px 0px 0px;
@@ -31,6 +36,7 @@
   @media (max-width: $br1) {
     padding-top: 15px;
     padding-bottom: 20px;
+    height: 90%;
   }
 }
 

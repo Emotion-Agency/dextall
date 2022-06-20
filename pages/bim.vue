@@ -195,7 +195,10 @@
     </div>
   </section>
   <section class="section bim-5">
-    <div class="bim-5__bg" style="background-image: url('/images/bim/5.jpg')">
+    <div
+      class="bim-5__bg"
+      style="background-image: url('/images/bim/5.jpg')"
+    >
       <div class="container bim-5__wrapper">
         <h2 class="bim-5__title">
           <span class="bim-5__span-title">try</span>
@@ -206,7 +209,7 @@
       </div>
     </div>
   </section>
-  <section class="section">
+  <!-- <section class="section">
     <TheNavigation />
-  </section>
+  </section> -->
 </template>

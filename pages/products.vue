@@ -208,9 +208,7 @@
                   <div class="products-4__line"></div>
                 </li>
               </ul>
-              <h4
-                class="products-4__content-title products-4__content-title--1"
-              >
+              <h4 class="products-4__content-title products-4__content-title--1">
                 On site simplicity
               </h4>
               <p class="products-4__content-desc">
@@ -321,8 +319,5 @@
       </div>
       <div class="products-6__line"></div>
     </div>
-  </section>
-  <section class="section products-7">
-    <div class="container products-7__wrapper"></div>
   </section>
 </template>

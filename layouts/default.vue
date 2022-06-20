@@ -24,10 +24,20 @@ onMounted(async () => {
 
 <template>
   <div id="app">
+
     <Head>
       <Title>Emotion</Title>
-      <Meta name="viewport" conten="width=device-width, initial-scale=1"></Meta>
-      <Link rel="icon" type="image/x-icon" href="/favicon.ico"></Link>
+      <Meta
+        name="viewport"
+        conten="width=device-width, initial-scale=1"
+      >
+      </Meta>
+      <Link
+        rel="icon"
+        type="image/x-icon"
+        href="/favicon.ico"
+      >
+      </Link>
     </Head>
     <AppGrid />
     <UiLoader />
@@ -35,6 +45,7 @@ onMounted(async () => {
     <SmoothScroll>
       <slot />
     </SmoothScroll>
+    <TheContacts />
     <TheFooter />
   </div>
 </template>
