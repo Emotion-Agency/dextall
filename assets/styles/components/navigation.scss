@@ -6,6 +6,10 @@
   height: 100vh;
   width: 100%;
   z-index: 100;
+
+  &--open {
+    display: flex;
+  }
 }
 
 .navigation__left-block {
@@ -26,6 +30,9 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .navigation__right-block {
@@ -91,10 +98,6 @@
   }
 }
 
-.navigation__list {}
-
-.navigation__li {}
-
 .navigation__line {
   height: 2px;
   width: 100%;
@@ -103,10 +106,15 @@
 
 .navigation__link {
   @include default;
+  display: block;
   font-size: vw(48);
   line-height: 130%;
+  margin-top: vw(20);
+  margin-bottom: vw(20);
 
   @media (max-width: $br1) {
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: size(48, 30);
   }
 
@@ -117,14 +125,17 @@
 
 .navigation__info-block {
   grid-template-columns: repeat(8, 1fr);
+  margin-top: vh(180);
 
   @media (max-width: $br1) {
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 50px;
   }
 }
 
 .navigation__social {
   @include col(1, 3);
+  align-self: end;
 
   @media (max-width: $br1) {
     @include row(2, 2);
@@ -142,18 +153,19 @@
   }
 }
 
-.navigation__info-li {}
-
-.navigation__line {}
-
 .navigation__info-link {
   @include default;
+  display: block;
   font-size: vw(24);
   line-height: 130%;
   text-transform: none;
+  margin-top: vw(15);
+  margin-bottom: vw(15);
 
   @media (max-width: $br1) {
     font-size: size(24, 15);
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   @media (max-width: $br4) {
