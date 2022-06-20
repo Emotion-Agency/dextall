@@ -209,7 +209,4 @@
       </div>
     </div>
   </section>
-  <!-- <section class="section">
-    <TheNavigation />
-  </section> -->
 </template>

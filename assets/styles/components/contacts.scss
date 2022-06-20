@@ -6,6 +6,7 @@
   z-index: 101;
   height: 100vh;
   display: none;
+
   &--open {
     display: block;
   }
@@ -19,6 +20,22 @@
   bottom: 0;
   right: 0;
   z-index: 0;
+}
+
+.contacts__line {
+  position: fixed;
+  width: vw(53);
+  height: 4px;
+  background-color: var(--bg);
+  z-index: 1;
+  top: 18vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  
+  @media (max-width: $br1) {
+    width: 53px;
+    top: 8vh;
+  }
 }
 
 .contacts__window {
@@ -144,7 +161,7 @@
 
 .contacts__bottom-block {
   align-items: flex-end;
-  margin-top: vw(158);
+  margin-top: vh(158);
 
   @media (max-width: $br1) {
     margin-top: 50px;

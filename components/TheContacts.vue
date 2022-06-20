@@ -1,6 +1,7 @@
 <template>
   <div class="contacts contacts--open">
     <div class="contacts__backdrop"></div>
+    <div class="contacts__line"></div>
     <div class="container contacts__window">
       <button class="contacts__close-btn">
         <span class="contacts__btn-line"></span>
@@ -38,7 +39,9 @@
             703-576-8588
           </p>
         </div>
-        <TextButton class="contacts__text-btn">Download DEXTALL MEDIA KIT</TextButton>
+        <TextButton class="contacts__text-btn"
+          >Download DEXTALL MEDIA KIT</TextButton
+        >
       </div>
     </div>
   </div>
