@@ -14,4 +14,17 @@
       <p class="about-1__desc">A Real solution to a real problem</p>
     </div>
   </section>
+  <section class="section about-2">
+    <div class="container about-2__wrapper">
+      <div class="about-2__line"></div>
+      <h3 class="about-2__title">
+        To accelerate decarbonization of the environment TODAY by bringing
+        affordable and efficient solutions to build sustainably
+      </h3>
+      <div class="about-2__line"></div>
+    </div>
+  </section>
+  <section class="section about-3">
+    <div class="container about-3__wrapper"></div>
+  </section>
 </template>
