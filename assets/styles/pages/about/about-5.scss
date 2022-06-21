@@ -1,0 +1,90 @@
+.about-5__title {
+  @include default;
+  font-size: vw(120);
+  max-width: vw(1405);
+
+  @media (max-width: $br1) {
+    font-size: size(120, 36);
+    max-width: 100%;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.about-5__span-title {
+  @media (min-width: $br1) {
+    @include italic;
+  }
+}
+
+.about-5__list {
+  margin-top: vw(50);
+
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
+}
+
+.about-5__li {
+  margin-top: vw(200);
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  @media (max-width: $br1) {
+    margin-top: 100px;
+  }
+}
+
+.about-5__line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--main);
+}
+
+.about-5__text-wrapper {
+  @media (max-width: $br1) {
+    display: inline;
+  }
+}
+
+.about-5__list-title {
+  @include default;
+  @include col(1, 4);
+  font-size: vw(50);
+  margin-top: vw(10);
+
+  @media (max-width: $br1) {
+    font-size: size(50, 25);
+    margin-top: 10px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 25px;
+  }
+}
+
+.about-5__content-list {
+  @include col(8, 15);
+}
+
+.about-5__text {
+  @include default;
+  text-transform: none;
+  font-size: vw(20);
+  margin-top: vw(30);
+  margin-bottom: vw(30);
+
+  @media (max-width: $br1) {
+    font-size: size(20, 16);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}

@@ -53,12 +53,112 @@
     </div>
   </section>
   <section class="section about-4">
-        <div class="container about-4__wrapper">
+    <div class="container about-4__wrapper">
       <div class="about-4__line"></div>
       <h3 class="about-4__title">
-Approximately 16 trillion dollars of new buildings are built worldwide every year. We want to ensure that those buildings exceed local, state, and national environmental regulations while providing a healthy lifestyle for their occupants
+        Approximately 16 trillion dollars of new buildings are built worldwide
+        every year. We want to ensure that those buildings exceed local, state,
+        and national environmental regulations while providing a healthy
+        lifestyle for their occupants
       </h3>
       <div class="about-4__line"></div>
     </div>
+  </section>
+  <section class="section about-5">
+    <div class="container about-5__wrapper">
+      <h2 class="about-5__title">
+        When <span class="about-5__span-title">Decarbonizing</span> With Dextall
+      </h2>
+      <ul class="about-5__list">
+        <li class="about-5__li">
+          <div class="about-5__line"></div>
+          <div class="grid about-5__text-wrapper">
+            <h3 class="about-5__list-title">Increase Value</h3>
+            <ul class="about-5__content-list">
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Favorable NOI — energy, insurance costs, maintenance — to
+                  property owners (retrofits)
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Low-maintenance, durability and resilience
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  15-20% projected project cost savings
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="about-5__li">
+          <div class="about-5__line"></div>
+          <div class="grid about-5__text-wrapper">
+            <h3 class="about-5__list-title">
+              Comply With regulations and local laws
+            </h3>
+            <ul class="about-5__content-list">
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Favorable NOI — energy, insurance costs, maintenance — to
+                  property owners (retrofits)
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Favorable NOI — energy, insurance costs, maintenance — to
+                  property owners (retrofits)
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Low-maintenance, durability and resilience
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="about-5__li">
+          <div class="about-5__line"></div>
+          <div class="grid about-5__text-wrapper">
+            <h3 class="about-5__list-title">Exceed Quality Standards</h3>
+            <ul class="about-5__content-list">
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Favorable NOI — energy, insurance costs, maintenance — to
+                  property owners (retrofits)
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Favorable NOI — energy, insurance costs, maintenance — to
+                  property owners (retrofits)
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+              <li class="about-5__content-li">
+                <p class="about-5__text">
+                  Low-maintenance, durability and resilience
+                </p>
+                <div class="about-5__line"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section about-6">
+    <div class="container about-6__wrapper"></div>
   </section>
 </template>
