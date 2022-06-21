@@ -76,6 +76,7 @@
             <h3 class="about-5__list-title">Increase Value</h3>
             <ul class="about-5__content-list">
               <li class="about-5__content-li">
+                <div class="about-7__mob-line"></div>
                 <p class="about-5__text">
                   Favorable NOI — energy, insurance costs, maintenance — to
                   property owners (retrofits)
@@ -105,6 +106,7 @@
             </h3>
             <ul class="about-5__content-list">
               <li class="about-5__content-li">
+                <div class="about-7__mob-line"></div>
                 <p class="about-5__text">
                   Favorable NOI — energy, insurance costs, maintenance — to
                   property owners (retrofits)
@@ -133,6 +135,7 @@
             <h3 class="about-5__list-title">Exceed Quality Standards</h3>
             <ul class="about-5__content-list">
               <li class="about-5__content-li">
+                <div class="about-7__mob-line"></div>
                 <p class="about-5__text">
                   Favorable NOI — energy, insurance costs, maintenance — to
                   property owners (retrofits)
@@ -178,6 +181,98 @@
     </div>
   </section>
   <section class="section about-7">
-    <div class="container about-7__wrapper"></div>
+    <div class="container about-7__wrapper">
+      <h2 class="about-7__title">A Real Solution To A Real Problem</h2>
+      <p class="about-7__desc">
+        We bridge the gap between the design of prefabricated exteriors within
+        the AEC industry and the final exterior wall execution at the job site
+        through automation, cost optimization and transparent practices.
+      </p>
+      <ul class="about-7__list">
+        <li class="about-7__li">
+          <div class="about-7__line"></div>
+          <div class="grid about-7__text-wrapper">
+            <div class="about-7__list-text-wrapper">
+              <h3 class="about-7__list-title about-7__list-title--mb">
+                EFFICIENT
+              </h3>
+              <p class="about-7__list-desc">BIM Solution — Dextall Studio</p>
+            </div>
+            <ul class="about-7__content-list">
+              <li class="about-7__content-li">
+                <div class="about-7__mob-line"></div>
+                <p class="about-7__text">
+                  20X faster exterior envelope design process
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+              <li class="about-7__content-li">
+                <p class="about-7__text">
+                  24 months reduction in exterior wall coordination process
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+              <li class="about-7__content-li">
+                <p class="about-7__text">
+                  80% faster building enclosure process
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+              <li class="about-7__content-li">
+                <p class="about-7__text">
+                  Fastest in market exterior solution for renovations
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="about-7__li">
+          <div class="about-7__line"></div>
+          <div class="grid about-7__text-wrapper">
+            <h3 class="about-7__list-title">Affordable</h3>
+            <ul class="about-7__content-list">
+              <li class="about-7__content-li">
+                <div class="about-7__mob-line"></div>
+                <p class="about-7__text">
+                  10%-15% lower cost than onsite construction
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+              <li class="about-7__content-li">
+                <p class="about-7__text">
+                  10X less laborers needed on the jobsite
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="about-7__li">
+          <div class="about-7__line"></div>
+          <div class="grid about-7__text-wrapper">
+            <h3 class="about-7__list-title">Sustainable</h3>
+            <ul class="about-7__content-list">
+              <li class="about-7__content-li">
+                <div class="about-7__mob-line"></div>
+                <p class="about-7__text">
+                  40% better energy efficiency than code
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+              <li class="about-7__content-li">
+                <p class="about-7__text">
+                  Suitable solution for Passive House and Net Zero
+                </p>
+                <div class="about-7__line"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section about-8">
+    <div class="container about-8__wrapper"></div>
   </section>
 </template>
