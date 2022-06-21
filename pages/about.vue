@@ -273,6 +273,83 @@
     </div>
   </section>
   <section class="section about-8">
-    <div class="container about-8__wrapper"></div>
+    <div class="container about-8__wrapper">
+      <div class="grid about-8__text-wrapper">
+        <p class="about-8__text">our story</p>
+        <h2 class="about-8__title">
+          With decades of experience, we rise to the challenge
+        </h2>
+      </div>
+      <ul class="about-8__list">
+        <li class="grid about-8__li">
+          <div class="about-8__left-block">
+            <div
+              class="about-8__image"
+              style="background-image: url('/images/about/6.jpg')"
+            ></div>
+          </div>
+          <div class="about-8__right-block about-8__right-block--reverse">
+            <div
+              class="about-8__image about-8__image--half"
+              style="background-image: url('/images/about/7.jpg')"
+            ></div>
+            <p class="about-8__desc">
+              Dextall is a team of leading industry professionals who bring to
+              bear decades of experience in engineering, design, technology, and
+              innovation in the sustainable building and construction industries
+              to develop succinct processes and smart labor solutions in
+              exterior design and construction of commercial buildings around
+              the world
+            </p>
+          </div>
+        </li>
+        <li class="grid about-8__li">
+          <div class="about-8__left-block">
+            <h3 class="about-8__content-title">Dextall’s CEO</h3>
+            <p class="about-8__desc">
+              Aurimas Sabulis is a serial entrepreneur in innovative
+              construction technology committed to striving for high-performing,
+              resilient, and environmentally-sustainable industrialized
+              transformation of our built space
+            </p>
+          </div>
+          <div class="about-8__right-block">
+            <div
+              class="block-img about-8__image"
+              style="background-image: url('/images/about/8.jpg')"
+            ></div>
+          </div>
+        </li>
+        <li class="grid about-8__li">
+          <div class="about-8__left-block">
+            <div
+              class="block-img about-8__image"
+              style="background-image: url('/images/about/9.jpg')"
+            ></div>
+          </div>
+          <div class="about-8__right-block">
+            <h3 class="about-8__content-title">
+              More than 20 years of practical experience
+            </h3>
+            <p class="about-8__desc about-8__desc--transform">
+              Aurimas' 20-plus year career in construction has been dedicated to
+              utilizing technologies to advance the fields of design and
+              construction, with a track record of award-winning and
+              groundbreaking projects within the United States. Mr. Sabulis
+              believes the power of technology combined with smart business
+              solutions can favorably bend cost curves as it unleashes
+              sustainability and long-term value in mid to high-rise building
+              construction.
+              <br />
+              <br />
+              Aurimas is also the founder of INTUS Windows, were he launched the
+              groundbreaking 1-Window-1-Tree initiative, which planted trees in
+              communities around the United States for each window sold by the
+              company.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
