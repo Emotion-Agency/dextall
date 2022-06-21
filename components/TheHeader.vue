@@ -17,7 +17,7 @@
             <NuxtLink to="/" class="header__text"> Projects </NuxtLink>
           </li>
           <li class="header__li">
-            <NuxtLink to="/" class="header__text"> About us </NuxtLink>
+            <NuxtLink to="/about/" class="header__text"> About us </NuxtLink>
           </li>
           <li class="header__li">
             <NuxtLink to="/" class="header__text"> News </NuxtLink>

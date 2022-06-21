@@ -21,7 +21,6 @@
         src="/images/products/4.jpg"
         alt="Building"
       />
-
       <div class="products-1__text-block">
         <h1 class="products-1__title">
           <span class="products-1__span-title">D Wall</span>
