@@ -159,6 +159,25 @@
     </div>
   </section>
   <section class="section about-6">
-    <div class="container about-6__wrapper"></div>
+    <div class="about-6__wrapper">
+      <div class="container about-6__left-block">
+        <h2 class="about-6__title">Few Facts</h2>
+        <p class="about-6__desc">
+          Buildings are 40% of the world's carbon emissions
+        </p>
+      </div>
+      <div class="container about-6__right-block">
+        <div class="about-6__ellipse"></div>
+        <h2 class="about-6__number">
+          40<span class="about-6__span-number">%</span>
+        </h2>
+        <p class="about-6__text">
+          Buildings are 40% of the world's carbon emissions
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section about-7">
+    <div class="container about-7__wrapper"></div>
   </section>
 </template>
