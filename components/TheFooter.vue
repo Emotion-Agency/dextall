@@ -1,5 +1,5 @@
 <template>
-  <footer class="section footer">
+  <footer class="section section--nm footer">
     <TheTicker class="footer__ticker"></TheTicker>
     <div class="container grid footer__top-wrapper">
       <TheSocial />

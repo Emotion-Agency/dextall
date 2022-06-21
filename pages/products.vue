@@ -1,28 +1,27 @@
 <template>
   <section class="section section--nm products-1">
     <div class="container products-1__wrapper">
-      <div class="products-1__image-block">
-        <img
-          class="products-1__img"
-          src="/images/products/1.jpg"
-          alt="Building"
-        />
-        <img
-          class="products-1__img"
-          src="/images/products/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="products-1__img"
-          src="/images/products/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="products-1__img"
-          src="/images/products/4.jpg"
-          alt="Building"
-        />
-      </div>
+      <img
+        class="products-1__img"
+        src="/images/products/1.jpg"
+        alt="Building"
+      />
+      <img
+        class="products-1__img"
+        src="/images/products/2.jpg"
+        alt="Building"
+      />
+      <img
+        class="products-1__img"
+        src="/images/products/3.jpg"
+        alt="Building"
+      />
+      <img
+        class="products-1__img"
+        src="/images/products/4.jpg"
+        alt="Building"
+      />
+
       <div class="products-1__text-block">
         <h1 class="products-1__title">
           <span class="products-1__span-title">D Wall</span>
@@ -208,7 +207,9 @@
                   <div class="products-4__line"></div>
                 </li>
               </ul>
-              <h4 class="products-4__content-title products-4__content-title--1">
+              <h4
+                class="products-4__content-title products-4__content-title--1"
+              >
                 On site simplicity
               </h4>
               <p class="products-4__content-desc">

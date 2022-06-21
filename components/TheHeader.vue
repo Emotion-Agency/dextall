@@ -8,10 +8,10 @@
       <div class="header__right-elements">
         <ul class="header__navbar">
           <li class="header__li">
-            <NuxtLink to="/" class="header__text"> Products </NuxtLink>
+            <NuxtLink to="/products/" class="header__text"> Products </NuxtLink>
           </li>
           <li class="header__li">
-            <NuxtLink to="/" class="header__text"> Bim solution </NuxtLink>
+            <NuxtLink to="/bim/" class="header__text"> Bim solution </NuxtLink>
           </li>
           <li class="header__li">
             <NuxtLink to="/" class="header__text"> Projects </NuxtLink>

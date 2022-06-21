@@ -1,87 +1,91 @@
 .products-1 {
   position: relative;
-  padding-top: vw(147);
   min-height: 100vh;
   height: 100vh;
 
   @media (max-width: $br1) {
-    padding-top: 115px;
+    padding-top: 0;
   }
 }
 
 .products-1__wrapper {
   display: flex;
   flex-flow: column nowrap;
+  position: relative;
   min-height: 100%;
 }
 
 .products-1__image-block {
-  position: relative;
+  position: absolute;
   z-index: -1;
 }
 
 .products-1__img {
   display: block;
-  border-radius: 10px;
   position: absolute;
+  border-radius: 10px;
 
   &:nth-of-type(1) {
     @media (min-width: $br1) {
-      height: vw(305);
-      width: vw(217);
+      height: vh(305);
+      width: vh(217);
+      top: vh(147);
+      left: vh(196);
     }
 
     @media (max-width: $br1) {
       height: 145px;
       width: 103px;
+      top: vh(115);
+      left: vh(20);
     }
   }
 
   &:nth-of-type(2) {
     @media (min-width: $br1) {
-      height: vw(496);
-      width: vw(340);
-      right: vw(124);
-      top: 0;
+      height: vh(496);
+      width: vh(340);
+      right: vh(194);
+      top: vh(147);
     }
 
     @media (max-width: $br1) {
       height: 173px;
       width: 118px;
-      right: 0;
-      top: 50px;
+      right: vh(13);
+      top: vh(162);
     }
   }
 
   &:nth-of-type(3) {
     @media (min-width: $br1) {
-      height: vw(305);
-      width: vw(338);
-      top: vw(570);
-      left: 0;
+      height: vh(305);
+      width: vh(338);
+      top: vh(717);
+      left: vh(75);
     }
 
     @media (max-width: $br1) {
       height: 145px;
       width: 161px;
-      top: 455px;
-      left: 0;
+      bottom: vh(140);
+      left: vh(20);
     }
   }
 
   &:nth-of-type(4) {
     @media (min-width: $br1) {
-      height: vw(274);
-      width: vw(340);
-      top: vw(660);
-      right: 0;
+      height: vh(274);
+      width: vh(340);
+      top: vh(806);
+      right: vh(73);
     }
 
     @media (max-width: $br1) {
       height: 95px;
       width: 72px;
-      top: 605px;
-      right: 0;
+      bottom: 0;
+      right: vh(20);
     }
   }
 }
@@ -99,7 +103,7 @@
   width: 100%;
 
   @media (min-width: $br1) {
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -50%);
   }
 
   @media (max-width: $br1) {
@@ -169,6 +173,7 @@
   margin-top: auto;
   max-width: fit-content;
   margin-bottom: vw(20);
+  position: relative;
 
   @media (max-width: $br1) {
     margin-bottom: 20px;
