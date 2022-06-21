@@ -19,4 +19,58 @@
       </p>
     </div>
   </section>
+  <section class="section project-2">
+    <div class="container project-2__wrapper">
+      <div class="project-2__line"></div>
+      <p class="project-2__text">
+        Dextall’s engineering team developed an innovative solution to integrate
+        its prefabricated walls with areas of the façade that will feature EIFS
+        cladding
+      </p>
+      <div class="project-2__line"></div>
+    </div>
+  </section>
+  <section class="section project-3">
+    <div class="container project-3__wrapper">
+      <h2 class="project-3__title">Project Gallery</h2>
+      <CircleButton class="project-3__btn">Full screen mode</CircleButton>
+    </div>
+    <ul class="project-3__img-list">
+      <li class="project-3__li">
+        <img
+          class="project-3__img"
+          src="/images/projects/project/2.jpg"
+          alt="Building"
+        />
+        <p class="project-3__number">01</p>
+      </li>
+      <li class="project-3__li">
+        <img
+          class="project-3__img"
+          src="/images/projects/project/3.jpg"
+          alt="Building"
+        />
+        <p class="project-3__number">02</p>
+      </li>
+      <li class="project-3__li">
+        <img
+          class="project-3__img"
+          src="/images/projects/project/4.jpg"
+          alt="Building"
+        />
+        <p class="project-3__number">03</p>
+      </li>
+      <li class="project-3__li">
+        <img
+          class="project-3__img"
+          src="/images/projects/project/5.jpg"
+          alt="Building"
+        />
+        <p class="project-3__number">04</p>
+      </li>
+    </ul>
+  </section>
+  <section class="section project-4">
+    <div class="container project-4__wrapper"></div>
+  </section>
 </template>
