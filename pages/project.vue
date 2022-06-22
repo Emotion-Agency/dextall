@@ -134,7 +134,66 @@
     </div>
   </section>
   <section class="section project-6">
-    <div class="container project-6__wrapper"></div>
+    <div class="container project-6__wrapper">
+      <TheTicker class="project-6__ticker" />
+      <div class="grid project-6__content">
+        <ul class="project-6__list">
+          <li class="project-6__li">
+            <div class="project-6__line"></div>
+            <div class="project-6__text-wrapper">
+              <p class="project-6__title">SIZE, SF:</p>
+              <p class="project-6__text">282828</p>
+            </div>
+          </li>
+          <li class="project-6__li">
+            <div class="project-6__line"></div>
+            <div class="project-6__text-wrapper">
+              <p class="project-6__title">Product:</p>
+              <p class="project-6__text">DWall 1500</p>
+            </div>
+          </li>
+          <li class="project-6__li">
+            <div class="project-6__line"></div>
+            <div class="project-6__text-wrapper">
+              <p class="project-6__title">Cladding:</p>
+              <p class="project-6__text">Aluminium (exposed fastening)</p>
+            </div>
+          </li>
+          <li class="project-6__li">
+            <div class="project-6__line"></div>
+            <div class="project-6__text-wrapper">
+              <p class="project-6__title">Project type:</p>
+              <p class="project-6__text">
+                Unique Renovation (old wall will be demolished and Dextall
+                Products installed
+              </p>
+            </div>
+          </li>
+          <li class="project-6__li">
+            <div class="project-6__line"></div>
+            <div class="project-6__text-wrapper">
+              <p class="project-6__title">Project Address:</p>
+              <p class="project-6__text">1660 Madison Ave, NY</p>
+            </div>
+          </li>
+          <li class="project-6__li">
+            <div class="project-6__line"></div>
+            <div class="project-6__text-wrapper">
+              <p class="project-6__title">Type of work:</p>
+              <p class="project-6__text">Retrofit</p>
+            </div>
+            <div class="project-6__line"></div>
+          </li>
+        </ul>
+        <div class="project-6__image-wrapper">
+          <img
+            class="project-6__img"
+            src="/images/projects/project/9.jpg"
+            alt="Building"
+          />
+        </div>
+      </div>
+    </div>
   </section>
   <section class="section project-7">
     <div class="container project-7__wrapper"></div>
