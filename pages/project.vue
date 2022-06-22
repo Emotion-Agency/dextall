@@ -71,6 +71,45 @@
     </ul>
   </section>
   <section class="section project-4">
-    <div class="container project-4__wrapper"></div>
+    <div class="container project-4__wrapper">
+      <h2 class="project-4__title">
+        About the<br />
+        building
+      </h2>
+      <div class="grid project-4__block-wrapper">
+        <div class="project-4__left-block">
+          <img
+            class="project-4__img"
+            src="/images/projects/project/6.jpg"
+            alt="Building"
+          />
+          <p class="project-4__desc">
+            Almost five decades later, the building is undergoing significant
+            renovations which will increase comfort for the tenants, reduce the
+            buildings energy consumption, and offer a transformative modern
+            appearance
+          </p>
+        </div>
+        <div class="project-4__right-block">
+          <img
+            class="project-4__img"
+            src="/images/projects/project/7.jpg"
+            alt="Building"
+          />
+          <p class="project-4__desc">
+            Located on 1660 Madison Avenue, NY. Built in 1974 under the
+            Mitchell-Lama program, this 11-story building provided affordable
+            rental and cooperative housing to moderate-and-middle-income
+            families
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section project-5">
+    <div class="container project-5__wrapper"></div>
+  </section>
+  <section class="section project-6">
+    <div class="container project-6__wrapper"></div>
   </section>
 </template>

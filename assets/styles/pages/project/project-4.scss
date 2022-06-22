@@ -1,0 +1,58 @@
+.project-4__title {
+  @include default;
+  font-size: vw(120);
+  text-align: end;
+
+  @media (max-width: $br1) {
+    font-size: size(120, 36);
+    text-align: start;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.project-4__block-wrapper {
+  margin-top: vw(55);
+
+  @media (max-width: $br1) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+}
+
+.project-4__left-block {
+  @include col(1, 7);
+}
+
+.project-4__img {
+  display: block;
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.project-4__desc {
+  @include default;
+  margin-top: vw(30);
+  font-size: vw(20);
+
+  @media (max-width: $br1) {
+    font-size: size(20, 14);
+    margin-top: 20px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 14px;
+  }
+}
+
+.project-4__right-block {
+  @include col(8, 15);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}
