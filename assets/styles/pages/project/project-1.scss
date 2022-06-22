@@ -2,19 +2,13 @@
   position: relative;
   min-height: 100vh;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 
   @media (max-width: $br1) {
     padding-top: 0;
   }
-}
-
-.project-1__bg {
-  // position: relative;
-  // height: 100vh;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: 50% 50%;
-  // z-index: -1;
 }
 
 .project-1__wrapper {
@@ -62,6 +56,7 @@
 
 .project-1__text {
   @include default;
+  color: var(--bg);
 }
 
 .project-1__title {
@@ -69,6 +64,7 @@
   font-size: vw(120);
   line-height: 110%;
   margin-top: vw(5);
+  color: var(--bg);
 
   @media (max-width: $br1) {
     font-size: size(120, 36);
@@ -95,6 +91,7 @@
   align-self: center;
   max-width: fit-content;
   position: relative;
+  color: var(--bg);
 
   @media (min-width: $br1) {
     margin-top: auto;

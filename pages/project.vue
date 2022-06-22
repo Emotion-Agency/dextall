@@ -1,9 +1,8 @@
 <template>
-  <section class="section section--nm project-1">
-    <div
-      class="project-1__bg"
-      style="background-image: url('/images/projects/project/1.jpg')"
-    ></div>
+  <section
+    class="section section--nm project-1"
+    style="background-image: url('/images/projects/project/1.jpg')"
+  >
     <div class="container project-1__wrapper">
       <div class="project-1__text-block">
         <p class="project-1__text">Minimized Tenant Disruption</p>
