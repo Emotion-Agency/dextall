@@ -37,22 +37,6 @@
   }
 }
 
-.project-7__small-text {
-  @include default;
-  text-transform: none;
-  margin-top: vw(20);
-  max-width: vw(398);
-
-  @media (max-width: $br1) {
-    margin-top: 15px;
-    max-width: 70%;
-  }
-
-  @media (max-width: $br4) {
-    max-width: 100%;
-  }
-}
-
 .project-7__image-top {
   @include col(9, 15);
 

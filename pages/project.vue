@@ -198,14 +198,9 @@
   <section class="section project-7">
     <div class="container grid project-7__wrapper">
       <div class="project-7__text-block">
-        <h2 class="project-7__big-text">Our mission is clear:</h2>
+        <h2 class="project-7__big-text">Interesting facts about the project</h2>
         <p class="project-7__desc">
-          “To accelerate decarbonization of the environment TODAY by bringing
-          affordable and efficient solutions to build sustainably”
-        </p>
-        <p class="project-7__small-text">
-          To fight climate change, we must act urgently. To achieve that, we
-          hire only the best!
+          This building is entered in The Empire Building Challenge competition
         </p>
       </div>
       <div class="project-7__image-top">
