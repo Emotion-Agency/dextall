@@ -107,9 +107,36 @@
     </div>
   </section>
   <section class="section project-5">
-    <div class="container project-5__wrapper"></div>
+    <div
+      class="project-5__bg"
+      style="background-image: url('/images/projects/project/8.jpg')"
+    ></div>
+    <div class="container grid project-5__wrapper">
+      <h2 class="project-5__title">Dextall’s solution</h2>
+      <p class="project-5__text">
+        Exterior upgrades feature Dextall’s prefabricated wall systems with
+        factory installed high-performance windows, and modern aluminum
+        cladding. Considered a “hybrid” renovation, Dextall’s engineering team
+        developed an innovative solution to integrate its prefabricated walls
+        with areas of the façade that will feature EIFS cladding.
+      </p>
+      <p class="project-5__text">
+        One of the primary challenges of the project is to minimize disruption
+        to the tenants. Dextall’s prefab wall systems are installed from the
+        exterior of the building and do not require scaffolding or staging.
+        <br />
+        <br />
+        Once completed, 1660 Madison Avenue will feature the most innovative
+        façade technology & materials effectively reducing energy consumption,
+        increasing indoor comfort, and eliminating costly maintenance over the
+        years.
+      </p>
+    </div>
   </section>
   <section class="section project-6">
     <div class="container project-6__wrapper"></div>
+  </section>
+  <section class="section project-7">
+    <div class="container project-7__wrapper"></div>
   </section>
 </template>
