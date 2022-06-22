@@ -20,7 +20,7 @@
             <NuxtLink to="/about/" class="header__text"> About us </NuxtLink>
           </li>
           <li class="header__li">
-            <NuxtLink to="/" class="header__text"> News </NuxtLink>
+            <NuxtLink to="/news/" class="header__text"> News </NuxtLink>
           </li>
         </ul>
         <button class="header__burger">
