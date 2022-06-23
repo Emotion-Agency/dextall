@@ -18,7 +18,7 @@
   align-items: center;
   width: 45%;
   background-color: var(--main);
-  padding: vw(220) vw(174);
+  // padding: vw(220) vw(174);
 
   @media (max-width: $br1) {
     display: none;
@@ -27,8 +27,8 @@
 
 .navigation__img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 30vw;
+  height: 30vw;
   border-radius: 10px;
   background-repeat: no-repeat;
   background-position: center;
