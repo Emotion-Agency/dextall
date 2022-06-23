@@ -67,6 +67,7 @@
   @include col(1, 15);
   @include row(2, 2);
   margin-top: vw(94);
+  align-items: end;
 
   @media (max-width: $br1) {
     @include col(1, 4);
