@@ -15,36 +15,48 @@
         energy consumption and increase comfort for tenants.
       </p>
       <div class="grid projects-2__img-wrapper">
-        <img
-          class="projects-2__img"
-          src="/images/projects/1.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/4.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/5.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/6.jpg"
-          alt="Building"
-        />
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/1.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/2.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/3.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/4.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/5.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/6.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
       </div>
     </div>
     <ProjectsTicker class="projects-2__ticker"></ProjectsTicker>
@@ -54,36 +66,48 @@
         energy consumption and increase comfort for tenants.
       </p>
       <div class="grid projects-2__img-wrapper">
-        <img
-          class="projects-2__img"
-          src="/images/projects/1.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/4.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/5.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/6.jpg"
-          alt="Building"
-        />
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/1.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/2.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/3.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/4.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/5.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/6.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
       </div>
     </div>
     <ProjectsTicker class="projects-2__ticker"></ProjectsTicker>
@@ -93,36 +117,48 @@
         energy consumption and increase comfort for tenants.
       </p>
       <div class="grid projects-2__img-wrapper">
-        <img
-          class="projects-2__img"
-          src="/images/projects/1.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/4.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/5.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/6.jpg"
-          alt="Building"
-        />
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/1.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/2.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/3.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/4.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/5.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/6.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
       </div>
     </div>
     <ProjectsTicker class="projects-2__ticker"></ProjectsTicker>
@@ -132,36 +168,48 @@
         energy consumption and increase comfort for tenants.
       </p>
       <div class="grid projects-2__img-wrapper">
-        <img
-          class="projects-2__img"
-          src="/images/projects/1.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/4.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/5.jpg"
-          alt="Building"
-        />
-        <img
-          class="projects-2__img"
-          src="/images/projects/6.jpg"
-          alt="Building"
-        />
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/1.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/2.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/3.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/4.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/5.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
+        <NuxtLink to="/" class="projects-2__link">
+          <img
+            class="projects-2__img"
+            src="/images/projects/6.jpg"
+            alt="Building"
+          />
+        </NuxtLink>
       </div>
     </div>
   </section>
