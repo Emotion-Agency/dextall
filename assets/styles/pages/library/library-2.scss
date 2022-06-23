@@ -86,6 +86,7 @@
   @include default;
   text-transform: none;
   margin-top: vw(15);
+  text-align: start;
 
   @media (max-width: $br1) {
     margin-top: 10px;
