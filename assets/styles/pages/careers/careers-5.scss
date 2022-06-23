@@ -40,7 +40,7 @@
 .careers-5__filter-list {
   @include default;
   display: flex;
-  margin-top: vw(185);
+  padding-top: vw(185);
   overflow: auto;
   overflow-y: hidden;
   width: 100vw;
@@ -108,6 +108,11 @@
   }
 }
 
+.careers-5__btn {
+  width: 100%;
+  background-color: transparent;
+}
+
 .careers-5__line {
   width: 100%;
   height: 2px;
@@ -132,6 +137,7 @@
   @include col(1, 1);
   @include default;
   font-size: vw(32);
+  text-align: start;
 
   @media (max-width: $br1) {
     display: none;
@@ -142,6 +148,7 @@
   @include col(6, 12);
   display: flex;
   flex-direction: column;
+  text-align: start;
 }
 
 .careers-5__content-title {

@@ -97,49 +97,57 @@
       </ul>
       <ul class="careers-5__content-list">
         <li class="careers-5__content-li">
-          <div class="careers-5__line"></div>
-          <div class="grid careers-5__content">
-            <p class="careers-5__number">01</p>
-            <div class="careers-5__text-wrapper">
-              <h3 class="careers-5__content-title">Project Manager – USA</h3>
-              <div class="careers-5__text-block">
-                <p class="careers-5__text">
-                  • Support the team in the design of digital strategies<br />
-                  • Collect information, analyze needs, study best practices
-                  (benchmarking), analyze visit trends, identify performance
-                  indicators (KPIs) <br />
-                  • Actively participate in the conversation in order to create
-                  an effective tree structure and wireframe.<br />
-                  • Monitor new practices and trends
-                </p>
+          <button class="careers-5__btn">
+            <div class="careers-5__line"></div>
+            <div class="grid careers-5__content">
+              <p class="careers-5__number">01</p>
+              <div class="careers-5__text-wrapper">
+                <h3 class="careers-5__content-title">Project Manager – USA</h3>
+                <div class="careers-5__text-block">
+                  <p class="careers-5__text">
+                    • Support the team in the design of digital strategies<br />
+                    • Collect information, analyze needs, study best practices
+                    (benchmarking), analyze visit trends, identify performance
+                    indicators (KPIs) <br />
+                    • Actively participate in the conversation in order to
+                    create an effective tree structure and wireframe.<br />
+                    • Monitor new practices and trends
+                  </p>
+                </div>
               </div>
+              <IconsArrowUp class="careers-5__arrow" />
             </div>
-            <IconsArrowUp class="careers-5__arrow" />
-          </div>
+          </button>
         </li>
         <li class="careers-5__content-li">
-          <div class="careers-5__line"></div>
-          <div class="grid careers-5__content">
-            <p class="careers-5__number">02</p>
-            <div class="careers-5__text-wrapper">
-              <h3 class="careers-5__content-title">Social Media Internship</h3>
+          <button class="careers-5__btn">
+            <div class="careers-5__line"></div>
+            <div class="grid careers-5__content">
+              <p class="careers-5__number">02</p>
+              <div class="careers-5__text-wrapper">
+                <h3 class="careers-5__content-title">
+                  Social Media Internship
+                </h3>
+              </div>
+              <IconsArrowDown class="careers-5__arrow" />
             </div>
-            <IconsArrowDown class="careers-5__arrow" />
-          </div>
+          </button>
         </li>
         <li class="careers-5__content-li">
-          <div class="careers-5__line"></div>
-          <div class="grid careers-5__content">
-            <p class="careers-5__number">03</p>
-            <div class="careers-5__text-wrapper">
-              <h3 class="careers-5__content-title">
-                3D Designer, sketcher for high-tech sustainable construction
-                team
-              </h3>
+          <button class="careers-5__btn">
+            <div class="careers-5__line"></div>
+            <div class="grid careers-5__content">
+              <p class="careers-5__number">03</p>
+              <div class="careers-5__text-wrapper">
+                <h3 class="careers-5__content-title">
+                  3D Designer, sketcher for high-tech sustainable construction
+                  team
+                </h3>
+              </div>
+              <IconsArrowDown class="careers-5__arrow" />
             </div>
-            <IconsArrowDown class="careers-5__arrow" />
-          </div>
-          <div class="careers-5__line"></div>
+            <div class="careers-5__line"></div>
+          </button>
         </li>
       </ul>
     </div>
