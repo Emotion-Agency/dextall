@@ -12,7 +12,7 @@ useTransition()
     </section>
     <section class="section library-2">
       <div class="container library-2__wrapper">
-        <NewsImages/>
+        <NewsImages />
       </div>
     </section>
   </main>
