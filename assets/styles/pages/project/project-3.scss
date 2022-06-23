@@ -45,6 +45,14 @@
 
 .project-3__img {
   display: block;
+
+  @media (max-width: $br2) {
+    width: 304px;
+  }
+
+  @media (max-width: $br4) {
+    width: 152px;
+  }
 }
 
 .project-3__number {
