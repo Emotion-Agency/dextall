@@ -13,8 +13,10 @@
 
   @media (max-width: $br1) {
     @include col(1, 4);
-    padding: 20px;
-    height: 600px;
+    // padding: 20px;
+    padding: 3vh;
+    // height: 600px;
+    height: 100vh;
   }
 
   &:nth-of-type(2) {
@@ -23,7 +25,8 @@
     }
 
     @media (max-width: $br1) {
-      margin-top: -87vh;
+      // margin-top: -87vh;
+      margin-top: -95vh;
     }
   }
 
@@ -33,7 +36,8 @@
     }
 
     @media (max-width: $br1) {
-      margin-top: -87vh;
+      // margin-top: -87vh;
+      margin-top: -95vh;
     }
   }
 }
@@ -71,7 +75,8 @@
   }
 
   @media (max-width: $br1) {
-    margin-top: 10px;
+    // margin-top: 10px;
+    margin-top: 2vh;
     max-width: 80%;
   }
 
@@ -86,7 +91,8 @@
   margin-top: vw(30);
 
   @media (max-width: $br1) {
-    margin-top: 20px;
+    // margin-top: 20px;
+    margin-top: 3vh;
   }
 }
 
@@ -100,7 +106,8 @@
   @media (max-width: $br1) {
     @include col(1, 4);
     @include row(3, 3);
-    margin-top: 92px;
+    // margin-top: 92px;
+    margin-top: 2vh;
   }
 }
 
@@ -146,7 +153,8 @@
   @media (max-width: $br1) {
     @include col(1, 4);
     @include row(2, 2);
-    margin-top: 40px;
+    // margin-top: 40px;
+    margin-top: 5vh;
   }
 }
 
