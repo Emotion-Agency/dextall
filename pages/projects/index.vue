@@ -22,7 +22,7 @@ useTransition()
         </p>
         <div class="grid projects-2__img-wrapper">
           <NuxtLink
-            to="/"
+            to="/projects/1"
             class="projects-2__link"
           >
             <img
@@ -32,7 +32,7 @@ useTransition()
             />
           </NuxtLink>
           <NuxtLink
-            to="/"
+            to="/projects/2"
             class="projects-2__link"
           >
             <img
@@ -42,7 +42,7 @@ useTransition()
             />
           </NuxtLink>
           <NuxtLink
-            to="/"
+            to="/projects/3"
             class="projects-2__link"
           >
             <img
