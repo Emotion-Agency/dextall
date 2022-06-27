@@ -1,9 +1,15 @@
 <template>
-  <div class="contacts">
+  <div
+    class="contacts"
+    :class="[isOpen && 'contacts--open']"
+  >
     <div class="contacts__backdrop"></div>
     <div class="contacts__line"></div>
     <div class="container contacts__window">
-      <button class="contacts__close-btn">
+      <button
+        class="contacts__close-btn"
+        @click="close"
+      >
         <span class="contacts__btn-line"></span>
         <span class="contacts__btn-line"></span>
       </button>
@@ -47,6 +53,9 @@
 
 <script setup lang="ts">
 import { iInputData } from '~~/composables/input'
+
+const { isOpen,close } = useContacts()
+
 
 const $inputs = ref([])
 const formData = reactive({
@@ -134,4 +143,6 @@ const onInputValue = (data: iInputData) => {
 //     // }, 400)
 //   }
 // }
+
+
 </script>

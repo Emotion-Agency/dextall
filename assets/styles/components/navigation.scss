@@ -63,7 +63,6 @@
   height: 100%;
 }
 
-
 .navigation__close-btn {
   display: block;
   position: absolute;
@@ -107,9 +106,14 @@
   @include default;
   display: block;
   font-size: vw(48);
-  line-height: 130%;
-  margin-top: vw(20);
-  margin-bottom: vw(20);
+
+  margin-top: vw(24);
+  margin-bottom: vw(24);
+  @media (min-width: $br1) {
+    line-height: 2.3vw;
+    bottom: -0.2vw;
+    position: relative;
+  }
 
   @media (max-width: $br1) {
     margin-top: 15px;
@@ -156,10 +160,12 @@
   @include default;
   display: block;
   font-size: vw(24);
-  line-height: 130%;
+  line-height: 0.75;
+  position: relative;
+  bottom: -0.75pt;
   text-transform: none;
-  margin-top: vw(15);
-  margin-bottom: vw(15);
+  margin-top: vw(20);
+  margin-bottom: vw(20);
 
   @media (max-width: $br1) {
     font-size: size(24, 15);
