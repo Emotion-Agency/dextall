@@ -18,12 +18,15 @@
         <span class="navigation__btn-line"></span>
       </button>
       <ul class="navigation__list">
-        <li class="navigation__li">
+        <li
+          class="navigation__li"
+          @click="close()"
+        >
           <div class="navigation__line"></div>
-          <a
-            href="#"
+          <NuxtLink
+            href="/"
             class="navigation__link"
-          > Home </a>
+          > Home </NuxtLink>
         </li>
         <li class="navigation__li">
           <div class="navigation__line"></div>
@@ -35,21 +38,21 @@
         <li class="navigation__li">
           <div class="navigation__line"></div>
           <NuxtLink
-            to="/"
+            to="/bim"
             class="navigation__link"
           > BIM Solution </NuxtLink>
         </li>
         <li class="navigation__li">
           <div class="navigation__line"></div>
           <NuxtLink
-            to="/"
+            to="/projects"
             class="navigation__link"
           > Projects </NuxtLink>
         </li>
         <li class="navigation__li">
           <div class="navigation__line"></div>
           <NuxtLink
-            to="/"
+            to="/news"
             class="navigation__link"
           > News </NuxtLink>
           <div class="navigation__line"></div>
@@ -57,18 +60,21 @@
       </ul>
       <div class="grid navigation__info-block">
         <TheSocial class="navigation__social" />
-        <ul class="navigation__info-list">
+        <ul
+          class="navigation__info-list"
+          @click="close()"
+        >
           <li class="navigation__info-li">
             <div class="navigation__line"></div>
             <NuxtLink
-              to="/"
+              to="/careers"
               class="navigation__info-link"
             > Careers </NuxtLink>
           </li>
           <li class="navigation__info-li">
             <div class="navigation__line"></div>
             <NuxtLink
-              to="/"
+              to="/library"
               class="navigation__info-link"
             >
               Education and Training
@@ -77,18 +83,18 @@
           <li class="navigation__info-li">
             <div class="navigation__line"></div>
             <NuxtLink
-              to="/"
+              to="/about"
               class="navigation__info-link"
             > About Us </NuxtLink>
           </li>
           <li class="navigation__info-li">
             <div class="navigation__line"></div>
-            <NuxtLink
-              to="/"
+            <button
               class="navigation__info-link"
+              @click="openContacts"
             >
               Contact Us
-            </NuxtLink>
+            </button>
             <div class="navigation__line"></div>
           </li>
         </ul>
@@ -109,5 +115,8 @@ const emit = defineEmits(['close'])
 const close = () => {
   emit('close')
 }
+
+const { open: openContacts } = useContacts()
+
 
 </script>
