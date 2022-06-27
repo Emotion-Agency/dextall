@@ -1,0 +1,136 @@
+.home-3__wrapper {
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    margin-top: 26px;
+  }
+}
+
+.home-3__left-block {
+  @include col(1, 8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+  }
+}
+
+.home-3__text {
+  @include default;
+  text-transform: none;
+  max-width: vw(340);
+
+  @media (max-width: $br1) {
+    max-width: 50%;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
+.home-3__list {
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
+}
+
+.home-3__li {}
+
+.home-3__line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--main);
+}
+
+.home-3__content {
+  @include default;
+  grid-template-columns: repeat(8, 1fr);
+  padding: vw(20) 0;
+
+  @media (max-width: $br1) {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 15px 0;
+  }
+}
+
+.home-3__medium-text {
+  @include col(1, 2);
+  color: var(--main);
+  font-size: vw(25);
+  line-height: 110%;
+  font-weight: 500;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    font-size: size(25, 20);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 20px;
+  }
+}
+
+.home-3__group-text {
+  @include col(3, 8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(2, 2);
+    font-size: size(25, 20);
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+}
+
+.home-3__regular-text {
+  @include default;
+  @include italic;
+  max-width: 50%;
+  font-size: vw(20);
+
+  @media (max-width: $br1) {
+    font-size: size(20, 16);
+    max-width: 100%;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}
+
+.home-3__small-text {
+  @include default;
+  text-transform: none;
+  line-height: 110%;
+
+  @media (max-width: $br1) {
+    margin-top: 10px;
+  }
+}
+
+.home-3__right-block {
+  @include col(9, 15);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    @include row(2, 2);
+  }
+}
+
+.home-3__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  @media (max-width: $br1) {
+    margin-top: 30px;
+  }
+}

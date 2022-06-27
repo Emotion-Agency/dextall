@@ -1,0 +1,67 @@
+.home-7__main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: vw(70) 0;
+
+  @media (min-width: $br1) {
+    text-align: center;
+  }
+
+  @media (max-width: $br1) {
+    display: inline;
+    margin: 30px 0;
+  }
+}
+
+.home-7__title {
+  @include default;
+  max-width: vw(1355);
+  font-size: vw(200);
+
+  @media (max-width: $br1) {
+    max-width: 100%;
+    font-size: size(200, 35);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 35px;
+  }
+}
+
+.home-7__span-title {
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include italic;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.home-7__desc {
+  @include default;
+  max-width: vw(550);
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    max-width: 60%;
+    margin-top: 25px;
+  }
+
+  @media (max-width: $br3) {
+    max-width: 80%;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
+.home-7__btn {
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    margin-top: 25px;
+  }
+}

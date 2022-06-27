@@ -1,0 +1,67 @@
+.products-6__line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--main);
+}
+
+.products-6__main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: vw(70) 0;
+
+  @media (max-width: $br1) {
+    margin: 30px 0;
+  }
+}
+
+.products-6__title {
+  @include default;
+  max-width: vw(1355);
+  font-size: vw(70);
+
+  @media (max-width: $br1) {
+    max-width: 80%;
+    font-size: size(70, 30);
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+    font-size: 30px;
+  }
+}
+
+.products-6__desc {
+  @include default;
+  text-transform: none;
+  max-width: vw(780);
+  margin-top: vw(40);
+
+  &:last-of-type {
+    max-width: 100%;
+    margin-top: vw(12);
+
+    @media (max-width: $br1) {
+      margin-top: 16px;
+    }
+  }
+
+  @media (max-width: $br1) {
+    max-width: 80%;
+    margin-top: 25px;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
+.products-6__btn {
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    margin-top: 25px;
+  }
+}

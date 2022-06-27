@@ -1,0 +1,261 @@
+.home-1 {
+  position: relative;
+  padding-top: vw(111);
+  padding-bottom: vw(30);
+  min-height: 100vh;
+  @media (min-width: $br1) {
+    height: 100vh;
+  }
+
+  @media (max-width: $br1) {
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+}
+
+.home-1__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: $br1) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+}
+
+.home-1__top-block {
+  @media (min-width: $br1) {
+    flex: 1 0 64%;
+  }
+
+  @media (max-width: $br1) {
+    display: block;
+    margin-top: vw(40);
+  }
+
+  @media (max-width: $br4) {
+    margin-top: 40px;
+  }
+}
+
+.home-1__elements-left {
+  @include col(1, 7);
+
+  @media (max-width: $br1) {
+    @include col(1, 4);
+    padding-bottom: toimg(335, 273);
+  }
+}
+
+.big-img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.home-1__elements-right {
+  @include col(8, 15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: $br1) {
+    @include col(1, 2);
+    @include row(2, 2);
+
+    margin-top: 25px;
+  }
+}
+
+.home-1__right-image {
+  @media (max-width: $br1) {
+    display: none;
+  }
+}
+
+.home-1__small-buildings {
+  @media (min-width: $br1) {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: vw(20);
+    margin-top: vw(46);
+  }
+
+  @media (max-width: $br1) {
+    width: 50%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: $br4) {
+    width: 100%;
+  }
+}
+
+.home-1__li {
+  &:nth-of-type(1) {
+    @include col(1, 1);
+  }
+
+  &:nth-of-type(2) {
+    @include col(4, 4);
+    width: vw(52);
+
+    @media (max-width: $br1) {
+      @include col(2, 2);
+      width: 100%;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @include col(5, 5);
+    width: vw(52);
+
+    @media (max-width: $br1) {
+      @include col(3, 3);
+      width: 100%;
+    }
+  }
+
+  &:nth-of-type(4) {
+    @include col(7, 7);
+    width: vw(52);
+
+    @media (max-width: $br1) {
+      @include col(4, 4);
+      width: 100%;
+    }
+  }
+
+  &:nth-of-type(5) {
+    @include col(8, 8);
+
+    @media (max-width: $br1) {
+      display: none;
+    }
+  }
+}
+
+.home-1__number {
+  @include reg;
+  text-transform: uppercase;
+  font-size: vw(16);
+  line-height: 100%;
+  margin-bottom: vw(6);
+
+  @media (max-width: $br1) {
+    font-size: size(16, 14);
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: $br1) {
+    font-size: 14px;
+  }
+}
+
+.home-1__small-img {
+  display: block;
+  height: vw(62);
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: $br1) {
+    width: 100%;
+    // height: 62px;
+    padding-bottom: toimg(62, 62);
+  }
+}
+
+.home-1__bottom-block {
+  @media (min-width: $br1) {
+    flex: 0 1 auto;
+    margin-top: vw(65);
+  }
+
+  @media (max-width: $br1) {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.home-1__desc {
+  @include col(6, 8);
+  @include reg;
+  font-size: vw(16);
+  text-transform: uppercase;
+  line-height: 100%;
+  color: var(--main);
+
+  @media (min-width: $br1) {
+    position: relative;
+    top: vw(116);
+    left: vw(597);
+    max-width: vw(338);
+  }
+
+  @media (max-width: $br1) {
+    align-self: flex-start;
+    font-size: size(16, 14);
+    margin-top: vw(18);
+    max-width: 50%;
+  }
+
+  @media (max-width: $br3) {
+    max-width: 65%;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 14px;
+    margin-top: 18px;
+    max-width: 100%;
+  }
+}
+
+.home-1__title {
+  @include h1;
+
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include col(1, 4);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @media (min-width: $br1) {
+      @include col(9, 15);
+      @include italic;
+      text-align: end;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include col(1, 4);
+      @include row(2, 2);
+      text-transform: none;
+      @include italic;
+    }
+  }
+
+  &:nth-of-type(4) {
+    @media (min-width: $br1) {
+      @include col(6, 8);
+      @include row(2, 2);
+    }
+  }
+
+  &:nth-of-type(5) {
+    @media (min-width: $br1) {
+      @include col(12, 15);
+      @include row(2, 2);
+      text-align: end;
+      text-transform: none;
+      @include italic;
+    }
+  }
+}

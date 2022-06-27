@@ -1,0 +1,196 @@
+.careers-5__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @media (max-width: $br1) {
+    flex-direction: column-reverse;
+  }
+}
+
+.careers-5__title {
+  @include default;
+  font-size: vw(120);
+
+  @media (min-width: $br1) {
+    max-width: vw(1332);
+  }
+
+  @media (max-width: $br1) {
+    font-size: size(120, 36);
+    margin-top: 15px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.careers-5__desc {
+  @include default;
+
+  @media (min-width: $br1) {
+    margin-top: vw(30);
+    max-width: vw(622);
+  }
+}
+
+.careers-5__filter-list {
+  @include default;
+  display: flex;
+  padding-top: vw(185);
+  overflow: auto;
+  overflow-y: hidden;
+  width: 100vw;
+  white-space: nowrap;
+  padding-left: vw(75);
+  padding-right: vw(75);
+  margin-left: vw(-75);
+
+  @media (max-width: $br1) {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: -32px;
+    padding-top: 52px;
+  }
+
+  @media (max-width: $br3) {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+  }
+}
+
+.careers-5__filter-li {
+  display: flex;
+  gap: vw(5);
+  margin-right: vw(50);
+
+  @media (max-width: $br1) {
+    gap: 5px;
+    margin-right: 20px;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.careers-5__filter-name {
+  @include default;
+  font-size: vw(16);
+  background: transparent;
+  text-decoration: none;
+
+  @media (max-width: $br1) {
+    font-size: 16px;
+  }
+}
+
+.careers-5__filter-numbers {
+  position: relative;
+  bottom: vw(10);
+  font-size: vw(12);
+
+  @media (max-width: $br1) {
+    bottom: 10px;
+    font-size: 12px;
+  }
+}
+
+.careers-5__content-list {
+  margin-top: vw(23);
+
+  @media (max-width: $br1) {
+    margin-top: 25px;
+  }
+}
+
+.careers-5__btn {
+  width: 100%;
+  background-color: transparent;
+}
+
+.careers-5__line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--main);
+}
+
+.careers-5__content {
+  margin-top: vw(25);
+  margin-bottom: vw(25);
+
+  @media (max-width: $br1) {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.careers-5__number {
+  @include col(1, 1);
+  @include default;
+  font-size: vw(32);
+  text-align: start;
+
+  @media (max-width: $br1) {
+    display: none;
+  }
+}
+
+.careers-5__text-wrapper {
+  @include col(6, 12);
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.careers-5__content-title {
+  @include default;
+  font-size: vw(30);
+
+  @media (max-width: $br1) {
+    font-size: size(30, 20);
+    padding-right: 35px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 20px;
+  }
+}
+
+.careers-5__text-block {
+  margin-top: vw(25);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}
+
+.careers-5__text {
+  @include default;
+  text-transform: none;
+  line-height: 140%;
+}
+
+.careers-5__arrow {
+  @media (min-width: $br1) {
+    @include col(15, 15);
+    width: vw(24);
+    height: vw(24);
+    justify-self: end;
+  }
+
+  @media (max-width: $br1) {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+  }
+}

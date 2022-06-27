@@ -9,6 +9,11 @@ export const useTransition = () => {
     css: false,
     appear: true,
     onEnter(el, done) {
+      setTimeout(() => {
+        window.ss.reset()
+        window.ss.isFixed = false
+      }, 500)
+
       gsap.fromTo(
         el,
         { opacity: 0 },
@@ -16,6 +21,10 @@ export const useTransition = () => {
       )
     },
     onLeave(el, done) {
+      setTimeout(() => {
+        window.ss.isFixed = true
+      }, 500)
+
       gsap.fromTo(
         el,
         { opacity: 1 },

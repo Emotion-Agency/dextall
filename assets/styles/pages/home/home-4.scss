@@ -1,0 +1,57 @@
+.home-4__title {
+  @include default;
+  font-size: vw(150);
+
+  @media (max-width: $br1) {
+    display: inline;
+    font-size: size(150, 35);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 35px;
+  }
+}
+
+.home-4__big-text {
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include col(1, 4);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @media (min-width: $br1) {
+      @include col(2, 3);
+      @include row(2, 2);
+      @include italic;
+      margin-left: vw(26);
+    }
+
+    @media (max-width: $br1) {
+      margin-left: 0;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include col(7, 15);
+      @include row(2, 2);
+    }
+  }
+
+  &:nth-of-type(4) {
+    @media (min-width: $br1) {
+      @include col(1, 9);
+      @include italic;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.home-4__floating-cards {
+  margin-top: vw(112);
+
+  @media (max-width: $br1) {
+    margin-top: 42px;
+  }
+}

@@ -1,0 +1,148 @@
+.bim-3__title {
+  @media (max-width: $br1) {
+    display: inline;
+  }
+}
+
+.bim-3__span-title {
+  @include default;
+  font-size: vw(200);
+
+  @media (max-width: $br1) {
+    font-size: size(200, 36);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include col(1, 8);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @media (min-width: $br1) {
+      @include col(11, 15);
+      @include italic;
+      text-transform: lowercase;
+      text-align: center;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include col(7, 15);
+      @include row(2, 2);
+      @include italic;
+    }
+  }
+}
+
+.bim-3__list {
+  margin-top: vw(70);
+
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
+}
+
+.bim-3__line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--main);
+}
+
+.bim-3__text {
+  @include default;
+  text-transform: none;
+  font-size: vw(20);
+  margin-top: vw(30);
+  margin-bottom: vw(30);
+
+  @media (max-width: $br1) {
+    font-size: size(20, 16);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}
+
+.bim-3__slider-wrapper {
+  margin-top: vw(60);
+
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
+}
+
+.bim-3__btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: vw(20);
+}
+
+.bim-3__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 50%;
+  padding: vw(42) vw(42);
+
+  @media (max-width: $br1) {
+    padding: 21px 21px;
+  }
+}
+
+.bim-3__arrow {
+  display: block;
+  width: vw(16);
+  height: vw(14);
+
+  @media (max-width: $br1) {
+    width: 8px;
+    height: 7px;
+  }
+}
+
+.bim-3__slider {
+  display: flex;
+  margin-top: vw(40);
+  gap: vw(20);
+  overflow: scroll;
+  width: 100vw;
+  padding-left: vw(75);
+  padding-right: vw(75);
+  margin-left: vw(-75);
+
+  @media (max-width: $br1) {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: -32px;
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  @media (max-width: $br3) {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+  }
+}
+
+.bim-3__slider-img {
+  display: block;
+  width: 100%;
+  height: vw(384);
+  border-radius: 10px;
+
+  @media (max-width: $br1) {
+    height: 165px;
+  }
+}

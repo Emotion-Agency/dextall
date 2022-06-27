@@ -20,19 +20,33 @@ onMounted(async () => {
   const { resize } = await import('@emotionagency/utils')
   resize.on(winSizes)
 })
+
 </script>
 
 <template>
   <div id="app">
+
     <Head>
       <Title>Emotion</Title>
-      <Meta name="viewport" conten="width=device-width, initial-scale=1"></Meta>
-      <Link rel="icon" type="image/x-icon" href="/favicon.ico"></Link>
+      <Meta
+        name="viewport"
+        conten="width=device-width, initial-scale=1"
+      >
+      </Meta>
+      <Link
+        rel="icon"
+        type="image/x-icon"
+        href="/favicon.ico"
+      >
+      </Link>
     </Head>
     <AppGrid />
     <UiLoader />
+    <TheHeader />
     <SmoothScroll>
       <slot />
+      <TheContacts />
+      <TheFooter />
     </SmoothScroll>
   </div>
 </template>

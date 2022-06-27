@@ -9,16 +9,19 @@ html {
   height: 100vh;
   height: var(--vh);
   font-size: vw(16);
+  overflow: hidden;
 }
 
 body {
   color: var(--black);
+  background-color: var(--bg);
   font-size: 1rem;
   height: 100vh;
   height: var(--vh);
   position: relative;
   overscroll-behavior-y: none;
   @include smooth-font;
+
   @media (min-width: 1060px) {
     overflow: hidden;
   }

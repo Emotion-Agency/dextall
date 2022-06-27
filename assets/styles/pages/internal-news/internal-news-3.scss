@@ -1,0 +1,21 @@
+.internal-news-3__title {
+  @include default;
+  text-align: center;
+  font-size: vw(120);
+
+  @media (max-width: $br1) {
+    font-size: size(120, 36);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.internal-news-3__images {
+  margin-top: vw(200);
+
+  @media (max-width: $br1) {
+    margin-top: 100px;
+  }
+}

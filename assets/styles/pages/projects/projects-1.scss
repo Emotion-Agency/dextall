@@ -1,0 +1,31 @@
+.projects-1 {
+  padding-top: 0;
+}
+
+.projects-1__wrapper {
+  height: 50vh;
+  padding-top: 16vh;
+  text-align: center;
+}
+
+.projects-1__title {
+  @include default;
+  display: flex;
+  flex-direction: column;
+  font-size: vw(120);
+
+  @media (max-width: $br1) {
+    font-size: size(120, 36);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.projects-1__span-title {
+  @media (min-width: $br1) {
+    @include italic;
+    text-transform: lowercase;
+  }
+}

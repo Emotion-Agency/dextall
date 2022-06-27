@@ -1,0 +1,63 @@
+.about-3__bg {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about-3__text {
+  @media (max-width: $br1) {
+    display: inline;
+  }
+}
+
+.about-3__title {
+  @include default;
+  font-size: vw(70);
+  margin-top: vw(20);
+
+  @media (min-width: $br1) {
+    @include col(8, 15);
+  }
+
+  @media (max-width: $br1) {
+    font-size: size(70, 20);
+    margin-top: 10px;
+    max-width: 85%;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 20px;
+    max-width: 100%;
+  }
+}
+
+.about-3__desc {
+  @include default;
+  text-transform: none;
+  margin-top: vw(26);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+    max-width: 70%;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include col(8, 11);
+      @include row(2, 2);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @media (min-width: $br1) {
+      @include col(12, 15);
+      @include row(2, 2);
+    }
+  }
+}

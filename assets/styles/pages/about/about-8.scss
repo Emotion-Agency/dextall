@@ -1,0 +1,141 @@
+.about-8__text-wrapper {
+  @media (max-width: $br1) {
+    display: inline;
+  }
+}
+
+.about-8__text {
+  @include default;
+
+  @media (min-width: $br1) {
+    @include col(1, 2);
+    position: relative;
+    top: vw(14);
+  }
+}
+
+.about-8__title {
+  @include default;
+  font-size: vw(120);
+
+  @media (min-width: $br1) {
+    text-align: end;
+    @include col(5, 15);
+  }
+
+  @media (max-width: $br1) {
+    font-size: size(120, 36);
+    margin-top: 15px;
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.about-8__list {
+  margin-top: vw(40);
+
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
+}
+
+.about-8__li {
+  height: vw(780);
+  margin-top: vw(20);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+
+  &:first-of-type {
+    @media (max-width: $br1) {
+      margin-top: 0;
+      gap: 0;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (max-width: $br1) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.about-8__left-block {
+  height: 100%;
+
+  @media (min-width: $br1) {
+    @include col(1, 7);
+  }
+}
+
+.about-8__right-block {
+  height: 100%;
+
+  @media (min-width: $br1) {
+    @include col(8, 15);
+  }
+
+  &--reverse {
+    @media (max-width: $br1) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+}
+
+.about-8__image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+
+  @media (max-width: $br1) {
+    height: 329px;
+  }
+
+  &--half {
+    height: vw(389);
+
+    @media (max-width: $br1) {
+      height: 201px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.about-8__content-title {
+  @include default;
+  font-size: vw(60);
+
+  @media (max-width: $br1) {
+    font-size: size(60, 30);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 30px;
+  }
+}
+
+.about-8__desc {
+  @include default;
+  margin-top: vw(30);
+
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+
+  &--transform {
+    text-transform: none;
+  }
+}
