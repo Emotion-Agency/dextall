@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "nuxt3-emotion-template",
+  "name": "dextall",
   "version": "1.0.0",
   "scripts": {
     "build": "nuxt build",

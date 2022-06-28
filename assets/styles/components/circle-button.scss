@@ -7,6 +7,27 @@
   border: 2px solid var(--main);
   border-radius: 50%;
   padding: vw(30) vw(58);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.5s ease;
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (min-width: $br2) {
+    &:hover {
+      border-color: transparent;
+      .circle-button__bg {
+        transform: rotate(0deg) translateY(0%);
+        border-radius: 0%;
+      }
+      .circle-button__content {
+        color: #fff;
+      }
+    }
+  }
 
   @media (min-width: $br1) {
     min-width: vw(215);
@@ -21,4 +42,22 @@
   @media (max-width: $br4) {
     font-size: 14px;
   }
+}
+
+.circle-button__content {
+  transition: color 0.5s ease;
+}
+
+.circle-button__bg {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: var(--main);
+  transition: transform 0.5s ease, border-radius 0.5s ease;
+  transform: rotate(15deg) translateY(105%);
 }

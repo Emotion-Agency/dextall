@@ -27,7 +27,7 @@ onMounted(async () => {
   <div id="app">
 
     <Head>
-      <Title>Emotion</Title>
+      <Title>Dextall</Title>
       <Meta
         name="viewport"
         conten="width=device-width, initial-scale=1"
