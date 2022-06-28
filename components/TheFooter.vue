@@ -8,28 +8,28 @@
           <NuxtLink to="/"> Home </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> Products </NuxtLink>
+          <NuxtLink to="/products"> Products </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> Bim Solution </NuxtLink>
+          <NuxtLink to="/bim"> Bim Solution </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> Projects </NuxtLink>
+          <NuxtLink to="/projects/"> Projects </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> News </NuxtLink>
+          <NuxtLink to="/news"> News </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> About us </NuxtLink>
+          <NuxtLink to="/about"> About us </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> Careers </NuxtLink>
+          <NuxtLink to="/careers"> Careers </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> Education and Training </NuxtLink>
+          <NuxtLink to="/library"> Education and Training </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/"> Contact us </NuxtLink>
+          <button @click="openContacts"> Contact us </button>
         </li>
       </ul>
       <form class="footer__form">
@@ -52,8 +52,14 @@
       </form>
       <div class="grid footer__bottom-wrapper">
         <p class="footer__date">©2022 DEXTALL</p>
-        <NuxtLink to="/" class="footer__rules">Terms and conditions</NuxtLink>
-        <NuxtLink to="/" class="footer__rules">Privacy Policy</NuxtLink>
+        <NuxtLink
+          to="/"
+          class="footer__rules"
+        >Terms and conditions</NuxtLink>
+        <NuxtLink
+          to="/"
+          class="footer__rules"
+        >Privacy Policy</NuxtLink>
         <a
           href="https://www.emotion-agency.com/"
           target="_blank"
@@ -69,6 +75,8 @@
 
 <script setup lang="ts">
 import { iInputData } from '~~/composables/input'
+
+const { open: openContacts } = useContacts()
 
 const $inputs = ref([])
 const formData = reactive({

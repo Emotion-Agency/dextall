@@ -31,7 +31,7 @@
         <li class="navigation__li">
           <div class="navigation__line"></div>
           <NuxtLink
-            to="/"
+            to="/products"
             class="navigation__link"
           > Products </NuxtLink>
         </li>
