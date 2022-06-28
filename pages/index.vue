@@ -114,7 +114,7 @@ useTransition()
       </div>
     </section>
     <section class="section home-3">
-      <TheTicker />
+      <TheTicker text="A New Norm in The Construction Process" />
       <div class="container grid home-3__wrapper">
         <div class="home-3__left-block">
           <p class="home-3__text">

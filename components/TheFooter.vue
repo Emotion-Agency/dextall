@@ -1,6 +1,9 @@
 <template>
   <footer class="section footer">
-    <TheTicker class="footer__ticker"></TheTicker>
+    <TheTicker
+      text="Get in touch"
+      class="footer__ticker"
+    ></TheTicker>
     <div class="container grid footer__top-wrapper">
       <TheSocial />
       <ul class="grid footer__nav-list">

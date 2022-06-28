@@ -140,7 +140,10 @@ useTransition()
     </section>
     <section class="section project-6">
       <div class="container project-6__wrapper">
-        <TheTicker class="project-6__ticker" />
+        <TheTicker
+          text="project 1"
+          class="project-6__ticker"
+        />
         <div class="grid project-6__content">
           <ul class="project-6__list">
             <li class="project-6__li">
