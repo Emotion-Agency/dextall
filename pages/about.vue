@@ -8,23 +8,12 @@ useTransition()
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
         <img
+          v-for="(_,idx) in 4"
+          :key="idx"
+          :data-parallax="(4 - idx) * 0.08"
+          :data-parallax-dir="-1"
           class="about-1__img"
-          src="/images/about/1.jpg"
-          alt="Building"
-        />
-        <img
-          class="about-1__img"
-          src="/images/about/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="about-1__img"
-          src="/images/about/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="about-1__img"
-          src="/images/about/4.jpg"
+          :src="`/images/about/${idx + 1}.jpg`"
           alt="Building"
         />
         <div class="about-1__text-block">

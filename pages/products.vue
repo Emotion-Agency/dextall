@@ -8,25 +8,15 @@ useTransition()
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
         <img
+          v-for="(_,idx) in 4"
+          :key="idx"
+          :data-parallax="(4 - idx) * 0.08"
+          :data-parallax-dir="-1"
           class="products-1__img"
-          src="/images/products/1.jpg"
+          :src="`/images/products/${idx + 1}.jpg`"
           alt="Building"
         />
-        <img
-          class="products-1__img"
-          src="/images/products/2.jpg"
-          alt="Building"
-        />
-        <img
-          class="products-1__img"
-          src="/images/products/3.jpg"
-          alt="Building"
-        />
-        <img
-          class="products-1__img"
-          src="/images/products/4.jpg"
-          alt="Building"
-        />
+
         <div class="products-1__text-block">
           <h1 class="products-1__title">
             <span class="products-1__span-title">D Wall</span>
