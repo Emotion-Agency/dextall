@@ -3,9 +3,9 @@
   --white: #ffffff;
   --gray: #f2f2f2;
   --red: #e73737;
-  --accent: green;
+  --accent: #4e706a;
   --bg: #ececec;
-  --main: #304E49;
+  --main: #304e49;
 }
 
 //screen config
@@ -21,7 +21,7 @@ $br3: 768px;
 $br4: 460px;
 
 //easings
-$easing: cubic-bezier(0.16, 1, 0.3, 1);
+$easing: cubic-bezier(0.33, 1, 0.68, 1);
 
 // layouts
 $g-offset: vw(75);
