@@ -66,10 +66,14 @@ useTransition()
       <div class="container products-3__wrapper">
         <p class="products-3__commentary">Simple, efficient, optimized</p>
         <div class="products-3__line"></div>
-        <TheTicker
-          text="System Makeup System Makeup"
-          class="products-3__ticker"
-        />
+      </div>
+
+      <TheTicker
+        text="System Makeup System Makeup"
+        class="products-3__ticker"
+      />
+      <div class="container products-3__wrapper">
+
         <div class="grid products-3__content">
           <ul class="products-3__list">
             <li class="products-3__li">
