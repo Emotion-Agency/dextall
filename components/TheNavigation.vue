@@ -23,6 +23,7 @@
       ref="$navRight"
       class="container navigation__right-block"
     >
+
       <button
         class="navigation__close-btn"
         @click="close()"
@@ -32,7 +33,7 @@
       </button>
       <ul class="navigation__list">
         <li
-          v-for="link in links"
+          v-for="(link,idx) in links"
           :key="link.text"
           class="navigation__li"
           data-nav
@@ -43,6 +44,11 @@
             :to="link.to"
             class="navigation__link"
           > {{ link.text }} </NuxtLink>
+          <div
+            v-if="idx === links.length - 1"
+            class="navigation__line"
+          ></div>
+
         </li>
       </ul>
       <div class="grid navigation__info-block">
@@ -173,7 +179,26 @@ watch(isOpen,() => {
 })
 
 const close = () => {
-  emit('close')
+  if (isAnimating.value) {
+    return
+  }
+
+  isAnimating.value = true
+  const tl = gsap.timeline({
+    onComplete: () => {
+      isAnimating.value = false
+      emit('close')
+    }
+  })
+  const ease = 'power3.out'
+
+  tl.to($social.value,{ duration: 1,opacity: 0,ease },0)
+  tl.to($navLine.value,{ duration: 1,width: '0%',ease },0)
+  tl.to($navItems.value,{ duration: 1,opacity: 0,ease },0)
+  tl.to($navImg.value,{ duration: 1,x: '100%',ease },0.1)
+  tl.to($navImgWrapper.value,{ duration: 1,x: '-100%',ease },0.1)
+  tl.to($navLeft.value,{ duration: 1,y: '100%',ease },0.8)
+  tl.to($navRight.value,{ duration: 1,y: '-100%',ease },0.8)
 }
 
 const { open: openContacts } = useContacts()
