@@ -8,8 +8,9 @@
         v-for="index in repeatNumber"
         :key="index"
         class="ticker__item"
-        v-html="`&nbsp; ${divider} ${text}`"
-      ></div>
+      >
+        <IconsTickerIcon />&nbsp;{{ text }}
+      </div>
     </div>
   </div>
 </template>
@@ -20,7 +21,6 @@ interface iProps {
   text: string
   duration?: number
   multiplier?: number
-  divider?: string
   direction?: 1 | -1
 }
 
@@ -29,7 +29,6 @@ const props = defineProps<iProps>()
 const text = props.text || ''
 const duration = props.duration || 80
 const multiplier = props.multiplier || 21
-const divider = props.divider || '—'
 const direction = props.direction || 1
 
 let ticker

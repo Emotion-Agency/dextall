@@ -15,11 +15,35 @@
 .ticker__item {
   @include default;
   display: flex;
+  align-items: center;
   color: var(--main);
   font-size: vw(200);
-  line-height: 110%;
+  line-height: 93%;
   white-space: nowrap;
   margin-left: vw(75);
+
+  svg {
+    display: block;
+    // max-width: 100%;
+    width: vw(98);
+    height: vw(98);
+    animation: flower 10s linear infinite;
+    position: relative;
+    top: -1vw;
+    @media (max-width: $br1) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  @keyframes flower {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
   @media (max-width: $br1) {
     margin-left: 32px;
