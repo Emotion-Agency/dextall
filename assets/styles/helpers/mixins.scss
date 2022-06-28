@@ -42,3 +42,27 @@
     font-style: #{$style};
   }
 }
+
+@mixin stroke-link {
+  position: relative;
+  width: fit-content;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main);
+    width: 0%;
+    height: 1px;
+    transition: width 0.35s ease;
+  }
+  @media (min-width: $br2) {
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}

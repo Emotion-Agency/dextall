@@ -29,6 +29,7 @@
 .footer__nav-li {
   @include default;
   @include col(2, 2);
+  @include stroke-link;
 
   &:nth-of-type(-n + 5) {
     @include col(1, 1);

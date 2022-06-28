@@ -59,6 +59,7 @@
 
 .header__li {
   margin-right: vw(40);
+  @include stroke-link;
 
   &:last-of-type {
     margin-right: 0;
