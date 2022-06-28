@@ -277,6 +277,13 @@
   dependencies:
     mime "^3.0.0"
 
+"@emotionagency/parallax@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@emotionagency/parallax/-/parallax-1.0.2.tgz#e20ebc02ef4cc40083a9ae639723d118d88a523a"
+  integrity sha512-VzjlpxXkTeIJnXqmuE/xIasUPw6LiUBPDMQYdzbRmvwJLqPSnFscXY+oaCbcZslRzc7P57NbwIs+X+iCzvm8gw==
+  dependencies:
+    "@emotionagency/utils" "*"
+
 "@emotionagency/smoothscroll@latest":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-1.0.2.tgz#bbd39d50ae410f31d1326b1a5085029542ab52a0"
@@ -284,7 +291,7 @@
   dependencies:
     virtual-scroll "^2.1.1"
 
-"@emotionagency/utils@latest":
+"@emotionagency/utils@*", "@emotionagency/utils@latest":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-1.0.2.tgz#3f7e1eb055dcc7cf5c99755fd410ae88936c4b56"
   integrity sha512-FGsnR9DUoOtw4MzMsWe/ueAUyu+iK2f7zh7j+DAz3fDm956PCwy716kxSTXIcY6BG4uDL86sxGM17B+pkKt+JA==

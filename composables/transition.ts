@@ -2,6 +2,16 @@ import gsap from 'gsap'
 import { TransitionProps } from 'nuxt/dist/app/compat/capi'
 
 export const useTransition = () => {
+  onMounted(() => {
+    setTimeout(() => {
+      window.ss.reset()
+      window.ss.isFixed = false
+    }, 500)
+
+    setTimeout(() => {
+      window.parallax && window.parallax.update()
+    }, 0)
+  })
   const route = useRoute()
   const pageTransition: TransitionProps = {
     duration: 250,
@@ -13,6 +23,10 @@ export const useTransition = () => {
         window.ss.reset()
         window.ss.isFixed = false
       }, 500)
+
+      setTimeout(() => {
+        window.parallax && window.parallax.update()
+      }, 0)
 
       gsap.fromTo(
         el,

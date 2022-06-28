@@ -181,9 +181,14 @@ useTransition()
           <span class="home-4__big-text"> Engineering</span>
           <span class="home-4__big-text"> Accreditations</span>
         </h2>
-        <FloatingCards class="home-4__floating-cards">
+        <FloatingCard
+          v-for="(_,idx)  in 4"
+          :key="idx"
+          :parallax="4 - idx"
+          class="home-4__floating-cards"
+        >
           <IconsFloatingCardsImg />
-        </FloatingCards>
+        </FloatingCard>
       </div>
     </section>
     <section class="section home-5">

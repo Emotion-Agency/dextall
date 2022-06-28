@@ -53,13 +53,20 @@ useTransition()
           requirements. Our exclusive innovative design and process technology
           slashes costs to make projects affordable
         </p>
-        <FloatingCards class="products-2__floating-cards">
+        <FloatingCard
+          v-for="(_,idx) in 4"
+          :key="idx"
+          :parallax="4 - idx"
+          class="home-4__floating-cards"
+        >
           <div class="products-2__text-wrapper">
             <h3 class="products-2__title-cards">Reduce Onsite Waste</h3>
             <p class="products-2__medium-text">From 30%+ to less than 5% ↓</p>
             <p class="products-2__small-text">Lower Cost and Carbon Footprint</p>
           </div>
-        </FloatingCards>
+        </FloatingCard>
+
+
       </div>
     </section>
     <section class="section products-3">
