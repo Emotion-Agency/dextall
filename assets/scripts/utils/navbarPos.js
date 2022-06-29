@@ -17,7 +17,7 @@ export default class NavbarPos {
   }
 
   mouseHandler(e) {
-    if (e.screenY <= 300) {
+    if (e.screenY <= 300 || this.isFixed) {
       document.body.classList.remove('nav-hidden')
       this.hovered = true
     } else {
@@ -49,7 +49,7 @@ export default class NavbarPos {
   }
 
   get isFixed() {
-    return window.smoothScroll ? window.smoothScroll.isFixed : false
+    return window.ss ? window.ss.isFixed : false
   }
 
   addVisibility() {

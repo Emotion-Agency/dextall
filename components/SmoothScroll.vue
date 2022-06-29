@@ -17,8 +17,6 @@ onMounted(async () => {
   const { SmoothScroll } = await import('@emotionagency/smoothscroll')
   const { raf } = await import('@emotionagency/utils')
 
-  console.log(props.scrollbar)
-
   window.ss = new SmoothScroll({
     el: document.querySelector(props.el) ?? undefined,
     mobile: props.mobile || false,

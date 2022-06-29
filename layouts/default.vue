@@ -50,8 +50,8 @@ onMounted(async () => {
     </Head>
     <AppGrid />
     <UiLoader />
-    <TheHeader />
     <SmoothScroll>
+      <TheHeader />
       <slot />
       <TheContacts />
       <TheFooter />
