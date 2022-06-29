@@ -13,26 +13,28 @@
         <span class="contacts__btn-line"></span>
         <span class="contacts__btn-line"></span>
       </button>
-      <h2 class="contacts__title">Contact us</h2>
-      <p class="contacts__desc">
-        Our client services team would love to hear from you
-      </p>
-      <form class="grid contacts__form">
-        <TheInput
-          v-for="input in formData.inputs"
-          :id="input.id"
-          :key="input.id"
-          ref="$inputs"
-          class="contacts__input"
-          :type="input.type"
-          :placeholder="input.label"
-          :required="input.required"
-          :validation-text="input.validationText"
-          :validation="input.validation"
-          @input-value="onInputValue"
-        />
-        <CircleButton class="contacts__btn">Send</CircleButton>
-      </form>
+      <div class="contacts__top">
+        <h2 class="contacts__title">Contact us</h2>
+        <p class="contacts__desc">
+          Our client services team would love to hear from you
+        </p>
+        <form class="grid contacts__form">
+          <TheInput
+            v-for="input in formData.inputs"
+            :id="input.id"
+            :key="input.id"
+            ref="$inputs"
+            class="contacts__input"
+            :type="input.type"
+            :placeholder="input.label"
+            :required="input.required"
+            :validation-text="input.validationText"
+            :validation="input.validation"
+            @input-value="onInputValue"
+          />
+          <CircleButton class="contacts__btn">Send</CircleButton>
+        </form>
+      </div>
       <div class="grid contacts__bottom-block">
         <TheSocial class="contacts__social" />
         <div class="contacts__text-wrapper">
