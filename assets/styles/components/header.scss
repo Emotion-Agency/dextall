@@ -137,10 +137,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    border-radius: 50%;
     background-color: var(--accent);
     z-index: 1;
-
-    transition: transform 0.4s $easing;
+    transition: transform 0.5s $easing, border-radius 0.5s $easing;
 
     transform: translateY(100%);
   }
@@ -148,6 +148,7 @@
   @media (min-width: $br2) {
     &:hover {
       &::after {
+        border-radius: 0%;
         transform: translateY(0%);
       }
     }
