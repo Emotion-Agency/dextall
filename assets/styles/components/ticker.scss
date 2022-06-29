@@ -24,12 +24,10 @@
 
   svg {
     display: block;
-    // max-width: 100%;
     width: vw(98);
     height: vw(98);
     animation: flower 10s linear infinite;
     position: relative;
-    top: -1vw;
     @media (max-width: $br1) {
       width: 36px;
       height: 36px;

@@ -174,7 +174,7 @@
 .home-1__bottom-block {
   @media (min-width: $br1) {
     flex: 0 1 auto;
-    margin-top: vw(65);
+    margin-top: vw(20);
   }
 
   @media (max-width: $br1) {
@@ -193,7 +193,7 @@
 
   @media (min-width: $br1) {
     position: relative;
-    top: vw(116);
+    top: vw(80);
     left: vw(597);
     max-width: vw(338);
   }
