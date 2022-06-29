@@ -4,6 +4,7 @@
   border-radius: 10px;
   color: var(--bg);
   position: relative;
+  z-index: 2;
 
   @media (min-width: $br1) {
     @include col(1, 15);
