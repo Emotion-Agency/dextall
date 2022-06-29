@@ -9,7 +9,7 @@
   padding: vw(30) vw(58);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.5s ease;
+  transition: border-color 0.7s $easing;
 
   * {
     position: relative;
@@ -58,6 +58,6 @@
   top: 0;
   border-radius: 50%;
   background-color: var(--main);
-  transition: transform 0.5s ease, border-radius 0.5s ease;
+  transition: transform 0.7s $easing, border-radius 0.7s $easing;
   transform: rotate(15deg) translateY(115%);
 }
