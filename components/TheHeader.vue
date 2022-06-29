@@ -70,8 +70,6 @@
 <script setup lang="ts">
 const isNavOpen = ref(false)
 
-
-
 const open = () => {
   window.ss.isFixed = true
   isNavOpen.value = true
