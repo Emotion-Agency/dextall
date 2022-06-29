@@ -236,6 +236,8 @@ useTransition()
             class="home-6__img"
             src="/images/home/11.jpg"
             alt="Building"
+            data-parallax="0.1"
+            data-parallax-dir="-1"
           />
         </div>
       </div>
@@ -302,6 +304,8 @@ useTransition()
             class="home-9__img"
             src="/images/home/18.jpg"
             alt="Building"
+            data-parallax="0.1"
+            data-parallax-dir="-1"
           />
         </div>
       </div>
