@@ -10,6 +10,9 @@ export const useContacts = () => {
   const close = () => {
     window.ss.isFixed = false
     isOpen.value = false
+    setTimeout(() => {
+      $content.value.style.height = null
+    }, 1000)
   }
 
   const open = () => {
@@ -30,9 +33,6 @@ export const useContacts = () => {
       $content.value.style.height = height + 'px'
       if ((height / window.innerHeight) * 100 < 50) {
         close()
-        setTimeout(() => {
-          $content.value.style.height = null
-        }, 1000)
       }
     }
 
