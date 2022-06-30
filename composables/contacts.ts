@@ -32,14 +32,11 @@ export const useContacts = () => {
     }
 
     const onMouseDown = () => {
-      console.log('down')
       document.addEventListener('mousemove', onMouseMove)
       document.addEventListener('touchmove', onMouseMove)
     }
 
     const onMouseUp = () => {
-      console.log('up')
-
       document.removeEventListener('mousemove', onMouseMove)
       document.removeEventListener('touchmove', onMouseMove)
     }
