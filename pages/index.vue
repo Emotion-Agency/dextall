@@ -20,7 +20,7 @@ useObserver('.section')
               style="background-image: url('/images/home/2.jpg')"
             ></div>
             <ul class="grid home-1__small-buildings">
-              <li class="home-1__li">
+              <li class="home-1__li home-1__li--active">
                 <p class="home-1__number">001</p>
                 <div
                   class="small-img home-1__small-img"

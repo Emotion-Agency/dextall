@@ -3,6 +3,9 @@ export const useContacts = () => {
   const $contacts = ref(null)
   const $content = ref(null)
   const $grabBtn = ref(null)
+  let onMouseDown: () => void
+  let onMouseMove: (e: MouseEvent | TouchEvent) => void
+  let onMouseUp: () => void
 
   const close = () => {
     window.ss.isFixed = false
@@ -19,8 +22,10 @@ export const useContacts = () => {
     $content.value = document.querySelector('.contacts__content')
     $grabBtn.value = document.querySelector('.contacts__line')
 
-    const onMouseMove = e => {
-      const y = e.clientY ?? e.changedTouches[0].clientY
+    onMouseMove = e => {
+      const y =
+        e instanceof TouchEvent ? e.changedTouches[0].clientY : e.clientY
+
       const height = window.innerHeight - y
       $content.value.style.height = height + 'px'
       if ((height / window.innerHeight) * 100 < 50) {
@@ -31,12 +36,12 @@ export const useContacts = () => {
       }
     }
 
-    const onMouseDown = () => {
+    onMouseDown = () => {
       document.addEventListener('mousemove', onMouseMove)
       document.addEventListener('touchmove', onMouseMove)
     }
 
-    const onMouseUp = () => {
+    onMouseUp = () => {
       document.removeEventListener('mousemove', onMouseMove)
       document.removeEventListener('touchmove', onMouseMove)
     }
@@ -45,6 +50,15 @@ export const useContacts = () => {
     document.body.addEventListener('mouseup', onMouseUp)
     $grabBtn.value.addEventListener('touchstart', onMouseDown)
     document.body.addEventListener('touchend', onMouseUp)
+  })
+
+  onBeforeUnmount(() => {
+    $grabBtn.value.removeEventListener('mousedown', onMouseDown)
+    document.body.removeEventListener('mouseup', onMouseUp)
+    $grabBtn.value.removeEventListener('touchstart', onMouseDown)
+    document.body.removeEventListener('touchend', onMouseUp)
+    document.removeEventListener('mousemove', onMouseMove)
+    document.removeEventListener('touchmove', onMouseMove)
   })
 
   return { isOpen, close, open }

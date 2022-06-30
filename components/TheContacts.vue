@@ -3,7 +3,10 @@
     class="contacts"
     :class="[isOpen && 'contacts--open']"
   >
-    <div class="contacts__backdrop"></div>
+    <div
+      class="contacts__backdrop"
+      @click="close"
+    ></div>
     <div class="contacts__content">
 
       <div class="contacts__line"></div>
