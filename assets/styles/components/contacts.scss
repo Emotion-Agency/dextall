@@ -5,65 +5,84 @@
   left: 0;
   z-index: 101;
   height: 100vh;
-  display: none;
+  visibility: hidden;
+  transition: visibility 1s $easing;
 
   &--open {
-    display: block;
+    visibility: visible;
+    .contacts__content {
+      transform: translateY(0%);
+    }
+    .contacts__backdrop {
+      opacity: 1;
+    }
   }
 }
 
 .contacts__backdrop {
-  background-color: #4f4f4f;
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 1s $easing;
 }
 
 .contacts__line {
-  position: fixed;
   width: vw(53);
   height: 4px;
   background-color: var(--bg);
   z-index: 1;
-  top: 15vh;
-  left: 50%;
+  cursor: row-resize;
   transform: translate(-50%, 0);
 
   @media (max-width: $br1) {
     width: 53px;
-    top: 8vh;
+  }
+}
+
+.contacts__content {
+  transform: translateY(100%);
+  transition: transform 1s $easing;
+  position: absolute;
+  height: calc(83% + 18px);
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  @media (max-width: $br1) {
+    height: 90%;
   }
 }
 
 .contacts__window {
-  position: absolute;
-  background-color: var(--bg);
-  height: 83%;
   width: 100%;
+  height: 100%;
   overflow: auto;
-  bottom: 0;
-  z-index: 1;
-  border-radius: 20px 20px 0px 0px;
-  padding-top: vw(60);
-  padding-bottom: vw(30);
   display: flex;
+  background-color: var(--bg);
+  border-radius: 20px 20px 0px 0px;
+
   flex-direction: column;
   justify-content: space-between;
-
+  padding-top: vw(60);
+  padding-bottom: vw(30);
   @media (max-width: $br1) {
     padding-top: 15px;
     padding-bottom: 20px;
-    height: 90%;
   }
 }
 
 .contacts__close-btn {
   display: block;
   position: absolute;
-  top: vw(60);
+  top: 18px;
   right: vw(75);
   background-color: transparent;
   width: vw(48);
