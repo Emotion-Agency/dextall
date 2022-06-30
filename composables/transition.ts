@@ -15,7 +15,7 @@ export const useTransition = () => {
   const route = useRoute()
   const pageTransition: TransitionProps = {
     duration: 250,
-    mode: 'out-in',
+    mode: 'in-out',
     css: false,
     appear: true,
     onEnter(el, done) {

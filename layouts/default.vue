@@ -8,7 +8,7 @@ const appStore = useAppStore()
 
 const parallaxInit = async () => {
   const { Parallax } = await import('@emotionagency/parallax')
-  window.parallax = new Parallax({ mobile: false,inViewDetection: false })
+  window.parallax = new Parallax({ mobile: false })
 }
 
 onMounted(async () => {
