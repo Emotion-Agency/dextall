@@ -7,7 +7,7 @@ let accordeon
 
 onMounted(async () => {
 
-  const { AccordeonHandler } = await import('~/assets/scripts/AccordeonHandler')
+  const { AccordeonHandler } = await import('~/scripts/AccordeonHandler')
 
   accordeon = new AccordeonHandler('.careers-5__content-li','.careers-5__text-block')
 })

@@ -3,7 +3,7 @@ export const useObserver = ($node: string) => {
 
   const initIntersectionObserver = async () => {
     const { intersectionObserver } = await import(
-      '~/assets/scripts/utils/intersectionObserver'
+      '~/scripts/utils/intersectionObserver'
     )
 
     intersectionObserverInstance = intersectionObserver

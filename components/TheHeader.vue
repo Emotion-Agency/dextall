@@ -85,7 +85,7 @@ const { open: openContacts } = useContacts()
 let navbarPos
 
 onMounted(async () => {
-  const { default: NavbarPos } = await import('~/assets/scripts/utils/navbarPos')
+  const { default: NavbarPos } = await import('~/scripts/utils/navbarPos')
   navbarPos = new NavbarPos()
   navbarPos.init()
 })

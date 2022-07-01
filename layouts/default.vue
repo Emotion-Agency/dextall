@@ -19,10 +19,10 @@ onMounted(async () => {
   } else {
     appStore.setIsWebp(false)
   }
-  const { hello } = await import('~/assets/scripts/utils/hello')
+  const { hello } = await import('~/scripts/utils/hello')
   hello()
 
-  const { winSizes } = await import('~/assets/scripts/utils/winSizes')
+  const { winSizes } = await import('~/scripts/utils/winSizes')
   const { resize } = await import('@emotionagency/utils')
   resize.on(winSizes)
 

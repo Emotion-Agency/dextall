@@ -1,4 +1,4 @@
-import validator from '~/assets/scripts/utils/Validation'
+import validator from '~/scripts/utils/Validation'
 
 export interface iInputData {
   id: string
