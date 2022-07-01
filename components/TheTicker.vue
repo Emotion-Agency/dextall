@@ -44,7 +44,7 @@ const repeatNumber = computed(() => {
 })
 
 const initTicker = async () => {
-  const { Ticker } = await import('~/assets/scripts/Ticker')
+  const { Ticker } = await import('~/assets/scripts/ticker')
   ticker = new Ticker({
     $el: $ticker.value,
     duration,
