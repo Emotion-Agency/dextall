@@ -4,6 +4,10 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   css: ['@/assets/styles/index.scss'],
 
+  // build: {
+  //   transpile: ['@emotionagency/utils'],
+  // },
+
   modules: ['@pinia/nuxt', '@nuxtjs/eslint-module'],
 
   // head: {

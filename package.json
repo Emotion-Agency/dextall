@@ -28,7 +28,6 @@
   "dependencies": {
     "@emotionagency/parallax": "^1.0.2",
     "@emotionagency/smoothscroll": "latest",
-    "@emotionagency/utils": "latest",
     "@pinia/nuxt": "^0.1.8",
     "gsap": "^3.10.3",
     "pinia": "^2.0.13",

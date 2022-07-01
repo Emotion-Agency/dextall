@@ -1,4 +1,4 @@
-import { raf } from '@emotionagency/utils'
+import { raf } from '@/scripts/utils/ea'
 
 const noop = () => {}
 

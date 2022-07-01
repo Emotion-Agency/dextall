@@ -1,4 +1,4 @@
-import { raf, matrixTransform } from '@emotionagency/utils'
+import { raf, matrixTransform } from '@/scripts/utils/ea'
 
 export class Ticker {
   time = 0

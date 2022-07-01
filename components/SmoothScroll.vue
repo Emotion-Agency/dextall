@@ -15,7 +15,7 @@ const props = defineProps<iProps>()
 
 onMounted(async () => {
   const { SmoothScroll } = await import('@emotionagency/smoothscroll')
-  const { raf } = await import('@emotionagency/utils')
+  const { raf } = await import('@/scripts/utils/ea')
 
   window.ss = new SmoothScroll({
     el: document.querySelector(props.el) ?? undefined,
