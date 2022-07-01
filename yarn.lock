@@ -296,11 +296,6 @@
   resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-1.0.2.tgz#3f7e1eb055dcc7cf5c99755fd410ae88936c4b56"
   integrity sha512-FGsnR9DUoOtw4MzMsWe/ueAUyu+iK2f7zh7j+DAz3fDm956PCwy716kxSTXIcY6BG4uDL86sxGM17B+pkKt+JA==
 
-"@emotionagency/utils@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-1.0.7.tgz#a1d66f0260a0c4ca7e2bc54cf185f813e30cd610"
-  integrity sha512-QOsIegh9x1o1/cBE3LpQsUlMeDcciua6ccPQG4gZWuli6eKQryqz1PioGmy89yANkTXAaQclVvjQ3rePruXfJw==
-
 "@eslint/eslintrc@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.2.2.tgz#4989b9e8c0216747ee7cca314ae73791bb281aae"

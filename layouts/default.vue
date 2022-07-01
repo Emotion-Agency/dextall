@@ -23,7 +23,7 @@ onMounted(async () => {
   hello()
 
   const { winSizes } = await import('~/scripts/utils/winSizes')
-  const { resize } = await import('@emotionagency/utils')
+  const { resize } = await import('@/scripts/utils/ea')
   resize.on(winSizes)
 
   await parallaxInit()
