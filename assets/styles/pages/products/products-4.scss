@@ -236,3 +236,10 @@
     font-size: 16px;
   }
 }
+
+.products-4__btn {
+  margin-top: vw(40);
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}

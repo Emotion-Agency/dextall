@@ -3,6 +3,22 @@ import { useTransition } from '~/composables/transition'
 useTransition()
 useObserver('.section')
 
+let accordeon
+
+onMounted(async () => {
+
+  const { AccordeonHandler } = await import('~/assets/scripts/AccordeonHandler')
+
+  accordeon = new AccordeonHandler('.careers-5__content-li','.careers-5__text-block')
+})
+
+onBeforeUnmount(() => {
+  accordeon && accordeon.destroy()
+})
+
+
+const { vacancies } = useVacancies()
+
 </script>
 
 <template>
@@ -90,72 +106,44 @@ useObserver('.section')
             <button class="careers-5__filter-name">All departments</button>
             <div class="careers-5__filter-numbers">(3)</div>
           </li>
-          <li class="careers-5__filter-li">
-            <button class="careers-5__filter-name">Project execution</button>
-            <p class="careers-5__filter-numbers">(1)</p>
+          <li
+            v-for="(item) in vacancies"
+            :key="item.title"
+            class="careers-5__filter-li"
+          >
+            <button class="careers-5__filter-name">{{ item.department }}</button>
+            <div class="careers-5__filter-numbers">(3)</div>
           </li>
-          <li class="careers-5__filter-li">
-            <button class="careers-5__filter-name">Marketing and pr</button>
-            <p class="careers-5__filter-numbers">(1)</p>
-          </li>
-          <li class="careers-5__filter-li">
-            <button class="careers-5__filter-name">Engineering</button>
-            <p class="careers-5__filter-numbers">(1)</p>
-          </li>
+
         </ul>
         <ul class="careers-5__content-list">
-          <li class="careers-5__content-li">
-            <button class="careers-5__btn">
+          <li
+            v-for="(vacancy,idx) in vacancies"
+            :key="vacancy.title"
+            class="careers-5__content-li"
+          >
+            <div class="careers-5__content-bg"></div>
+            <div class="careers-5__btn">
               <div class="careers-5__line"></div>
               <div class="grid careers-5__content">
-                <p class="careers-5__number">01</p>
+                <p class="careers-5__number">0{{ idx + 1 }}</p>
                 <div class="careers-5__text-wrapper">
-                  <h3 class="careers-5__content-title">Project Manager – USA</h3>
+                  <h3 class="careers-5__content-title">{{ vacancy.title }}</h3>
                   <div class="careers-5__text-block">
-                    <p class="careers-5__text">
-                      • Support the team in the design of digital strategies<br />
-                      • Collect information, analyze needs, study best practices
-                      (benchmarking), analyze visit trends, identify performance
-                      indicators (KPIs) <br />
-                      • Actively participate in the conversation in order to
-                      create an effective tree structure and wireframe.<br />
-                      • Monitor new practices and trends
-                    </p>
+                    <p
+                      class="careers-5__text"
+                      v-html="vacancy.text"
+                    />
                   </div>
                 </div>
                 <IconsArrowUp class="careers-5__arrow" />
               </div>
-            </button>
-          </li>
-          <li class="careers-5__content-li">
-            <button class="careers-5__btn">
-              <div class="careers-5__line"></div>
-              <div class="grid careers-5__content">
-                <p class="careers-5__number">02</p>
-                <div class="careers-5__text-wrapper">
-                  <h3 class="careers-5__content-title">
-                    Social Media Internship
-                  </h3>
-                </div>
-                <IconsArrowDown class="careers-5__arrow" />
-              </div>
-            </button>
-          </li>
-          <li class="careers-5__content-li">
-            <button class="careers-5__btn">
-              <div class="careers-5__line"></div>
-              <div class="grid careers-5__content">
-                <p class="careers-5__number">03</p>
-                <div class="careers-5__text-wrapper">
-                  <h3 class="careers-5__content-title">
-                    3D Designer, sketcher for high-tech sustainable construction
-                    team
-                  </h3>
-                </div>
-                <IconsArrowDown class="careers-5__arrow" />
-              </div>
-              <div class="careers-5__line"></div>
-            </button>
+              <div
+                v-if="idx === vacancies.length - 1"
+                class="careers-5__line"
+              ></div>
+
+            </div>
           </li>
         </ul>
       </div>
