@@ -47,22 +47,51 @@ export const useVacancies = () => {
     },
   ])
 
+  const activeFilter = ref('all departments')
+
+  const filteredVacancies = computed(() => {
+    if (activeFilter.value === 'all departments') {
+      return vacancies.value
+    }
+
+    return vacancies.value.filter(v => v.department === activeFilter.value)
+  })
+
   interface iFilter {
     type: string
     isActive: boolean
+    length: number
   }
+
+  const filtersValues = [...new Set(vacancies.value.map(v => v.department))]
 
   const filters = useState<iFilter[]>('vacanciesFilters', () => [])
 
   filters.value = [
     {
-      type: 'all',
-      isActive: false,
+      type: 'all departments',
+      isActive: true,
+      length: vacancies.value.length,
     },
-    ...vacancies.value.map(v => ({ type: v.department, isActive: false })),
+    ...filtersValues.map(fv => ({
+      type: fv,
+      isActive: false,
+      length: vacancies.value.filter(v => v.department === fv).length,
+    })),
   ]
 
-  console.log(filters.value)
+  watch(activeFilter, () => {
+    filters.value = filters.value.map(f => {
+      if (f.type === activeFilter.value) {
+        return { ...f, isActive: true }
+      }
+      return { ...f, isActive: false }
+    })
+  })
 
-  return { vacancies }
+  const onFilter = (value: string) => {
+    activeFilter.value = value
+  }
+
+  return { vacancies, filteredVacancies, filters, onFilter }
 }

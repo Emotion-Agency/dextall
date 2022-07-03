@@ -3,21 +3,7 @@ import { useTransition } from '~/composables/transition'
 useTransition()
 useObserver('.section')
 
-let accordeon
-
-onMounted(async () => {
-
-  const { AccordeonHandler } = await import('~/scripts/AccordeonHandler')
-
-  accordeon = new AccordeonHandler('.careers-5__content-li','.careers-5__text-block')
-})
-
-onBeforeUnmount(() => {
-  accordeon && accordeon.destroy()
-})
-
-
-const { vacancies } = useVacancies()
+const { filters,onFilter,filteredVacancies } = useVacancies()
 
 </script>
 
@@ -102,49 +88,33 @@ const { vacancies } = useVacancies()
           </p>
         </div>
         <ul class="careers-5__filter-list">
-          <li class="careers-5__filter-li">
-            <button class="careers-5__filter-name">All departments</button>
-            <div class="careers-5__filter-numbers">(3)</div>
-          </li>
           <li
-            v-for="(item) in vacancies"
-            :key="item.title"
+            v-for="item in filters"
+            :key="item.type"
             class="careers-5__filter-li"
+            :class="[item.isActive && 'careers-5__filter-li--active']"
+            @click="onFilter(item.type)"
           >
-            <button class="careers-5__filter-name">{{ item.department }}</button>
-            <div class="careers-5__filter-numbers">(3)</div>
+            <button class="careers-5__filter-name">{{ item.type }}</button>
+            <span class="careers-5__filter-numbers">({{ item.length }})</span>
           </li>
 
         </ul>
         <ul class="careers-5__content-list">
-          <li
-            v-for="(vacancy,idx) in vacancies"
-            :key="vacancy.title"
-            class="careers-5__content-li"
+          <TransitionGroup
+            name="fade"
+            mode="out-in"
           >
-            <div class="careers-5__content-bg"></div>
-            <div class="careers-5__btn">
-              <div class="careers-5__line"></div>
-              <div class="grid careers-5__content">
-                <p class="careers-5__number">0{{ idx + 1 }}</p>
-                <div class="careers-5__text-wrapper">
-                  <h3 class="careers-5__content-title">{{ vacancy.title }}</h3>
-                  <div class="careers-5__text-block">
-                    <p
-                      class="careers-5__text"
-                      v-html="vacancy.text"
-                    />
-                  </div>
-                </div>
-                <IconsArrowUp class="careers-5__arrow" />
-              </div>
-              <div
-                v-if="idx === vacancies.length - 1"
-                class="careers-5__line"
-              ></div>
+            <CareerItem
+              v-for="(vacancy,idx) in filteredVacancies"
+              :key="vacancy.title"
+              :title="vacancy.title"
+              :text="vacancy.text"
+              :idx="idx"
+              :is-last="idx === filteredVacancies.length - 1"
+            />
 
-            </div>
-          </li>
+          </TransitionGroup>
         </ul>
       </div>
     </section>
