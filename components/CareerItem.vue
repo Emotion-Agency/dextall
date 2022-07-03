@@ -16,12 +16,12 @@ const height = ref(0)
 
 const onResize = () => {
   height.value = $child.value.scrollHeight * 0.01
+  $el.value.style.setProperty('--h',`${height.value}px`)
 }
 
 const onClick = () => {
   resize.on(onResize)
   isOpen.value = !isOpen.value
-  $el.value.style.setProperty('--h',`${height.value}px`)
 }
 
 onBeforeUnmount(() => {
