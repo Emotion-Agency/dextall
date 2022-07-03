@@ -59,7 +59,6 @@ onBeforeUnmount(() => {
         v-if="isLast"
         class="careers-5__line"
       ></div>
-
     </div>
   </li>
 </template>

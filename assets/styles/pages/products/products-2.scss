@@ -50,7 +50,6 @@
   }
 
   @media (max-width: $br1) {
-    display: inline;
     margin-top: 15px;
     @include col(1, 4);
     @include row(2, 2);
@@ -71,6 +70,12 @@
     @include col(1, 4);
     @include row(3, 3);
     margin-top: 42px;
+  }
+}
+
+.products-2__wrapper {
+  @media (max-width: $br1) {
+    display: block;
   }
 }
 
