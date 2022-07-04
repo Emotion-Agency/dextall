@@ -40,9 +40,27 @@
   }
 }
 
+.home-1__img-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1;
+
+  &.active {
+    display: block;
+    z-index: 2;
+  }
+}
+
 .home-1__elements-left {
   @include col(1, 7);
-
+  position: relative;
+  overflow: hidden;
   @media (max-width: $br1) {
     @include col(1, 4);
     padding-bottom: toimg(335, 273);
@@ -58,9 +76,16 @@
   background-size: cover;
 }
 
+.home-1__right-image {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
 .home-1__elements-right {
   @include col(8, 15);
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
 

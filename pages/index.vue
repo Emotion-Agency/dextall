@@ -1,44 +1,100 @@
 <script setup lang="ts">
+import gsap from 'gsap'
 import { useTransition } from '~/composables/transition'
 import { transformImage } from '~/scripts/utils/storyblokImage'
+import { useHomeStory } from '~~/composables/stories/home.story';
+import { keysGenerator } from '~~/scripts/utils/ea';
 useTransition()
 useObserver('.section')
+const { getH6Title,getH9Title,story } = await useHomeStory()
 
-const story = ref(null)
-const storyapi = useStoryblokApi()
+const activeIdx = ref(0)
+const isAnimating = ref(false)
+const $slides1 = ref(null)
+const $slides2 = ref(null)
+
+const sliderImages = [
+  {
+    _uid: keysGenerator(8),
+    img_1: '/images/home/1.jpg',
+    img_2: '/images/home/2.jpg',
+  },
+  {
+    _uid: keysGenerator(8),
+    img_1: '/images/home/3.jpg',
+    img_2: '/images/home/4.jpg',
+  },
+  {
+    _uid: keysGenerator(8),
+    img_1: '/images/home/5.jpg',
+    img_2: '/images/home/6.jpg',
+  },
+  {
+    _uid: keysGenerator(8),
+    img_1: '/images/home/7.jpg',
+    img_2: '/images/home/8.jpg',
+  },
+  {
+    _uid: keysGenerator(8),
+    img_1: '/images/home/9.jpg',
+    img_2: '/images/home/10.jpg',
+  }
+]
 
 
-try {
-  const { data } = await storyapi.get("cdn/stories/home",{ version: "draft" })
-  story.value = data.story.content
+const onSliderNavigationClick = (idx: number) => {
+  if (isAnimating.value) {
+    return
+  }
 
-  console.log(story.value)
-} catch (e) {
-  console.log(e.message)
-}
+  const dif = idx - activeIdx.value
+  const isNext = idx > activeIdx.value ? 1 : -1
+
+  const $curSlide1 = $slides1.value[idx]
+  const $curSlideImg1 = $curSlide1.querySelector('.big-img')
+
+  const $curSlide2 = $slides2.value[idx]
+  const $curSlideImg2 = $curSlide2.querySelector('.big-img')
+
+  const $prevSlide1 = $slides1.value[idx + -dif]
+  const $prevSlideImg1 = $prevSlide1.querySelector('.big-img')
+
+  const $prevSlide2 = $slides2.value[idx + -dif]
+  const $prevSlideImg2 = $prevSlide2.querySelector('.big-img')
 
 
-const getH6Title = (string: string) => {
-  const words = string.split(' ')
 
-  words[0] = `<span class="home-6__b-text home-6__b-text--small">${words[0]}</span>`
 
-  return words.join(' ')
-}
+  isAnimating.value = true
 
-const getH9Title = (string: string) => {
-  let words = string.split(' ')
-
-  words = words.map(word => {
-    if (word === 'and') {
-      return `<span class="home-9__b-text home-9__b-text--small">${word}</span>`
+  const tl = gsap.timeline({
+    onComplete: () => {
+      $prevSlide1.style.display = 'none'
+      $prevSlide2.style.display = 'none'
+      activeIdx.value = idx
+      isAnimating.value = false
     }
-
-    return word
   })
+  const ease = 'power2.inOut'
 
-  return words.join(' ')
+  const x = 100 * isNext
+
+
+  $curSlide1.style.display = 'block'
+
+  tl.to($prevSlide1,{ duration: 2,x: -x + '%',ease },0)
+  tl.to($prevSlideImg1,{ duration: 2,x: x + '%',scale: 1.2,ease },0)
+  tl.fromTo($curSlide1,{ x: x + '%' },{ duration: 2,x: '0%',ease },0)
+  tl.fromTo($curSlideImg1,{ x: -x + '%',scale: 1.2 },{ duration: 2,x: '0%',scale: 1,ease },0)
+
+
+  $curSlide2.style.display = 'block'
+  tl.to($prevSlide2,{ duration: 2,x: -x + '%',ease },0)
+  tl.to($prevSlideImg2,{ duration: 2,x: x + '%',scale: 1.2,ease },0)
+  tl.fromTo($curSlide2,{ x: x + '%' },{ duration: 2,x: '0%',ease },0)
+  tl.fromTo($curSlideImg2,{ x: -x + '%',scale: 1.2 },{ duration: 2,x: '0%',scale: 1,ease },0)
 }
+
 
 </script>
 
@@ -47,49 +103,47 @@ const getH9Title = (string: string) => {
     <section class="section section--nm home-1">
       <div class="container home-1__wrapper">
         <div class="grid home-1__top-block">
-          <div
-            class="big-img home-1__elements-left"
-            style="background-image: url('/images/home/1.jpg')"
-          ></div>
-          <div class="home-1__elements-right">
+          <div class="home-1__elements-left">
             <div
-              class="big-img home-1__right-image"
-              style="background-image: url('/images/home/2.jpg')"
-            ></div>
+              v-for="(img,idx) in sliderImages"
+              ref="$slides1"
+              :key="img._uid"
+              class=" home-1__img-wrapper"
+              :class="activeIdx === idx && 'active'"
+            >
+              <div
+                class="big-img"
+                :style="`background-image: url('${img.img_1}')`"
+              ></div>
+            </div>
+          </div>
+          <div class="home-1__elements-right">
+            <div class="home-1__right-image">
+              <div
+                v-for="(img,idx) in sliderImages"
+                :key="img._uid"
+                ref="$slides2"
+                class=" home-1__img-wrapper"
+                :class="activeIdx === idx && 'active'"
+              >
+                <div
+                  class="big-img"
+                  :style="`background-image: url('${img.img_2}')`"
+                ></div>
+              </div>
+            </div>
             <ul class="grid home-1__small-buildings">
-              <li class="home-1__li home-1__li--active">
-                <p class="home-1__number">001</p>
+              <li
+                v-for="(img,idx) in sliderImages"
+                :key="img._uid"
+                class="home-1__li"
+                :class="idx === activeIdx && 'home-1__li--active'"
+                @click="onSliderNavigationClick(idx)"
+              >
+                <p class="home-1__number">00{{ idx + 1 }}</p>
                 <div
                   class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/3.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">002</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/4.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">003</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/5.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">004</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/6.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">005</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/7.jpg')"
+                  :style="`background-image: url('${img.img_1}')`"
                 ></div>
               </li>
             </ul>
