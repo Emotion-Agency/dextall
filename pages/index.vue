@@ -218,7 +218,7 @@ const getH9Title = (string: string) => {
             {{ story.home_screen_5[0].Featured_news[0].main_text }}
           </p>
           <CircleButton
-            tag="a"
+            :tag="story.home_screen_5[0].Featured_news[0].button[0].link.linktype === 'url' ? 'a' : 'nuxt-link'"
             :href="story.home_screen_5[0].Featured_news[0].button[0].link.url"
             class="home-5__btn"
           > {{ story.home_screen_5[0].Featured_news[0].button[0].text_button }}
@@ -271,7 +271,7 @@ const getH9Title = (string: string) => {
             {{ story.home_screen_7[0].main_text }}
           </p>
           <CircleButton
-            tag="NuxtLink"
+            tag="nuxt-link"
             to="/projects/"
             class="home-7__btn"
           > View all </CircleButton>

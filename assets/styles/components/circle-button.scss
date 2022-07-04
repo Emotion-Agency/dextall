@@ -2,6 +2,8 @@
   @include default;
   @include italic;
   text-transform: none;
+  display: block;
+  width: fit-content;
   font-size: vw(20);
   background-color: transparent;
   border: 2px solid var(--main);
