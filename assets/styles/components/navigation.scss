@@ -73,6 +73,9 @@
   padding-top: vw(90);
   padding-bottom: vw(20);
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: $br1) {
     padding-top: 120px;
@@ -168,8 +171,7 @@
 
 .navigation__info-block {
   grid-template-columns: repeat(8, 1fr);
-  margin-top: vh(180);
-
+  margin-top: 100px;
   @media (max-width: $br1) {
     grid-template-columns: repeat(4, 1fr);
     margin-top: 50px;
@@ -212,6 +214,7 @@
 
 .navigation__info-link {
   @include default;
+  background-color: transparent;
   transition: color 0.5s $easing;
 
   display: block;
