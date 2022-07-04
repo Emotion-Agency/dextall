@@ -14,11 +14,15 @@
 
 .internal-news-2__filter {
   display: flex;
+  height: fit-content;
 
   @media (min-width: $br1) {
     @include col(1, 1);
     flex-direction: column;
     gap: vw(15);
+    position: sticky;
+    transition: top 0.5s ease;
+    top: calc(var(--nav-height) + 20px);
   }
 
   @media (max-width: $br1) {

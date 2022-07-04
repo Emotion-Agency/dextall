@@ -2,6 +2,7 @@ import { raf } from '@/scripts/utils/ea'
 
 export default class NavbarPos {
   $sc = document.querySelector('#scroll-container')
+  $navbar = document.querySelector('.navbar')
   hovered = false
 
   constructor() {
@@ -53,11 +54,17 @@ export default class NavbarPos {
   }
 
   addVisibility() {
+    document.body.style.setProperty(
+      '--nav-height',
+      this.$navbar.getBoundingClientRect().height + 'px'
+    )
     document.body.classList.remove('nav-hidden')
     document.removeEventListener('mousemove', this.mouseFunc)
   }
 
   removeVisibility() {
+    document.body.style.setProperty('--nav-height', '0px')
+
     document.body.classList.add('nav-hidden')
     document.addEventListener('mousemove', this.mouseFunc)
   }
