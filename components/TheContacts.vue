@@ -8,8 +8,10 @@
       @click="close"
     ></div>
     <div class="contacts__content">
+      <div class="contacts__line-wrapper">
 
-      <div class="contacts__line"></div>
+        <div class="contacts__line"></div>
+      </div>
       <div class="container contacts__window">
         <button
           class="contacts__close-btn"

@@ -23,7 +23,7 @@ export const useContacts = () => {
   onMounted(() => {
     $contacts.value = document.querySelector('.contacts')
     $content.value = document.querySelector('.contacts__content')
-    $grabBtn.value = document.querySelector('.contacts__line')
+    $grabBtn.value = document.querySelector('.contacts__line-wrapper')
 
     onMouseMove = e => {
       let y

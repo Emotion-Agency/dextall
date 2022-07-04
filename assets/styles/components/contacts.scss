@@ -31,13 +31,19 @@
   transition: opacity 1s $easing;
 }
 
+.contacts__line-wrapper {
+  height: 24px;
+  cursor: row-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
 .contacts__line {
   width: vw(53);
   height: 4px;
   background-color: var(--bg);
-  z-index: 1;
-  cursor: row-resize;
-
   @media (max-width: $br1) {
     width: 53px;
   }
@@ -54,7 +60,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
   @media (max-width: $br1) {
     height: 90%;
   }
