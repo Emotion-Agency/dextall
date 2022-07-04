@@ -11,7 +11,7 @@ const tag = computed(() => {
   if (props.tag === 'nuxt-link') {
     return resolveComponent('NuxtLink')
   }
-  else return props.tag
+  else return props.tag ?? 'button'
 })
 
 const to = props.tag === 'nuxt-link' ? props.href : undefined

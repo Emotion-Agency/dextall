@@ -1,8 +1,51 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { keysGenerator } from '~/scripts/utils/ea';
 useTransition()
 useObserver('.section')
 
+const images = [
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/2.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/3.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/4.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/5.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/2.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/3.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/4.jpg'
+  },
+  {
+    _uid: keysGenerator(8),
+    filename: '/images/projects/project/5.jpg'
+  }
+
+]
+
+onMounted(async () => {
+  const { Carousel } = await import('~/scripts/Carousel')
+
+  const carousel = new Carousel()
+  carousel.init()
+})
 </script>
 
 <template>
@@ -42,40 +85,28 @@ useObserver('.section')
         <h2 class="project-3__title">Project Gallery</h2>
         <CircleButton class="project-3__btn">Full screen mode</CircleButton>
       </div>
-      <ul class="project-3__img-list">
-        <li class="project-3__li">
-          <img
-            class="project-3__img"
-            src="/images/projects/project/2.jpg"
-            alt="Building"
-          />
-          <p class="project-3__number">01</p>
-        </li>
-        <li class="project-3__li">
-          <img
-            class="project-3__img"
-            src="/images/projects/project/3.jpg"
-            alt="Building"
-          />
-          <p class="project-3__number">02</p>
-        </li>
-        <li class="project-3__li">
-          <img
-            class="project-3__img"
-            src="/images/projects/project/4.jpg"
-            alt="Building"
-          />
-          <p class="project-3__number">03</p>
-        </li>
-        <li class="project-3__li">
-          <img
-            class="project-3__img"
-            src="/images/projects/project/5.jpg"
-            alt="Building"
-          />
-          <p class="project-3__number">04</p>
-        </li>
-      </ul>
+      <div data-slider>
+        <ul
+          class="project-3__img-list"
+          data-slider-inner
+        >
+          <li
+            v-for="(img,idx) in images"
+            :key="img._uid"
+            class="project-3__li"
+            data-slide
+          >
+            <div class="project-3__img-wrapper">
+              <img
+                class="project-3__img"
+                :src="img.filename"
+                alt="Building"
+              />
+            </div>
+            <p class="project-3__number">0{{ idx + 1 }}</p>
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="section project-4">
       <div class="container project-4__wrapper">
