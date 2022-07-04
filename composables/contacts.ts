@@ -4,7 +4,7 @@ export const useContacts = () => {
   const $content = ref(null)
   const $grabBtn = ref(null)
   let onMouseDown: () => void
-  let onMouseMove: (e: MouseEvent | TouchEvent) => void
+  let onMouseMove: (e) => void
   let onMouseUp: () => void
 
   const close = () => {
@@ -26,8 +26,12 @@ export const useContacts = () => {
     $grabBtn.value = document.querySelector('.contacts__line')
 
     onMouseMove = e => {
-      const y =
-        e instanceof TouchEvent ? e.changedTouches[0].clientY : e.clientY
+      let y
+      if (e.changedTouches) {
+        y = e.changedTouches[0]?.clientY
+      } else {
+        y = e.clientY
+      }
 
       const height = window.innerHeight - y
       $content.value.style.height = height + 'px'
