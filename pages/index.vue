@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import gsap from 'gsap'
 import { useTransition } from '~/composables/transition'
 import { transformImage } from '~/scripts/utils/storyblokImage'
 import { useHomeStory } from '~~/composables/stories/home.story';
@@ -8,8 +7,6 @@ useTransition()
 useObserver('.section')
 const { getH6Title,getH9Title,story } = await useHomeStory()
 
-const activeIdx = ref(0)
-const isAnimating = ref(false)
 const $slides1 = ref(null)
 const $slides2 = ref(null)
 
@@ -42,58 +39,7 @@ const sliderImages = [
 ]
 
 
-const onSliderNavigationClick = (idx: number) => {
-  if (isAnimating.value) {
-    return
-  }
-
-  const dif = idx - activeIdx.value
-  const isNext = idx > activeIdx.value ? 1 : -1
-
-  const $curSlide1 = $slides1.value[idx]
-  const $curSlideImg1 = $curSlide1.querySelector('.big-img')
-
-  const $curSlide2 = $slides2.value[idx]
-  const $curSlideImg2 = $curSlide2.querySelector('.big-img')
-
-  const $prevSlide1 = $slides1.value[idx + -dif]
-  const $prevSlideImg1 = $prevSlide1.querySelector('.big-img')
-
-  const $prevSlide2 = $slides2.value[idx + -dif]
-  const $prevSlideImg2 = $prevSlide2.querySelector('.big-img')
-
-
-
-
-  isAnimating.value = true
-
-  const tl = gsap.timeline({
-    onComplete: () => {
-      $prevSlide1.style.display = 'none'
-      $prevSlide2.style.display = 'none'
-      activeIdx.value = idx
-      isAnimating.value = false
-    }
-  })
-  const ease = 'power2.inOut'
-
-  const x = 100 * isNext
-
-
-  $curSlide1.style.display = 'block'
-
-  tl.to($prevSlide1,{ duration: 2,x: -x + '%',ease },0)
-  tl.to($prevSlideImg1,{ duration: 2,x: x + '%',scale: 1.2,ease },0)
-  tl.fromTo($curSlide1,{ x: x + '%' },{ duration: 2,x: '0%',ease },0)
-  tl.fromTo($curSlideImg1,{ x: -x + '%',scale: 1.2 },{ duration: 2,x: '0%',scale: 1,ease },0)
-
-
-  $curSlide2.style.display = 'block'
-  tl.to($prevSlide2,{ duration: 2,x: -x + '%',ease },0)
-  tl.to($prevSlideImg2,{ duration: 2,x: x + '%',scale: 1.2,ease },0)
-  tl.fromTo($curSlide2,{ x: x + '%' },{ duration: 2,x: '0%',ease },0)
-  tl.fromTo($curSlideImg2,{ x: -x + '%',scale: 1.2 },{ duration: 2,x: '0%',scale: 1,ease },0)
-}
+const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
 
 
 </script>
