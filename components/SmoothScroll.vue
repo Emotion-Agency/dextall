@@ -30,6 +30,10 @@ onMounted(async () => {
     raf,
   })
 })
+
+onBeforeUnmount(() => {
+  window.ss && window.ss.destroy()
+})
 </script>
 
 <template>

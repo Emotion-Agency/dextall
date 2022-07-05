@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { transformImage } from '~/scripts/utils/storyblokImage'
-import { useHomeStory } from '~~/composables/stories/home.story';
+import { useHomeStory } from '~~/composables/stories/home.story'
 import { keysGenerator } from '~~/scripts/utils/ea';
 useTransition()
 useObserver('.section')
@@ -177,13 +176,11 @@ const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
             </li>
           </ul>
         </div>
-        <div class="home-3__right-block">
-          <img
-            class="home-3__img"
-            :src="transformImage(story.home_screen_3[0].image.filename)"
-            alt="Building"
-          />
-        </div>
+        <ParallaxImg
+          :src="story.home_screen_3[0].image.filename"
+          img-class="home-3__img"
+          class="home-3__right-block"
+        />
       </div>
     </section>
     <section class="section home-4">
@@ -242,22 +239,21 @@ const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
           </p>
           <CircleButton class="home-6__btn"> View more </CircleButton>
         </div>
-        <div class="home-6__image-top">
-          <img
-            class="home-6__img"
-            :src="transformImage(story.home_screen_6[0].small_image.filename)"
-            alt="Building"
-          />
-        </div>
-        <div class="home-6__image-bottom">
-          <img
-            class="home-6__img"
-            :src="transformImage(story.home_screen_6[0].big_image.filename)"
-            alt="Building"
-            data-parallax="0.1"
-            data-parallax-dir="-1"
-          />
-        </div>
+
+        <ParallaxImg
+          :src="story.home_screen_6[0].small_image.filename"
+          img-class="home-6__img"
+          class="home-6__image-top"
+        />
+
+        <ParallaxImg
+          :src="story.home_screen_6[0].big_image.filename"
+          img-class="home-6__img"
+          class="home-6__image-bottom"
+          data-parallax="0.1"
+          data-parallax-dir="-1"
+        />
+
       </div>
     </section>
     <section class="section home-7">
@@ -276,7 +272,7 @@ const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
             class="home-7__btn"
           > View all </CircleButton>
         </div>
-        <ImageList />
+        <ProjectList />
       </div>
     </section>
     <section class="section home-8">
@@ -308,22 +304,20 @@ const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
           </p>
           <CircleButton class="home-9__btn"> Read more </CircleButton>
         </div>
-        <div class="home-9__image-top">
-          <img
-            class="home-9__img"
-            :src="transformImage(story.home_screen_9[0].small_image.filename)"
-            alt="Building"
-          />
-        </div>
-        <div class="home-9__image-bottom">
-          <img
-            class="home-9__img"
-            :src="transformImage(story.home_screen_9[0].big_image.filename)"
-            alt="Building"
-            data-parallax="0.1"
-            data-parallax-dir="-1"
-          />
-        </div>
+        <ParallaxImg
+          :src="story.home_screen_9[0].small_image.filename"
+          img-class="home-9__img"
+          class="home-9__image-top"
+        />
+
+        <ParallaxImg
+          :src="story.home_screen_9[0].big_image.filename"
+          img-class="home-9__img"
+          class="home-9__image-bottom"
+          data-parallax="0.1"
+          data-parallax-dir="-1"
+        />
+
       </div>
     </section>
   </main>

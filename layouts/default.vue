@@ -29,6 +29,10 @@ onMounted(async () => {
   await parallaxInit()
 })
 
+onBeforeUnmount(() => {
+  window.parallax && window.parallax.destroy()
+})
+
 </script>
 
 <template>
