@@ -3,9 +3,14 @@
 }
 
 .news-1__wrapper {
-  height: 50vh;
-  padding-top: 20vh;
+  padding-top: 15vh;
+  padding-bottom: 8vh;
   text-align: center;
+
+  @media (min-width: $br1) {
+    padding-top: 8vw;
+    padding-bottom: 6vw;
+  }
 }
 
 .news-1__title {

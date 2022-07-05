@@ -12,6 +12,10 @@
 .news-images__li {
   @media (max-width: $br1) {
     margin-top: 40px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 
   &:nth-of-type(odd) {
