@@ -98,11 +98,11 @@ const links = [
   },
   {
     text: 'Products',
-    to: '/products'
+    to: '/products/'
   },
   {
     text: 'BIM solution',
-    to: '/bim'
+    to: '/bim/'
   },
   {
     text: 'Projects',
@@ -117,15 +117,15 @@ const links = [
 const smallLinks = [
   {
     text: 'Careers',
-    to: '/careers'
+    to: '/careers/'
   },
   {
     text: 'Education and Training',
-    to: '/library'
+    to: '/library/'
   },
   {
     text: 'About us',
-    to: '/about'
+    to: '/about/'
   }
 ]
 
