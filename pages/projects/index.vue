@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useProjectStory } from '~~/composables/stories/project.story'
+
 useTransition()
 useObserver('.section')
 
+const { story } = await useProjectStory('')
+console.log(story)
 </script>
 
 <template>

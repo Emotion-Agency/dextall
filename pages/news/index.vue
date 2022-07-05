@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+
 useTransition()
 useObserver('.section')
-
 </script>
 
 <template>

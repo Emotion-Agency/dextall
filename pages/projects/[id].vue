@@ -1,43 +1,47 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { keysGenerator } from '~/scripts/utils/ea';
+import { keysGenerator } from '~/scripts/utils/ea'
+import { useProjectStory } from '~~/composables/stories/project.story'
+
 useTransition()
 useObserver('.section')
+
+const { story } = await useProjectStory('/the-heritage-1')
+console.log(story)
 
 const images = [
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/2.jpg'
+    filename: '/images/projects/project/2.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/3.jpg'
+    filename: '/images/projects/project/3.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/4.jpg'
+    filename: '/images/projects/project/4.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/5.jpg'
+    filename: '/images/projects/project/5.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/2.jpg'
+    filename: '/images/projects/project/2.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/3.jpg'
+    filename: '/images/projects/project/3.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/4.jpg'
+    filename: '/images/projects/project/4.jpg',
   },
   {
     _uid: keysGenerator(8),
-    filename: '/images/projects/project/5.jpg'
-  }
-
+    filename: '/images/projects/project/5.jpg',
+  },
 ]
 
 onMounted(async () => {
@@ -56,16 +60,15 @@ onMounted(async () => {
     >
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">
-          <p class="project-1__text">Minimized Tenant Disruption</p>
+          <p class="project-1__text">
+            {{ story.Screen_1[0].small_text }}
+          </p>
           <h1 class="project-1__title">
-            <span class="project-1__span-title">The</span>
-            <span class="project-1__span-title"> Heritage</span>
+            {{ story.Screen_1[0].project_name }}
           </h1>
         </div>
         <p class="project-1__desc">
-          A “hybrid” renovation for 1974 building to increase comfort for the
-          tenants, reduce the buildings energy consumption, and offer a
-          transformative modern appearance
+          {{ story.Screen_1[0].project_description }}
         </p>
       </div>
     </section>
@@ -73,9 +76,9 @@ onMounted(async () => {
       <div class="container project-2__wrapper">
         <div class="project-2__line"></div>
         <p class="project-2__text">
-          Dextall’s engineering team developed an innovative solution to integrate
-          its prefabricated walls with areas of the façade that will feature EIFS
-          cladding
+          Dextall’s engineering team developed an innovative solution to
+          integrate its prefabricated walls with areas of the façade that will
+          feature EIFS cladding
         </p>
         <div class="project-2__line"></div>
       </div>
@@ -86,22 +89,15 @@ onMounted(async () => {
         <CircleButton class="project-3__btn">Full screen mode</CircleButton>
       </div>
       <div data-slider>
-        <ul
-          class="project-3__img-list"
-          data-slider-inner
-        >
+        <ul class="project-3__img-list" data-slider-inner>
           <li
-            v-for="(img,idx) in images"
+            v-for="(img, idx) in images"
             :key="img._uid"
             class="project-3__li"
             data-slide
           >
             <div class="project-3__img-wrapper">
-              <img
-                class="project-3__img"
-                :src="img.filename"
-                alt="Building"
-              />
+              <img class="project-3__img" :src="img.filename" alt="Building" />
             </div>
             <p class="project-3__number">0{{ idx + 1 }}</p>
           </li>
@@ -123,9 +119,9 @@ onMounted(async () => {
             />
             <p class="project-4__desc">
               Almost five decades later, the building is undergoing significant
-              renovations which will increase comfort for the tenants, reduce the
-              buildings energy consumption, and offer a transformative modern
-              appearance
+              renovations which will increase comfort for the tenants, reduce
+              the buildings energy consumption, and offer a transformative
+              modern appearance
             </p>
           </div>
           <div class="project-4__right-block">
@@ -173,10 +169,7 @@ onMounted(async () => {
     </section>
     <section class="section project-6">
       <div class="container project-6__wrapper">
-        <TheTicker
-          text="project 1"
-          class="project-6__ticker"
-        />
+        <TheTicker text="project 1" class="project-6__ticker" />
         <div class="grid project-6__content">
           <ul class="project-6__list">
             <li class="project-6__li">
@@ -239,9 +232,12 @@ onMounted(async () => {
     <section class="section project-7">
       <div class="container grid project-7__wrapper">
         <div class="project-7__text-block">
-          <h2 class="project-7__big-text">Interesting facts about the project</h2>
+          <h2 class="project-7__big-text">
+            Interesting facts about the project
+          </h2>
           <p class="project-7__desc">
-            This building is entered in The Empire Building Challenge competition
+            This building is entered in The Empire Building Challenge
+            competition
           </p>
         </div>
         <div class="project-7__image-top">
