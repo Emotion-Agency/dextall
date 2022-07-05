@@ -54,4 +54,17 @@
   @media (max-width: $br1) {
     margin-top: 42px;
   }
+
+  img {
+    display: block;
+    max-width: 100%;
+
+    @media (min-width: $br1) {
+      height: vw(80);
+    }
+
+    @media (max-width: $br1) {
+      height: 80px;
+    }
+  }
 }
