@@ -4,9 +4,10 @@ export const useSlider = ($slides1, $slides2) => {
   const isAnimating = ref(false)
   const activeIdx = ref(0)
   const timer = ref(0)
+  let interval
 
   onMounted(() => {
-    setInterval(() => {
+    interval = setInterval(() => {
       if (isAnimating.value) {
         timer.value = 0
         return
@@ -81,6 +82,10 @@ export const useSlider = ($slides1, $slides2) => {
       0
     )
   }
+
+  onBeforeUnmount(() => {
+    clearInterval(interval)
+  })
 
   return { onSliderNavigationClick, activeIdx, timer }
 }
