@@ -1,7 +1,21 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useNewsStories } from '~/composables/stories/news.story'
 useTransition()
 useObserver('.section')
+
+const { stories } = await useNewsStories()
+
+
+const slug = useRoute().params.id
+
+
+const story = stories.value.find(story => story.slug === slug).content
+
+
+const filteredStories = computed(() => {
+  return stories.value.filter(story => story.slug !== slug)
+})
 
 </script>
 
@@ -10,8 +24,7 @@ useObserver('.section')
     <section class="section section--nm internal-news-1">
       <div class="container internal-news-1__wrapper">
         <h1 class="internal-news-1__title">
-          Dextall’s latest Forbes magazine feature on our construction
-          innovation
+          {{ story.title }}
         </h1>
       </div>
       <div
@@ -84,7 +97,18 @@ useObserver('.section')
       <div class="container internal-news-3__wrapper">
         <h2 class="internal-news-3__title">Other news</h2>
         <div class="internal-news-3__images">
-          <NewsImages />
+
+          <ul class="grid news-images">
+            <NewsItem
+              v-for="item in filteredStories"
+              :key="item._uid"
+              :date="item.first_published_at || item.created_at"
+              :name="item.name"
+              :link="'/news/' + item.slug + '/'"
+              :img="item.content.big_image.filename"
+              description="test"
+            />
+          </ul>
         </div>
       </div>
     </section>
