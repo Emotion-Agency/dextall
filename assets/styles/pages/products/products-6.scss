@@ -39,14 +39,14 @@
   max-width: vw(780);
   margin-top: vw(40);
 
-  &:last-of-type {
-    max-width: 100%;
-    margin-top: vw(12);
+  // &:last-of-type {
+  //   max-width: 100%;
+  //   margin-top: vw(12);
 
-    @media (max-width: $br1) {
-      margin-top: 16px;
-    }
-  }
+  //   @media (max-width: $br1) {
+  //     margin-top: 16px;
+  //   }
+  // }
 
   @media (max-width: $br1) {
     max-width: 80%;

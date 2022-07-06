@@ -15,7 +15,7 @@ console.log(story)
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
         <img
-          v-for="(_,idx) in 4"
+          v-for="(_, idx) in 4"
           :key="idx"
           :data-parallax="(4 - idx) * 0.08"
           :data-parallax-dir="-1"
@@ -23,7 +23,6 @@ console.log(story)
           :src="`/images/products/${idx + 1}.jpg`"
           alt="Building"
         />
-
         <div class="products-1__text-block">
           <h1 class="products-1__title">
             <span class="products-1__span-title">D Wall</span>
@@ -31,7 +30,7 @@ console.log(story)
             <span class="products-1__span-title"> Bearing System</span>
           </h1>
           <p class="products-1__desc">
-            Our products are designed for new and retrofit construction
+            {{ story.screen_1[0].description }}
           </p>
         </div>
         <CircleButton class="products-1__btn"> Show products </CircleButton>
@@ -45,90 +44,103 @@ console.log(story)
           <span class="products-2__big-text"> CERTIFIED</span>
         </h2>
         <p class="products-2__desc">
-          Dextal’s proprietary unitized exterior prefab walls feature prime
-          components engineered to meet or exceed all code compliance
-          requirements. Our exclusive innovative design and process technology
-          slashes costs to make projects affordable
+          {{ story.screen_2[0].description }}
         </p>
         <FloatingCard
-          v-for="(_,idx) in 4"
+          v-for="(_, idx) in 4"
           :key="idx"
           :parallax="4 - idx"
           class="home-4__floating-cards"
         >
           <div class="products-2__text-wrapper">
-            <h3 class="products-2__title-cards">Reduce Onsite Waste</h3>
-            <p class="products-2__medium-text">From 30%+ to less than 5% ↓</p>
-            <p class="products-2__small-text">Lower Cost and Carbon Footprint</p>
+            <h3 class="products-2__title-cards">
+              {{ story.screen_2[0].cards[0].H1 }}
+            </h3>
+            <p class="products-2__medium-text">
+              {{ story.screen_2[0].cards[0].H2 }}
+            </p>
+            <p class="products-2__small-text">
+              {{ story.screen_2[0].cards[0].H3 }}
+            </p>
           </div>
         </FloatingCard>
-
-
       </div>
     </section>
     <section class="section products-3">
       <div class="container products-3__wrapper">
-        <p class="products-3__commentary">Simple, efficient, optimized</p>
+        <p class="products-3__commentary">{{ story.screen_3[0].small_text }}</p>
         <div class="products-3__line"></div>
       </div>
-
       <TheTicker
-        text="System Makeup System Makeup"
+        :text="story.screen_3[0].moving_title"
         class="products-3__ticker"
       />
       <div class="container products-3__wrapper">
-
         <div class="grid products-3__content">
           <ul class="products-3__list">
             <li class="products-3__li">
               <div class="products-3__line"></div>
               <div class="products-3__text-wrapper">
-                <p class="products-3__number">01</p>
+                <p class="products-3__number">
+                  {{ story.screen_3[0].panel_compound[0].number }}
+                </p>
                 <p class="products-3__text">
-                  Non Combustible stone wool insulation
+                  {{ story.screen_3[0].panel_compound[0].description }}
                 </p>
               </div>
             </li>
             <li class="products-3__li">
               <div class="products-3__line"></div>
               <div class="products-3__text-wrapper">
-                <p class="products-3__number">02</p>
+                <p class="products-3__number">
+                  {{ story.screen_3[0].panel_compound[1].number }}
+                </p>
                 <p class="products-3__text">
-                  High thermal and acoustical performance steel reinforced polymer
-                  windows
+                  {{ story.screen_3[0].panel_compound[1].description }}
                 </p>
               </div>
             </li>
             <li class="products-3__li">
               <div class="products-3__line"></div>
               <div class="products-3__text-wrapper">
-                <p class="products-3__number">03</p>
-                <p class="products-3__text">Rain Screen Cladding</p>
-              </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">04</p>
-                <p class="products-3__text">Sheet metal vapor barrier</p>
-              </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">05</p>
+                <p class="products-3__number">
+                  {{ story.screen_3[0].panel_compound[2].number }}
+                </p>
                 <p class="products-3__text">
-                  High performance gaskets for a dry connection
+                  {{ story.screen_3[0].panel_compound[2].description }}
                 </p>
               </div>
             </li>
             <li class="products-3__li">
               <div class="products-3__line"></div>
               <div class="products-3__text-wrapper">
-                <p class="products-3__number">06</p>
+                <p class="products-3__number">
+                  {{ story.screen_3[0].panel_compound[3].number }}
+                </p>
                 <p class="products-3__text">
-                  Non-combustible vapor permeable sheathing, includes weather and
-                  water protection layer
+                  {{ story.screen_3[0].panel_compound[3].description }}
+                </p>
+              </div>
+            </li>
+            <li class="products-3__li">
+              <div class="products-3__line"></div>
+              <div class="products-3__text-wrapper">
+                <p class="products-3__number">
+                  {{ story.screen_3[0].panel_compound[4].number }}
+                </p>
+                <p class="products-3__text">
+                  {{ story.screen_3[0].panel_compound[4].description }}
+                </p>
+              </div>
+            </li>
+            <li class="products-3__li">
+              <div class="products-3__line"></div>
+              <div class="products-3__text-wrapper">
+                <p class="products-3__number">
+                  {{ story.screen_3[0].panel_compound[5].number }}
+                </p>
+                <p class="products-3__text">
+                  {{ story.screen_3[0].panel_compound[5].description }}
                 </p>
               </div>
               <div class="products-3__line"></div>
@@ -161,16 +173,18 @@ console.log(story)
           <li class="products-4__li">
             <div class="products-4__line"></div>
             <div class="grid products-4__all-content">
-              <p class="products-4__number">001</p>
-              <h3 class="products-4__title">D Wall — New Construction</h3>
+              <p class="products-4__number">
+                {{ story.screen_4[0].product_1[0].number }}
+              </p>
+              <h3 class="products-4__title">
+                {{ story.screen_4[0].product_1[0].title }}
+              </h3>
               <div class="products-4__content-list">
-                <h4 class="products-4__content-title">D Wall 2000</h4>
+                <h4 class="products-4__content-title">
+                  {{ story.screen_4[0].product_1[0].small_title }}
+                </h4>
                 <p class="products-4__content-desc">
-                  The Dextall light gauge metal-framed unitized prefab panel
-                  system features fully-integrated, factory-installed window and
-                  cladding components, including non-combustible core insulation.
-                  It is a simple and versatile product that delivers
-                  high-performance façades that are both water- and airtight
+                  {{ story.screen_4[0].product_1[0].main_text }}
                 </p>
                 <div class="products-4__line"></div>
                 <div class="products-4__img-wrapper">
@@ -181,55 +195,66 @@ console.log(story)
                   />
                 </div>
                 <p class="products-4__img-text">
-                  The Dextall System adapts to narrow or tight-lot vertical
-                  projects
+                  {{ story.screen_4[0].product_1[0].short_text }}
                 </p>
                 <div class="products-4__line"></div>
                 <ul class="products-4__upper-text-list">
                   <li class="products-4__upper-text-li">
-                    <h4 class="products-4__upper-title">Benefits</h4>
+                    <h4 class="products-4__upper-title">
+                      {{ story.screen_4[0].product_1[0].benefits_title }}
+                    </h4>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
                     <p class="products-4__upper-text">
-                      DESIGN MATCHING CLIENT EXPECTATIONS
+                      {{ story.screen_4[0].product_1[0].benefits_1 }}
                     </p>
-                  </li>
-                  <li class="products-4__upper-text-li">
-                    <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">WATERTIGHT</p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
                     <p class="products-4__upper-text">
-                      STRUCTURALLY SOUND PANELS
+                      {{ story.screen_4[0].product_1[0].benefits_2 }}
                     </p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">HIGH PERFORMANCE</p>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_1[0].benefits_3 }}
+                    </p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">AIRTIGHT</p>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_1[0].benefits_4 }}
+                    </p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">SOUND-PROOF</p>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_1[0].benefits_5 }}
+                    </p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">FIRE RESISTANT</p>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_1[0].benefits_6 }}
+                    </p>
+                  </li>
+                  <li class="products-4__upper-text-li">
+                    <div class="products-4__line"></div>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_1[0].benefits_7 }}
+                    </p>
                     <div class="products-4__line"></div>
                   </li>
                 </ul>
-                <h4 class="products-4__content-title products-4__content-title--1">
-                  On site simplicity
+                <h4
+                  class="products-4__content-title products-4__content-title--1"
+                >
+                  {{ story.screen_4[0].product_1[0].title_1 }}
                 </h4>
                 <p class="products-4__content-desc">
-                  We eliminate the need to work outside the building once the
-                  panels are in place. Scaffolds or other suspended platforms are
-                  unnecessary
+                  {{ story.screen_4[0].product_1[0].main_text1 }}
                 </p>
                 <div class="products-4__line"></div>
               </div>
@@ -238,15 +263,18 @@ console.log(story)
           <li class="products-4__li">
             <div class="products-4__line"></div>
             <div class="grid products-4__all-content">
-              <p class="products-4__number">002</p>
-              <h3 class="products-4__title">D Wall — Retrofit</h3>
+              <p class="products-4__number">
+                {{ story.screen_4[0].product_2[0].number }}
+              </p>
+              <h3 class="products-4__title">
+                {{ story.screen_4[0].product_2[0].title }}
+              </h3>
               <div class="products-4__content-list">
-                <h4 class="products-4__content-title">A new path to retrofit</h4>
+                <h4 class="products-4__content-title">
+                  {{ story.screen_4[0].product_2[0].small_title }}
+                </h4>
                 <p class="products-4__content-desc">
-                  Dextall wall systems are delivered complete with windows,
-                  exterior cladding, and the ability to integrate mechanical
-                  systems. Result: reduced on-site labor and construction
-                  timelines.
+                  {{ story.screen_4[0].product_2[0].main_text }}
                 </p>
                 <div class="products-4__line"></div>
                 <div class="products-4__img-wrapper">
@@ -259,47 +287,55 @@ console.log(story)
                 <div class="products-4__line"></div>
                 <ul class="products-4__upper-text-list">
                   <li class="products-4__upper-text-li">
-                    <h4 class="products-4__upper-title">Benefits</h4>
-                  </li>
-                  <li class="products-4__upper-text-li">
-                    <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">Scalable, Cost-Effective</p>
+                    <h4 class="products-4__upper-title">
+                      {{ story.screen_4[0].product_2[0].benefits_title }}
+                    </h4>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
                     <p class="products-4__upper-text">
-                      High-Performance, Net Zero or Passive House ready
+                      {{ story.screen_4[0].product_2[0].benefits_1 }}
                     </p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">Low-to-no Maintenance</p>
-                  </li>
-                  <li class="products-4__upper-text-li">
-                    <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">Aesthetic excellence</p>
-                  </li>
-                  <li class="products-4__upper-text-li">
-                    <div class="products-4__line"></div>
-                    <p class="products-4__upper-text">Proven precision quality</p>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_2[0].benefits_2 }}
+                    </p>
                   </li>
                   <li class="products-4__upper-text-li">
                     <div class="products-4__line"></div>
                     <p class="products-4__upper-text">
-                      Scaffold-free installation, and minimal tenant disturbance
+                      {{ story.screen_4[0].product_2[0].benefits_3 }}
+                    </p>
+                  </li>
+                  <li class="products-4__upper-text-li">
+                    <div class="products-4__line"></div>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_2[0].benefits_4 }}
+                    </p>
+                  </li>
+                  <li class="products-4__upper-text-li">
+                    <div class="products-4__line"></div>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_2[0].benefits_5 }}
+                    </p>
+                  </li>
+                  <li class="products-4__upper-text-li">
+                    <div class="products-4__line"></div>
+                    <p class="products-4__upper-text">
+                      {{ story.screen_4[0].product_2[0].benefits_6 }}
                     </p>
                     <div class="products-4__line"></div>
                   </li>
                 </ul>
                 <p class="products-4__text">
-                  Dextall team members have decades of extensive knowledge of
-                  prefabricated exteriors for new and retrofit applications.
-                  Beyond our team of engineers, drafters, and support staff,
-                  Dextall works with other engineering and consulting partners
-                  specializing in NYC’s rehab work.
+                  {{ story.screen_4[0].product_2[0].main_text1 }}
                 </p>
                 <div class="products-4__line"></div>
-                <CircleButton class="products-4__btn">Pilot mock up program</CircleButton>
+                <CircleButton class="products-4__btn"
+                  >Pilot mock up program</CircleButton
+                >
               </div>
             </div>
           </li>
@@ -318,20 +354,22 @@ console.log(story)
       <div class="container products-6__wrapper">
         <div class="products-6__line"></div>
         <div class="products-6__main-block">
-          <h3 class="products-6__title">NYSERDA Approved</h3>
+          <h3 class="products-6__title">
+            {{ story.screen_5[0].news_section[0].title }}
+          </h3>
           <p class="products-6__desc">
-            As a NYSERDA approved and qualified Component Manufacturer, Dextall
-            proves to be a pioneer in the prefabricated wall system industry and a
-            viable solution for New York State Rehabilitation initiatives.
+            {{ story.screen_5[0].news_section[0].main_text }}
           </p>
-          <p class="products-6__desc">
+          <!-- <p class="products-6__desc">
             *Overall building energy spending IS LOWER with Dextall's products.
           </p>
           <p class="products-6__desc">
-            *More durable exteriors means passing envelope inspections without the
-            need to spend on ongoing maintenance work.
-          </p>
-          <CircleButton class="products-6__btn"> Read more </CircleButton>
+            *More durable exteriors means passing envelope inspections without
+            the need to spend on ongoing maintenance work.
+          </p> -->
+          <CircleButton class="products-6__btn">
+            {{ story.screen_5[0].news_section[0].button[0].text_button }}
+          </CircleButton>
         </div>
         <div class="products-6__line"></div>
       </div>
