@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useProductsStory } from '~/composables/stories/products.story'
+
 useTransition()
 useObserver('.section')
 
+const { story } = await useProductsStory()
+
+console.log(story)
 </script>
 
 <template>
