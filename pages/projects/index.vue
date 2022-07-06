@@ -7,7 +7,7 @@ useObserver('.section')
 
 const { stories } = await useProjectsStories()
 
-console.log(stories)
+console.log(stories.value)
 </script>
 
 <template>
@@ -34,10 +34,10 @@ console.log(stories)
             <ProjectsTicker
               class="projects-2__ticker"
               :text="project.name"
-            ></ProjectsTicker>
+            />
             <div class="container projects-2__wrapper">
               <p class="projects-2__text">
-                {{ project.content.Screen_1[0].description }}
+                {{ project.content?.Screen_1 && project.content.Screen_1[0].description }}
               </p>
               <div class="grid projects-2__img-wrapper">
                 <img
@@ -81,4 +81,5 @@ console.log(stories)
       </ul>
     </section>
   </main>
+  test
 </template>

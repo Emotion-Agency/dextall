@@ -7,12 +7,14 @@ interface iProps {
   imgClass?: string
   transform?: boolean
   withBorderRadius?: boolean
+  scale: number
 }
 
 
 const props = withDefaults(defineProps<iProps>(),{
   transform: true,
-  withBorderRadius: true
+  withBorderRadius: true,
+  scale: 1.07
 })
 
 
@@ -34,7 +36,7 @@ const src = props.transform ? transformImage(props.src) : props.src
         :src="src"
         :alt="alt"
         data-parallax="0.06"
-        data-scale="1.07"
+        :data-scale="scale"
       />
     </div>
   </div>
