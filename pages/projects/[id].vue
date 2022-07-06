@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { keysGenerator } from '~/scripts/utils/ea'
-import { useProjectStory } from '~~/composables/stories/project.story'
+import { useProjectsStories } from '~/composables/stories/projects.story'
 
 useTransition()
 useObserver('.section')
 
-const { story } = await useProjectStory('/the-heritage-1')
-console.log(story)
+const { stories } = await useProjectsStories()
+
+const slug = useRoute().params.id
+
+
+const story = stories.value.find(story => story.slug === slug).content
+
 
 const images = [
   {
@@ -89,15 +94,22 @@ onMounted(async () => {
         <CircleButton class="project-3__btn">Full screen mode</CircleButton>
       </div>
       <div data-slider>
-        <ul class="project-3__img-list" data-slider-inner>
+        <ul
+          class="project-3__img-list"
+          data-slider-inner
+        >
           <li
-            v-for="(img, idx) in images"
+            v-for="(img,idx) in images"
             :key="img._uid"
             class="project-3__li"
             data-slide
           >
             <div class="project-3__img-wrapper">
-              <img class="project-3__img" :src="img.filename" alt="Building" />
+              <img
+                class="project-3__img"
+                :src="img.filename"
+                alt="Building"
+              />
             </div>
             <p class="project-3__number">0{{ idx + 1 }}</p>
           </li>
@@ -168,8 +180,11 @@ onMounted(async () => {
       </div>
     </section>
     <section class="section project-6">
+      <TheTicker
+        text="project 1"
+        class="project-6__ticker"
+      />
       <div class="container project-6__wrapper">
-        <TheTicker text="project 1" class="project-6__ticker" />
         <div class="grid project-6__content">
           <ul class="project-6__list">
             <li class="project-6__li">

@@ -2,15 +2,10 @@
   padding-top: 0;
 }
 
-.projects-2__ticker {
+.project-item {
   margin-top: vw(200);
-
   @media (max-width: $br1) {
     margin-top: 100px;
-  }
-
-  &:first-of-type {
-    margin-top: 0;
   }
 }
 
@@ -59,7 +54,7 @@
   }
 }
 
-.projects-2__link {
+.projects-2__img {
   &:nth-of-type(1) {
     @media (min-width: $br1) {
       @include col(1, 3);
