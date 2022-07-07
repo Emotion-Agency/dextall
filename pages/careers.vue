@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useCareersStory } from '~/composables/stories/careers.story'
+
 useTransition()
 useObserver('.section')
 
-const { filters,onFilter,filteredVacancies } = useVacancies()
+const { filters, onFilter, filteredVacancies } = useVacancies()
+const { story } = await useCareersStory()
 
+console.log(story)
 </script>
 
 <template>
@@ -12,11 +16,10 @@ const { filters,onFilter,filteredVacancies } = useVacancies()
     <section class="section section--nm careers-1">
       <div class="container careers-1__wrapper">
         <div class="careers-1__text-block">
-          <h1 class="careers-1__title">Careers</h1>
+          <h1 class="careers-1__title">{{ story.Screen_1[0].title }}</h1>
         </div>
         <p class="careers-1__desc">
-          Be part of decarbonizing our world. Set The New Normal. Work in a cool
-          team
+          {{ story.Screen_1[0].description }}
         </p>
       </div>
     </section>
@@ -27,22 +30,19 @@ const { filters,onFilter,filteredVacancies } = useVacancies()
       ></div>
       <div class="container grid careers-2__wrapper">
         <h2 class="careers-2__title">
-          We are always on the lookout for talented people that use their skills
-          for the greater good
+          {{ story.Screen_1[0].uppercase_description }}
         </h2>
       </div>
     </section>
     <section class="section careers-3">
       <div class="container grid careers-3__wrapper">
         <div class="careers-3__text-block">
-          <h2 class="careers-3__big-text">Our mission is clear:</h2>
+          <h2 class="careers-3__big-text">{{ story.Screen_2[0].title }}</h2>
           <p class="careers-3__desc">
-            “To accelerate decarbonization of the environment TODAY by bringing
-            affordable and efficient solutions to build sustainably”
+            {{ story.Screen_2[0].description }}
           </p>
           <p class="careers-3__small-text">
-            To fight climate change, we must act urgently. To achieve that, we
-            hire only the best!
+            {{ story.Screen_2[0].small_text }}
           </p>
         </div>
         <div class="careers-3__image-top">
@@ -65,13 +65,14 @@ const { filters,onFilter,filteredVacancies } = useVacancies()
       <div class="container careers-4__wrapper">
         <div class="careers-4__line"></div>
         <div class="careers-4__text-wrapper">
-          <h3 class="careers-4__title">We strive to always raise the bar</h3>
+          <h3 class="careers-4__title">{{ story.Screen_3[0].title }}</h3>
           <p class="careers-4__text">
-            Dextall’s leaders hire other leaders and think “I must hire the
+            {{ story.Screen_3[0].main_text }}
+            <!-- Dextall’s leaders hire other leaders and think “I must hire the
             candidate that will most likely outperform me”.
             <br />
             <br />
-            Elevating our mission is the primary goal of each team member
+            Elevating our mission is the primary goal of each team member -->
           </p>
         </div>
         <div class="careers-4__line"></div>
@@ -80,11 +81,9 @@ const { filters,onFilter,filteredVacancies } = useVacancies()
     <section class="section careers-5">
       <div class="container careers-5__wrapper">
         <div class="careers-5__title-wrapper">
-          <h2 class="careers-5__title">Are you ready to change the world?</h2>
+          <h2 class="careers-5__title">{{ story.Screen_4[0].title }}</h2>
           <p class="careers-5__desc">
-            If you’re interested in working with us check out below our current
-            openings. If you don’t see an exact fit but you feel inspired by our
-            work drop us a note, portfolio link, or résumé
+            {{ story.Screen_4[0].description }}
           </p>
         </div>
         <ul class="careers-5__filter-list">
@@ -98,22 +97,17 @@ const { filters,onFilter,filteredVacancies } = useVacancies()
             <button class="careers-5__filter-name">{{ item.type }}</button>
             <span class="careers-5__filter-numbers">({{ item.length }})</span>
           </li>
-
         </ul>
         <ul class="careers-5__content-list">
-          <TransitionGroup
-            name="fade"
-            mode="out-in"
-          >
+          <TransitionGroup name="fade" mode="out-in">
             <CareerItem
-              v-for="(vacancy,idx) in filteredVacancies"
+              v-for="(vacancy, idx) in filteredVacancies"
               :key="vacancy.title"
               :title="vacancy.title"
               :text="vacancy.text"
               :idx="idx"
               :is-last="idx === filteredVacancies.length - 1"
             />
-
           </TransitionGroup>
         </ul>
       </div>
