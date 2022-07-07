@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useBimStory } from '~/composables/stories/bim.story'
+
 useTransition()
 useObserver('.section')
 
+const { story } = await useBimStory()
+
+console.log(story)
 </script>
 
 <template>
@@ -10,18 +15,18 @@ useObserver('.section')
     <section class="section section--nm bim-1">
       <div class="container bim-1__wrapper">
         <div class="bim-1__text-block">
-          <p class="bim-1__top-text">Simple, efficient, optimized</p>
+          <p class="bim-1__top-text">{{ story.Screen_1[0].short_text }}</p>
           <TheTicker
             text="BIM Solution: Dextall Studio"
             class="bim-1__ticker"
           />
           <p class="bim-1__bottom-text">
-            Technology platform that bridges the gap between the design of
-            prefabricated exteriors within the AEC industry and the final exterior
-            wall execution at the job site
+            {{ story.Screen_1[0].description }}
           </p>
         </div>
-        <CircleButton class="bim-1__btn"> Get access </CircleButton>
+        <CircleButton class="bim-1__btn">
+          {{ story.Screen_1[0].button[0].text_button }}
+        </CircleButton>
       </div>
     </section>
     <section class="section bim-2">
@@ -34,14 +39,14 @@ useObserver('.section')
         </h2>
         <div class="grid bim-2__content">
           <p class="bim-2__text">
-            Our Platform offers optimized, end-to-end architectural, automated
-            design and engineering review process
+            {{ story.Screen_2[0].left_text }}
           </p>
           <p class="bim-2__text">
-            Get access to a Digital Library of templated, realistic detailed
-            facade design, renderings and more
+            {{ story.Screen_2[0].right_text }}
           </p>
-          <TextButton class="bim-2__btn">Get access</TextButton>
+          <TextButton class="bim-2__btn">{{
+            story.Screen_2[0].button[0].text_button
+          }}</TextButton>
         </div>
       </div>
       <div
@@ -60,35 +65,37 @@ useObserver('.section')
           <li class="bim-3__li">
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              Software optimization algorithm reduces material waste factor by 30%
+              {{ story.Screen_3[0].benefits_list[0].benefit_1 }}
             </p>
           </li>
           <li class="bim-3__li">
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              Exterior system optimized for architectural Revit models
+              {{ story.Screen_3[0].benefits_list[0].benefit_2 }}
             </p>
           </li>
           <li class="bim-3__li">
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              Realistic and detailed façade design & Renderings
+              {{ story.Screen_3[0].benefits_list[0].benefit_3 }}
             </p>
           </li>
           <li class="bim-3__li">
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              3D high LOD wall section renderings and shop drawings
+              {{ story.Screen_3[0].benefits_list[0].benefit_4 }}
             </p>
           </li>
           <li class="bim-3__li">
             <div class="bim-3__line"></div>
-            <p class="bim-3__text">Drawings satisfy specBIM requirements</p>
+            <p class="bim-3__text">
+              {{ story.Screen_3[0].benefits_list[0].benefit_5 }}
+            </p>
           </li>
           <li class="bim-3__li">
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              Dashboard for data driven design and analytics
+              {{ story.Screen_3[0].benefits_list[0].benefit_6 }}
             </p>
             <div class="bim-3__line"></div>
           </li>
@@ -129,34 +136,49 @@ useObserver('.section')
     </section>
     <section class="section bim-4">
       <div class="container bim-4__wrapper">
-        <h2 class="bim-4__title">Results</h2>
+        <h2 class="bim-4__title">
+          {{ story.Screen_3[0].results_list_benefits[0].H1_title }}
+        </h2>
         <ul class="bim-4__list">
           <li class="bim-4__li">
             <div class="bim-4__line"></div>
             <div class="grid bim-4__content-wrapper">
               <div class="bim-4__text-wrapper">
-                <h3 class="bim-4__content-title">For Architects</h3>
+                <h3 class="bim-4__content-title">
+                  {{ story.Screen_3[0].results_list_benefits[0].point_title }}
+                </h3>
                 <p class="bim-4__content-desc">
-                  Optimize with flexibility and accuracy
+                  {{
+                    story.Screen_3[0].results_list_benefits[0].description_title
+                  }}
                 </p>
               </div>
               <ul class="bim-4__content-list">
                 <li class="bim-4__content-li">
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
-                    Less mistakes means more time to fuel your creativity
+                    {{
+                      story.Screen_3[0].results_list_benefits[0].text_point[0]
+                        .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Faster design process and real-time exterior skin cost updates
+                    {{
+                      story.Screen_3[0].results_list_benefits[0].text_point[1]
+                        .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Fully optimized to work with retrofit projects in Revit
+                    {{
+                      story.Screen_3[0].results_list_benefits[0].text_point[2]
+                        .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
@@ -168,35 +190,48 @@ useObserver('.section')
             <div class="grid bim-4__content-wrapper">
               <div class="bim-4__text-wrapper">
                 <h3 class="bim-4__content-title">
-                  For GCs and construction managers
+                  {{ story.Screen_3[0].results_list_benefits[1].point_title }}
                 </h3>
                 <p class="bim-4__content-desc">
-                  Easily obtain installation manuals and 3D high detailed
-                  renderings
+                  {{
+                    story.Screen_3[0].results_list_benefits[1].description_title
+                  }}
                 </p>
               </div>
               <ul class="bim-4__content-list">
                 <li class="bim-4__content-li">
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
-                    Less time spend installing and lower overall cost
+                    {{
+                      story.Screen_3[0].results_list_benefits[1].text_point[0]
+                        .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Less mistakes during installations
+                    {{
+                      story.Screen_3[0].results_list_benefits[1].text_point[1]
+                        .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Fully optimized to work with retrofit projects on site
+                    {{
+                      story.Screen_3[0].results_list_benefits[1].text_point[2]
+                        .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                   <p class="bim-4__about-text">
-                    Support: video chat support.<br />
-                    Education: training on plug-in options
+                    {{
+                      story.Screen_3[0].marked_list_benefits[0].uppercase_text
+                    }}
+                    <!-- Support: video chat support.<br />
+                    Education: training on plug-in options -->
                   </p>
                 </li>
               </ul>
@@ -206,17 +241,18 @@ useObserver('.section')
       </div>
     </section>
     <section class="section bim-5">
-      <div
-        class="bim-5__bg"
-        style="background-image: url('/images/bim/5.jpg')"
-      >
+      <div class="bim-5__bg" style="background-image: url('/images/bim/5.jpg')">
         <div class="container bim-5__wrapper">
           <h2 class="bim-5__title">
             <span class="bim-5__span-title">try</span>
             <span class="bim-5__span-title"> Dextall Studio</span>
           </h2>
-          <p class="bim-5__desc">Get Access Now!</p>
-          <CircleButton class="bim-5__btn">Register</CircleButton>
+          <p class="bim-5__desc">
+            {{ story.Screen_4[0].description }}
+          </p>
+          <CircleButton class="bim-5__btn">{{
+            story.Screen_4[0].button[0].text_button
+          }}</CircleButton>
         </div>
       </div>
     </section>
