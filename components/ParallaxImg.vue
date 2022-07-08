@@ -7,7 +7,7 @@ interface iProps {
   imgClass?: string
   transform?: boolean
   withBorderRadius?: boolean
-  scale: number
+  scale?: number
 }
 
 

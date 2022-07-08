@@ -47,20 +47,20 @@ console.log(story)
           {{ story.screen_2[0].description }}
         </p>
         <FloatingCard
-          v-for="(_, idx) in 4"
-          :key="idx"
-          :parallax="4 - idx"
+          v-for="(item, idx) in story.screen_2[0].cards"
+          :key="item._uid"
+          :parallax="story.screen_2[0].cards.length - idx"
           class="home-4__floating-cards"
         >
           <div class="products-2__text-wrapper">
             <h3 class="products-2__title-cards">
-              {{ story.screen_2[0].cards[0].H1 }}
+              {{ item.H1 }}
             </h3>
             <p class="products-2__medium-text">
-              {{ story.screen_2[0].cards[0].H2 }}
+              {{ item.H2 }}
             </p>
             <p class="products-2__small-text">
-              {{ story.screen_2[0].cards[0].H3 }}
+              {{ item.H3 }}
             </p>
           </div>
         </FloatingCard>
@@ -78,72 +78,24 @@ console.log(story)
       <div class="container products-3__wrapper">
         <div class="grid products-3__content">
           <ul class="products-3__list">
-            <li class="products-3__li">
+            <li
+              v-for="(item, idx) in story.screen_3[0].panel_compound"
+              :key="item._uid"
+              class="products-3__li"
+            >
               <div class="products-3__line"></div>
               <div class="products-3__text-wrapper">
                 <p class="products-3__number">
-                  {{ story.screen_3[0].panel_compound[0].number }}
+                  {{ item.number }}
                 </p>
                 <p class="products-3__text">
-                  {{ story.screen_3[0].panel_compound[0].description }}
+                  {{ item.description }}
                 </p>
               </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">
-                  {{ story.screen_3[0].panel_compound[1].number }}
-                </p>
-                <p class="products-3__text">
-                  {{ story.screen_3[0].panel_compound[1].description }}
-                </p>
-              </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">
-                  {{ story.screen_3[0].panel_compound[2].number }}
-                </p>
-                <p class="products-3__text">
-                  {{ story.screen_3[0].panel_compound[2].description }}
-                </p>
-              </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">
-                  {{ story.screen_3[0].panel_compound[3].number }}
-                </p>
-                <p class="products-3__text">
-                  {{ story.screen_3[0].panel_compound[3].description }}
-                </p>
-              </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">
-                  {{ story.screen_3[0].panel_compound[4].number }}
-                </p>
-                <p class="products-3__text">
-                  {{ story.screen_3[0].panel_compound[4].description }}
-                </p>
-              </div>
-            </li>
-            <li class="products-3__li">
-              <div class="products-3__line"></div>
-              <div class="products-3__text-wrapper">
-                <p class="products-3__number">
-                  {{ story.screen_3[0].panel_compound[5].number }}
-                </p>
-                <p class="products-3__text">
-                  {{ story.screen_3[0].panel_compound[5].description }}
-                </p>
-              </div>
-              <div class="products-3__line"></div>
+              <div
+                v-if="idx === story.screen_3[0].panel_compound.length - 1"
+                class="products-3__line"
+              ></div>
             </li>
           </ul>
           <div class="products-3__image-wrapper">

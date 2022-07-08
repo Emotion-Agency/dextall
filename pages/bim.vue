@@ -62,42 +62,20 @@ console.log(story)
           <span class="bim-3__span-title"> Benefits</span>
         </h2>
         <ul class="bim-3__list">
-          <li class="bim-3__li">
+          <!-- rewrite -->
+          <li
+            v-for="(item, idx) in story.Screen_3[0].benefits_list"
+            :key="item._uid"
+            class="bim-3__li"
+          >
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0].benefit_1 }}
+              {{ item.benefit_1 }}
             </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0].benefit_2 }}
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0].benefit_3 }}
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0].benefit_4 }}
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0].benefit_5 }}
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0].benefit_6 }}
-            </p>
-            <div class="bim-3__line"></div>
+            <div
+              v-if="idx === story.Screen_3[0].benefits_list.length - 1"
+              class="bim-3__line"
+            ></div>
           </li>
         </ul>
         <div class="bim-3__slider-wrapper">

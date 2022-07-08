@@ -88,6 +88,8 @@
   gap: vw(15);
   @include default;
   color: var(--bg);
+  padding-left: vw(30);
+  padding-right: vw(30);
 
   @media (max-width: $br1) {
     gap: 10px;
