@@ -67,7 +67,6 @@
 
 .header__li {
   margin-right: vw(40);
-  @include stroke-link;
 
   &:last-of-type {
     margin-right: 0;
@@ -75,7 +74,16 @@
 }
 
 .header__text {
+  display: block;
   @include default;
+  @include stroke-link;
+
+  &.router-link-exact-active {
+    pointer-events: none;
+    &:after {
+      width: 100% !important;
+    }
+  }
 }
 
 .header__burger {

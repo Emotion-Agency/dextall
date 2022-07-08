@@ -31,6 +31,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
     background-color: var(--main);
     transition: transform 0.6s $easing;
   }
@@ -129,20 +130,6 @@
   }
 }
 
-.navigation__li {
-  @include navigation-animation;
-  @media (min-width: $br2) {
-    &:hover {
-      &::after {
-        transform: translateY(0);
-      }
-      .navigation__link {
-        color: white;
-      }
-    }
-  }
-}
-
 .navigation__line {
   height: 2px;
   width: 100%;
@@ -154,6 +141,7 @@
   @include default;
   display: block;
   font-size: vw(48);
+  overflow: hidden;
   position: relative;
   padding-top: vw(24);
   padding-bottom: vw(24);
@@ -167,6 +155,20 @@
   @media (max-width: $br4) {
     font-size: 30px;
   }
+
+  @include navigation-animation;
+
+  &:hover,
+  &.router-link-exact-active {
+    &::after {
+      transform: translateY(0);
+    }
+    color: white;
+  }
+
+  &.router-link-exact-active {
+    pointer-events: none;
+  }
 }
 
 .navigation__info-block {
@@ -175,20 +177,6 @@
   @media (max-width: $br1) {
     grid-template-columns: repeat(4, 1fr);
     margin-top: 50px;
-  }
-}
-
-.navigation__info-li {
-  @include navigation-animation;
-  @media (min-width: $br2) {
-    &:hover {
-      &::after {
-        transform: translateY(0);
-      }
-      .navigation__info-link {
-        color: white;
-      }
-    }
   }
 }
 
@@ -216,14 +204,30 @@
   @include default;
   background-color: transparent;
   transition: color 0.5s $easing;
-
+  overflow: hidden;
   display: block;
   font-size: vw(24);
+  width: 100%;
+  height: 100%;
+  text-align: left;
   line-height: 1em;
   position: relative;
   text-transform: none;
-  margin-top: vw(20);
-  margin-bottom: vw(20);
+  padding-top: vw(20);
+  padding-bottom: vw(20);
+  @include navigation-animation;
+
+  &:hover,
+  &.router-link-exact-active {
+    &::after {
+      transform: translateY(0);
+    }
+    color: white;
+  }
+
+  &.router-link-exact-active {
+    pointer-events: none;
+  }
 
   @media (max-width: $br1) {
     font-size: size(24, 15);
