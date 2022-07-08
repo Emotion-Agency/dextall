@@ -81,5 +81,4 @@ console.log(stories.value)
       </ul>
     </section>
   </main>
-  test
 </template>
