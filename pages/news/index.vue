@@ -26,7 +26,7 @@ console.log(stories)
             :date="item.first_published_at || item.created_at"
             :name="item.name"
             :link="'/news/' + item.slug + '/'"
-            :img="item.content.big_image.filename"
+            :img="item?.content?.big_image?.filename"
             description="test"
           />
         </ul>

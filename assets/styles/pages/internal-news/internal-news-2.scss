@@ -12,6 +12,42 @@
   }
 }
 
+.internal-news-2__block {
+  + .internal-news-2__block {
+    margin-top: 20px;
+  }
+  *:first-child {
+    margin-top: 0;
+  }
+  * {
+    margin-top: 20px;
+    @include default;
+    font-size: 16px;
+    text-transform: none;
+    line-height: 1.4em;
+  }
+  h1,
+  h2 {
+    @include h1;
+    font-size: 36px;
+  }
+  ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  li {
+    p {
+      display: inline;
+    }
+  }
+}
+
 .internal-news-2__filter {
   display: flex;
   height: fit-content;
