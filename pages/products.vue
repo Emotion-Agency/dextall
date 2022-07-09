@@ -314,6 +314,7 @@ const goToProducts = () => {
       <ParallaxImg
         class="products-5__bg-wrapper"
         src="/images/products/9.jpg"
+        :with-border-radius="false"
         :transform="false"
       />
     </section>

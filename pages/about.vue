@@ -8,6 +8,8 @@ useObserver('.section')
 const { story } = await useAboutStory()
 
 console.log(story)
+
+const breakLine = useBreakLine()
 </script>
 
 <template>
@@ -15,7 +17,7 @@ console.log(story)
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
         <img
-          v-for="(_, idx) in 4"
+          v-for="(_,idx) in 4"
           :key="idx"
           :data-parallax="(4 - idx) * 0.08"
           :data-parallax-dir="-1"
@@ -42,10 +44,12 @@ console.log(story)
       </div>
     </section>
     <section class="section about-3">
-      <div
+      <ParallaxImg
         class="about-3__bg"
-        style="background-image: url('/images/about/5.jpg')"
-      ></div>
+        src="/images/about/5.jpg"
+        :transform="false"
+        :with-border-radius="false"
+      />
       <div class="container about-3__wrapper">
         <div class="grid about-3__text">
           <h3 class="about-3__title">
@@ -296,16 +300,20 @@ console.log(story)
         <ul class="about-8__list">
           <li class="grid about-8__li">
             <div class="about-8__left-block">
-              <div
+              <ParallaxImg
                 class="about-8__image"
-                style="background-image: url('/images/about/6.jpg')"
-              ></div>
+                src="/images/about/6.jpg"
+                :transform="false"
+              />
+
             </div>
             <div class="about-8__right-block about-8__right-block--reverse">
-              <div
+
+              <ParallaxImg
                 class="about-8__image about-8__image--half"
-                style="background-image: url('/images/about/7.jpg')"
-              ></div>
+                src="/images/about/7.jpg"
+                :transform="false"
+              />
               <p class="about-8__desc">
                 {{ story.Screen_5[0].main_text_1 }}
               </p>
@@ -321,40 +329,30 @@ console.log(story)
               </p>
             </div>
             <div class="about-8__right-block">
-              <div
+              <ParallaxImg
                 class="block-img about-8__image"
-                style="background-image: url('/images/about/8.jpg')"
-              ></div>
+                src="/images/about/8.jpg"
+                :transform="false"
+              />
             </div>
           </li>
           <li class="grid about-8__li">
             <div class="about-8__left-block">
-              <div
+
+              <ParallaxImg
                 class="block-img about-8__image"
-                style="background-image: url('/images/about/9.jpg')"
-              ></div>
+                src="/images/about/9.jpg"
+                :transform="false"
+              />
             </div>
             <div class="about-8__right-block">
               <h3 class="about-8__content-title">
                 {{ story.Screen_5[0].small_title_1 }}
               </h3>
-              <p class="about-8__desc about-8__desc--transform">
-                {{ story.Screen_5[0].main_text_2 }}
-                <!-- Aurimas' 20-plus year career in construction has been dedicated
-                to utilizing technologies to advance the fields of design and
-                construction, with a track record of award-winning and
-                groundbreaking projects within the United States. Mr. Sabulis
-                believes the power of technology combined with smart business
-                solutions can favorably bend cost curves as it unleashes
-                sustainability and long-term value in mid to high-rise building
-                construction.
-                <br />
-                <br />
-                Aurimas is also the founder of INTUS Windows, were he launched
-                the groundbreaking 1-Window-1-Tree initiative, which planted
-                trees in communities around the United States for each window
-                sold by the company. -->
-              </p>
+              <p
+                class="about-8__desc about-8__desc--transform"
+                v-html="breakLine(story.Screen_5[0].main_text_2)"
+              />
             </div>
           </li>
         </ul>

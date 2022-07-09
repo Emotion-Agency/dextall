@@ -78,6 +78,7 @@
 
 .about-8__right-block {
   height: 100%;
+  overflow: hidden;
 
   @media (min-width: $br1) {
     @include col(8, 15);
