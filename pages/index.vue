@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { useHomeStory } from '~~/composables/stories/home.story'
-import { keysGenerator } from '~~/scripts/utils/ea';
+import { useHomeStory } from '~/composables/stories/home.story'
+import { keysGenerator } from '~/scripts/utils/ea'
 useTransition()
 useObserver('.section')
 const { getH6Title,getH9Title,story } = await useHomeStory()
@@ -40,7 +40,11 @@ const sliderImages = [
 
 const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
 
+onMounted(async () => {
+  const { renderSequence } = await import('~/scripts/PlaySequence')
 
+  renderSequence()
+})
 </script>
 
 <template>
@@ -106,9 +110,9 @@ const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
         </h1>
       </div>
     </section>
-    <section class="section home-2">
+    <section class="section home-2 scroll-sequence__container">
       <div
-        class="home-2__background"
+        class="home-2__background scroll-sequence"
         style="background-image: url('/images/home/8.jpg')"
       ></div>
       <div class="container">
