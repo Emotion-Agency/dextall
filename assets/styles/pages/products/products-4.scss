@@ -72,8 +72,12 @@
   @include default;
 
   @media (min-width: $br1) {
+    position: sticky;
+    top: calc(var(--nav-height) + 40px);
+    height: fit-content;
     @include italic;
     font-size: vw(25);
+    transition: top 0.5s ease;
   }
 
   @media (max-width: $br1) {
@@ -90,6 +94,10 @@
   @include default;
 
   @media (min-width: $br1) {
+    position: sticky;
+    top: calc(var(--nav-height) + 40px);
+    transition: top 0.5s ease;
+    height: fit-content;
     @include col(3, 9);
     font-size: vw(60);
     max-width: vw(568);

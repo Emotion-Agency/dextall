@@ -7,7 +7,20 @@ useObserver('.section')
 
 const { story } = await useProductsStory()
 
-console.log(story)
+
+
+
+const goToProducts = () => {
+  const $products = document.querySelector('#products') as HTMLElement
+
+  if (!$products) {
+    return
+  }
+
+  const goToAnchor = useAnchorScroll($products)
+
+  goToAnchor()
+}
 </script>
 
 <template>
@@ -15,7 +28,7 @@ console.log(story)
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
         <img
-          v-for="(_, idx) in 4"
+          v-for="(_,idx) in 4"
           :key="idx"
           :data-parallax="(4 - idx) * 0.08"
           :data-parallax-dir="-1"
@@ -33,7 +46,10 @@ console.log(story)
             {{ story.screen_1[0].description }}
           </p>
         </div>
-        <CircleButton class="products-1__btn"> Show products </CircleButton>
+        <CircleButton
+          class="products-1__btn"
+          @click="goToProducts"
+        > Show products </CircleButton>
       </div>
     </section>
     <section class="section products-2">
@@ -47,7 +63,7 @@ console.log(story)
           {{ story.screen_2[0].description }}
         </p>
         <FloatingCard
-          v-for="(item, idx) in story.screen_2[0].cards"
+          v-for="(item,idx) in story.screen_2[0].cards"
           :key="item._uid"
           :parallax="story.screen_2[0].cards.length - idx"
           class="home-4__floating-cards"
@@ -79,7 +95,7 @@ console.log(story)
         <div class="grid products-3__content">
           <ul class="products-3__list">
             <li
-              v-for="(item, idx) in story.screen_3[0].panel_compound"
+              v-for="(item,idx) in story.screen_3[0].panel_compound"
               :key="item._uid"
               class="products-3__li"
             >
@@ -120,7 +136,11 @@ console.log(story)
           </h2>
         </div>
       </div>
-      <div class="container products-4__wrapper">
+
+      <div
+        id="products"
+        class="container products-4__wrapper"
+      >
         <ul class="products-4__list">
           <li class="products-4__li">
             <div class="products-4__line"></div>
@@ -200,9 +220,7 @@ console.log(story)
                     <div class="products-4__line"></div>
                   </li>
                 </ul>
-                <h4
-                  class="products-4__content-title products-4__content-title--1"
-                >
+                <h4 class="products-4__content-title products-4__content-title--1">
                   {{ story.screen_4[0].product_1[0].title_1 }}
                 </h4>
                 <p class="products-4__content-desc">
@@ -285,9 +303,7 @@ console.log(story)
                   {{ story.screen_4[0].product_2[0].main_text1 }}
                 </p>
                 <div class="products-4__line"></div>
-                <CircleButton class="products-4__btn"
-                  >Pilot mock up program</CircleButton
-                >
+                <CircleButton class="products-4__btn">Pilot mock up program</CircleButton>
               </div>
             </div>
           </li>
@@ -295,12 +311,11 @@ console.log(story)
       </div>
     </section>
     <section class="section products-5">
-      <div class="products-5__bg-wrapper">
-        <div
-          class="products-5__bg"
-          style="background-image: url('/images/products/9.jpg')"
-        ></div>
-      </div>
+      <ParallaxImg
+        class="products-5__bg-wrapper"
+        src="/images/products/9.jpg"
+        :transform="false"
+      />
     </section>
     <section class="section products-6">
       <div class="container products-6__wrapper">
