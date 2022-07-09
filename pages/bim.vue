@@ -31,9 +31,9 @@ const { story } = await useBimStory()
       <div class="container bim-2__wrapper">
         <h2 class="bim-2__title">
           <span class="bim-2__span-title">
-            Exterior design and coordination process is reduced
+            {{ story.Screen_2[0].title.replace(story.Screen_2[0].highlighted_title,'') }}
           </span>
-          from 24 month to 2 days
+          {{ story.Screen_2[0].highlighted_title }}
         </h2>
         <div class="grid bim-2__content">
           <p class="bim-2__text">
