@@ -5,10 +5,16 @@ import { useCareersStory } from '~/composables/stories/careers.story'
 useTransition()
 useObserver('.section')
 
-const { filters, onFilter, filteredVacancies } = useVacancies()
+
 const { story } = await useCareersStory()
 
-console.log(story)
+const vacansies = ref(story.value.Screen_4[0].vacancies_list)
+vacansies.value = vacansies.value.map(v => ({ ...v,department: v.type[0] }))
+
+
+const { filters,onFilter,filteredVacancies } = useVacancies(vacansies.value)
+
+
 </script>
 
 <template>
@@ -24,10 +30,11 @@ console.log(story)
       </div>
     </section>
     <section class="section careers-2">
-      <div
+      <ParallaxImg
         class="careers-2__bg"
-        style="background-image: url('/images/careers/1.jpg')"
-      ></div>
+        src="/images/careers/1.jpg"
+        :transform="false"
+      />
       <div class="container grid careers-2__wrapper">
         <h2 class="careers-2__title">
           {{ story.Screen_1[0].uppercase_description }}
@@ -45,20 +52,20 @@ console.log(story)
             {{ story.Screen_2[0].small_text }}
           </p>
         </div>
-        <div class="careers-3__image-top">
-          <img
-            class="careers-3__img"
-            src="/images/careers/2.jpg"
-            alt="Building"
-          />
-        </div>
-        <div class="careers-3__image-bottom">
-          <img
-            class="careers-3__img"
-            src="/images/careers/3.jpg"
-            alt="Building"
-          />
-        </div>
+
+        <ParallaxImg
+          :src="story.Screen_2[0].image_1.filename"
+          img-class="careers-3__img"
+          class="careers-3__image-top"
+        />
+
+        <ParallaxImg
+          :src="story.Screen_2[0].image_2.filename"
+          img-class="careers-3__img"
+          class="careers-3__image-bottom"
+          data-parallax="0.1"
+          data-parallax-dir="-1"
+        />
       </div>
     </section>
     <section class="section careers-4">
@@ -99,16 +106,14 @@ console.log(story)
           </li>
         </ul>
         <ul class="careers-5__content-list">
-          <TransitionGroup name="fade" mode="out-in">
-            <CareerItem
-              v-for="(vacancy, idx) in filteredVacancies"
-              :key="vacancy.title"
-              :title="vacancy.title"
-              :text="vacancy.text"
-              :idx="idx"
-              :is-last="idx === filteredVacancies.length - 1"
-            />
-          </TransitionGroup>
+          <CareerItem
+            v-for="(vacancy,idx) in filteredVacancies"
+            :key="vacancy.title"
+            :title="vacancy.title"
+            :text="vacancy.description"
+            :idx="idx"
+            :is-last="idx === filteredVacancies.length - 1"
+          />
         </ul>
       </div>
     </section>

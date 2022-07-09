@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { Richtext } from 'storyblok-js-client'
 import { resize } from '~/scripts/utils/ea/resize/resize'
 interface iProps {
   title: string
   idx: number
   isLast?: boolean
-  text: string
+  text: Richtext
 }
 
 defineProps<iProps>()
@@ -47,10 +48,7 @@ onBeforeUnmount(() => {
             ref="$child"
             class="careers-5__text-block"
           >
-            <p
-              class="careers-5__text"
-              v-html="text"
-            />
+            <RichText :text="text" />
           </div>
         </div>
         <IconsArrowUp class="careers-5__arrow" />

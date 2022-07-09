@@ -1,51 +1,13 @@
-export const useVacancies = () => {
-  const vacancies = useState('vacancies', () => [
-    {
-      department: 'project execution',
-      title: 'Project Manager – USA',
-      text: ` • Support the team in the design of digital strategies<br />
-              • Collect information, analyze needs, study best practices
-              (benchmarking), analyze visit trends, identify performance
-              indicators (KPIs) <br />
-              • Actively participate in the conversation in order to
-              create an effective tree structure and wireframe.<br />
-              • Monitor new practices and trends`,
-    },
-    {
-      department: 'project execution',
-      title: 'Project Manager2 – USA',
-      text: ` • Support the team in the design of digital strategies<br />
-              • Collect information, analyze needs, study best practices
-              (benchmarking), analyze visit trends, identify performance
-              indicators (KPIs) <br />
-              • Actively participate in the conversation in order to
-              create an effective tree structure and wireframe.<br />
-              • Monitor new practices and trends`,
-    },
-    {
-      department: 'marketing and pr',
+import { Richtext } from 'storyblok-js-client'
 
-      title: 'CMO',
-      text: ` • Support the team in the design of digital strategies<br />
-              • Collect information, analyze needs, study best practices
-              (benchmarking), analyze visit trends, identify performance
-              indicators (KPIs) <br />
-              • Actively participate in the conversation in order to
-              create an effective tree structure and wireframe.<br />
-              • Monitor new practices and trends`,
-    },
-    {
-      department: 'engineering',
-      title: 'Web Designer',
-      text: ` • Support the team in the design of digital strategies<br />
-              • Collect information, analyze needs, study best practices
-              (benchmarking), analyze visit trends, identify performance
-              indicators (KPIs) <br />
-              • Actively participate in the conversation in order to
-              create an effective tree structure and wireframe.<br />
-              • Monitor new practices and trends`,
-    },
-  ])
+export interface iVanacy {
+  department: string
+  title: string
+  description: Richtext
+}
+
+export const useVacancies = (vacanciesList: iVanacy[]) => {
+  const vacancies = useState('vacancies', () => vacanciesList)
 
   const activeFilter = ref('all departments')
 

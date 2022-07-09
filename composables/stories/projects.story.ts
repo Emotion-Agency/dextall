@@ -1,5 +1,5 @@
 import { Ref } from 'nuxt/dist/app/compat/capi'
-import { iStory } from '~~/types/story'
+import { iStory } from '~/types/story'
 
 type tProjectStories = () => Promise<{ stories: Ref<iStory[]> }>
 
