@@ -40,39 +40,13 @@ console.log(stories.value)
                 {{ project.content?.Screen_1 && project.content.Screen_1[0].description }}
               </p>
               <div class="grid projects-2__img-wrapper">
-                <img
+                <ParallaxImg
+                  v-for="(_,idx) in 6"
+                  :key="idx"
                   class="projects-2__img"
-                  src="/images/projects/1.jpg"
-                  alt="Building"
-                />
-
-                <img
-                  class="projects-2__img"
-                  src="/images/projects/2.jpg"
-                  alt="Building"
-                />
-                <img
-                  class="projects-2__img"
-                  src="/images/projects/3.jpg"
-                  alt="Building"
-                />
-
-                <img
-                  class="projects-2__img"
-                  src="/images/projects/4.jpg"
-                  alt="Building"
-                />
-
-                <img
-                  class="projects-2__img"
-                  src="/images/projects/5.jpg"
-                  alt="Building"
-                />
-
-                <img
-                  class="projects-2__img"
-                  src="/images/projects/6.jpg"
-                  alt="Building"
+                  :src="`/images/projects/${idx + 1}.jpg`"
+                  :transform="false"
+                  :scale="1.2"
                 />
               </div>
             </div>

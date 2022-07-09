@@ -11,7 +11,7 @@ export const useProjectsStories: tProjectStories = async () => {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=projects/*', {
       version: 'draft',
     })
-    stories.value = data.stories
+    stories.value = data.stories.filter(s => s.name !== 'Index')
   } catch (e) {
     console.log(e.message)
   }
