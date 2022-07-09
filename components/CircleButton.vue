@@ -3,6 +3,7 @@ interface iProps {
   tag?: string
   href?: string
   type?: string
+  isWhite?: boolean
 }
 
 const props = defineProps<iProps>()
@@ -23,6 +24,7 @@ const href = props.tag === 'a' ? props.href : undefined
   <component
     :is="tag"
     class="circle-button"
+    :class="[isWhite && 'circle-button--white']"
     :to="to"
     :href="href"
     :target="props.tag === 'a' ? '_blank' : undefined"

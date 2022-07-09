@@ -6,8 +6,6 @@ useTransition()
 useObserver('.section')
 
 const { story } = await useBimStory()
-
-console.log(story)
 </script>
 
 <template>
@@ -45,14 +43,15 @@ console.log(story)
             {{ story.Screen_2[0].right_text }}
           </p>
           <TextButton class="bim-2__btn">{{
-            story.Screen_2[0].button[0].text_button
+              story.Screen_2[0].button[0].text_button
           }}</TextButton>
         </div>
       </div>
-      <div
+      <ParallaxImg
         class="bim-2__bg"
-        style="background-image: url('/images/bim/1.jpg')"
-      ></div>
+        src="/images/bim/1.jpg"
+        :transform="false"
+      />
     </section>
     <section class="section bim-3">
       <div class="container bim-3__wrapper">
@@ -64,7 +63,7 @@ console.log(story)
         <ul class="bim-3__list">
           <!-- rewrite -->
           <li
-            v-for="(item, idx) in story.Screen_3[0].benefits_list"
+            v-for="(item,idx) in story.Screen_3[0].benefits_list"
             :key="item._uid"
             class="bim-3__li"
           >
@@ -127,7 +126,7 @@ console.log(story)
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                    story.Screen_3[0].results_list_benefits[0].description_title
+                      story.Screen_3[0].results_list_benefits[0].description_title
                   }}
                 </p>
               </div>
@@ -136,8 +135,8 @@ console.log(story)
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
                     {{
-                      story.Screen_3[0].results_list_benefits[0].text_point[0]
-                        .text
+                        story.Screen_3[0].results_list_benefits[0].text_point[0]
+                          .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -145,8 +144,8 @@ console.log(story)
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                      story.Screen_3[0].results_list_benefits[0].text_point[1]
-                        .text
+                        story.Screen_3[0].results_list_benefits[0].text_point[1]
+                          .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -154,8 +153,8 @@ console.log(story)
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                      story.Screen_3[0].results_list_benefits[0].text_point[2]
-                        .text
+                        story.Screen_3[0].results_list_benefits[0].text_point[2]
+                          .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -172,7 +171,7 @@ console.log(story)
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                    story.Screen_3[0].results_list_benefits[1].description_title
+                      story.Screen_3[0].results_list_benefits[1].description_title
                   }}
                 </p>
               </div>
@@ -181,8 +180,8 @@ console.log(story)
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
                     {{
-                      story.Screen_3[0].results_list_benefits[1].text_point[0]
-                        .text
+                        story.Screen_3[0].results_list_benefits[1].text_point[0]
+                          .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -190,8 +189,8 @@ console.log(story)
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                      story.Screen_3[0].results_list_benefits[1].text_point[1]
-                        .text
+                        story.Screen_3[0].results_list_benefits[1].text_point[1]
+                          .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -199,14 +198,14 @@ console.log(story)
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                      story.Screen_3[0].results_list_benefits[1].text_point[2]
-                        .text
+                        story.Screen_3[0].results_list_benefits[1].text_point[2]
+                          .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
                   <p class="bim-4__about-text">
                     {{
-                      story.Screen_3[0].marked_list_benefits[0].uppercase_text
+                        story.Screen_3[0].marked_list_benefits[0].uppercase_text
                     }}
                     <!-- Support: video chat support.<br />
                     Education: training on plug-in options -->
@@ -219,20 +218,27 @@ console.log(story)
       </div>
     </section>
     <section class="section bim-5">
-      <div class="bim-5__bg" style="background-image: url('/images/bim/5.jpg')">
-        <div class="container bim-5__wrapper">
-          <h2 class="bim-5__title">
-            <span class="bim-5__span-title">try</span>
-            <span class="bim-5__span-title"> Dextall Studio</span>
-          </h2>
-          <p class="bim-5__desc">
-            {{ story.Screen_4[0].description }}
-          </p>
-          <CircleButton class="bim-5__btn">{{
+      <ParallaxImg
+        class="bim-5__bg"
+        src='/images/bim/5.jpg'
+        :transform="false"
+      />
+      <div class="container bim-5__wrapper">
+        <h2 class="bim-5__title">
+          <span class="bim-5__span-title">try</span>
+          <span class="bim-5__span-title"> Dextall Studio</span>
+        </h2>
+        <p class="bim-5__desc">
+          {{ story.Screen_4[0].description }}
+        </p>
+        <CircleButton
+          class="bim-5__btn"
+          :is-white="true"
+        >{{
             story.Screen_4[0].button[0].text_button
-          }}</CircleButton>
-        </div>
+        }}</CircleButton>
       </div>
+
     </section>
   </main>
 </template>

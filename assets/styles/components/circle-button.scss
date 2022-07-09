@@ -14,6 +14,19 @@
   isolation: isolate;
   transition: border-color 0.7s $easing;
 
+  &--white {
+    border: 2px solid #fff;
+    color: #fff;
+    .circle-button__bg {
+      background-color: #fff;
+    }
+    &:hover {
+      .circle-button__content {
+        color: var(--main) !important;
+      }
+    }
+  }
+
   * {
     position: relative;
     z-index: 2;
