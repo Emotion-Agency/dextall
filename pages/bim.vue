@@ -61,18 +61,17 @@ const { story } = await useBimStory()
           <span class="bim-3__span-title"> Benefits</span>
         </h2>
         <ul class="bim-3__list">
-          <!-- rewrite -->
           <li
-            v-for="(item,idx) in story.Screen_3[0].benefits_list"
-            :key="item._uid"
+            v-for="(_,idx) in 6"
+            :key="idx"
             class="bim-3__li"
           >
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              {{ item.benefit_1 }}
+              {{ story.Screen_3[0].benefits_list[0][`benefit_${idx + 1}`] }}
             </p>
             <div
-              v-if="idx === story.Screen_3[0].benefits_list.length - 1"
+              v-if="idx === 5"
               class="bim-3__line"
             ></div>
           </li>
