@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useHomeStory } from '~/composables/stories/home.story'
+import { useProjectsStories } from '~/composables/stories/projects.story'
 
 useTransition()
 useObserver('.section')
 const { getH6Title,getH9Title,story } = await useHomeStory()
+const projects = ref(null)
 
-console.log(story)
+const projectsData = await useProjectsStories()
+
+
+projects.value = projectsData.stories.value.filter((_,idx) => idx <= 2)
 
 const $slides1 = ref(null)
 const $slides2 = ref(null)
@@ -255,7 +260,17 @@ const getTransformedImage = useTransformedImage()
             class="home-7__btn"
           > View all </CircleButton>
         </div>
-        <ProjectList />
+        <ul class="image-list">
+          <ProjectListItem
+            v-for="(project,idx) in projects"
+            :key="project._uid"
+            :images="project.content.Screen_2[0].gallery"
+            :title="project.name"
+            :description="project.content.Screen_1[0].project_description"
+            :number="idx + 1"
+          />
+        </ul>
+
       </div>
     </section>
     <section class="section home-8">

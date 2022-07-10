@@ -146,6 +146,7 @@
     @media (min-width: $br1) {
       @include col(5, 11);
       @include row(1, 2);
+      height: 100% !important;
     }
   }
 

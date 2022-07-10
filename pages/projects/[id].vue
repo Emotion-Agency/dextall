@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { keysGenerator } from '~/scripts/utils/ea'
 import { useProjectsStories } from '~/composables/stories/projects.story'
 
 useTransition()
@@ -12,42 +11,7 @@ const slug = useRoute().params.id
 
 
 const story = stories.value.find(story => story.slug === slug).content
-
-
-const images = [
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/2.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/3.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/4.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/5.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/2.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/3.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/4.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    filename: '/images/projects/project/5.jpg',
-  },
-]
+const getTransformedImage = useTransformedImage()
 
 onMounted(async () => {
   const { Carousel } = await import('~/scripts/Carousel')
@@ -55,6 +19,8 @@ onMounted(async () => {
   const carousel = new Carousel()
   carousel.init()
 })
+
+
 </script>
 
 <template>
@@ -63,6 +29,8 @@ onMounted(async () => {
       <ParallaxImg
         class="project-1__bg"
         :src="story.Screen_1[0].main_image.filename"
+        :width="1920"
+        :height="1080"
       />
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">
@@ -100,7 +68,7 @@ onMounted(async () => {
           data-slider-inner
         >
           <li
-            v-for="(img,idx) in images"
+            v-for="(img,idx) in story.Screen_2[0].gallery"
             :key="img._uid"
             class="project-3__li"
             data-slide
@@ -108,7 +76,7 @@ onMounted(async () => {
             <div class="project-3__img-wrapper">
               <img
                 class="project-3__img"
-                :src="img.filename"
+                :src="getTransformedImage(img.image.filename,800)"
                 alt="Building"
               />
             </div>

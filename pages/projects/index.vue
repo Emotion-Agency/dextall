@@ -41,10 +41,12 @@ console.log(stories.value)
               </p>
               <div class="grid projects-2__img-wrapper">
                 <ParallaxImg
-                  v-for="(_,idx) in 6"
+                  v-for="(item,idx) in project.content?.Screen_2[0].gallery"
                   :key="idx"
                   class="projects-2__img"
-                  :src="`/images/projects/${idx + 1}.jpg`"
+                  :src="item?.image?.filename"
+                  :height="600"
+                  :width="600"
                   :transform="false"
                   :scale="1.2"
                 />
