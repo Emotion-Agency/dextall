@@ -1,41 +1,15 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useHomeStory } from '~/composables/stories/home.story'
-import { keysGenerator } from '~/scripts/utils/ea'
+
 useTransition()
 useObserver('.section')
 const { getH6Title,getH9Title,story } = await useHomeStory()
 
+console.log(story)
+
 const $slides1 = ref(null)
 const $slides2 = ref(null)
-
-const sliderImages = [
-  {
-    _uid: keysGenerator(8),
-    img_1: '/images/home/1.jpg',
-    img_2: '/images/home/2.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    img_1: '/images/home/3.jpg',
-    img_2: '/images/home/4.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    img_1: '/images/home/5.jpg',
-    img_2: '/images/home/6.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    img_1: '/images/home/7.jpg',
-    img_2: '/images/home/8.jpg',
-  },
-  {
-    _uid: keysGenerator(8),
-    img_1: '/images/home/9.jpg',
-    img_2: '/images/home/10.jpg',
-  }
-]
 
 
 const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
@@ -45,6 +19,8 @@ onMounted(async () => {
 
   renderSequence()
 })
+
+const getTransformedImage = useTransformedImage()
 </script>
 
 <template>
@@ -54,7 +30,7 @@ onMounted(async () => {
         <div class="grid home-1__top-block">
           <div class="home-1__elements-left">
             <div
-              v-for="(img,idx) in sliderImages"
+              v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
               ref="$slides1"
               :key="img._uid"
               class=" home-1__img-wrapper"
@@ -62,14 +38,14 @@ onMounted(async () => {
             >
               <div
                 class="big-img"
-                :style="`background-image: url('${img.img_1}')`"
+                :style="`background-image: url('${getTransformedImage(img.image_1.filename,815)}')`"
               ></div>
             </div>
           </div>
           <div class="home-1__elements-right">
             <div class="home-1__right-image">
               <div
-                v-for="(img,idx) in sliderImages"
+                v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
                 :key="img._uid"
                 ref="$slides2"
                 class=" home-1__img-wrapper"
@@ -77,13 +53,13 @@ onMounted(async () => {
               >
                 <div
                   class="big-img"
-                  :style="`background-image: url('${img.img_2}')`"
+                  :style="`background-image: url('${getTransformedImage(img.image_1.filename,937)}')`"
                 ></div>
               </div>
             </div>
             <ul class="grid home-1__small-buildings">
               <li
-                v-for="(img,idx) in sliderImages"
+                v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
                 :key="img._uid"
                 class="home-1__li"
                 :class="idx === activeIdx && 'home-1__li--active'"
@@ -92,7 +68,7 @@ onMounted(async () => {
                 <p class="home-1__number">00{{ idx + 1 }}</p>
                 <div
                   class="small-img home-1__small-img"
-                  :style="`background-image: url('${img.img_1}')`"
+                  :style="`background-image: url('${getTransformedImage(img.image_1.filename,208)}')`"
                 ></div>
               </li>
             </ul>
@@ -111,10 +87,7 @@ onMounted(async () => {
       </div>
     </section>
     <section class="section home-2 scroll-sequence__container">
-      <div
-        class="home-2__background scroll-sequence"
-        style="background-image: url('/images/home/8.jpg')"
-      ></div>
+      <div class="home-2__background scroll-sequence"></div>
       <div class="container">
         <div class="home-2__wrapper">
           <div class="home-2__block">
@@ -182,6 +155,8 @@ onMounted(async () => {
         </div>
         <ParallaxImg
           :src="story.home_screen_3[0].image.filename"
+          :width="816"
+          :height="800"
           img-class="home-3__img"
           class="home-3__right-block"
         />
@@ -246,12 +221,16 @@ onMounted(async () => {
 
         <ParallaxImg
           :src="story.home_screen_6[0].small_image.filename"
+          :width="815"
+          :height="899"
           img-class="home-6__img"
           class="home-6__image-top"
         />
 
         <ParallaxImg
           :src="story.home_screen_6[0].big_image.filename"
+          :width="1173"
+          :height="899"
           img-class="home-6__img"
           class="home-6__image-bottom"
           data-parallax="0.1"
@@ -311,11 +290,15 @@ onMounted(async () => {
         <ParallaxImg
           :src="story.home_screen_9[0].small_image.filename"
           img-class="home-9__img"
+          :width="815"
+          :height="1021"
           class="home-9__image-top"
         />
 
         <ParallaxImg
           :src="story.home_screen_9[0].big_image.filename"
+          :width="1172"
+          :height="899"
           img-class="home-9__img"
           class="home-9__image-bottom"
           data-parallax="0.1"

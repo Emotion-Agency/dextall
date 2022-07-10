@@ -60,6 +60,7 @@ body {
 
 .p-img-wrapper {
   overflow: hidden;
+  position: relative;
   &--br {
     border-radius: 10px;
   }
@@ -68,6 +69,12 @@ body {
 .p-img-container {
   height: 100%;
   width: 100%;
+  &--cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
 }
 
 .parallax-img {

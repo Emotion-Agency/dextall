@@ -24,21 +24,46 @@ const goToProducts = () => {
 
 }
 const breakLine = useBreakLine()
+
+const firstScreenImageSizes = [
+  {
+    width: 217,
+    height: 305
+  },
+  {
+    width: 340,
+    height: 400
+  },
+  {
+    width: 338,
+    height: 305
+  },
+  {
+    width: 340,
+    height: 274
+  }
+]
+const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ...item,...firstScreenImageSizes[idx] }))
+
 </script>
 
 <template>
   <main>
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
-        <img
-          v-for="(item,idx) in story.screen_1[0].images"
-          :key="idx"
-          :data-parallax="(4 - idx) * 0.08"
-          :data-parallax-dir="-1"
-          class="products-1__img"
-          :src="item.image.filename"
-          alt="Building"
-        />
+        <div class="grid container products-1__image-block">
+          <ParallaxImg
+            v-for="(item,idx) in firstScreenImages"
+            :key="idx"
+            :src="item.image.filename"
+            :width="item.width"
+            :height="item.height"
+            class="products-1__img-wrapper"
+            :data-parallax="(4 - idx) * 0.08"
+            :data-parallax-dir="-1"
+            :scale="1.2"
+          />
+        </div>
         <div class="products-1__text-block">
           <h1 class="products-1__title">
             <span class="products-1__span-title">D Wall</span>

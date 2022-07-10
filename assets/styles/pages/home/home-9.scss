@@ -71,7 +71,6 @@
 
 .home-9__image-top {
   @include col(1, 7);
-  height: vh(1021);
 
   @media (max-width: $br1) {
     @include col(1, 4);
