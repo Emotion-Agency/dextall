@@ -50,8 +50,11 @@ class ScrollSequence {
       this.canvas.renderIndex(0)
     })
 
-    this.loader.once('IMAGES_LOADED', () => {
+    this.loader.once('PRIORITY_IMAGES_LOADED', () => {
       raf.on(this.changeOnWindowScroll)
+    })
+
+    this.loader.once('IMAGES_LOADED', () => {
       console.log('Sequence Loaded')
     })
   }
@@ -66,6 +69,10 @@ class ScrollSequence {
   get percentScrolled() {
     return this.scroller.percentScrolled * 100
   }
+
+  destroy() {
+    raf.off(this.changeOnWindowScroll)
+  }
 }
 
 export const renderSequence = () => {
@@ -74,7 +81,7 @@ export const renderSequence = () => {
     scrollWith: '.scroll-sequence',
     images: appleSequenceImages,
     imagesRoot: '/images/storytelling/',
-    priorityFrames: [0, 20, 40, 60, 90],
+    priorityFrames: [0, 20, 40, 60, 90, 180, 280],
     cover: true,
     playUntil: 'scroll-out',
     starts: 'in',

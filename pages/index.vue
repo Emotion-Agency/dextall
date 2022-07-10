@@ -3,6 +3,7 @@ import { useTransition } from '~/composables/transition'
 import { useHomeStory } from '~/composables/stories/home.story'
 import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useNewsStories } from '~/composables/stories/news.story'
+import { useTransformLink } from '~~/composables/transformLink';
 
 useTransition()
 useObserver('.section')
@@ -30,6 +31,7 @@ onMounted(async () => {
 })
 
 const getTransformedImage = useTransformedImage()
+const getRransformedLink = useTransformLink()
 </script>
 
 <template>
@@ -203,8 +205,8 @@ const getTransformedImage = useTransformedImage()
             {{ story.home_screen_5[0].Featured_news[0].main_text }}
           </p>
           <CircleButton
-            :tag="story.home_screen_5[0].Featured_news[0].button[0].link.linktype === 'url' ? 'a' : 'nuxt-link'"
-            :href="story.home_screen_5[0].Featured_news[0].button[0].link.url"
+            :tag="getRransformedLink(story.home_screen_5[0].Featured_news[0].button[0].link).tag"
+            :href="getRransformedLink(story.home_screen_5[0].Featured_news[0].button[0].link).href"
             class="home-5__btn"
           > {{ story.home_screen_5[0].Featured_news[0].button[0].text_button }}
           </CircleButton>
