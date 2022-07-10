@@ -12,11 +12,18 @@
   .ticker__item {
     font-size: vw(30);
     margin-left: 1vw;
+    @media (max-width: $br1) {
+      font-size: 24px;
+      margin-left: 20px;
+    }
   }
 
   svg {
     width: 30px;
     height: 30px;
     margin-right: 1vw;
+    @media (max-width: $br1) {
+      margin-right: 20px;
+    }
   }
 }
