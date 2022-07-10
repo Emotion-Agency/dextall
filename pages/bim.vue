@@ -8,6 +8,9 @@ useObserver('.section')
 const { story } = await useBimStory()
 
 console.log(story)
+
+const getTransformedImage = useTransformedImage()
+
 </script>
 
 <template>
@@ -52,6 +55,8 @@ console.log(story)
       <ParallaxImg
         class="bim-2__bg"
         :src="story.Screen_2[0].big_image.filename"
+        :width="1920"
+        :height="2160"
       />
     </section>
     <section class="section bim-3">
@@ -88,23 +93,10 @@ console.log(story)
           </div>
           <div class="bim-3__slider">
             <img
+              v-for="item in story.Screen_3[0].gallery"
+              :key="item._uid"
               class="bim-3__slider-img"
-              src="/images/bim/2.jpg"
-              alt="Building"
-            />
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/3.jpg"
-              alt="Building"
-            />
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/4.jpg"
-              alt="Building"
-            />
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/2.jpg"
+              :src="getTransformedImage(item.image.filename,577)"
               alt="Building"
             />
           </div>
@@ -207,8 +199,6 @@ console.log(story)
                     {{
                         story.Screen_3[0].marked_list_benefits[0].uppercase_text
                     }}
-                    <!-- Support: video chat support.<br />
-                    Education: training on plug-in options -->
                   </p>
                 </li>
               </ul>
@@ -222,6 +212,8 @@ console.log(story)
         class="bim-5__bg"
         :src='story.Screen_4[0].big_image.filename'
         :with-border-radius="false"
+        :width="1920"
+        :height="1080"
       />
       <div class="container bim-5__wrapper">
         <h2 class="bim-5__title">
