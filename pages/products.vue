@@ -45,6 +45,9 @@ const firstScreenImageSizes = [
 ]
 const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ...item,...firstScreenImageSizes[idx] }))
 
+
+const getTransformedImage = useTransformedImage()
+
 </script>
 
 <template>
@@ -157,18 +160,18 @@ const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ..
       </div>
     </section>
     <section class="section products-4">
-      <div class="products-4__bg-wrapper">
-        <div
+      <div class="container products-4__bg-wrapper">
+        <ParallaxImg
           class="products-4__bg"
-          style="background-image: url('/images/products/6.jpg')"
-        >
-          <h2 class="products-4__big-text">
-            <span class="products-4__span-text">Our</span>
-            <span class="products-4__span-text"> products</span>
-          </h2>
-        </div>
+          :src="story.screen_4[0].image.filename"
+          :width="1920"
+          :height="1080"
+        />
+        <h2 class="products-4__big-text">
+          <span class="products-4__span-text">Our</span>
+          <span class="products-4__span-text"> products</span>
+        </h2>
       </div>
-
       <div
         id="products"
         class="container products-4__wrapper"
@@ -194,7 +197,7 @@ const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ..
                 <div class="products-4__img-wrapper">
                   <img
                     class="products-4__img"
-                    :src="story.screen_4[0].product_1[0].image_video.filename"
+                    :src="getTransformedImage(story.screen_4[0].product_1[0].image_video.filename,696,410)"
                     alt="Building"
                   />
                 </div>
@@ -282,7 +285,7 @@ const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ..
                 <div class="products-4__img-wrapper">
                   <img
                     class="products-4__img"
-                    :src="story.screen_4[0].product_2[0].image_video.filename"
+                    :src="getTransformedImage(story.screen_4[0].product_2[0].image_video.filename,696,410)"
                     alt="Building"
                   />
                 </div>
