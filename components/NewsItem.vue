@@ -1,4 +1,6 @@
 <script lang='ts' setup>
+import { useFormattedDate } from '~/composables/computeDate'
+
 interface iProps {
   name: string
   date: string
@@ -9,13 +11,7 @@ interface iProps {
 
 const props = defineProps<iProps>()
 
-const formattedDate = computed(() => {
-  const date = new Date(props.date)
-  const day = '0' + String(date.getDate()).slice(-2)
-  const month = '0' + String(date.getMonth()).slice(-2)
-  const year = date.getFullYear()
-  return `${day}.${month}.${year}`
-})
+const formattedDate = useFormattedDate(props.date)
 
 const formattedTitle = computed(() => {
 

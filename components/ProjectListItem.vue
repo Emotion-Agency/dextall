@@ -1,10 +1,5 @@
 <script lang='ts' setup>
-interface iImage {
-  image: {
-    _uid: string
-    filename: string
-  }
-}
+import { iImage } from '~/types/story'
 
 interface iProps {
   title?: string

@@ -2,16 +2,20 @@
 import { useTransition } from '~/composables/transition'
 import { useHomeStory } from '~/composables/stories/home.story'
 import { useProjectsStories } from '~/composables/stories/projects.story'
+import { useNewsStories } from '~/composables/stories/news.story'
 
 useTransition()
 useObserver('.section')
 const { getH6Title,getH9Title,story } = await useHomeStory()
 const projects = ref(null)
+const news = ref(null)
 
 const projectsData = await useProjectsStories()
+const newsData = await useNewsStories()
 
 
 projects.value = projectsData.stories.value.filter((_,idx) => idx <= 2)
+news.value = newsData.stories.value.filter((_,idx) => idx <= 2)
 
 const $slides1 = ref(null)
 const $slides2 = ref(null)
@@ -286,7 +290,18 @@ const getTransformedImage = useTransformedImage()
             on training for unitized prefab panel installation
           </p>
         </div>
-        <TheCards class="home-8__cards" />
+        <ul class="grid cards">
+          <NewsCard
+            v-for="(item) in news"
+            :key="item._uid"
+            :title="item.name"
+            :slug="item.slug"
+            :description="item.content.description"
+            :date="item.first_published_at || item.created_at"
+            :img="item.content.big_image"
+            class="home-8__cards"
+          />
+        </ul>
       </div>
     </section>
     <section class="section home-9">
@@ -319,7 +334,6 @@ const getTransformedImage = useTransformedImage()
           data-parallax="0.1"
           data-parallax-dir="-1"
         />
-
       </div>
     </section>
   </main>

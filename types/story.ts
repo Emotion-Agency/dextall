@@ -7,3 +7,10 @@ export interface iStory {
   name: string
   _uid: string
 }
+
+export interface iImage {
+  image: {
+    _uid: string
+    filename: string
+  }
+}

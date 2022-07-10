@@ -27,7 +27,7 @@ console.log(stories)
             :name="item.name"
             :link="'/news/' + item.slug + '/'"
             :img="item?.content?.big_image?.filename"
-            description="test"
+            :description="item.content.description"
           />
         </ul>
       </div>
