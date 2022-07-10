@@ -1,4 +1,4 @@
-import { clamp } from '@emotionagency/utils'
+import { clamp } from '~/scripts/utils/ea'
 
 export default class Scrolling {
   constructor($el, $parent) {
