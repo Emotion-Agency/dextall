@@ -10,14 +10,18 @@ const { stories } = await useNewsStories()
 const slug = useRoute().params.id
 
 
-const story = stories.value.find(story => story.slug === slug).content
+const story = stories.value.find(story => story.slug === slug)
 
 
 const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
 })
 
-console.log(story)
+
+const date = story.first_published_at || story.created_at
+
+const formattedDate = useFormattedDate(date)
+
 </script>
 
 <template>
@@ -25,28 +29,29 @@ console.log(story)
     <section class="section section--nm internal-news-1">
       <div class="container internal-news-1__wrapper">
         <h1 class="internal-news-1__title">
-          {{ story.title }}
+          {{ story.content.title }}
         </h1>
       </div>
-      <div
+
+      <ParallaxImg
         class="internal-news-1__bg"
-        style="background-image: url('/images/news/internal-news/1.jpg')"
-      ></div>
+        :with-border-radius="false"
+        :src="story.content.big_image.filename"
+        :width="1920"
+        :height="1080"
+      />
     </section>
     <section class="section internal-news-2">
       <div class="container internal-news-2__wrapper">
         <div class="internal-news-2__line"></div>
         <div class="grid internal-news-2__content-wrapper">
-          <div class="internal-news-2__filter">
-            <button class="internal-news-2__switch">Heading 1</button>
-            <button class="internal-news-2__switch">Heading 2</button>
-            <button class="internal-news-2__switch">Heading 3</button>
-            <button class="internal-news-2__switch">Heading 4</button>
-          </div>
+          <time class="internal-news-2__date">
+            {{ formattedDate }}
+          </time>
           <div class="internal-news-2__content">
 
             <div
-              v-for="block in story.blog_section"
+              v-for="block in story.content.blog_section"
               :key="block._uid"
               class="internal-news-2__block"
             >

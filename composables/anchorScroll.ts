@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 
-export const useAnchorScroll = (target: HTMLElement, cb = () => {}) => {
-  return () => {
+export const useAnchorScroll = () => {
+  return (target: HTMLElement, cb = () => {}) => {
     const startLocation = window.pageYOffset
     const endLocation = target.offsetTop
 

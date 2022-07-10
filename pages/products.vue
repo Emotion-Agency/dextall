@@ -18,9 +18,9 @@ const goToProducts = () => {
     return
   }
 
-  const goToAnchor = useAnchorScroll($products)
+  const goToAnchor = useAnchorScroll()
 
-  goToAnchor()
+  goToAnchor($products)
 
 }
 const breakLine = useBreakLine()

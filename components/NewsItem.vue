@@ -20,7 +20,7 @@ const formattedDate = useFormattedDate(props.date)
       :to="link"
       class="news-images__link"
     >
-      <p class="news-images__date">{{ formattedDate }}</p>
+      <time class="news-images__date">{{ formattedDate }}</time>
       <ParallaxImg
         class="news-images__img"
         :src="img"

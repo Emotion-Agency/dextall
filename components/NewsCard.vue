@@ -29,7 +29,7 @@ const getTransformedImage = useTransformedImage()
       > Read more </CircleButton>
     </div>
     <div class="cards__line-block">
-      <p class="cards__date">{{ formattedDate }}</p>
+      <time class="cards__date">{{ formattedDate }}</time>
       <div class="cards__line"></div>
     </div>
     <div
