@@ -13,16 +13,14 @@ const props = defineProps<iProps>()
 
 const formattedDate = useFormattedDate(props.date)
 
-console.log(props)
+const getTransformedImage = useTransformedImage()
+
 </script>
 
 <template>
   <li class="grid cards__li">
     <div class="cards__text-block">
       <h3 class="cards__title">{{ title }}</h3>
-      <p class="cards__desc">
-        {{ description }}
-      </p>
       <CircleButton
         class="cards__btn"
         tag="nuxt-link"
@@ -36,7 +34,7 @@ console.log(props)
     </div>
     <div
       class="cards__image-block"
-      :style="`background-image: url('${img.filename}')`"
+      :style="`background-image: url('${getTransformedImage(img.filename,800)}')`"
     ></div>
   </li>
 </template>

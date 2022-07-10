@@ -12,19 +12,6 @@ interface iProps {
 const props = defineProps<iProps>()
 
 const formattedDate = useFormattedDate(props.date)
-
-const formattedTitle = computed(() => {
-
-  const words = props.name.split(' ')
-
-  if (words.length <= 3) {
-    return words.join(' ')
-  }
-
-  const slisedWords = words.splice(0,3)
-
-  return slisedWords.join(' ') + '...'
-})
 </script>
 
 <template>
@@ -33,18 +20,13 @@ const formattedTitle = computed(() => {
       :to="link"
       class="news-images__link"
     >
-      <div class="news-images__text-wrapper">
-        <p class="news-images__name">{{ formattedTitle }}</p>
-        <p class="news-images__date">{{ formattedDate }}</p>
-      </div>
+      <p class="news-images__date">{{ formattedDate }}</p>
       <ParallaxImg
         class="news-images__img"
         :src="img"
         :scale="1.2"
       />
-      <p class="news-images__desc">
-        {{ description }}
-      </p>
+      <h2 class="news-images__name">{{ name }}</h2>
     </NuxtLink>
   </li>
 

@@ -67,11 +67,18 @@
   }
 }
 
-.news-images__text-wrapper {
+.news-images__name {
   @include default;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  margin-top: vw(20);
+
+  @media (max-width: $br1) {
+    margin-top: 15px;
+  }
+}
+
+.news-images__date {
+  @include default;
 }
 
 .news-images__img {
