@@ -1,6 +1,7 @@
 import { raf } from '~/scripts/utils/ea'
 import { ImgLoader } from '~/scripts/utils/ImgLoader'
 import { Canvas } from '~/scripts/utils/Canvas'
+import Scrolling from './utils/Scrolling'
 
 const appleSequenceImages = []
 
@@ -36,6 +37,8 @@ class ScrollSequence {
       cover: this.opts.cover,
     })
 
+    this.scroller = new Scrolling(this.container, this.container.parentElement)
+
     this.init()
 
     this.changeOnWindowScroll = this.changeOnWindowScroll.bind(this)
@@ -61,7 +64,7 @@ class ScrollSequence {
   }
 
   get percentScrolled() {
-    return 100
+    return this.scroller.percentScrolled * 100
   }
 }
 

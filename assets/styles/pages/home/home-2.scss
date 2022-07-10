@@ -26,6 +26,7 @@
   align-items: center;
   max-width: vw(668);
   height: 100vh;
+  margin-top: 100vh;
 
   @media (max-width: $br1) {
     max-width: 70%;
