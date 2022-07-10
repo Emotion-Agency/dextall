@@ -6,6 +6,7 @@ useTransition()
 useObserver('.section')
 
 const { story } = await useProductsStory()
+console.log(story)
 
 
 
@@ -20,7 +21,9 @@ const goToProducts = () => {
   const goToAnchor = useAnchorScroll($products)
 
   goToAnchor()
+
 }
+const breakLine = useBreakLine()
 </script>
 
 <template>
@@ -28,12 +31,12 @@ const goToProducts = () => {
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
         <img
-          v-for="(_,idx) in 4"
+          v-for="(item,idx) in story.screen_1[0].images"
           :key="idx"
           :data-parallax="(4 - idx) * 0.08"
           :data-parallax-dir="-1"
           class="products-1__img"
-          :src="`/images/products/${idx + 1}.jpg`"
+          :src="item.image.filename"
           alt="Building"
         />
         <div class="products-1__text-block">
@@ -115,11 +118,15 @@ const goToProducts = () => {
             </li>
           </ul>
           <div class="products-3__image-wrapper">
-            <img
+            <video
+              autoplay
+              playsinline
+              loop
+              muted
               class="products-3__img"
-              src="/images/products/5.jpg"
-              alt="Building"
-            />
+              :src="story.screen_3[0].panel_images[0].image.filename"
+            >
+            </video>
           </div>
         </div>
       </div>
@@ -162,7 +169,7 @@ const goToProducts = () => {
                 <div class="products-4__img-wrapper">
                   <img
                     class="products-4__img"
-                    src="/images/products/7.jpg"
+                    :src="story.screen_4[0].product_1[0].image_video.filename"
                     alt="Building"
                   />
                 </div>
@@ -250,7 +257,7 @@ const goToProducts = () => {
                 <div class="products-4__img-wrapper">
                   <img
                     class="products-4__img"
-                    src="/images/products/8.jpg"
+                    :src="story.screen_4[0].product_2[0].image_video.filename"
                     alt="Building"
                   />
                 </div>
@@ -313,9 +320,8 @@ const goToProducts = () => {
     <section class="section products-5">
       <ParallaxImg
         class="products-5__bg-wrapper"
-        src="/images/products/9.jpg"
+        :src="story.screen_5[0].big_image.filename"
         :with-border-radius="false"
-        :transform="false"
       />
     </section>
     <section class="section products-6">
@@ -325,16 +331,11 @@ const goToProducts = () => {
           <h3 class="products-6__title">
             {{ story.screen_5[0].news_section[0].title }}
           </h3>
-          <p class="products-6__desc">
-            {{ story.screen_5[0].news_section[0].main_text }}
-          </p>
-          <!-- <p class="products-6__desc">
-            *Overall building energy spending IS LOWER with Dextall's products.
-          </p>
-          <p class="products-6__desc">
-            *More durable exteriors means passing envelope inspections without
-            the need to spend on ongoing maintenance work.
-          </p> -->
+          <p
+            class="products-6__desc"
+            v-html="breakLine(story.screen_5[0].news_section[0].main_text)"
+          />
+
           <CircleButton class="products-6__btn">
             {{ story.screen_5[0].news_section[0].button[0].text_button }}
           </CircleButton>

@@ -59,10 +59,11 @@ onMounted(async () => {
 
 <template>
   <main>
-    <section
-      class="section section--nm project-1"
-      style="background-image: url('/images/projects/project/1.jpg')"
-    >
+    <section class="section section--nm project-1">
+      <ParallaxImg
+        class="project-1__bg"
+        :src="story.Screen_1[0].main_image.filename"
+      />
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">
           <p class="project-1__text">

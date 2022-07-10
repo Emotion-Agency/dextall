@@ -3,7 +3,7 @@ export const useBimStory = async () => {
   const storyapi = useStoryblokApi()
 
   try {
-    const { data } = await storyapi.get('cdn/stories/bim-solution', {
+    const { data } = await storyapi.get('cdn/stories/bim', {
       version: 'draft',
     })
     story.value = data.story.content

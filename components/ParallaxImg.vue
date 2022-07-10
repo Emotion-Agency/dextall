@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+* @todo
+add sizes params
+* */
 import { transformImage } from '~/scripts/utils/storyblokImage'
 
 interface iProps {

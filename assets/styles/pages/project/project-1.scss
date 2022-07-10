@@ -1,6 +1,7 @@
 .project-1 {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,6 +9,26 @@
 
   @media (max-width: $br1) {
     padding-top: 0;
+  }
+}
+
+.project-1__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 

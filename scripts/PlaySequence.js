@@ -61,7 +61,7 @@ class ScrollSequence {
   }
 
   get percentScrolled() {
-    return 50
+    return 100
   }
 }
 

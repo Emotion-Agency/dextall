@@ -16,7 +16,7 @@ const breakLine = useBreakLine()
   <main>
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
-        <img
+        <!-- <img
           v-for="(_,idx) in 4"
           :key="idx"
           :data-parallax="(4 - idx) * 0.08"
@@ -24,7 +24,7 @@ const breakLine = useBreakLine()
           class="about-1__img"
           :src="`/images/about/${idx + 1}.jpg`"
           alt="Building"
-        />
+        /> -->
         <div class="about-1__text-block">
           <h1 class="about-1__title">
             <span class="about-1__span-title">Our</span>

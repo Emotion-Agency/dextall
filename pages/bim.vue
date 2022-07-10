@@ -6,6 +6,8 @@ useTransition()
 useObserver('.section')
 
 const { story } = await useBimStory()
+
+console.log(story)
 </script>
 
 <template>
@@ -49,8 +51,7 @@ const { story } = await useBimStory()
       </div>
       <ParallaxImg
         class="bim-2__bg"
-        src="/images/bim/1.jpg"
-        :transform="false"
+        :src="story.Screen_2[0].big_image.filename"
       />
     </section>
     <section class="section bim-3">
@@ -219,8 +220,8 @@ const { story } = await useBimStory()
     <section class="section bim-5">
       <ParallaxImg
         class="bim-5__bg"
-        src='/images/bim/5.jpg'
-        :transform="false"
+        :src='story.Screen_4[0].big_image.filename'
+        :with-border-radius="false"
       />
       <div class="container bim-5__wrapper">
         <h2 class="bim-5__title">

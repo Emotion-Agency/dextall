@@ -89,6 +89,7 @@
     @include row(2, 2);
     position: relative;
     top: vw(-142);
+    height: vh(900);
   }
 
   @media (max-width: $br1) {
