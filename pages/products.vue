@@ -47,11 +47,16 @@ const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ..
 
 
 const getTransformedImage = useTransformedImage()
+const getTransformedLink = useTransformLink()
 
 </script>
 
 <template>
   <main>
+    <PageMeta
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
         <div class="grid container products-1__image-block">
@@ -338,7 +343,10 @@ const getTransformedImage = useTransformedImage()
                   {{ story.screen_4[0].product_2[0].main_text1 }}
                 </p>
                 <div class="products-4__line"></div>
-                <CircleButton class="products-4__btn">Pilot mock up program</CircleButton>
+                <CircleButton
+                  v-bind="getTransformedLink(story.screen_4[0].button[0].link)"
+                  class="products-4__btn"
+                >{{ story.screen_4[0].button[0].text_button }}</CircleButton>
               </div>
             </div>
           </li>
@@ -364,7 +372,10 @@ const getTransformedImage = useTransformedImage()
             v-html="breakLine(story.screen_5[0].news_section[0].main_text)"
           />
 
-          <CircleButton class="products-6__btn">
+          <CircleButton
+            v-bind="getTransformedLink(story.screen_5[0].news_section[0].button[0].link)"
+            class="products-6__btn"
+          >
             {{ story.screen_5[0].news_section[0].button[0].text_button }}
           </CircleButton>
         </div>

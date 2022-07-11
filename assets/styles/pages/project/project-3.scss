@@ -79,6 +79,7 @@
   overflow: hidden;
   width: vw(338);
   height: vw(338);
+  border-radius: 10px;
 
   @media (max-width: $br2) {
     width: 304px;
@@ -104,6 +105,7 @@
 .project-3__number {
   @include default;
   margin-top: vw(15);
+  user-select: none;
 
   @media (max-width: $br1) {
     margin-top: 6px;

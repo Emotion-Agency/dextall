@@ -11,25 +11,25 @@
           <NuxtLink to="/"> Home </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/products"> Products </NuxtLink>
+          <NuxtLink to="/products/"> Products </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/bim"> Bim Solution </NuxtLink>
+          <NuxtLink to="/bim/"> Bim Solution </NuxtLink>
         </li>
         <li class="footer__nav-li">
           <NuxtLink to="/projects/"> Projects </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/news"> News </NuxtLink>
+          <NuxtLink to="/news/"> News </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/about"> About us </NuxtLink>
+          <NuxtLink to="/about/"> About us </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/careers"> Careers </NuxtLink>
+          <NuxtLink to="/careers/"> Careers </NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <NuxtLink to="/library"> Education and Training </NuxtLink>
+          <NuxtLink to="/education-trainings/"> Education and Training </NuxtLink>
         </li>
         <li class="footer__nav-li">
           <button @click="openContacts"> Contact us </button>

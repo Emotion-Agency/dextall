@@ -6,6 +6,7 @@ interface iProps {
   number?: number
   description?: string
   images?: iImage[]
+  slug?: string
 }
 
 defineProps<iProps>()
@@ -14,7 +15,7 @@ defineProps<iProps>()
 <template>
   <li class="image-list__li">
     <NuxtLink
-      to="/"
+      :to="`/projects/${slug}/`"
       class="image-list__link"
     >
       <div class="image-list__text">

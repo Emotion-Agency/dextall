@@ -5,13 +5,19 @@ import { useProjectsStories } from '~/composables/stories/projects.story'
 useTransition()
 useObserver('.section')
 
-const { stories } = await useProjectsStories()
+const { stories,story } = await useProjectsStories()
 
 console.log(stories.value)
+
+console.log(story.value)
 </script>
 
 <template>
   <main>
+    <PageMeta
+      :title="story.content.meta[0].title"
+      :description="story.content.meta[0].description"
+    />
     <section class="section section--nm projects-1">
       <div class="container projects-1__wrapper">
         <h1 class="projects-1__title">

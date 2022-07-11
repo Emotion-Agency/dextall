@@ -10,24 +10,39 @@ const { story } = await useBimStory()
 console.log(story)
 
 const getTransformedImage = useTransformedImage()
+const getTransformedLink = useTransformLink()
+
+onMounted(async () => {
+  const { Carousel } = await import('~/scripts/Carousel')
+
+  const carousel = new Carousel()
+  carousel.init()
+})
 
 </script>
 
 <template>
   <main>
+    <PageMeta
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm bim-1">
       <div class="container bim-1__wrapper">
         <div class="bim-1__text-block">
           <p class="bim-1__top-text">{{ story.Screen_1[0].short_text }}</p>
           <TheTicker
-            text="BIM Solution: Dextall Studio"
+            :text="story.Screen_1[0].moving_title"
             class="bim-1__ticker"
           />
           <p class="bim-1__bottom-text">
             {{ story.Screen_1[0].description }}
           </p>
         </div>
-        <CircleButton class="bim-1__btn">
+        <CircleButton
+          v-bind="getTransformedLink(story.Screen_1[0].button[0].link)"
+          class="bim-1__btn"
+        >
           {{ story.Screen_1[0].button[0].text_button }}
         </CircleButton>
       </div>
@@ -47,7 +62,10 @@ const getTransformedImage = useTransformedImage()
           <p class="bim-2__text">
             {{ story.Screen_2[0].right_text }}
           </p>
-          <TextButton class="bim-2__btn">{{
+          <TextButton
+            class="bim-2__btn"
+            v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
+          >{{
               story.Screen_2[0].button[0].text_button
           }}</TextButton>
         </div>
@@ -68,39 +86,45 @@ const getTransformedImage = useTransformedImage()
         </h2>
         <ul class="bim-3__list">
           <li
-            v-for="(_,idx) in 6"
-            :key="idx"
+            v-for="(item,idx) in story.Screen_3[0].benefits_list"
+            :key="item._uid"
             class="bim-3__li"
           >
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              {{ story.Screen_3[0].benefits_list[0][`benefit_${idx + 1}`] }}
+              {{ item.text }}
             </p>
             <div
-              v-if="idx === 5"
+              v-if="idx === story.Screen_3[0].benefits_list.length - 1"
               class="bim-3__line"
             ></div>
           </li>
         </ul>
-        <div class="bim-3__slider-wrapper">
-          <div class="bim-3__btns">
-            <button class="bim-3__btn">
-              <IconsArrowLeft class="bim-3__arrow" />
-            </button>
-            <button class="bim-3__btn">
-              <IconsArrowRight class="bim-3__arrow" />
-            </button>
-          </div>
-          <div class="bim-3__slider">
-            <img
-              v-for="item in story.Screen_3[0].gallery"
-              :key="item._uid"
-              class="bim-3__slider-img"
-              :src="getTransformedImage(item.image.filename,577)"
-              alt="Building"
-            />
-          </div>
-        </div>
+      </div>
+      <div
+        data-slider
+        class="bim-3__slider-wrapper"
+      >
+        <ul
+          class="bim-3__img-list"
+          data-slider-inner
+        >
+          <li
+            v-for="(img,idx) in story.Screen_3[0].gallery"
+            :key="img._uid"
+            class="bim-3__li"
+            data-slide
+          >
+            <div class="bim-3__img-wrapper">
+              <img
+                class="bim-3__img"
+                :src="getTransformedImage(img.image.filename,577)"
+                alt="Building"
+              />
+            </div>
+            <p class="bim-3__number">0{{ idx + 1 }}</p>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="section bim-4">
@@ -230,7 +254,6 @@ const getTransformedImage = useTransformedImage()
             story.Screen_4[0].button[0].text_button
         }}</CircleButton>
       </div>
-
     </section>
   </main>
 </template>

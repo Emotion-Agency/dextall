@@ -11,6 +11,10 @@ const slug = useRoute().params.id
 
 
 const story = stories.value.find(story => story.slug === slug).content
+const filteredStories = computed(() => {
+  return stories.value.filter(story => story.slug !== slug)
+})
+
 const getTransformedImage = useTransformedImage()
 
 onMounted(async () => {
@@ -20,11 +24,16 @@ onMounted(async () => {
   carousel.init()
 })
 
-
+console.log(story)
 </script>
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.meta.length"
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm project-1">
       <ParallaxImg
         class="project-1__bg"
@@ -46,18 +55,22 @@ onMounted(async () => {
         </p>
       </div>
     </section>
-    <section class="section project-2">
+    <section
+      v-if="story.Screen_2[0].main_fact"
+      class="section project-2"
+    >
       <div class="container project-2__wrapper">
         <div class="project-2__line"></div>
         <p class="project-2__text">
-          Dextall’s engineering team developed an innovative solution to
-          integrate its prefabricated walls with areas of the façade that will
-          feature EIFS cladding
+          {{ story.Screen_2[0].main_fact }}
         </p>
         <div class="project-2__line"></div>
       </div>
     </section>
-    <section class="section project-3">
+    <section
+      v-if="story.Screen_2[0].gallery.length"
+      class="section project-3"
+    >
       <div class="container project-3__wrapper">
         <h2 class="project-3__title">Project Gallery</h2>
         <CircleButton class="project-3__btn">Full screen mode</CircleButton>
@@ -237,6 +250,25 @@ onMounted(async () => {
             src="/images/projects/project/11.jpg"
             alt="Building"
           />
+        </div>
+      </div>
+    </section>
+    <section class="section internal-news-3">
+      <div class="container internal-news-3__wrapper">
+        <h2 class="internal-news-3__title">Other projects</h2>
+        <div class="internal-news-3__images">
+
+          <ul class="grid news-images">
+            <NewsItem
+              v-for="item in filteredStories"
+              :key="item._uid"
+              :date="item.first_published_at || item.created_at"
+              :name="item.name"
+              :link="'/news/' + item.slug + '/'"
+              :img="item?.content?.Screen_1[0].main_image.filename"
+              description="test"
+            />
+          </ul>
         </div>
       </div>
     </section>

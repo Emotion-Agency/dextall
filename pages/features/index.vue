@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { useNewsStories } from '~/composables/stories/news.story'
+import { useFeaturesStories } from '~/composables/stories/features.story'
 
 useTransition()
 useObserver('.section')
 
-const { stories,story } = await useNewsStories()
+const { stories,story } = await useFeaturesStories()
 
 console.log(stories)
 </script>
@@ -18,7 +18,7 @@ console.log(stories)
     />
     <section class="section section--nm news-1">
       <div class="container news-1__wrapper">
-        <h1 class="news-1__title">Latest news</h1>
+        <h1 class="news-1__title">Dextall Studio Growing Features list</h1>
       </div>
     </section>
     <section class="section news-2">
@@ -29,7 +29,7 @@ console.log(stories)
             :key="item._uid"
             :date="item.first_published_at || item.created_at"
             :name="item.name"
-            :link="'/news/' + item.slug + '/'"
+            :link="undefined"
             :img="item?.content?.big_image?.filename"
             :description="item.content.description"
           />

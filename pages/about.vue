@@ -10,10 +10,22 @@ const { story } = await useAboutStory()
 console.log(story)
 
 const breakLine = useBreakLine()
+
+const get3Title = (string: string) => {
+  const words = string.split(' ')
+
+  words[1] = `<span class="about-5__span-title">${words[1]}</span>`
+
+  return words.join(' ')
+}
 </script>
 
 <template>
   <main>
+    <PageMeta
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
         <!-- <img
@@ -75,10 +87,12 @@ const breakLine = useBreakLine()
     </section>
     <section class="section about-5">
       <div class="container about-5__wrapper">
-        <h2 class="about-5__title">
-          When <span class="about-5__span-title">Decarbonizing</span> With
-          Dextall
-        </h2>
+        <h2
+          class="about-5__title"
+          v-html="get3Title(story.Screen_2[0].title)"
+        />
+
+
         <ul class="about-5__list">
           <li class="about-5__li">
             <div class="about-5__line"></div>
@@ -302,8 +316,9 @@ const breakLine = useBreakLine()
             <div class="about-8__left-block">
               <ParallaxImg
                 class="about-8__image"
-                src="/images/about/6.jpg"
-                :transform="false"
+                :src="story.Screen_5[0].first_image.filename"
+                :width="815"
+                :height="780"
               />
 
             </div>
@@ -311,8 +326,9 @@ const breakLine = useBreakLine()
 
               <ParallaxImg
                 class="about-8__image about-8__image--half"
-                src="/images/about/7.jpg"
-                :transform="false"
+                :src="story.Screen_5[0].second_image.filename"
+                :width="935"
+                :height="390"
               />
               <p class="about-8__desc">
                 {{ story.Screen_5[0].main_text_1 }}
@@ -331,8 +347,9 @@ const breakLine = useBreakLine()
             <div class="about-8__right-block">
               <ParallaxImg
                 class="block-img about-8__image"
-                src="/images/about/8.jpg"
-                :transform="false"
+                :src="story.Screen_5[0].third_image.filename"
+                :width="935"
+                :height="804"
               />
             </div>
           </li>
@@ -341,8 +358,9 @@ const breakLine = useBreakLine()
 
               <ParallaxImg
                 class="block-img about-8__image"
-                src="/images/about/9.jpg"
-                :transform="false"
+                :src="story.Screen_5[0].fourth_image.filename"
+                :width="815"
+                :height="804"
               />
             </div>
             <div class="about-8__right-block">

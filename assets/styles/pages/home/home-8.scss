@@ -31,25 +31,18 @@
   }
 }
 
-.home-8__desc {
-  @include default;
-  line-height: 130%;
-
+.home-8__btn {
   @media (min-width: $br1) {
-    @include col(11, 15);
-    align-self: flex-end;
-    max-width: vw(554);
+    @include col(13, 15);
+    align-self: end;
+    justify-self: end;
     position: relative;
-    left: vw(24);
+    right: 10px;
+    top: 4px;
   }
 
   @media (max-width: $br1) {
     margin-top: 15px;
-    max-width: 80%;
-  }
-
-  @media (max-width: $br4) {
-    max-width: 100%;
   }
 }
 

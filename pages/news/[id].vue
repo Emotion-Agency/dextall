@@ -22,10 +22,20 @@ const date = story.first_published_at || story.created_at
 
 const formattedDate = useFormattedDate(date)
 
+console.log(story)
+
+const getTransformedLink = useTransformLink()
+
+
 </script>
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.content.meta.length"
+      :title="story.content.meta[0].title"
+      :description="story.content.meta[0].description"
+    />
     <section class="section section--nm internal-news-1">
       <div class="container internal-news-1__wrapper">
         <h1 class="internal-news-1__title">
@@ -55,7 +65,15 @@ const formattedDate = useFormattedDate(date)
               :key="block._uid"
               class="internal-news-2__block"
             >
-              <RichText :text="block.text_formatting" />
+              <div class="internal-news-2__block-text">
+                <RichText :text="block.text_formatting" />
+              </div>
+              <CircleButton
+                v-if="block.button[0]"
+                v-bind="getTransformedLink(block.button[0].link)"
+                class="internal-news-2__btn"
+              > {{ block.button[0].text_button }}
+              </CircleButton>
             </div>
           </div>
         </div>

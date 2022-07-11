@@ -1,19 +1,19 @@
 import { Ref } from 'nuxt/dist/app/compat/capi'
 import { iStory } from '~/types/story'
 
-type tNewsStories = () => Promise<{
+type tFeaturesStories = () => Promise<{
   stories: Ref<iStory[]>
   story: Ref<iStory>
 }>
 
-export const useNewsStories: tNewsStories = async () => {
-  const stories = useState<iStory[]>('newsStory', null)
-  const story = useState<iStory>('newsPageStory', null)
+export const useFeaturesStories: tFeaturesStories = async () => {
+  const stories = useState<iStory[]>('featuresStory', null)
+  const story = useState<iStory>('featuresPageStory', null)
 
   const storyapi = useStoryblokApi()
 
   try {
-    const { data } = await storyapi.get('cdn/stories/?by_slugs=news/*', {
+    const { data } = await storyapi.get('cdn/stories/?by_slugs=features/*', {
       version: 'draft',
     })
     stories.value = data.stories.filter(s => s.name !== 'Index')

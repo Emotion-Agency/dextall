@@ -121,7 +121,7 @@ const smallLinks = [
   },
   {
     text: 'Education and Training',
-    to: '/library/'
+    to: '/education-trainings/'
   },
   {
     text: 'About us',

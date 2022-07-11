@@ -31,11 +31,18 @@ onMounted(async () => {
 })
 
 const getTransformedImage = useTransformedImage()
-const getRransformedLink = useTransformLink()
+const getTransformedLink = useTransformLink()
+
+console.log(story)
 </script>
 
 <template>
   <main>
+
+    <PageMeta
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm home-1">
       <div class="container home-1__wrapper">
         <div class="grid home-1__top-block">
@@ -205,8 +212,7 @@ const getRransformedLink = useTransformLink()
             {{ story.home_screen_5[0].Featured_news[0].main_text }}
           </p>
           <CircleButton
-            :tag="getRransformedLink(story.home_screen_5[0].Featured_news[0].button[0].link).tag"
-            :href="getRransformedLink(story.home_screen_5[0].Featured_news[0].button[0].link).href"
+            v-bind="getTransformedLink(story.home_screen_5[0].Featured_news[0].button[0].link)"
             class="home-5__btn"
           > {{ story.home_screen_5[0].Featured_news[0].button[0].text_button }}
           </CircleButton>
@@ -227,7 +233,10 @@ const getRransformedLink = useTransformLink()
           <p class="home-6__desc">
             {{ story.home_screen_6[0].main_text }}
           </p>
-          <CircleButton class="home-6__btn"> View more </CircleButton>
+          <CircleButton
+            class="home-6__btn"
+            v-bind="getTransformedLink(story.home_screen_6[0].button[0].link)"
+          > {{ story.home_screen_6[0].button[0].text_button }} </CircleButton>
         </div>
 
         <ParallaxImg
@@ -274,6 +283,7 @@ const getRransformedLink = useTransformLink()
             :title="project.name"
             :description="project.content.Screen_1[0].project_description"
             :number="idx + 1"
+            :slug="project.slug"
           />
         </ul>
 
@@ -286,11 +296,13 @@ const getRransformedLink = useTransformLink()
             <span class="home-8__span-top">Latest</span>
             <span class="home-8__span-bottom"> News</span>
           </h3>
-          <p class="home-8__desc">
-            As an AIA/CES Registered Provider, Dextall offers various programs for
-            Architects and Certified Installer Program (Dextall CIP) that focuses
-            on training for unitized prefab panel installation
-          </p>
+          <TextButton
+            tag="nuxt-link"
+            href="/news/"
+            class="home-8__btn"
+          >
+            Read More
+          </TextButton>
         </div>
         <ul class="grid cards">
           <NewsCard
@@ -317,7 +329,10 @@ const getRransformedLink = useTransformLink()
           <p class="home-9__desc">
             {{ story.home_screen_9[0].Description }}
           </p>
-          <CircleButton class="home-9__btn"> Read more </CircleButton>
+          <CircleButton
+            class="home-9__btn"
+            v-bind="getTransformedLink(story.home_screen_9[0].button[0].link)"
+          > {{ story.home_screen_9[0].button[0].text_button }} </CircleButton>
         </div>
         <ParallaxImg
           :src="story.home_screen_9[0].small_image.filename"

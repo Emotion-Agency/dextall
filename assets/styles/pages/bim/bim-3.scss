@@ -147,3 +147,54 @@
     height: 165px;
   }
 }
+
+.bim-3__img-list {
+  display: flex;
+  align-items: flex-end;
+  column-gap: vw(20);
+  padding-left: $g-offset;
+  padding-right: 20px;
+
+  @media (max-width: $br1) {
+    column-gap: 15px;
+    padding-left: $g-s;
+  }
+}
+
+.bim-3__li {
+  transition: transform 1s $easing;
+}
+
+.bim-3__img-wrapper {
+  overflow: hidden;
+  width: vw(338);
+  border-radius: 10px;
+
+  @media (max-width: $br2) {
+    width: 304px;
+  }
+
+  @media (max-width: $br4) {
+    width: 152px;
+  }
+}
+
+.bim-3__img {
+  display: block;
+  transition: width 0.5s $easing, transform 1s $easing;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bim-3__number {
+  user-select: none;
+  @include default;
+  margin-top: vw(15);
+
+  @media (max-width: $br1) {
+    margin-top: 6px;
+  }
+}

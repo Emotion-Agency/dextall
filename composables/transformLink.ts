@@ -1,7 +1,17 @@
+interface iLink {
+  linktype: string
+  url: string
+  cached_url: string
+}
+
 export const useTransformLink = () => {
-  return (link: { linktype: string; url: string }) => {
+  return (link: iLink) => {
     const tag = link.linktype === 'url' ? 'a' : 'nuxt-link'
-    const href = link.url
+
+    const href =
+      link.linktype === 'url'
+        ? link.url
+        : '/' + (link.cached_url + '/').replace('//', '/')
     return { tag, href }
   }
 }

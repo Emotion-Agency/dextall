@@ -3,10 +3,10 @@ import { ImgLoader } from '~/scripts/utils/ImgLoader'
 import { Canvas } from '~/scripts/utils/Canvas'
 import Scrolling from './utils/Scrolling'
 
-const appleSequenceImages = []
+const sequenceImages = []
 
 for (let i = 0; i <= 280; i++) {
-  appleSequenceImages.push(`${i + 1}.webp`)
+  sequenceImages.push(`${i + 1}.webp`)
 }
 
 class ScrollSequence {
@@ -79,7 +79,7 @@ export const renderSequence = () => {
   new ScrollSequence({
     container: '.scroll-sequence',
     scrollWith: '.scroll-sequence',
-    images: appleSequenceImages,
+    images: sequenceImages,
     imagesRoot: '/images/storytelling/',
     priorityFrames: [0, 20, 40, 60, 90, 180, 280],
     cover: true,
