@@ -3,7 +3,7 @@ import { useFormattedDate } from '~/composables/computeDate'
 
 interface iProps {
   title: string
-  description: string
+  description?: string
   date: string
   slug: string
   img: { filename: string }

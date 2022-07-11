@@ -5,7 +5,7 @@ interface iProps {
   name: string
   date: string
   img: string
-  description: string
+  description?: string
   link: string
 }
 

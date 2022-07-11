@@ -32,7 +32,6 @@ const { stories,story } = await useProjectsStories()
             :name="item.name"
             :link="'/projects/' + item.slug + '/'"
             :img="item.content.Screen_1[0].main_image.filename"
-            :description="item.content.description"
           />
         </ul>
       </div>

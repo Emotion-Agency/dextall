@@ -27,10 +27,19 @@ const $slides2 = ref(null)
 
 const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
 
+let scrollSequence
 onMounted(async () => {
-  const { renderSequence } = await import('~/scripts/PlaySequence')
+  const { ScrollSequence } = await import('~/scripts/PlaySequence')
+  scrollSequence = new ScrollSequence({
+    container: '.scroll-sequence',
+    imagesRoot: '/images/storytelling/',
+    priorityFrames: [0,20,40,60,90,180,280],
+    cover: true,
+  })
+})
 
-  renderSequence()
+onBeforeUnmount(() => {
+  scrollSequence && scrollSequence.destroy()
 })
 
 const getTransformedImage = useTransformedImage()

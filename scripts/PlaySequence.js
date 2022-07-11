@@ -3,13 +3,7 @@ import { ImgLoader } from '~/scripts/utils/ImgLoader'
 import { Canvas } from '~/scripts/utils/Canvas'
 import Scrolling from './utils/Scrolling'
 
-const sequenceImages = []
-
-for (let i = 0; i <= 280; i++) {
-  sequenceImages.push(`${i + 1}.webp`)
-}
-
-class ScrollSequence {
+export class ScrollSequence {
   constructor(opts) {
     this.opts = {
       imagesRoot: '',
@@ -18,10 +12,16 @@ class ScrollSequence {
     }
     this.container = document.querySelector(opts.container)
 
-    this.scrollWith = document.querySelector(opts.scrollWith)
+    this.scrollWith = document.querySelector(opts.container)
 
-    this.images = Array(opts.images.length)
-    this.imagesToLoad = opts.images
+    const sequenceImages = []
+
+    for (let i = 0; i <= 280; i++) {
+      sequenceImages.push(`${i + 1}.webp`)
+    }
+
+    this.images = Array(sequenceImages.length)
+    this.imagesToLoad = sequenceImages
     this.priorityFrames = opts.priorityFrames
 
     this.loader = new ImgLoader({
@@ -73,17 +73,4 @@ class ScrollSequence {
   destroy() {
     raf.off(this.changeOnWindowScroll)
   }
-}
-
-export const renderSequence = () => {
-  new ScrollSequence({
-    container: '.scroll-sequence',
-    scrollWith: '.scroll-sequence',
-    images: sequenceImages,
-    imagesRoot: '/images/storytelling/',
-    priorityFrames: [0, 20, 40, 60, 90, 180, 280],
-    cover: true,
-    playUntil: 'scroll-out',
-    starts: 'in',
-  })
 }
