@@ -30,6 +30,9 @@
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
   }
+  @media (max-width: $br1) {
+    height: 100vh !important;
+  }
 }
 
 .project-1__wrapper {
@@ -78,6 +81,9 @@
 .project-1__text {
   @include default;
   color: var(--bg);
+  @media (max-width: $br1) {
+    font-size: 12px;
+  }
 }
 
 .project-1__title {

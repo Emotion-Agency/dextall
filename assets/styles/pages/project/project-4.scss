@@ -2,6 +2,10 @@
   @include default;
   font-size: vw(120);
   text-align: end;
+  @media (min-width: $br1) {
+    max-width: vw(945);
+    margin-left: auto;
+  }
 
   @media (max-width: $br1) {
     font-size: size(120, 36);
