@@ -6,7 +6,6 @@ useTransition()
 useObserver('.section')
 
 const { story } = await useProductsStory()
-console.log(story)
 
 
 

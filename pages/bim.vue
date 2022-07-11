@@ -7,8 +7,6 @@ useObserver('.section')
 
 const { story } = await useBimStory()
 
-console.log(story)
-
 const getTransformedImage = useTransformedImage()
 const getTransformedLink = useTransformLink()
 

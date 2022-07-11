@@ -6,10 +6,6 @@ useTransition()
 useObserver('.section')
 
 const { stories,story } = await useProjectsStories()
-
-console.log(stories.value)
-
-console.log(story.value)
 </script>
 
 <template>

@@ -1,3 +1,12 @@
+.cards-wrapper {
+  height: 350vh;
+}
+
+.cards {
+  position: sticky;
+  top: 10px;
+}
+
 .cards__li {
   background-color: var(--main);
   box-shadow: 0px -4px 24px rgba(0, 0, 0, 0.2);
@@ -5,11 +14,20 @@
   color: var(--bg);
   position: relative;
   z-index: 2;
+  &:nth-of-type(1) {
+    transform: translateY(20%);
+  }
+  &:nth-of-type(2) {
+    transform: translateY(100vh);
+  }
+  &:nth-of-type(3) {
+    transform: translateY(200vh);
+  }
 
   @media (min-width: $br1) {
     @include col(1, 15);
     padding: vw(65) vw(42);
-    height: vh(721);
+    height: 70vh;
   }
 
   @media (max-width: $br1) {
@@ -54,10 +72,10 @@
 .cards__title {
   @include default;
   color: var(--bg);
-  font-size: vw(60);
+  font-size: vw(40);
 
   @media (max-width: $br1) {
-    font-size: size(60, 20);
+    font-size: size(40, 20);
   }
 
   @media (max-width: $br4) {
@@ -140,7 +158,7 @@
 .cards__image-block {
   display: block;
   width: 100%;
-  height: vh(591);
+  height: 100%;
   border-radius: 10px;
   background-repeat: no-repeat;
   background-position: center;

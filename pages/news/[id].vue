@@ -19,14 +19,6 @@ const filteredStories = computed(() => {
 
 
 const date = story.first_published_at || story.created_at
-
-const formattedDate = useFormattedDate(date)
-
-console.log(story)
-
-const getTransformedLink = useTransformLink()
-
-
 </script>
 
 <template>
@@ -36,49 +28,12 @@ const getTransformedLink = useTransformLink()
       :title="story.content.meta[0].title"
       :description="story.content.meta[0].description"
     />
-    <section class="section section--nm internal-news-1">
-      <div class="container internal-news-1__wrapper">
-        <h1 class="internal-news-1__title">
-          {{ story.content.title }}
-        </h1>
-      </div>
-
-      <ParallaxImg
-        class="internal-news-1__bg"
-        :with-border-radius="false"
-        :src="story.content.big_image.filename"
-        :width="1920"
-        :height="1080"
-      />
-    </section>
-    <section class="section internal-news-2">
-      <div class="container internal-news-2__wrapper">
-        <div class="internal-news-2__line"></div>
-        <div class="grid internal-news-2__content-wrapper">
-          <time class="internal-news-2__date">
-            {{ formattedDate }}
-          </time>
-          <div class="internal-news-2__content">
-
-            <div
-              v-for="block in story.content.blog_section"
-              :key="block._uid"
-              class="internal-news-2__block"
-            >
-              <div class="internal-news-2__block-text">
-                <RichText :text="block.text_formatting" />
-              </div>
-              <CircleButton
-                v-if="block.button[0]"
-                v-bind="getTransformedLink(block.button[0].link)"
-                class="internal-news-2__btn"
-              > {{ block.button[0].text_button }}
-              </CircleButton>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PostItem
+      :title="story.content.title"
+      :date="date"
+      :image="story.content.big_image.filename"
+      :blocks="story.content.blog_section"
+    />
     <section class="section internal-news-3">
       <div class="container internal-news-3__wrapper">
         <h2 class="internal-news-3__title">Other news</h2>

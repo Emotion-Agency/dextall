@@ -15,7 +15,10 @@ const projectsData = await useProjectsStories()
 const newsData = await useNewsStories()
 
 
-projects.value = projectsData.stories.value.filter((_,idx) => idx <= 2)
+projects.value = projectsData.stories.value
+  .filter(prj => prj.content.featured_on_home)
+  .filter((_,idx) => idx <= 2)
+
 news.value = newsData.stories.value.filter((_,idx) => idx <= 2)
 
 const $slides1 = ref(null)
@@ -32,8 +35,6 @@ onMounted(async () => {
 
 const getTransformedImage = useTransformedImage()
 const getTransformedLink = useTransformLink()
-
-console.log(story)
 </script>
 
 <template>
@@ -104,6 +105,7 @@ console.log(story)
         </h1>
       </div>
     </section>
+
     <section class="section home-2 scroll-sequence__container">
       <div class="home-2__background scroll-sequence"></div>
       <div class="container">
@@ -304,19 +306,22 @@ console.log(story)
             Read More
           </TextButton>
         </div>
-        <ul class="grid cards">
-          <NewsCard
-            v-for="(item) in news"
-            :key="item._uid"
-            :title="item.name"
-            :slug="item.slug"
-            :description="item.content.description"
-            :date="item.first_published_at || item.created_at"
-            :img="item.content.big_image"
-            class="home-8__cards"
-          />
-        </ul>
+        <div class="cards-wrapper">
+          <ul class="cards">
+            <NewsCard
+              v-for="(item) in news"
+              :key="item._uid"
+              :title="item.name"
+              :slug="item.slug"
+              :description="item.content.description"
+              :date="item.first_published_at || item.created_at"
+              :img="item.content.big_image"
+              class="home-8__cards"
+            />
+          </ul>
+        </div>
       </div>
+
     </section>
     <section class="section home-9">
       <div class="container grid home-9__wrapper">

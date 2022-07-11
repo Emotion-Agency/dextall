@@ -7,8 +7,6 @@ useObserver('.section')
 
 const { story } = await useAboutStory()
 
-console.log(story)
-
 const breakLine = useBreakLine()
 
 const get3Title = (string: string) => {

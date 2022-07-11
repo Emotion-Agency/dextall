@@ -1,6 +1,19 @@
+import { Richtext } from 'storyblok-js-client'
+
 interface iMeta {
   title: string
   description: string
+}
+
+export interface iLink {
+  linktype: string
+  url: string
+  cached_url: string
+}
+
+interface iButton {
+  link: iLink
+  text_button: string
 }
 
 export interface iStory {
@@ -19,4 +32,10 @@ export interface iImage {
     _uid: string
     filename: string
   }
+}
+
+export interface iPostBlock {
+  _uid: string
+  text_formatting: Richtext
+  button: iButton[]
 }

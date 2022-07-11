@@ -1,8 +1,4 @@
-interface iLink {
-  linktype: string
-  url: string
-  cached_url: string
-}
+import { iLink } from '~/types/story'
 
 export const useTransformLink = () => {
   return (link: iLink) => {

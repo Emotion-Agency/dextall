@@ -15,10 +15,29 @@ const formattedDate = useFormattedDate(props.date)
 
 const getTransformedImage = useTransformedImage()
 
+const $el = ref(null)
+let sa
+
+onMounted(() => {
+  setTimeout(async () => {
+    const { OnScrollAppereance } = await import(
+      '~/scripts/OnScrollAppereance'
+    )
+    sa = new OnScrollAppereance($el.value)
+  },1000)
+})
+
+onBeforeUnmount(() => {
+  sa && sa.destroy()
+})
+
 </script>
 
 <template>
-  <li class="grid cards__li">
+  <li
+    ref="$el"
+    class="grid cards__li"
+  >
     <div class="cards__text-block">
       <h3 class="cards__title">{{ title }}</h3>
       <CircleButton

@@ -14,6 +14,9 @@ vacansies.value = vacansies.value.map(v => ({ ...v,department: v.type[0] }))
 
 const { filters,onFilter,filteredVacancies } = useVacancies(vacansies.value)
 
+const breakLine = useBreakLine()
+
+
 
 </script>
 
@@ -73,13 +76,10 @@ const { filters,onFilter,filteredVacancies } = useVacancies(vacansies.value)
         <div class="careers-4__line"></div>
         <div class="careers-4__text-wrapper">
           <h3 class="careers-4__title">{{ story.Screen_3[0].title }}</h3>
-          <p class="careers-4__text">
-            {{ story.Screen_3[0].main_text }}
-            <!-- Dextall’s leaders hire other leaders and think “I must hire the
-            candidate that will most likely outperform me”.
-            <br />
-            <br />
-            Elevating our mission is the primary goal of each team member -->
+          <p
+            class="careers-4__text"
+            v-html="breakLine(story.Screen_3[0].main_text)"
+          >
           </p>
         </div>
         <div class="careers-4__line"></div>
