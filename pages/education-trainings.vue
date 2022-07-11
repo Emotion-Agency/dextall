@@ -8,8 +8,6 @@ useObserver('.section')
 const { story } = await useLibraryStory()
 
 const date = story.value.first_published_at || story.value.created_at
-
-console.log(story)
 </script>
 
 <template>

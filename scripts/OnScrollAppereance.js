@@ -1,10 +1,9 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export class OnScrollAppereance {
   constructor($el, opts = {}) {
+    gsap.registerPlugin(ScrollTrigger)
     this.$el = $el
     this.offset = opts.offset || 0
     this.breakpoint = opts.breakpoint || 960

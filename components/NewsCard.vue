@@ -43,7 +43,7 @@ onBeforeUnmount(() => {
       <CircleButton
         class="cards__btn"
         tag="nuxt-link"
-        :href="`/news/${slug}`"
+        :href="`/news/${slug}/`"
         :is-white="true"
       > Read more </CircleButton>
     </div>
