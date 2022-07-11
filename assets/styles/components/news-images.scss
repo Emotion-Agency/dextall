@@ -12,6 +12,10 @@
 .news-images__li {
   @media (max-width: $br1) {
     margin-top: 40px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 
   &:nth-of-type(odd) {
@@ -63,22 +67,35 @@
   }
 }
 
-.news-images__text-wrapper {
+.news-images__name {
   @include default;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  margin-top: vw(20);
+
+  @media (max-width: $br1) {
+    margin-top: 15px;
+  }
+}
+
+.news-images__date {
+  @include default;
 }
 
 .news-images__img {
   display: block;
-  width: 100%;
-  height: fit-content;
+  width: vw(338);
+  height: vw(338);
   border-radius: 10px;
   margin-top: vw(15);
 
   @media (max-width: $br1) {
     margin-top: 10px;
+    width: 338px;
+    height: 338px;
+  }
+  @media (max-width: $br4) {
+    width: 100%;
+    height: auto;
   }
 }
 

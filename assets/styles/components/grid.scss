@@ -11,7 +11,7 @@
 .app-grid__col {
   height: 100%;
   background-color: rgba(#b8b8b8, 0.1);
-  @media (max-width: $br4) {
+  @media (max-width: $br1) {
     &:nth-child(n + 5) {
       display: none;
     }

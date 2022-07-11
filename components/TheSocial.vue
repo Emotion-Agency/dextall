@@ -1,19 +1,29 @@
+<script lang='ts' setup>
+import { useSocialStory } from '~/composables/stories/social.story'
+const { story } = await useSocialStory()
+
+const icons = {
+  ['Instagram']: 'In',
+  ['Facebook']: 'Fb',
+  ['YouTube']: 'You',
+  ['Twitter']: 'Tw',
+  ['LinkedIn']: 'Lin',
+}
+</script>
+
 <template>
   <ul class="social">
-    <li class="social__li">
-      <a class="social__link" href="#"> In </a>
-    </li>
-    <li class="social__li">
-      <a class="social__link" href="#"> Fb </a>
-    </li>
-    <li class="social__li">
-      <a class="social__link" href="#"> You </a>
-    </li>
-    <li class="social__li">
-      <a class="social__link" href="#"> Tw </a>
-    </li>
-    <li class="social__li">
-      <a class="social__link" href="#"> Lin </a>
+    <li
+      v-for="link in story.social_links"
+      :key="link._uid"
+      class="social__li"
+    >
+      <a
+        class="social__link"
+        :href="link.link"
+        target="'_blank'"
+        rel="'noreferer noopener'"
+      > {{ icons[link.type] }} </a>
     </li>
   </ul>
 </template>

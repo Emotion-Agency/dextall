@@ -1,64 +1,100 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useHomeStory } from '~/composables/stories/home.story'
+import { useProjectsStories } from '~/composables/stories/projects.story'
+import { useNewsStories } from '~/composables/stories/news.story'
+import { useTransformLink } from '~~/composables/transformLink';
+
 useTransition()
+useObserver('.section')
+const { getH6Title,getH9Title,story } = await useHomeStory()
+const projects = ref(null)
+const news = ref(null)
+
+const projectsData = await useProjectsStories()
+const newsData = await useNewsStories()
+
+
+projects.value = projectsData.stories.value
+  .filter(prj => prj.content.featured_on_home)
+  .filter((_,idx) => idx <= 2)
+
+news.value = newsData.stories.value.filter((_,idx) => idx <= 2)
+
+const $slides1 = ref(null)
+const $slides2 = ref(null)
+
+
+const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
+
+onMounted(async () => {
+  const { renderSequence } = await import('~/scripts/PlaySequence')
+
+  renderSequence()
+})
+
+const getTransformedImage = useTransformedImage()
+const getTransformedLink = useTransformLink()
 </script>
 
 <template>
   <main>
+
+    <PageMeta
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm home-1">
       <div class="container home-1__wrapper">
         <div class="grid home-1__top-block">
-          <div
-            class="big-img home-1__elements-left"
-            style="background-image: url('/images/home/1.jpg')"
-          ></div>
-          <div class="home-1__elements-right">
+          <div class="home-1__elements-left">
             <div
-              class="big-img home-1__right-image"
-              style="background-image: url('/images/home/2.jpg')"
-            ></div>
+              v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
+              ref="$slides1"
+              :key="img._uid"
+              class=" home-1__img-wrapper"
+              :class="activeIdx === idx && 'active'"
+            >
+              <div
+                class="big-img"
+                :style="`background-image: url('${getTransformedImage(img.image_1.filename,815)}')`"
+              ></div>
+            </div>
+          </div>
+          <div class="home-1__elements-right">
+            <div class="home-1__right-image">
+              <div
+                v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
+                :key="img._uid"
+                ref="$slides2"
+                class=" home-1__img-wrapper"
+                :class="activeIdx === idx && 'active'"
+              >
+                <div
+                  class="big-img"
+                  :style="`background-image: url('${getTransformedImage(img.image_1.filename,937)}')`"
+                ></div>
+              </div>
+            </div>
             <ul class="grid home-1__small-buildings">
-              <li class="home-1__li">
-                <p class="home-1__number">001</p>
+              <li
+                v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
+                :key="img._uid"
+                class="home-1__li"
+                :class="idx === activeIdx && 'home-1__li--active'"
+                @click="onSliderNavigationClick(idx)"
+              >
+                <p class="home-1__number">00{{ idx + 1 }}</p>
                 <div
                   class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/3.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">002</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/4.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">003</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/5.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">004</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/6.jpg')"
-                ></div>
-              </li>
-              <li class="home-1__li">
-                <p class="home-1__number">005</p>
-                <div
-                  class="small-img home-1__small-img"
-                  style="background-image: url('/images/home/7.jpg')"
+                  :style="`background-image: url('${getTransformedImage(img.image_1.filename,208)}')`"
                 ></div>
               </li>
             </ul>
           </div>
         </div>
         <p class="home-1__desc">
-          A New Norm To Design. Build. Think. powered by Dextall Studio, the BIM
-          Solution software
+          {{ story.home_screen_1[0].Description }}
         </p>
         <h1 class="grid home-1__bottom-block">
           <span class="home-1__title">Unitized</span>
@@ -69,18 +105,14 @@ useTransition()
         </h1>
       </div>
     </section>
-    <section class="section home-2">
-      <div
-        class="home-2__background"
-        style="background-image: url('/images/home/8.jpg')"
-      ></div>
+
+    <section class="section home-2 scroll-sequence__container">
+      <div class="home-2__background scroll-sequence"></div>
       <div class="container">
         <div class="home-2__wrapper">
           <div class="home-2__block">
             <p class="home-2__text">
-              Dextall innovative technology solutions empower architects, GCs,
-              business owners and developers to design and build smarter, cost
-              effective, sustainable and more beautiful buildings
+              {{ story.home_screen_2[0].main_text1 }}
             </p>
           </div>
           <div class="home-2__block">
@@ -90,87 +122,64 @@ useTransition()
               <span class="home-2__title"> Technology</span>
             </h3>
             <p class="home-2__desc">
-              Architects Fuse Design And Constructability Together, Empowering
-              them to design Mid- To High-Rise Projects by Reducing
-              design-to-installation timelines by more than 80%, providing
-              architects instantaneous data into a whole-project federated model
+              {{ story.home_screen_2[0].main_text_2 }}
             </p>
           </div>
           <div class="home-2__block">
             <p class="home-2__text">
-              Driven by technology innovation we accelerate sustainable building
-              practices TODAY, and bring affordable and efficient solutions to the
-              construction industry
+              {{ story.home_screen_2[0].main_text_3 }}
             </p>
           </div>
           <div class="home-2__block">
             <p class="home-2__text">
-              The most advanced and cost effective exterior prefab solutions and
-              the only BIM solution that utilizes technological advancement to
-              save money, time and recourses
+              {{ story.home_screen_2[0].main_text_4 }}
             </p>
           </div>
         </div>
       </div>
     </section>
     <section class="section home-3">
-      <TheTicker />
+      <TheTicker :text="story.home_screen_3[0].title" />
       <div class="container grid home-3__wrapper">
         <div class="home-3__left-block">
           <p class="home-3__text">
-            Dextall named as first qualified and approved prefab wall panel
-            provided in sweeping plan to over-clad existing affordable housing
-            projects for the State of New York
+            {{ story.home_screen_3[0].main_text }}
           </p>
           <ul class="home-3__list">
-            <li class="home-3__li">
+            <li
+              v-for="(item,idx) in story.home_screen_3[0].benefits"
+              :key="item._uid"
+              class="home-3__li"
+            >
               <div class="home-3__line"></div>
               <div class="grid home-3__content">
-                <p class="home-3__medium-text">80% faster</p>
-                <div class="home-3__group-text">
-                  <p class="home-3__regular-text">Exterior Installation</p>
-                  <p class="home-3__small-text">
-                    Get tenants in faster | Save on carrying costs
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="home-3__li">
-              <div class="home-3__line"></div>
-              <div class="grid home-3__content">
-                <p class="home-3__medium-text">15-20% less</p>
+                <p class="home-3__medium-text">
+
+                  {{ item.italics_text }}
+                </p>
                 <div class="home-3__group-text">
                   <p class="home-3__regular-text">
-                    Cost Lower than onsite construction
+                    {{ item.bold_text }}
                   </p>
                   <p class="home-3__small-text">
-                    Pass savings directly to your client
+                    {{ item.main_text }}
                   </p>
                 </div>
               </div>
-            </li>
-            <li class="home-3__li">
-              <div class="home-3__line"></div>
-              <div class="grid home-3__content">
-                <p class="home-3__medium-text">20 Times Less</p>
-                <div class="home-3__group-text">
-                  <p class="home-3__regular-text">Reduce Onsite Labor</p>
-                  <p class="home-3__small-text">
-                    Lower Cost and Carbon Footprint
-                  </p>
-                </div>
-              </div>
-              <div class="home-3__line"></div>
+              <div
+                v-if="idx + 1 === story.home_screen_3[0].benefits.length"
+                class="home-3__line"
+              ></div>
             </li>
           </ul>
         </div>
-        <div class="home-3__right-block">
-          <img
-            class="home-3__img"
-            src="/images/home/9.jpg"
-            alt="Building"
-          />
-        </div>
+        <ParallaxImg
+          :src="story.home_screen_3[0].image.filename"
+          :width="816"
+          :height="800"
+          img-class="home-3__img"
+          class="home-3__right-block"
+        />
       </div>
     </section>
     <section class="section home-4">
@@ -181,9 +190,17 @@ useTransition()
           <span class="home-4__big-text"> Engineering</span>
           <span class="home-4__big-text"> Accreditations</span>
         </h2>
-        <FloatingCards class="home-4__floating-cards">
-          <IconsFloatingCardsImg />
-        </FloatingCards>
+        <FloatingCard
+          v-for="(item,idx) in story.home_screen_4[0].Logotype"
+          :key="idx"
+          :parallax="story.home_screen_4[0].Logotype.length - idx"
+          class="home-4__floating-cards"
+        >
+          <img
+            :src="item.image_1.filename"
+            alt=""
+          >
+        </FloatingCard>
       </div>
     </section>
     <section class="section home-5">
@@ -191,15 +208,16 @@ useTransition()
         <div class="home-5__line"></div>
         <div class="home-5__main-block">
           <h3 class="home-5__title">
-            Dextall wins approved-supplier designation in $30-Million NYSERDA
-            Retrofit Initiative
+            {{ story.home_screen_5[0].Featured_news[0].title }}
           </h3>
           <p class="home-5__desc">
-            Dextall named as first qualified and approved prefab wall panel
-            provided in sweeping plan to over-clad existing affordable housing
-            projects for the State of New York
+            {{ story.home_screen_5[0].Featured_news[0].main_text }}
           </p>
-          <CircleButton class="home-5__btn"> Read more </CircleButton>
+          <CircleButton
+            v-bind="getTransformedLink(story.home_screen_5[0].Featured_news[0].button[0].link)"
+            class="home-5__btn"
+          > {{ story.home_screen_5[0].Featured_news[0].button[0].text_button }}
+          </CircleButton>
         </div>
         <div class="home-5__line"></div>
       </div>
@@ -207,32 +225,40 @@ useTransition()
     <section class="section home-6">
       <div class="container grid home-6__wrapper">
         <div class="home-6__text-block">
-          <p class="home-6__small-text">Leader in innovation</p>
-          <h2 class="home-6__big-text">
-            <span class="home-6__b-text">latest</span>
-            <span class="home-6__b-text"> Forbes</span>
-            <span class="home-6__b-text"> feature</span>
+          <p class="home-6__small-text">{{ story.home_screen_6[0].small_text }}</p>
+          <h2
+            class="home-6__big-text"
+            v-html="getH6Title(story.home_screen_6[0].title)"
+          >
+
           </h2>
           <p class="home-6__desc">
-            States’ Build Back Better Plans For Affordable Housing Hinge On
-            Innovators
+            {{ story.home_screen_6[0].main_text }}
           </p>
-          <CircleButton class="home-6__btn"> View more </CircleButton>
+          <CircleButton
+            class="home-6__btn"
+            v-bind="getTransformedLink(story.home_screen_6[0].button[0].link)"
+          > {{ story.home_screen_6[0].button[0].text_button }} </CircleButton>
         </div>
-        <div class="home-6__image-top">
-          <img
-            class="home-6__img"
-            src="/images/home/10.jpg"
-            alt="Building"
-          />
-        </div>
-        <div class="home-6__image-bottom">
-          <img
-            class="home-6__img"
-            src="/images/home/11.jpg"
-            alt="Building"
-          />
-        </div>
+
+        <ParallaxImg
+          :src="story.home_screen_6[0].small_image.filename"
+          :width="815"
+          :height="899"
+          img-class="home-6__img"
+          class="home-6__image-top"
+        />
+
+        <ParallaxImg
+          :src="story.home_screen_6[0].big_image.filename"
+          :width="1173"
+          :height="899"
+          img-class="home-6__img"
+          class="home-6__image-bottom"
+          data-parallax="0.1"
+          data-parallax-dir="-1"
+        />
+
       </div>
     </section>
     <section class="section home-7">
@@ -243,13 +269,26 @@ useTransition()
             <span class="home-7__span-title"> Projects</span>
           </h3>
           <p class="home-7__desc">
-            Highest quality prefab exteriors and BIM Solution that provides
-            affordable, sustainable designs and increases design coordination
-            efficiency
+            {{ story.home_screen_7[0].main_text }}
           </p>
-          <CircleButton class="home-7__btn"> View all </CircleButton>
+          <CircleButton
+            tag="nuxt-link"
+            to="/projects/"
+            class="home-7__btn"
+          > View all </CircleButton>
         </div>
-        <ImageList />
+        <ul class="image-list">
+          <ProjectListItem
+            v-for="(project,idx) in projects"
+            :key="project._uid"
+            :images="project.content.Screen_2[0].gallery"
+            :title="project.name"
+            :description="project.content.Screen_1[0].project_description"
+            :number="idx + 1"
+            :slug="project.slug"
+          />
+        </ul>
+
       </div>
     </section>
     <section class="section home-8">
@@ -259,46 +298,64 @@ useTransition()
             <span class="home-8__span-top">Latest</span>
             <span class="home-8__span-bottom"> News</span>
           </h3>
-          <p class="home-8__desc">
-            As an AIA/CES Registered Provider, Dextall offers various programs for
-            Architects and Certified Installer Program (Dextall CIP) that focuses
-            on training for unitized prefab panel installation
-          </p>
+          <TextButton
+            tag="nuxt-link"
+            href="/news/"
+            class="home-8__btn"
+          >
+            Read More
+          </TextButton>
         </div>
-        <TheCards class="home-8__cards" />
+        <div class="cards-wrapper">
+          <ul class="cards">
+            <NewsCard
+              v-for="(item) in news"
+              :key="item._uid"
+              :title="item.name"
+              :slug="item.slug"
+              :description="item.content.description"
+              :date="item.first_published_at || item.created_at"
+              :img="item.content.big_image"
+              class="home-8__cards"
+            />
+          </ul>
+        </div>
       </div>
+
     </section>
     <section class="section home-9">
       <div class="container grid home-9__wrapper">
         <div class="home-9__text-block">
-          <h2 class="home-9__big-text">
-            <span class="home-9__b-text">Architect</span>
-            <span class="home-9__b-text"> Education</span>
-            <span class="home-9__b-text"> and</span>
-            <span class="home-9__b-text"> Installer</span>
-            <span class="home-9__b-text"> Training</span>
+          <h2
+            class="home-9__big-text"
+            v-html="getH9Title(story.home_screen_9[0].Title)"
+          >
           </h2>
           <p class="home-9__desc">
-            As an AIA/CES Registered Provider, Dextall offers various programs for
-            Architects and Certified Installer Program (Dextall CIP) that focuses
-            on training for unitized prefab panel installation
+            {{ story.home_screen_9[0].Description }}
           </p>
-          <CircleButton class="home-9__btn"> Read more </CircleButton>
+          <CircleButton
+            class="home-9__btn"
+            v-bind="getTransformedLink(story.home_screen_9[0].button[0].link)"
+          > {{ story.home_screen_9[0].button[0].text_button }} </CircleButton>
         </div>
-        <div class="home-9__image-top">
-          <img
-            class="home-9__img"
-            src="/images/home/17.jpg"
-            alt="Building"
-          />
-        </div>
-        <div class="home-9__image-bottom">
-          <img
-            class="home-9__img"
-            src="/images/home/18.jpg"
-            alt="Building"
-          />
-        </div>
+        <ParallaxImg
+          :src="story.home_screen_9[0].small_image.filename"
+          img-class="home-9__img"
+          :width="815"
+          :height="1021"
+          class="home-9__image-top"
+        />
+
+        <ParallaxImg
+          :src="story.home_screen_9[0].big_image.filename"
+          :width="1172"
+          :height="899"
+          img-class="home-9__img"
+          class="home-9__image-bottom"
+          data-parallax="0.1"
+          data-parallax-dir="-1"
+        />
       </div>
     </section>
   </main>

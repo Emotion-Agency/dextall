@@ -78,6 +78,7 @@
 
 .about-8__right-block {
   height: 100%;
+  overflow: hidden;
 
   @media (min-width: $br1) {
     @include col(8, 15);
@@ -89,7 +90,6 @@
       flex-direction: column-reverse;
     }
   }
-
 }
 
 .about-8__image {
@@ -130,12 +130,20 @@
 .about-8__desc {
   @include default;
   margin-top: vw(30);
+  font-size: vw(20);
+  line-height: 1.2em;
 
   @media (max-width: $br1) {
     margin-top: 20px;
+    font-size: 16px;
   }
 
   &--transform {
     text-transform: none;
+    font-size: 14px;
+
+    @media (min-width: $br1) {
+      max-width: vw(816);
+    }
   }
 }

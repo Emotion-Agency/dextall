@@ -1,5 +1,5 @@
 <template>
-  <header class="header container">
+  <header class="header navbar container">
     <div class="header__wrapper">
       <NuxtLink
         to="/"
@@ -70,8 +70,6 @@
 <script setup lang="ts">
 const isNavOpen = ref(false)
 
-
-
 const open = () => {
   window.ss.isFixed = true
   isNavOpen.value = true
@@ -84,4 +82,15 @@ const close = () => {
 }
 
 const { open: openContacts } = useContacts()
+let navbarPos
+
+onMounted(async () => {
+  const { default: NavbarPos } = await import('~/scripts/utils/navbarPos')
+  navbarPos = new NavbarPos()
+  navbarPos.init()
+})
+
+onBeforeUnmount(() => {
+  navbarPos && navbarPos.destroy()
+})
 </script>

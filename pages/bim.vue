@@ -1,48 +1,79 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useBimStory } from '~/composables/stories/bim.story'
+
 useTransition()
+useObserver('.section')
+
+const { story } = await useBimStory()
+
+const getTransformedImage = useTransformedImage()
+const getTransformedLink = useTransformLink()
+
+onMounted(async () => {
+  const { Carousel } = await import('~/scripts/Carousel')
+
+  const carousel = new Carousel()
+  carousel.init()
+})
+
 </script>
 
 <template>
   <main>
+    <PageMeta
+      :title="story.meta[0].title"
+      :description="story.meta[0].description"
+    />
     <section class="section section--nm bim-1">
       <div class="container bim-1__wrapper">
         <div class="bim-1__text-block">
-          <p class="bim-1__top-text">Simple, efficient, optimized</p>
-          <TheTicker class="bim-1__ticker" />
+          <p class="bim-1__top-text">{{ story.Screen_1[0].short_text }}</p>
+          <TheTicker
+            :text="story.Screen_1[0].moving_title"
+            class="bim-1__ticker"
+          />
           <p class="bim-1__bottom-text">
-            Technology platform that bridges the gap between the design of
-            prefabricated exteriors within the AEC industry and the final exterior
-            wall execution at the job site
+            {{ story.Screen_1[0].description }}
           </p>
         </div>
-        <CircleButton class="bim-1__btn"> Get access </CircleButton>
+        <CircleButton
+          v-bind="getTransformedLink(story.Screen_1[0].button[0].link)"
+          class="bim-1__btn"
+        >
+          {{ story.Screen_1[0].button[0].text_button }}
+        </CircleButton>
       </div>
     </section>
     <section class="section bim-2">
       <div class="container bim-2__wrapper">
         <h2 class="bim-2__title">
           <span class="bim-2__span-title">
-            Exterior design and coordination process is reduced
+            {{ story.Screen_2[0].title.replace(story.Screen_2[0].highlighted_title,'') }}
           </span>
-          from 24 month to 2 days
+          {{ story.Screen_2[0].highlighted_title }}
         </h2>
         <div class="grid bim-2__content">
           <p class="bim-2__text">
-            Our Platform offers optimized, end-to-end architectural, automated
-            design and engineering review process
+            {{ story.Screen_2[0].left_text }}
           </p>
           <p class="bim-2__text">
-            Get access to a Digital Library of templated, realistic detailed
-            facade design, renderings and more
+            {{ story.Screen_2[0].right_text }}
           </p>
-          <TextButton class="bim-2__btn">Get access</TextButton>
+          <TextButton
+            class="bim-2__btn"
+            v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
+          >{{
+              story.Screen_2[0].button[0].text_button
+          }}</TextButton>
         </div>
       </div>
-      <div
+      <ParallaxImg
         class="bim-2__bg"
-        style="background-image: url('/images/bim/1.jpg')"
-      ></div>
+        :src="story.Screen_2[0].big_image.filename"
+        :width="1920"
+        :height="2160"
+      />
     </section>
     <section class="section bim-3">
       <div class="container bim-3__wrapper">
@@ -52,106 +83,93 @@ useTransition()
           <span class="bim-3__span-title"> Benefits</span>
         </h2>
         <ul class="bim-3__list">
-          <li class="bim-3__li">
+          <li
+            v-for="(item,idx) in story.Screen_3[0].benefits_list"
+            :key="item._uid"
+            class="bim-3__li"
+          >
             <div class="bim-3__line"></div>
             <p class="bim-3__text">
-              Software optimization algorithm reduces material waste factor by 30%
+              {{ item.text }}
             </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              Exterior system optimized for architectural Revit models
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              Realistic and detailed façade design & Renderings
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              3D high LOD wall section renderings and shop drawings
-            </p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">Drawings satisfy specBIM requirements</p>
-          </li>
-          <li class="bim-3__li">
-            <div class="bim-3__line"></div>
-            <p class="bim-3__text">
-              Dashboard for data driven design and analytics
-            </p>
-            <div class="bim-3__line"></div>
+            <div
+              v-if="idx === story.Screen_3[0].benefits_list.length - 1"
+              class="bim-3__line"
+            ></div>
           </li>
         </ul>
-        <div class="bim-3__slider-wrapper">
-          <div class="bim-3__btns">
-            <button class="bim-3__btn">
-              <IconsArrowLeft class="bim-3__arrow" />
-            </button>
-            <button class="bim-3__btn">
-              <IconsArrowRight class="bim-3__arrow" />
-            </button>
-          </div>
-          <div class="bim-3__slider">
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/2.jpg"
-              alt="Building"
-            />
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/3.jpg"
-              alt="Building"
-            />
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/4.jpg"
-              alt="Building"
-            />
-            <img
-              class="bim-3__slider-img"
-              src="/images/bim/2.jpg"
-              alt="Building"
-            />
-          </div>
-        </div>
+      </div>
+      <div
+        data-slider
+        class="bim-3__slider-wrapper"
+      >
+        <ul
+          class="bim-3__img-list"
+          data-slider-inner
+        >
+          <li
+            v-for="(img,idx) in story.Screen_3[0].gallery"
+            :key="img._uid"
+            class="bim-3__li"
+            data-slide
+          >
+            <div class="bim-3__img-wrapper">
+              <img
+                class="bim-3__img"
+                :src="getTransformedImage(img.image.filename,577)"
+                alt="Building"
+              />
+            </div>
+            <p class="bim-3__number">0{{ idx + 1 }}</p>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="section bim-4">
       <div class="container bim-4__wrapper">
-        <h2 class="bim-4__title">Results</h2>
+        <h2 class="bim-4__title">
+          {{ story.Screen_3[0].results_list_benefits[0].H1_title }}
+        </h2>
         <ul class="bim-4__list">
           <li class="bim-4__li">
             <div class="bim-4__line"></div>
             <div class="grid bim-4__content-wrapper">
               <div class="bim-4__text-wrapper">
-                <h3 class="bim-4__content-title">For Architects</h3>
+                <h3 class="bim-4__content-title">
+                  {{ story.Screen_3[0].results_list_benefits[0].point_title }}
+                </h3>
                 <p class="bim-4__content-desc">
-                  Optimize with flexibility and accuracy
+                  {{
+                      story.Screen_3[0].results_list_benefits[0].description_title
+                  }}
                 </p>
               </div>
               <ul class="bim-4__content-list">
                 <li class="bim-4__content-li">
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
-                    Less mistakes means more time to fuel your creativity
+                    {{
+                        story.Screen_3[0].results_list_benefits[0].text_point[0]
+                          .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Faster design process and real-time exterior skin cost updates
+                    {{
+                        story.Screen_3[0].results_list_benefits[0].text_point[1]
+                          .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Fully optimized to work with retrofit projects in Revit
+                    {{
+                        story.Screen_3[0].results_list_benefits[0].text_point[2]
+                          .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
@@ -163,35 +181,46 @@ useTransition()
             <div class="grid bim-4__content-wrapper">
               <div class="bim-4__text-wrapper">
                 <h3 class="bim-4__content-title">
-                  For GCs and construction managers
+                  {{ story.Screen_3[0].results_list_benefits[1].point_title }}
                 </h3>
                 <p class="bim-4__content-desc">
-                  Easily obtain installation manuals and 3D high detailed
-                  renderings
+                  {{
+                      story.Screen_3[0].results_list_benefits[1].description_title
+                  }}
                 </p>
               </div>
               <ul class="bim-4__content-list">
                 <li class="bim-4__content-li">
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
-                    Less time spend installing and lower overall cost
+                    {{
+                        story.Screen_3[0].results_list_benefits[1].text_point[0]
+                          .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Less mistakes during installations
+                    {{
+                        story.Screen_3[0].results_list_benefits[1].text_point[1]
+                          .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
-                    Fully optimized to work with retrofit projects on site
+                    {{
+                        story.Screen_3[0].results_list_benefits[1].text_point[2]
+                          .text
+                    }}
                   </p>
                   <div class="bim-4__line"></div>
                   <p class="bim-4__about-text">
-                    Support: video chat support.<br />
-                    Education: training on plug-in options
+                    {{
+                        story.Screen_3[0].marked_list_benefits[0].uppercase_text
+                    }}
                   </p>
                 </li>
               </ul>
@@ -201,18 +230,27 @@ useTransition()
       </div>
     </section>
     <section class="section bim-5">
-      <div
+      <ParallaxImg
         class="bim-5__bg"
-        style="background-image: url('/images/bim/5.jpg')"
-      >
-        <div class="container bim-5__wrapper">
-          <h2 class="bim-5__title">
-            <span class="bim-5__span-title">try</span>
-            <span class="bim-5__span-title"> Dextall Studio</span>
-          </h2>
-          <p class="bim-5__desc">Get Access Now!</p>
-          <CircleButton class="bim-5__btn">Register</CircleButton>
-        </div>
+        :src='story.Screen_4[0].big_image.filename'
+        :with-border-radius="false"
+        :width="1920"
+        :height="1080"
+      />
+      <div class="container bim-5__wrapper">
+        <h2 class="bim-5__title">
+          <span class="bim-5__span-title">try</span>
+          <span class="bim-5__span-title"> Dextall Studio</span>
+        </h2>
+        <p class="bim-5__desc">
+          {{ story.Screen_4[0].description }}
+        </p>
+        <CircleButton
+          class="bim-5__btn"
+          :is-white="true"
+        >{{
+            story.Screen_4[0].button[0].text_button
+        }}</CircleButton>
       </div>
     </section>
   </main>

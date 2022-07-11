@@ -37,8 +37,6 @@
   }
 }
 
-.home-3__li {}
-
 .home-3__line {
   height: 2px;
   width: 100%;
@@ -49,6 +47,7 @@
   @include default;
   grid-template-columns: repeat(8, 1fr);
   padding: vw(20) 0;
+  align-items: center;
 
   @media (max-width: $br1) {
     grid-template-columns: repeat(4, 1fr);

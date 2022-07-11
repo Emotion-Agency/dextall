@@ -5,6 +5,12 @@ import { useFonts } from '~/composables/fonts'
 useFonts()
 
 const appStore = useAppStore()
+
+const parallaxInit = async () => {
+  const { Parallax } = await import('@emotionagency/parallax')
+  window.parallax = new Parallax({ mobile: false })
+}
+
 onMounted(async () => {
   const { default: supportsWebP } = await import('supports-webp')
 
@@ -13,12 +19,18 @@ onMounted(async () => {
   } else {
     appStore.setIsWebp(false)
   }
-  const { hello } = await import('~/assets/scripts/utils/hello')
+  const { hello } = await import('~/scripts/utils/hello')
   hello()
 
-  const { winSizes } = await import('~/assets/scripts/utils/winSizes')
-  const { resize } = await import('@emotionagency/utils')
+  const { winSizes } = await import('~/scripts/utils/winSizes')
+  const { resize } = await import('@/scripts/utils/ea')
   resize.on(winSizes)
+
+  await parallaxInit()
+})
+
+onBeforeUnmount(() => {
+  window.parallax && window.parallax.destroy()
 })
 
 </script>
@@ -27,7 +39,7 @@ onMounted(async () => {
   <div id="app">
 
     <Head>
-      <Title>Emotion</Title>
+      <Title>Dextall</Title>
       <Meta
         name="viewport"
         conten="width=device-width, initial-scale=1"
@@ -42,8 +54,8 @@ onMounted(async () => {
     </Head>
     <AppGrid />
     <UiLoader />
-    <TheHeader />
     <SmoothScroll>
+      <TheHeader />
       <slot />
       <TheContacts />
       <TheFooter />

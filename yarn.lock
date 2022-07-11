@@ -232,6 +232,13 @@
     "@babel/helper-plugin-utils" "^7.16.7"
     "@babel/plugin-syntax-typescript" "^7.16.7"
 
+"@babel/runtime@^7.15.4":
+  version "7.18.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.6.tgz#6a1ef59f838debd670421f8c7f2cbb8da9751580"
+  integrity sha512-t9wi7/AW6XtKahAe20Yw0/mMljKq0B1r2fPdvaAdV/KPDZewFXdaaa6K7lxmZBZ8FBNpCiAT6iHPmd6QO9bKfQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.17.7":
   version "7.17.11"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.17.11.tgz#9cc17674da762332b2e40d469ce37725a6136487"
@@ -277,6 +284,13 @@
   dependencies:
     mime "^3.0.0"
 
+"@emotionagency/parallax@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@emotionagency/parallax/-/parallax-1.0.2.tgz#e20ebc02ef4cc40083a9ae639723d118d88a523a"
+  integrity sha512-VzjlpxXkTeIJnXqmuE/xIasUPw6LiUBPDMQYdzbRmvwJLqPSnFscXY+oaCbcZslRzc7P57NbwIs+X+iCzvm8gw==
+  dependencies:
+    "@emotionagency/utils" "*"
+
 "@emotionagency/smoothscroll@latest":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-1.0.2.tgz#bbd39d50ae410f31d1326b1a5085029542ab52a0"
@@ -284,7 +298,7 @@
   dependencies:
     virtual-scroll "^2.1.1"
 
-"@emotionagency/utils@latest":
+"@emotionagency/utils@*":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-1.0.2.tgz#3f7e1eb055dcc7cf5c99755fd410ae88936c4b56"
   integrity sha512-FGsnR9DUoOtw4MzMsWe/ueAUyu+iK2f7zh7j+DAz3fDm956PCwy716kxSTXIcY6BG4uDL86sxGM17B+pkKt+JA==
@@ -531,6 +545,17 @@
     vite-node "^0.10.0"
     vite-plugin-checker "^0.4.6"
 
+"@nuxtjs/axios@^5.13.6":
+  version "5.13.6"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.13.6.tgz#6f4bbd98a3a7799a5d2c0726c6ad2a98aa111881"
+  integrity sha512-XS+pOE0xsDODs1zAIbo95A0LKlilvJi8YW0NoXYuq3/jjxGgWDxizZ6Yx0AIIjZOoGsXJOPc0/BcnSEUQ2mFBA==
+  dependencies:
+    "@nuxtjs/proxy" "^2.1.0"
+    axios "^0.21.1"
+    axios-retry "^3.1.9"
+    consola "^2.15.3"
+    defu "^5.0.0"
+
 "@nuxtjs/eslint-module@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-module/-/eslint-module-3.1.0.tgz#3e7d241f4b53fbc6ab59932054d11dd22a828a40"
@@ -539,6 +564,13 @@
     consola "^2.15.3"
     defu "^6.0.0"
     eslint-webpack-plugin "^2.6.0"
+
+"@nuxtjs/proxy@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-2.1.0.tgz#fa7715a11d237fa1273503c4e9e137dd1bf5575b"
+  integrity sha512-/qtoeqXgZ4Mg6LRg/gDUZQrFpOlOdHrol/vQYMnKu3aN3bP90UfOUB3QSDghUUK7OISAJ0xp8Ld78aHyCTcKCQ==
+  dependencies:
+    http-proxy-middleware "^1.0.6"
 
 "@pinia/nuxt@^0.1.8":
   version "0.1.8"
@@ -630,6 +662,28 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@storyblok/js@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.6.1.tgz#385c08e960d93a7463c414dbf30254f089e6e7fe"
+  integrity sha512-Umxi3rcIEK5waZNynS62AEsw3ygbFhyv0s0ZjFWVvBxJKNVEhqqg7Zx6Fa8fo+lW6vFsdlnXmvX7CfjI94RzrA==
+  dependencies:
+    storyblok-js-client "^4.5.2"
+
+"@storyblok/nuxt@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@storyblok/nuxt/-/nuxt-4.0.1.tgz#66098849bb5310d0ba1a63564e102040abf4a551"
+  integrity sha512-bZke7+lfpJeHkLcIvaygWfa62PUYrDFquMdCLH8zIBTAQTHAlCZDCb0LLyOtIv0S+6u6iZAGiJu7W3Z+tuRCDQ==
+  dependencies:
+    "@nuxt/kit" "^3.0.0-rc.2"
+    "@storyblok/vue" "^6.0.3"
+
+"@storyblok/vue@^6.0.3":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/vue/-/vue-6.1.0.tgz#56fe6063294c471c8f6644b19da84ce4cf878a53"
+  integrity sha512-MlJ5c7FR5aOW83V6nNnH4F8t1Py72Qzz6LSyIysFN8i/t4UTIgOcJ/7WaJuBcFF69yBx3efvRkKKnVakq5cqQw==
+  dependencies:
+    "@storyblok/js" "^1.6.1"
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
@@ -652,6 +706,13 @@
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
+
+"@types/http-proxy@^1.17.5":
+  version "1.17.9"
+  resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.9.tgz#7f0e7931343761efde1e2bf48c40f02f3f75705a"
+  integrity sha512-QsbSjA/fSk7xB+UXlCT3wHBy5ai9wOcNDWwZAtud+jXhwOM3l+EYZh8Lng4+/6n8uar0J7xILzqftJdJ/Wdfkw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/jsdom@^16.2.14":
   version "16.2.14"
@@ -1124,6 +1185,21 @@ available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
+
+axios-retry@^3.1.9:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.3.1.tgz#47624646138aedefbad2ac32f226f4ee94b6dcab"
+  integrity sha512-RohAUQTDxBSWLFEnoIG/6bvmy8l3TfpkclgStjl5MDCMBDgapAWCmr1r/9harQfWC8bzLC8job6UcL1A1Yc+/Q==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    is-retry-allowed "^2.2.0"
+
+axios@^0.21.1:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -1681,6 +1757,11 @@ define-properties@^1.1.3, define-properties@^1.1.4:
   dependencies:
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
+
+defu@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/defu/-/defu-5.0.1.tgz#a034278f9b032bf0845d261aa75e9ad98da878ac"
+  integrity sha512-EPS1carKg+dkEVy3qNTqIdp2qV7mUP08nIsupfwQpz++slCVRw7qbQyWvSTig+kFPwz2XXp5/kIIkH+CwrJKkQ==
 
 defu@^6.0.0:
   version "6.0.0"
@@ -2403,6 +2484,11 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
   integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
 
+follow-redirects@^1.14.0:
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.1.tgz#0ca6a452306c9b276e4d3127483e29575e207ad5"
+  integrity sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==
+
 foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
@@ -2742,6 +2828,17 @@ http-errors@2.0.0:
     statuses "2.0.1"
     toidentifier "1.0.1"
 
+http-proxy-middleware@^1.0.6:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-1.3.1.tgz#43700d6d9eecb7419bf086a128d0f7205d9eb665"
+  integrity sha512-13eVVDYS4z79w7f1+NPllJtOQFx/FdUW4btIvVRMaRlUY9VGstAbo5MOhLEuUgZFRHn3x50ufn25zkj/boZnEg==
+  dependencies:
+    "@types/http-proxy" "^1.17.5"
+    http-proxy "^1.18.1"
+    is-glob "^4.0.1"
+    is-plain-obj "^3.0.0"
+    micromatch "^4.0.2"
+
 http-proxy@^1.18.1:
   version "1.18.1"
   resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
@@ -2996,6 +3093,11 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+is-plain-obj@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-3.0.0.tgz#af6f2ea14ac5a646183a5bbdb5baabbc156ad9d7"
+  integrity sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==
+
 is-primitive@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/is-primitive/-/is-primitive-3.0.1.tgz#98c4db1abff185485a657fc2905052b940524d05"
@@ -3020,6 +3122,11 @@ is-regex@^1.1.4:
   dependencies:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
+
+is-retry-allowed@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-2.2.0.tgz#88f34cbd236e043e71b6932d09b0c65fb7b4d71d"
+  integrity sha512-XVm7LOeLpTW4jV19QSH38vkswxoLud8sQ57YwJVTPWdiaI9I8keEhGFpBlslyVsgdQy4Opg8QOLb8YRgsyZiQg==
 
 is-shared-array-buffer@^1.0.2:
   version "1.0.2"
@@ -4429,6 +4536,11 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
+regenerator-runtime@^0.13.4:
+  version "0.13.9"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
+
 regexpp@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.2.0.tgz#0425a2768d8f23bad70ca4b90461fa2f1213e1b2"
@@ -4785,6 +4897,11 @@ std-env@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.1.1.tgz#1f19c4d3f6278c52efd08a94574a2a8d32b7d092"
   integrity sha512-/c645XdExBypL01TpFKiG/3RAa/Qmu+zRi0MwAmrdEkwHNuN0ebo8ccAXBBDa5Z0QOJgBskUIbuCK91x0sCVEw==
+
+storyblok-js-client@^4.5.2:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.5.tgz#00b34b7f6d0a66a486cfc700472c267a62652d7a"
+  integrity sha512-PP71RWU3/3XgiFPQ83hz0T2zuI6syoPePPtDGYJwkHOwarjf+rbbQVS1xx1CDvxlfQCFkv0fPenG9ekH1fHFXQ==
 
 strict-uri-encode@^2.0.0:
   version "2.0.0"

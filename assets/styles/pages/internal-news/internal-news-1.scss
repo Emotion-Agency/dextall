@@ -5,11 +5,10 @@
 .internal-news-1__wrapper {
   display: flex;
   justify-content: center;
-  height: 50vh;
   text-align: center;
+  margin-bottom: 16px;
 
   @media (min-width: $br1) {
-    max-width: vw(1840);
     margin-top: vw(252);
     align-items: end;
   }

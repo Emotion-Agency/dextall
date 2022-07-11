@@ -30,8 +30,22 @@
   @include default;
   @include col(2, 2);
 
-  &:nth-of-type(-n+5) {
+  &:nth-of-type(-n + 5) {
     @include col(1, 1);
+  }
+  button {
+    @include default;
+  }
+  a {
+    line-height: 1em;
+    display: block;
+    @include stroke-link;
+    &.router-link-exact-active {
+      pointer-events: none;
+      &:after {
+        width: 100% !important;
+      }
+    }
   }
 }
 
