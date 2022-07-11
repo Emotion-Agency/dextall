@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useProjectsStories } from '~/composables/stories/projects.story'
-import { keysGenerator } from '~~/scripts/utils/ea';
+import { keysGenerator } from '~~/scripts/utils/ea'
 
 useTransition()
 useObserver('.section')
@@ -11,9 +11,12 @@ const { stories } = await useProjectsStories()
 const slug = useRoute().params.id
 
 
+
 const story = computed(() => {
   return stories.value.find(story => story.slug === slug).content
 })
+
+console.log(story.value)
 
 const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
@@ -106,7 +109,10 @@ const imagesSlides = computed(() => {
           @click="openSlider(0)"
         >Full screen mode</CircleButton>
       </div>
-      <div data-slider>
+      <div
+        data-slider
+        dragable="false"
+      >
         <ul
           class="project-3__img-list"
           data-slider-inner
@@ -253,7 +259,7 @@ const imagesSlides = computed(() => {
               :key="item._uid"
               :date="item.first_published_at || item.created_at"
               :name="item.name"
-              :link="'/news/' + item.slug + '/'"
+              :link="'/projects/' + item.slug + '/'"
               :img="item?.content?.Screen_1[0].main_image.filename"
               description="test"
             />

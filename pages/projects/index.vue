@@ -23,40 +23,19 @@ const { stories,story } = await useProjectsStories()
       </div>
     </section>
     <section class="section projects-2">
-      <ul class="projects-list">
-        <li
-          v-for="project in stories"
-          :key="project._uid"
-          class="project-item"
-        >
-          <NuxtLink
-            :to="'/projects/' + project.slug + '/'"
-            class="project-link"
-          >
-            <ProjectsTicker
-              class="projects-2__ticker"
-              :text="project.name"
-            />
-            <div class="container projects-2__wrapper">
-              <p class="projects-2__text">
-                {{ project.content?.Screen_1 && project.content.Screen_1[0].description }}
-              </p>
-              <div class="grid projects-2__img-wrapper">
-                <ParallaxImg
-                  v-for="(item,idx) in project.content?.Screen_2[0].gallery"
-                  :key="idx"
-                  class="projects-2__img"
-                  :src="item?.image?.filename"
-                  :height="600"
-                  :width="600"
-                  :transform="false"
-                  :scale="1.2"
-                />
-              </div>
-            </div>
-          </NuxtLink>
-        </li>
-      </ul>
+      <div class="container">
+        <ul class="grid news-images projects-list">
+          <NewsItem
+            v-for="item in stories"
+            :key="item._uid"
+            :date="item.first_published_at || item.created_at"
+            :name="item.name"
+            :link="'/projects/' + item.slug + '/'"
+            :img="item.content.Screen_1[0].main_image.filename"
+            :description="item.content.description"
+          />
+        </ul>
+      </div>
     </section>
   </main>
 </template>

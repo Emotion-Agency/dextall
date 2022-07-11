@@ -33,6 +33,7 @@
 [data-slider] {
   overflow: auto;
   cursor: grab;
+  user-select: none;
   &.is-grabbing {
     cursor: grabbing;
     .project-3__img {

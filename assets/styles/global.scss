@@ -63,6 +63,7 @@ body {
   position: relative;
   &--br {
     border-radius: 10px;
+    isolation: isolate;
   }
 }
 

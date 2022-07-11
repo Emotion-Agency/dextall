@@ -20,11 +20,11 @@ const filteredStories = computed(() => {
 })
 
 
-const date = story.value.first_published_at || story.value.created_at
+const date = story.value?.first_published_at || story.value?.created_at
 </script>
 
 <template>
-  <main>
+  <main v-if="story?.content">
     <PageMeta
       v-if="story.content.meta.length"
       :title="story.content.meta[0].title"

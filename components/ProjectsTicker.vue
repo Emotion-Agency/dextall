@@ -11,6 +11,5 @@ defineProps<iProps>()
     :text="text"
     class="project-ticker"
     :duration="30"
-    :multiplier="32"
   />
 </template>

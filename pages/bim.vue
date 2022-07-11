@@ -101,6 +101,7 @@ onMounted(async () => {
       </div>
       <div
         data-slider
+        dragable="false"
         class="bim-3__slider-wrapper"
       >
         <ul

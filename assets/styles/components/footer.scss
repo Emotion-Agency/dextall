@@ -35,6 +35,7 @@
   }
   button {
     @include default;
+    background-color: transparent;
   }
   a {
     line-height: 1em;
