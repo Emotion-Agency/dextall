@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang='ts' setup>
 import { iImage } from '~/types/story'
 
 interface iProps {
@@ -14,7 +14,10 @@ defineProps<iProps>()
 
 <template>
   <li class="image-list__li">
-    <NuxtLink :to="`/projects/${slug}/`" class="image-list__link">
+    <NuxtLink
+      :to="`/projects/${slug}/`"
+      class="image-list__link"
+    >
       <div class="image-list__text">
         <h4 class="image-list__title">{{ title }}</h4>
         <div class="image-list__desc-wrapper">
@@ -24,7 +27,10 @@ defineProps<iProps>()
           </p>
         </div>
       </div>
-      <div v-if="images.length >= 4" class="grid image-list__img-wrapper">
+      <div
+        v-if="images.length >= 4"
+        class="grid image-list__img-wrapper"
+      >
         <ParallaxImg
           :key="images[0].image._uid"
           :src="images[0].image.filename"
@@ -60,4 +66,5 @@ defineProps<iProps>()
       </div>
     </NuxtLink>
   </li>
+
 </template>

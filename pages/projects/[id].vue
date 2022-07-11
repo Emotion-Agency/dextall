@@ -165,6 +165,7 @@ const imagesSlides = computed(() => {
       <ParallaxImg
         class="project-5__bg"
         :src="story.Screen_4[0].image.filename"
+        :with-border-radius="false"
       />
       <div class="container grid project-5__wrapper">
         <h2 class="project-5__title">{{ story.Screen_4[0].title }}</h2>

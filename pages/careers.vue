@@ -37,6 +37,7 @@ const breakLine = useBreakLine()
         class="careers-2__bg"
         src="/images/careers/1.jpg"
         :transform="false"
+        :with-border-radius="false"
       />
       <div class="container grid careers-2__wrapper">
         <h2 class="careers-2__title">

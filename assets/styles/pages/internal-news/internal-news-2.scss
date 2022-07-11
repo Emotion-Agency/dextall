@@ -31,15 +31,15 @@
     h1,
     h2 {
       @include h1;
-      font-size: 36px;
+      font-size: 36px !important;
     }
     h3 {
       @include h1;
-      font-size: 28px;
+      font-size: 28px !important;
     }
     h4 {
       @include h1;
-      font-size: 20px;
+      font-size: 20px !important;
     }
     ol {
       list-style-type: decimal;
