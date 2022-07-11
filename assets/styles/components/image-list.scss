@@ -11,9 +11,8 @@
   &:nth-of-type(2) {
     .image-list__text {
       @media (min-width: $br1) {
-        position: absolute;
-        max-width: vw(458);
         right: vw(75);
+        height: vw(354);
       }
     }
     .image-list__img {
@@ -64,6 +63,11 @@
   @media (min-width: $br1) {
     position: absolute;
     max-width: vw(458);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: vw(380);
+    width: 100%;
   }
 }
 
@@ -82,7 +86,6 @@
 
 .image-list__desc-wrapper {
   @include default;
-  margin-top: vw(244);
 
   @media (max-width: $br1) {
     margin-top: 20px;

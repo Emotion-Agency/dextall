@@ -16,7 +16,6 @@ onMounted(async () => {
   const carousel = new Carousel()
   carousel.init()
 })
-
 </script>
 
 <template>
@@ -49,7 +48,12 @@ onMounted(async () => {
       <div class="container bim-2__wrapper">
         <h2 class="bim-2__title">
           <span class="bim-2__span-title">
-            {{ story.Screen_2[0].title.replace(story.Screen_2[0].highlighted_title,'') }}
+            {{
+              story.Screen_2[0].title.replace(
+                story.Screen_2[0].highlighted_title,
+                ''
+              )
+            }}
           </span>
           {{ story.Screen_2[0].highlighted_title }}
         </h2>
@@ -63,9 +67,8 @@ onMounted(async () => {
           <TextButton
             class="bim-2__btn"
             v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
-          >{{
-              story.Screen_2[0].button[0].text_button
-          }}</TextButton>
+            >{{ story.Screen_2[0].button[0].text_button }}</TextButton
+          >
         </div>
       </div>
       <ParallaxImg
@@ -84,7 +87,7 @@ onMounted(async () => {
         </h2>
         <ul class="bim-3__list">
           <li
-            v-for="(item,idx) in story.Screen_3[0].benefits_list"
+            v-for="(item, idx) in story.Screen_3[0].benefits_list"
             :key="item._uid"
             class="bim-3__li"
           >
@@ -99,16 +102,10 @@ onMounted(async () => {
           </li>
         </ul>
       </div>
-      <div
-        data-slider
-        class="bim-3__slider-wrapper"
-      >
-        <ul
-          class="bim-3__img-list"
-          data-slider-inner
-        >
+      <div data-slider class="bim-3__slider-wrapper">
+        <ul class="bim-3__img-list" data-slider-inner>
           <li
-            v-for="(img,idx) in story.Screen_3[0].gallery"
+            v-for="(img, idx) in story.Screen_3[0].gallery"
             :key="img._uid"
             class="bim-3__li"
             data-slide
@@ -116,7 +113,7 @@ onMounted(async () => {
             <div class="bim-3__img-wrapper">
               <img
                 class="bim-3__img"
-                :src="getTransformedImage(img.image.filename,577)"
+                :src="getTransformedImage(img.image.filename, 577)"
                 alt="Building"
               />
             </div>
@@ -140,7 +137,7 @@ onMounted(async () => {
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                      story.Screen_3[0].results_list_benefits[0].description_title
+                    story.Screen_3[0].results_list_benefits[0].description_title
                   }}
                 </p>
               </div>
@@ -149,8 +146,8 @@ onMounted(async () => {
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
                     {{
-                        story.Screen_3[0].results_list_benefits[0].text_point[0]
-                          .text
+                      story.Screen_3[0].results_list_benefits[0].text_point[0]
+                        .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -158,8 +155,8 @@ onMounted(async () => {
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[0].text_point[1]
-                          .text
+                      story.Screen_3[0].results_list_benefits[0].text_point[1]
+                        .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -167,8 +164,8 @@ onMounted(async () => {
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[0].text_point[2]
-                          .text
+                      story.Screen_3[0].results_list_benefits[0].text_point[2]
+                        .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -185,7 +182,7 @@ onMounted(async () => {
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                      story.Screen_3[0].results_list_benefits[1].description_title
+                    story.Screen_3[0].results_list_benefits[1].description_title
                   }}
                 </p>
               </div>
@@ -194,8 +191,8 @@ onMounted(async () => {
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
                     {{
-                        story.Screen_3[0].results_list_benefits[1].text_point[0]
-                          .text
+                      story.Screen_3[0].results_list_benefits[1].text_point[0]
+                        .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -203,8 +200,8 @@ onMounted(async () => {
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[1].text_point[1]
-                          .text
+                      story.Screen_3[0].results_list_benefits[1].text_point[1]
+                        .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -212,14 +209,14 @@ onMounted(async () => {
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[1].text_point[2]
-                          .text
+                      story.Screen_3[0].results_list_benefits[1].text_point[2]
+                        .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
                   <p class="bim-4__about-text">
                     {{
-                        story.Screen_3[0].marked_list_benefits[0].uppercase_text
+                      story.Screen_3[0].marked_list_benefits[0].uppercase_text
                     }}
                   </p>
                 </li>
@@ -232,7 +229,7 @@ onMounted(async () => {
     <section class="section bim-5">
       <ParallaxImg
         class="bim-5__bg"
-        :src='story.Screen_4[0].big_image.filename'
+        :src="story.Screen_4[0].big_image.filename"
         :with-border-radius="false"
         :width="1920"
         :height="1080"
@@ -248,9 +245,9 @@ onMounted(async () => {
         <CircleButton
           class="bim-5__btn"
           :is-white="true"
-        >{{
-            story.Screen_4[0].button[0].text_button
-        }}</CircleButton>
+          v-bind="getTransformedLink(story.Screen_4[0].button[0].link)"
+          >{{ story.Screen_4[0].button[0].text_button }}</CircleButton
+        >
       </div>
     </section>
   </main>
