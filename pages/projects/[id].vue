@@ -11,7 +11,10 @@ const { stories } = await useProjectsStories()
 const slug = useRoute().params.id
 
 
-const story = stories.value.find(story => story.slug === slug).content
+const story = computed(() => {
+  return stories.value.find(story => story.slug === slug).content
+})
+
 const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
 })
@@ -42,7 +45,7 @@ const closeSlider = () => {
 }
 
 const imagesSlides = computed(() => {
-  return story.Screen_2[0].gallery.map(img => ({
+  return story.value.Screen_2[0].gallery.map(img => ({
     _id: keysGenerator(8),
     img: getTransformedImage(
       img.image.filename,

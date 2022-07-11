@@ -22,5 +22,15 @@ export const useNewsStories: tNewsStories = async () => {
     console.log(e.message)
   }
 
+  stories.value = stories.value
+    .map(s => {
+      useStoryblokBridge(s.id, evStory => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        s = evStory as any
+      })
+      return s
+    })
+    .filter(s => s.name !== 'Index')
+
   return { stories, story }
 }

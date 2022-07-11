@@ -11,5 +11,9 @@ export const useLibraryStory = async () => {
     console.log(e.message)
   }
 
+  useStoryblokBridge(story.value.id, evStory => {
+    story.value = evStory
+  })
+
   return { story }
 }

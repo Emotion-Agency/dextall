@@ -22,5 +22,18 @@ export const useFeaturesStories: tFeaturesStories = async () => {
     console.log(e.message)
   }
 
+  useStoryblokBridge(story.value.id, evStory => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    story.value = evStory as any
+  })
+
+  stories.value = stories.value.map(s => {
+    useStoryblokBridge(s.id, evStory => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      s = evStory as any
+    })
+    return s
+  })
+
   return { stories, story }
 }

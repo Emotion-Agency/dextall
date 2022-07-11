@@ -24,6 +24,7 @@ export interface iStory {
   first_published_at: string
   name: string
   _uid: string
+  id: number
   meta?: iMeta[]
 }
 

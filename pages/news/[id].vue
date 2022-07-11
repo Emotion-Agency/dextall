@@ -10,7 +10,9 @@ const { stories } = await useNewsStories()
 const slug = useRoute().params.id
 
 
-const story = stories.value.find(story => story.slug === slug)
+const story = computed(() => {
+  return stories.value.find(story => story.slug === slug)
+})
 
 
 const filteredStories = computed(() => {
@@ -18,7 +20,7 @@ const filteredStories = computed(() => {
 })
 
 
-const date = story.first_published_at || story.created_at
+const date = story.value.first_published_at || story.value.created_at
 </script>
 
 <template>

@@ -82,10 +82,7 @@ import { useFooterStory } from '~/composables/stories/footer.story'
 
 const { open: openContacts } = useContacts()
 
-
-
 const { story } = await useFooterStory()
-console.log(story)
 
 const $inputs = ref([])
 const formData = reactive({

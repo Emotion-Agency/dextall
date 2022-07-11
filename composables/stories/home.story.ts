@@ -1,12 +1,12 @@
 export const useHomeStory = async () => {
-  const story = ref(null)
+  const initStory = ref(null)
   const storyapi = useStoryblokApi()
 
   try {
     const { data } = await storyapi.get('cdn/stories/home', {
       version: 'draft',
     })
-    story.value = data.story.content
+    initStory.value = data.story
   } catch (e) {
     console.log(e.message)
   }
@@ -32,6 +32,14 @@ export const useHomeStory = async () => {
 
     return words.join(' ')
   }
+
+  useStoryblokBridge(initStory.value.id, evStory => {
+    initStory.value = evStory
+  })
+
+  const story = computed(() => {
+    return initStory.value?.content
+  })
 
   return { getH6Title, getH9Title, story }
 }
