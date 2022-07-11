@@ -81,7 +81,7 @@ const getTransformedLink = useTransformLink()
               >
                 <div
                   class="big-img"
-                  :style="`background-image: url('${getTransformedImage(img.image_1.filename,937)}')`"
+                  :style="`background-image: url('${getTransformedImage(img.image_2.filename,937)}')`"
                 ></div>
               </div>
             </div>
