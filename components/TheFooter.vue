@@ -1,7 +1,7 @@
 <template>
   <footer class="section footer">
     <TheTicker
-      text="Get in touch"
+      :text="story.title"
       class="footer__ticker"
     ></TheTicker>
     <div class="container grid footer__top-wrapper">
@@ -36,7 +36,7 @@
         </li>
       </ul>
       <form class="footer__form">
-        <legend class="footer__form-title">Follow us</legend>
+        <legend class="footer__form-title">{{ story.form_title }}</legend>
         <TheInput
           v-for="input in formData.inputs"
           :id="input.id"
@@ -56,11 +56,11 @@
       <div class="grid footer__bottom-wrapper">
         <p class="footer__date">©2022 DEXTALL</p>
         <NuxtLink
-          to="/"
+          to="/terms-privacy/terms-conditions"
           class="footer__rules"
         >Terms and conditions</NuxtLink>
         <NuxtLink
-          to="/"
+          to="/terms-privacy/privacy-policy"
           class="footer__rules"
         >Privacy Policy</NuxtLink>
         <a
@@ -78,8 +78,14 @@
 
 <script setup lang="ts">
 import { iInputData } from '~~/composables/input'
+import { useFooterStory } from '~/composables/stories/footer.story'
 
 const { open: openContacts } = useContacts()
+
+
+
+const { story } = await useFooterStory()
+console.log(story)
 
 const $inputs = ref([])
 const formData = reactive({

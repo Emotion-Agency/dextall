@@ -23,7 +23,7 @@
         <div class="contacts__top">
           <h2 class="contacts__title">Contact us</h2>
           <p class="contacts__desc">
-            Our client services team would love to hear from you
+            {{ story.main_text }}
           </p>
           <form class="grid contacts__form">
             <TheInput
@@ -45,16 +45,19 @@
         <div class="grid contacts__bottom-block">
           <TheSocial class="contacts__social" />
           <div class="contacts__text-wrapper">
-            <p class="contacts__text">
-              Dextall Inc.<br />
-              202-701-3208
-            </p>
-            <p class="contacts__text">
-              Marketing And PR:<br />
-              703-576-8588
-            </p>
+            <p
+              class="contacts__text"
+              v-html="breakLine(story.contact_1)"
+            />
+            <p
+              class="contacts__text"
+              v-html="breakLine(story.contact_2)"
+            />
           </div>
-          <TextButton class="contacts__text-btn">Download DEXTALL MEDIA KIT</TextButton>
+          <TextButton
+            class="contacts__text-btn"
+            v-bind="getTransformedLink(story.media_button[0].link)"
+          >{{ story.media_button[0].text_button }}</TextButton>
         </div>
       </div>
     </div>
@@ -62,7 +65,15 @@
 </template>
 
 <script setup lang="ts">
-import { iInputData } from '~~/composables/input'
+import { useContactsStory } from '~/composables/stories/contacts.story'
+import { iInputData } from '~/composables/input'
+
+
+const { story } = await useContactsStory()
+const breakLine = useBreakLine()
+const getTransformedLink = useTransformLink()
+
+
 
 const { isOpen,close } = useContacts()
 
