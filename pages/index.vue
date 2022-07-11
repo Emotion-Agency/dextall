@@ -33,7 +33,7 @@ onMounted(async () => {
   scrollSequence = new ScrollSequence({
     container: '.scroll-sequence',
     imagesRoot: '/images/storytelling/',
-    priorityFrames: [0,20,40,60,90,180,280],
+    priorityFrames: [0,20,40,60,90,150],
     cover: true,
   })
 })

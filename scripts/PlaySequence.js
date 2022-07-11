@@ -16,7 +16,7 @@ export class ScrollSequence {
 
     const sequenceImages = []
 
-    for (let i = 0; i <= 280; i++) {
+    for (let i = 0; i <= 150; i++) {
       sequenceImages.push(`${i + 1}.webp`)
     }
 
