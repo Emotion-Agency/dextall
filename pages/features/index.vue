@@ -29,7 +29,7 @@ console.log(stories)
             :key="item._uid"
             :date="item.first_published_at || item.created_at"
             :name="item.name"
-            :link="undefined"
+            :link="'/features/' + item.slug + '/'"
             :img="item?.content?.big_image?.filename"
             :description="item.content.description"
           />
