@@ -250,6 +250,7 @@ onMounted(async () => {
         <CircleButton
           class="bim-5__btn"
           :is-white="true"
+          v-bind="getTransformedLink(story.Screen_4[0].button[0].link)"
         >{{
             story.Screen_4[0].button[0].text_button
         }}</CircleButton>
