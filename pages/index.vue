@@ -36,6 +36,9 @@ onMounted(async () => {
     priorityFrames: [0,20,40,60,90,150],
     cover: true,
   })
+
+  // const { ScrollSequence } = await import('~/scripts/PlaySequence')
+  // scrollSequence = new ScrollSequence('.scroll-sequence')
 })
 
 onBeforeUnmount(() => {
@@ -117,6 +120,12 @@ const getTransformedLink = useTransformLink()
 
     <section class="section home-2 scroll-sequence__container">
       <div class="home-2__background scroll-sequence"></div>
+      <!-- <video
+        preload="true"
+        muted
+        class="home-2__background scroll-sequence"
+        src="https://a.storyblok.com/f/164189/x/e1fe1e74f2/website-facade-animation-rev3-1.webm"
+      ></video> -->
       <div class="container">
         <div class="home-2__wrapper">
           <div class="home-2__block">

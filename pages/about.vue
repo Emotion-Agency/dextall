@@ -16,6 +16,8 @@ const get3Title = (string: string) => {
 
   return words.join(' ')
 }
+
+console.log(story.value)
 </script>
 
 <template>
@@ -87,7 +89,7 @@ const get3Title = (string: string) => {
       <div class="container about-5__wrapper">
         <h2
           class="about-5__title"
-          v-html="get3Title(story.Screen_2[0].title)"
+          v-html="get3Title(story.Screen_3[0].marked_list[0].H1_title)"
         />
 
 

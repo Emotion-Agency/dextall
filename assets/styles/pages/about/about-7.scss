@@ -1,7 +1,7 @@
 .about-7__title {
   @include default;
   font-size: vw(120);
-  max-width: vw(1405);
+  max-width: vw(1220);
 
   @media (max-width: $br1) {
     font-size: size(120, 36);
