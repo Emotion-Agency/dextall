@@ -4,6 +4,7 @@
   margin-top: vw(300);
   overflow: hidden;
   height: 100vh;
+  height: var(--vh);
   width: 100%;
 
   @media (max-width: $br1) {
@@ -21,7 +22,8 @@
 }
 
 .bim-5__bg {
-  height: 100vh !important;
+  height: 100vh;
+  height: var(--vh) !important;
   width: 100%;
   position: absolute;
   top: 0;

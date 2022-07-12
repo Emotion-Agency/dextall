@@ -3,8 +3,10 @@
   padding-top: vw(111);
   padding-bottom: vw(30);
   min-height: 100vh;
+  height: var(--vh);
   @media (min-width: $br1) {
     height: 100vh;
+    height: var(--vh);
   }
 
   @media (max-width: $br1) {

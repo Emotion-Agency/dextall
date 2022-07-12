@@ -71,6 +71,7 @@ const imagesSlides = computed(() => {
         :src="story.Screen_1[0].main_image.filename"
         :width="1920"
         :height="1080"
+        :with-border-radius="false"
       />
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">

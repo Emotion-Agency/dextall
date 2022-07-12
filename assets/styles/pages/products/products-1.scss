@@ -1,7 +1,9 @@
 .products-1 {
   position: relative;
   min-height: 100vh;
+  height: var(--vh);
   height: 100vh;
+  height: var(--vh);
 
   @media (max-width: $br1) {
     padding-top: 0;

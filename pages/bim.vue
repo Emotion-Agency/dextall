@@ -73,6 +73,7 @@ onMounted(async () => {
         :src="story.Screen_2[0].big_image.filename"
         :width="1920"
         :height="2160"
+        :with-border-radius="false"
       />
     </section>
     <section class="section bim-3">

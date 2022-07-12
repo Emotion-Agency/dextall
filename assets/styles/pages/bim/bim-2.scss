@@ -80,5 +80,6 @@
 
   @media (max-width: $br4) {
     height: 100vh;
+    height: var(--vh);
   }
 }

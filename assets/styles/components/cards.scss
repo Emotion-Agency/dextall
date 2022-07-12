@@ -36,10 +36,13 @@
 
   @media (max-width: $br1) {
     @include col(1, 4);
-    // padding: 20px;
+
     padding: 3vh;
-    // height: 600px;
+
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &:nth-of-type(2) {
@@ -48,8 +51,7 @@
     }
 
     @media (max-width: $br1) {
-      // margin-top: -87vh;
-      margin-top: -95vh;
+      margin-top: -75vh;
     }
   }
 
@@ -60,16 +62,18 @@
 
     @media (max-width: $br1) {
       // margin-top: -87vh;
-      margin-top: -95vh;
+      margin-top: -75vh;
     }
   }
 }
 
 .cards__text-block {
-  @include col(1, 8);
+  @media (min-width: $br1) {
+    @include col(1, 8);
+  }
 
   @media (max-width: $br1) {
-    @include col(1, 4);
+    order: 1;
   }
 }
 
@@ -127,8 +131,7 @@
   }
 
   @media (max-width: $br1) {
-    @include col(1, 4);
-    @include row(3, 3);
+    order: 3;
     // margin-top: 92px;
     margin-top: 2vh;
   }
@@ -174,10 +177,9 @@
   }
 
   @media (max-width: $br1) {
-    @include col(1, 4);
-    @include row(2, 2);
+    order: 2;
     // margin-top: 40px;
-    height: 30vh;
+    height: 40vh;
     margin-top: 5vh;
   }
 }

@@ -170,6 +170,7 @@ const getTransformedLink = useTransformLink()
           :src="story.screen_4[0].image.filename"
           :width="1920"
           :height="1080"
+          :with-border-radius="false"
         />
         <h2 class="products-4__big-text">
           <span class="products-4__span-text">Our</span>

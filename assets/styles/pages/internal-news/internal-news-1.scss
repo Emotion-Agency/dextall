@@ -34,7 +34,8 @@
 }
 
 .internal-news-1__bg {
-  height: 100vh !important;
+  height: 100vh;
+  height: var(--vh) !important;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;

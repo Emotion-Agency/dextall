@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  height: var(--vh);
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -15,6 +16,7 @@
   bottom: 0;
   right: 0;
   z-index: -1;
+  height: 100% !important;
 }
 
 .products-4__big-text {
