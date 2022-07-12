@@ -8,7 +8,9 @@ interface iProps {
   blocks: iPostBlock[]
 }
 
+
 const props = defineProps<iProps>()
+
 
 
 const formattedDate = useFormattedDate(props.date)
@@ -49,10 +51,13 @@ const getTransformedLink = useTransformLink()
               class="internal-news-2__block"
             >
               <div class="internal-news-2__block-text">
-                <RichText :text="block.text_formatting" />
+                <RichText
+                  v-if="block.text_formatting"
+                  :text="block.text_formatting"
+                />
               </div>
               <CircleButton
-                v-if="block.button[0]"
+                v-if="block?.button && block.button[0]"
                 v-bind="getTransformedLink(block.button[0].link)"
                 class="internal-news-2__btn"
               > {{ block.button[0].text_button }}
