@@ -48,11 +48,8 @@ export class ScrollSequence {
       this.canvas.renderIndex(0)
     })
 
-    this.loader.once('PRIORITY_IMAGES_LOADED', () => {
-      raf.on(this.changeOnWindowScroll)
-    })
-
     this.loader.once('IMAGES_LOADED', () => {
+      raf.on(this.changeOnWindowScroll)
       console.log('Sequence Loaded')
     })
   }
