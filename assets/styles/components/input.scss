@@ -63,6 +63,7 @@
 }
 
 .input-error {
+  @include default;
   color: var(--red);
   font-size: 12px;
   display: block;

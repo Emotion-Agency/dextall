@@ -25,7 +25,11 @@
           <p class="contacts__desc">
             {{ story.main_text }}
           </p>
-          <form class="grid contacts__form">
+          <form
+            class="grid contacts__form"
+            novalidate
+            @submit.prevent
+          >
             <TheInput
               v-for="input in formData.inputs"
               :id="input.id"
@@ -35,8 +39,8 @@
               :type="input.type"
               :placeholder="input.label"
               :required="input.required"
-              :validation-text="input.validationText"
-              :validation="input.validation"
+              :validation-text="input.validationText && input.validationText"
+              :validation="input.validationText && input.validation"
               @input-value="onInputValue"
             />
             <CircleButton class="contacts__btn">Send</CircleButton>
@@ -83,14 +87,12 @@ const formData = reactive({
   hasErrors: true,
   inputs: [
     {
-      required: true,
+      required: false,
       id: 'name',
       name: 'Name',
       label: 'Your Name',
       type: 'text',
-      validation: 'name',
-      validationText: 'incorrect name',
-      error: true,
+      error: false,
       value: '',
     },
     {
@@ -105,14 +107,12 @@ const formData = reactive({
       value: '',
     },
     {
-      required: true,
+      required: false,
       id: 'message',
       name: 'Message',
       label: 'Your Message',
       type: 'text',
-      validation: 'message',
-      validationText: 'incorrect message',
-      error: true,
+      error: false,
       value: '',
     },
   ],

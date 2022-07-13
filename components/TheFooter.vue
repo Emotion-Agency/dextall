@@ -35,7 +35,11 @@
           <button @click="openContacts"> Contact us </button>
         </li>
       </ul>
-      <form class="footer__form">
+      <form
+        class="footer__form"
+        novalidate
+        @submit.prevent="onSubmit"
+      >
         <legend class="footer__form-title">{{ story.form_title }}</legend>
         <TheInput
           v-for="input in formData.inputs"
@@ -102,19 +106,19 @@ const formData = reactive({
   ],
 })
 
-// const emmitError = () => {
-//   $inputs.value.forEach(input => input.throwError())
-// }
+const emmitError = () => {
+  $inputs.value.forEach(input => input.throwError())
+}
 
-// const resetForm = () => {
-//   formData.inputs?.forEach(inp => {
-//     inp.error = true
-//     inp.value = ''
-//   })
+const resetForm = () => {
+  formData.inputs?.forEach(inp => {
+    inp.error = true
+    inp.value = ''
+  })
 
-//   $inputs.value.forEach(input => input.reset())
-//   formData.hasErrors = false
-// }
+  $inputs.value.forEach(input => input.reset())
+  formData.hasErrors = false
+}
 
 const onInputValue = (data: iInputData) => {
   const idx = formData.inputs.findIndex(el => el.id === data.id)
@@ -122,30 +126,30 @@ const onInputValue = (data: iInputData) => {
   formData.inputs[idx].error = data.error
 }
 
-// const onSubmit = () => {
-//   const inputs = formData.inputs
-//   const isError = inputs.find(el => el.error)
+const onSubmit = () => {
+  const inputs = formData.inputs
+  const isError = inputs.find(el => el.error)
 
-//   if (isError) {
-//     emmitError()
-//     return
-//   }
+  if (isError) {
+    emmitError()
+    return
+  }
 
-//   const formSendData = new FormData()
-//   inputs.forEach(el => {
-//     formSendData.append(el.name, el.value)
-//   })
+  const formSendData = new FormData()
+  inputs.forEach(el => {
+    formSendData.append(el.name,el.value)
+  })
 
-//   try {
-//     console.log(inputs)
-//     resetForm()
-//   } catch (error) {
-//     console.log(error.message)
-//     formData.hasErrors = true
-//   } finally {
-//     // setTimeout(() => {
-//     //   this.$store.commit('app/setLoading', false)
-//     // }, 400)
-//   }
-// }
+  try {
+    console.log(inputs)
+    resetForm()
+  } catch (error) {
+    console.log(error.message)
+    formData.hasErrors = true
+  } finally {
+    // setTimeout(() => {
+    //   this.$store.commit('app/setLoading', false)
+    // }, 400)
+  }
+}
 </script>

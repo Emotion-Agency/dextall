@@ -2,7 +2,7 @@
   <div class="input-content">
     <div
       class="input-wrapper"
-      :class="[inputFocus && 'js-focus', error && 'js-error']"
+      :class="[inputFocus && 'js-focus',error && 'js-error']"
     >
       <input
         :id="id"
@@ -16,14 +16,22 @@
         @blur="onBlur"
         @input="onInput"
       />
-      <label :for="id" class="input-placeholder">
+      <label
+        :for="id"
+        class="input-placeholder"
+      >
         {{ placeholder }}
-        <abbr v-if="required" title="required"> * </abbr>
+        <abbr
+          v-if="required"
+          title="required"
+        > * </abbr>
       </label>
-      <!-- <transition name="fade" mode="out-in"> </transition> -->
       <slot />
     </div>
-    <small v-if="error" class="input-error">{{ validationText }}</small>
+    <small
+      v-if="error"
+      class="input-error"
+    >{{ validationText }}</small>
   </div>
 </template>
 
@@ -35,8 +43,8 @@ interface iProps {
   placeholder: string
   required?: boolean
   name?: string
-  validation?: string
-  validationText?: string
+  validation?: string | undefined | unknown
+  validationText?: string | undefined | unknown
 }
 
 const props = defineProps<iProps>()
@@ -52,7 +60,7 @@ const {
   onInput,
   reset,
   throwError,
-} = useInput(emit, props)
+} = useInput(emit,props)
 
 defineExpose({
   throwError,
