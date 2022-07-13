@@ -3,7 +3,7 @@ import { useTransition } from '~/composables/transition'
 import { useHomeStory } from '~/composables/stories/home.story'
 import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useNewsStories } from '~/composables/stories/news.story'
-import { useTransformLink } from '~~/composables/transformLink';
+import { useTransformLink } from '~~/composables/transformLink'
 
 useTransition()
 useObserver('.section')
@@ -13,6 +13,7 @@ const news = ref(null)
 
 const projectsData = await useProjectsStories()
 const newsData = await useNewsStories()
+
 
 
 projects.value = projectsData.stories.value
@@ -32,13 +33,10 @@ onMounted(async () => {
   const { ScrollSequence } = await import('~/scripts/PlaySequence')
   scrollSequence = new ScrollSequence({
     container: '.scroll-sequence',
-    imagesRoot: '/images/storytelling/',
-    priorityFrames: [0,20,40,60,90,150],
+    images: story.value?.home_screen_2[0]?.frames,
+    priorityFrames: [],
     cover: true,
   })
-
-  // const { ScrollSequence } = await import('~/scripts/PlaySequence')
-  // scrollSequence = new ScrollSequence('.scroll-sequence')
 })
 
 onBeforeUnmount(() => {

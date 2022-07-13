@@ -14,11 +14,9 @@ export class ScrollSequence {
 
     this.scrollWith = document.querySelector(opts.container)
 
-    const sequenceImages = []
+    const imgs = this.opts.images.map(img => img.filename)
 
-    for (let i = 0; i <= 150; i++) {
-      sequenceImages.push(`${i + 1}.webp`)
-    }
+    const sequenceImages = [...imgs]
 
     this.images = Array(sequenceImages.length)
     this.imagesToLoad = sequenceImages
