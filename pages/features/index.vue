@@ -6,8 +6,6 @@ useTransition()
 useObserver('.section')
 
 const { stories,story } = await useFeaturesStories()
-
-console.log(stories)
 </script>
 
 <template>

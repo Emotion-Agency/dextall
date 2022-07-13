@@ -17,7 +17,30 @@ const get3Title = (string: string) => {
   return words.join(' ')
 }
 
-console.log(story.value)
+const separateTextAndNumber = (string: string) => {
+  let newStr = string.trim().split(/(\d+)/).filter(Boolean)
+
+  newStr = newStr.map(str => {
+    if (str.match(/\d/gm)) {
+
+      return `<span data-type='number'>${str}</span>`
+    }
+    return str
+  })
+  return newStr.join('')
+}
+
+let fa
+
+onMounted(async () => {
+  const { FactsAnimation } = await import('~/scripts/FactsAnimation')
+
+  fa = new FactsAnimation('[data-fa]')
+})
+
+onBeforeUnmount(() => {
+  fa && fa.destroy()
+})
 </script>
 
 <template>
@@ -184,22 +207,42 @@ console.log(story.value)
         </ul>
       </div>
     </section>
-    <section class="section about-6">
+    <section
+      v-if="story.Screen_3[0].few_facts?.length"
+      class="section about-6"
+      data-fa
+    >
       <div class="about-6__wrapper">
-        <div class="container about-6__left-block">
-          <h2 class="about-6__title">Few Facts</h2>
-          <p class="about-6__desc">
-            Buildings are 40% of the world's carbon emissions
-          </p>
+        <div
+          class="container about-6__left-block"
+          data-fa-scrolling
+        >
+          <div
+            v-for="fact in story.Screen_3[0].few_facts"
+            :key="fact._uid"
+            class="about-6__left-block-content"
+          >
+            <h2 class="about-6__title">{{ fact.title }}</h2>
+            <p class="about-6__desc">
+              {{ fact.description }}
+            </p>
+          </div>
         </div>
         <div class="container about-6__right-block">
-          <div class="about-6__ellipse"></div>
-          <h2 class="about-6__number">
-            40<span class="about-6__span-number">%</span>
-          </h2>
-          <p class="about-6__text">
-            Buildings are 40% of the world's carbon emissions
-          </p>
+
+          <div
+            data-fa-progress
+            class="about-6__ellipse"
+          ></div>
+          <div
+            v-for="fact in story.Screen_3[0].few_facts"
+            :key="fact._uid"
+            data-fa-number
+            class="about-6__number"
+            v-html="separateTextAndNumber(fact.number)"
+          >
+
+          </div>
         </div>
       </div>
     </section>

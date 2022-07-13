@@ -12,6 +12,7 @@ interface iProps {
 const props = defineProps<iProps>()
 
 const formattedDate = useFormattedDate(props.date)
+
 </script>
 
 <template>
@@ -24,6 +25,8 @@ const formattedDate = useFormattedDate(props.date)
       <ParallaxImg
         class="news-images__img"
         :src="img"
+        :width="500"
+        :height="500"
         :scale="1.2"
       />
       <h2 class="news-images__name">{{ name }}</h2>
