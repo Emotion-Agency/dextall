@@ -1,10 +1,10 @@
 import { raf } from '@/scripts/utils/ea'
-import ProgressBar from 'progressbar.js'
 
 export class FactsAnimation {
   _current = 0
-  constructor($elSelector) {
-    this.$el = document.querySelector($elSelector)
+  constructor($el, circle) {
+    this.$el = $el
+    this.circle = circle
     this.$scrolling = this.$el.querySelector('[data-fa-scrolling]')
     this.$numbers = this.$el.querySelectorAll('[data-fa-number]')
 
@@ -12,17 +12,8 @@ export class FactsAnimation {
   }
 
   init() {
-    console.log('init')
     this.onScroll = this.onScroll.bind(this)
     this.$numbers[this.current].classList.add('active')
-
-    if (!document.querySelector('[data-fa-progress] svg')) {
-      this.circle = new ProgressBar.Circle('[data-fa-progress]', {
-        color: '#304e49',
-        duration: 500,
-        easing: 'easeOut',
-      })
-    }
 
     raf.on(this.onScroll)
   }
@@ -77,6 +68,7 @@ export class FactsAnimation {
     const endValues = $numbers.map(n => +n.innerHTML)
 
     const pathValue = endValues.length > 1 ? 1 : endValues[0] / 100
+    this.circle.animate(pathValue)
 
     const step = timestamp => {
       if (!startTimestamp) startTimestamp = timestamp
@@ -84,7 +76,6 @@ export class FactsAnimation {
       $numbers.forEach((n, idx) => {
         n.innerHTML = Math.floor(progress * endValues[idx])
       })
-      this.circle.animate(pathValue)
       if (progress < 1) {
         window.requestAnimationFrame(step)
       }
