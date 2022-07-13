@@ -16,8 +16,6 @@ const story = computed(() => {
   return stories.value.find(story => story.slug === slug).content
 })
 
-console.log(story.value)
-
 const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
 })

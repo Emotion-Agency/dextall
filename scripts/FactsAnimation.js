@@ -46,7 +46,6 @@ export class FactsAnimation {
     }
 
     this._current = val
-    console.log(this.current)
     this.$numbers.forEach(el => {
       el.classList.remove('active')
     })
