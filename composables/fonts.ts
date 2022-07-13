@@ -1,27 +1,15 @@
 const fontsMetaList = [
   {
+    rel: 'preload',
     type: 'font/woff2',
-    href: '/fonts/HelveticaNeue.woff2',
+    href: '/fonts/NeueHelvetica55Roman/font.woff2',
     crossorigin: 'anonymous',
     as: 'font',
   },
   {
     rel: 'preload',
     type: 'font/woff2',
-    href: '/fonts/HelveticaNeueItalic.woff2',
-    crossorigin: 'anonymous',
-    as: 'font',
-  },
-  {
-    type: 'font/woff',
-    href: '/fonts/HelveticaNeue.woff',
-    crossorigin: 'anonymous',
-    as: 'font',
-  },
-  {
-    rel: 'preload',
-    type: 'font/woff',
-    href: '/fonts/HelveticaNeueItalic.woff',
+    href: '/fonts/NeueHelvetica56Italic/font.woff2',
     crossorigin: 'anonymous',
     as: 'font',
   },
