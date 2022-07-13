@@ -12,14 +12,17 @@ export class FactsAnimation {
   }
 
   init() {
+    console.log('init')
     this.onScroll = this.onScroll.bind(this)
     this.$numbers[this.current].classList.add('active')
 
-    this.circle = new ProgressBar.Circle('[data-fa-progress]', {
-      color: '#304e49',
-      duration: 500,
-      easing: 'easeOut',
-    })
+    if (!document.querySelector('[data-fa-progress] svg')) {
+      this.circle = new ProgressBar.Circle('[data-fa-progress]', {
+        color: '#304e49',
+        duration: 500,
+        easing: 'easeOut',
+      })
+    }
 
     raf.on(this.onScroll)
   }
