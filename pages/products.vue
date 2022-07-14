@@ -169,15 +169,10 @@ const splitText = useSplitText()
             </li>
           </ul>
           <div class="products-3__image-wrapper">
-            <video
-              autoplay
-              playsinline
-              loop
-              muted
+            <img
               class="products-3__img"
-              :src="story.screen_3[0].panel_images[0].image.filename"
-            >
-            </video>
+              :src="getTransformedImage(story.screen_3[0].panel_images[0].image.filename,694,867)"
+            />
           </div>
         </div>
       </div>
