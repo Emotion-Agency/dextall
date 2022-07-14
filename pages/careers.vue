@@ -16,8 +16,15 @@ const { filters,onFilter,filteredVacancies } = useVacancies(vacansies.value)
 
 const breakLine = useBreakLine()
 
+const { open: openPopup } = useFormPopup()
+const formText = ref('')
 
 
+
+const onSubmit = (title: string) => {
+  formText.value = title
+  openPopup()
+}
 </script>
 
 <template>
@@ -34,10 +41,12 @@ const breakLine = useBreakLine()
     </section>
     <section class="section careers-2">
       <ParallaxImg
+        v-if="story.Screen_1[0].big_image.filename"
         class="careers-2__bg"
-        src="/images/careers/1.jpg"
-        :transform="false"
+        :src="story.Screen_1[0].big_image.filename"
         :with-border-radius="false"
+        :width="1920"
+        :height="1080"
       />
       <div class="container grid careers-2__wrapper">
         <h2 class="careers-2__title">
@@ -60,6 +69,8 @@ const breakLine = useBreakLine()
         <ParallaxImg
           :src="story.Screen_2[0].image_1.filename"
           img-class="careers-3__img"
+          :width="815"
+          :height="899"
           class="careers-3__image-top"
         />
 
@@ -69,6 +80,8 @@ const breakLine = useBreakLine()
           class="careers-3__image-bottom"
           data-parallax="0.1"
           data-parallax-dir="-1"
+          :width="1173"
+          :height="899"
         />
       </div>
     </section>
@@ -114,9 +127,17 @@ const breakLine = useBreakLine()
             :text="vacancy.description"
             :idx="idx"
             :is-last="idx === filteredVacancies.length - 1"
+            @on-submit="onSubmit"
           />
         </ul>
       </div>
     </section>
+    <teleport to='body'>
+      <FormPopup
+        title="Submit application"
+        :text="formText"
+        :form-title="`Careers application: ${formText}`"
+      />
+    </teleport>
   </main>
 </template>

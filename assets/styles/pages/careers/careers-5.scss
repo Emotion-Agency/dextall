@@ -140,6 +140,13 @@
   }
 }
 
+.careers-5__submit-btn {
+  margin-top: vw(40);
+  @media (max-width: $br1) {
+    margin-top: 20px;
+  }
+}
+
 .careers-5__btn {
   width: 100%;
   background-color: transparent;

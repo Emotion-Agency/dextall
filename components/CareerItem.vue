@@ -10,6 +10,10 @@ interface iProps {
 
 defineProps<iProps>()
 
+const emit = defineEmits(['onSubmit'])
+
+
+
 const $el = ref(null)
 const $child = ref(null)
 const isOpen = ref(false)
@@ -49,6 +53,10 @@ onBeforeUnmount(() => {
             class="careers-5__text-block"
           >
             <RichText :text="text" />
+            <CircleButton
+              class="careers-5__submit-btn"
+              @click.stop="emit('onSubmit',title)"
+            >Submit application</CircleButton>
           </div>
         </div>
         <IconsArrowUp class="careers-5__arrow" />

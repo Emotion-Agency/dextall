@@ -57,9 +57,10 @@ const get3Title = (string: string) => {
     <section class="section about-3">
       <ParallaxImg
         class="about-3__bg"
-        src="/images/about/5.jpg"
-        :transform="false"
+        :src="story.Screen_2[0].big_image.filename"
         :with-border-radius="false"
+        :width="1920"
+        :height="1080"
       />
       <div class="container about-3__wrapper">
         <div class="grid about-3__text">
