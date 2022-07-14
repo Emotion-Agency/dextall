@@ -116,24 +116,26 @@ const splitText = useSplitText()
         <p class="products-2__desc">
           {{ story.screen_2[0].description }}
         </p>
-        <FloatingCard
-          v-for="(item,idx) in story.screen_2[0].cards"
-          :key="item._uid"
-          :parallax="story.screen_2[0].cards.length - idx"
-          class="home-4__floating-cards"
-        >
-          <div class="products-2__text-wrapper">
-            <h3 class="products-2__title-cards">
-              {{ item.H1 }}
-            </h3>
-            <p class="products-2__medium-text">
-              {{ item.H2 }}
-            </p>
-            <p class="products-2__small-text">
-              {{ item.H3 }}
-            </p>
-          </div>
-        </FloatingCard>
+        <ul>
+          <FloatingCard
+            v-for="(item,idx) in story.screen_2[0].cards"
+            :key="item._uid"
+            :parallax="story.screen_2[0].cards.length - idx"
+            class="home-4__floating-cards"
+          >
+            <div class="products-2__text-wrapper">
+              <h3 class="products-2__title-cards">
+                {{ item.H1 }}
+              </h3>
+              <p class="products-2__medium-text">
+                {{ item.H2 }}
+              </p>
+              <p class="products-2__small-text">
+                {{ item.H3 }}
+              </p>
+            </div>
+          </FloatingCard>
+        </ul>
       </div>
     </section>
     <section class="section products-3">
