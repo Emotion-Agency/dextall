@@ -37,12 +37,12 @@
           :key="link.text"
           class="navigation__li"
           data-nav
-          @click="close()"
         >
           <div class="navigation__line"></div>
           <NuxtLink
             :to="link.to"
             class="navigation__link"
+            @click="close()"
           > {{ link.text }} </NuxtLink>
           <div
             v-if="idx === links.length - 1"
@@ -53,10 +53,7 @@
       </ul>
       <div class="grid navigation__info-block">
         <TheSocial class="navigation__social" />
-        <ul
-          class="navigation__info-list"
-          @click="close()"
-        >
+        <ul class="navigation__info-list">
           <li
             v-for="link in smallLinks"
             :key="link.text"
@@ -67,6 +64,7 @@
               :to="link.to"
               data-nav
               class="navigation__info-link"
+              @click="close"
             > {{ link.text }} </NuxtLink>
           </li>
           <li
@@ -76,7 +74,7 @@
             <div class="navigation__line"></div>
             <button
               class="navigation__info-link"
-              @click="openContacts"
+              @click="openContacts()"
             >
               Contact Us
             </button>

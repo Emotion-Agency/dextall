@@ -66,6 +66,10 @@ const props = defineProps<iProps>()
 
 const { isOpen,close } = useFormPopup()
 
+onBeforeUnmount(() => {
+  close()
+})
+
 
 const $inputs = ref([])
 const formData = reactive({
