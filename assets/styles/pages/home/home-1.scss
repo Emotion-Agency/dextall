@@ -131,12 +131,13 @@
 .home-1__li {
   cursor: pointer;
   opacity: 0.7;
-  transition: opacity 0.5s $easing;
+  transition: opacity 0.7s $easing;
   position: relative;
   &--active,
   &:hover {
     opacity: 1;
   }
+
   &:nth-of-type(1) {
     @include col(1, 1);
   }
