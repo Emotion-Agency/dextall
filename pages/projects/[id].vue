@@ -56,7 +56,6 @@ const imagesSlides = computed(() => {
 })
 
 const splitText = useSplitText()
-
 </script>
 
 <template>

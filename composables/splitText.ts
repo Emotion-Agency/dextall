@@ -12,6 +12,12 @@ export const useSplitText = () => {
       })
       .join('')
 
-    return splittedChars
+    const words = splittedChars.split('<span class="whitespace"> </span>')
+
+    const splittedWords = words
+      .map(word => `<span class="word">${word}</span>`)
+      .join(' ')
+
+    return splittedWords
   }
 }

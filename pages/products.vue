@@ -8,8 +8,6 @@ useObserver('.section')
 const { story } = await useProductsStory()
 
 
-
-
 const goToProducts = () => {
   const $products = document.querySelector('#products') as HTMLElement
 

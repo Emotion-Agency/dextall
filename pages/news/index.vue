@@ -25,7 +25,10 @@ const splitText = useSplitText()
         />
       </div>
     </section>
-    <section class="section news-2">
+    <section
+      data-a-t
+      class="section news-2"
+    >
       <div class="container news-2__wrapper">
         <ul class="grid news-images">
           <NewsItem

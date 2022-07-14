@@ -22,11 +22,7 @@ projects.value = projectsData.stories.value
 
 news.value = newsData.stories.value.filter((_,idx) => idx <= 2)
 
-const $slides1 = ref(null)
-const $slides2 = ref(null)
 
-
-const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
 
 let scrollSequence
 const $sequenceContainer = ref(null)
@@ -44,7 +40,6 @@ onBeforeUnmount(() => {
   scrollSequence && scrollSequence.destroy()
 })
 
-const getTransformedImage = useTransformedImage()
 const getTransformedLink = useTransformLink()
 const splitText = useSplitText()
 </script>
@@ -58,62 +53,7 @@ const splitText = useSplitText()
     />
     <section class="section section--nm home-1">
       <div class="container home-1__wrapper">
-        <div class="grid home-1__top-block">
-          <div
-            data-a-t
-            class="home-1__elements-left"
-          >
-            <div
-              v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
-              ref="$slides1"
-              :key="img._uid"
-              class=" home-1__img-wrapper"
-              :class="activeIdx === idx && 'active'"
-            >
-              <div
-                class="big-img"
-                :style="`background-image: url('${getTransformedImage(img.image_1.filename,815)}')`"
-              ></div>
-            </div>
-          </div>
-          <div
-            data-a-t
-            class="home-1__elements-right"
-          >
-            <div class="home-1__right-image">
-              <div
-                v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
-                :key="img._uid"
-                ref="$slides2"
-                class=" home-1__img-wrapper"
-                :class="activeIdx === idx && 'active'"
-              >
-                <div
-                  class="big-img"
-                  :style="`background-image: url('${getTransformedImage(img.image_2.filename,937)}')`"
-                ></div>
-              </div>
-            </div>
-            <ul
-              data-a-o
-              class="grid home-1__small-buildings"
-            >
-              <li
-                v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
-                :key="img._uid"
-                class="home-1__li"
-                :class="idx === activeIdx && 'home-1__li--active'"
-                @click="onSliderNavigationClick(idx)"
-              >
-                <p class="home-1__number">00{{ idx + 1 }}</p>
-                <div
-                  class="small-img home-1__small-img"
-                  :style="`background-image: url('${getTransformedImage(img.image_1.filename,208)}')`"
-                ></div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <HomeSlider :slides="story.home_screen_1[0].Images[0].home_slider_image" />
         <p
           data-a-t
           class="home-1__desc"
@@ -124,22 +64,22 @@ const splitText = useSplitText()
           <span
             data-a-h
             class="home-1__title"
-            v-html="splitText('Unitized')"
+            v-html="splitText('Unitized ')"
           />
           <span
             data-a-h
             class="home-1__title"
-            v-html="splitText('prefabricated')"
+            v-html="splitText('prefabricated ')"
           />
           <span
             data-a-h
             class="home-1__title"
-            v-html="splitText('exterior')"
+            v-html="splitText('exterior ')"
           />
           <span
             data-a-h
             class="home-1__title"
-            v-html="splitText('wall')"
+            v-html="splitText('wall ')"
           />
           <span
             data-a-h

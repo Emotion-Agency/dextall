@@ -15,8 +15,6 @@
 
 .news-1__title {
   @include default;
-  display: flex;
-  flex-direction: column;
   font-size: vw(120);
 
   @media (max-width: $br1) {

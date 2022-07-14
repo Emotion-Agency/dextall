@@ -135,3 +135,9 @@ body {
     will-change: transform;
   }
 }
+
+.word {
+  @media (max-width: $br1) {
+    display: inline-block;
+  }
+}
