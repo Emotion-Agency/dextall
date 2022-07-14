@@ -57,6 +57,7 @@
     </div>
     <button
       class="header__btn"
+      aria-label="Send the form"
       @click="openContacts"
     >
       <span class="header__btn-text">Let’s talk</span>
