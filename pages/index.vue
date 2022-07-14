@@ -106,11 +106,11 @@ const splitText = useSplitText()
             </p>
           </div>
           <div class="home-2__block">
-            <h3 class="home-2__title-block">
+            <h2 class="home-2__title-block">
               <span class="home-2__title">Breakthrough</span>
               <span class="home-2__title"> In BIM</span>
               <span class="home-2__title"> Technology</span>
-            </h3>
+            </h2>
             <p class="home-2__desc">
               {{ story.home_screen_2[0].main_text_2 }}
             </p>
@@ -180,17 +180,20 @@ const splitText = useSplitText()
           <span class="home-4__big-text"> Engineering</span>
           <span class="home-4__big-text"> Accreditations</span>
         </h2>
-        <FloatingCard
-          v-for="(item,idx) in story.home_screen_4[0].Logotype"
-          :key="idx"
-          :parallax="story.home_screen_4[0].Logotype.length - idx"
-          class="home-4__floating-cards"
-        >
-          <img
-            :src="item.image_1.filename"
-            alt=""
+        <ul>
+          <FloatingCard
+            v-for="(item,idx) in story.home_screen_4[0].Logotype"
+            :key="idx"
+            :parallax="story.home_screen_4[0].Logotype.length - idx"
+            class="home-4__floating-cards"
           >
-        </FloatingCard>
+
+            <img
+              :src="item.image_1.filename"
+              alt=""
+            >
+          </FloatingCard>
+        </ul>
       </div>
     </section>
     <section class="section home-5">

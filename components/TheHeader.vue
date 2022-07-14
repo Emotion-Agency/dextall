@@ -7,6 +7,7 @@
       <NuxtLink
         to="/"
         class="header__logo"
+        aria-label="Logo"
       >
         <IconsLogoDesktop class="header__logo-desk" />
         <IconsLogoMobile class="header__logo-mob" />
@@ -54,6 +55,7 @@
       </div>
     </div>
     <button
+      aria-label="Open menu"
       class="header__btn"
       @click="openContacts"
     >

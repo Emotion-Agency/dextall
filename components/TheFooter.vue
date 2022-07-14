@@ -93,7 +93,7 @@ const formData = reactive({
   inputs: [
     {
       required: true,
-      id: 'email',
+      id: 'footer-email',
       name: 'Email',
       label: 'Your Email',
       type: 'email',

@@ -95,7 +95,7 @@ const formData = reactive({
     },
     {
       required: true,
-      id: 'email',
+      id: 'contacts-email',
       name: 'Email',
       label: 'Your Email',
       type: 'email',

@@ -18,7 +18,8 @@ const props = withDefaults(defineProps<iProps>(),{
   transform: true,
   withBorderRadius: true,
   scale: 1.07,
-  isLazy: true
+  isLazy: true,
+  alt: 'Dextall'
 })
 
 const width = props.width ?? 0
