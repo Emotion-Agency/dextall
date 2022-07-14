@@ -81,7 +81,6 @@
 </template>
 
 <script setup lang="ts">
-import { iInputData } from '~~/composables/input'
 import { useFooterStory } from '~/composables/stories/footer.story'
 
 const { open: openContacts } = useContacts()
@@ -106,50 +105,5 @@ const formData = reactive({
   ],
 })
 
-const emmitError = () => {
-  $inputs.value.forEach(input => input.throwError())
-}
-
-const resetForm = () => {
-  formData.inputs?.forEach(inp => {
-    inp.error = true
-    inp.value = ''
-  })
-
-  $inputs.value.forEach(input => input.reset())
-  formData.hasErrors = false
-}
-
-const onInputValue = (data: iInputData) => {
-  const idx = formData.inputs.findIndex(el => el.id === data.id)
-  formData.inputs[idx].value = data.value
-  formData.inputs[idx].error = data.error
-}
-
-const onSubmit = () => {
-  const inputs = formData.inputs
-  const isError = inputs.find(el => el.error)
-
-  if (isError) {
-    emmitError()
-    return
-  }
-
-  const formSendData = new FormData()
-  inputs.forEach(el => {
-    formSendData.append(el.name,el.value)
-  })
-
-  try {
-    console.log(inputs)
-    resetForm()
-  } catch (error) {
-    console.log(error.message)
-    formData.hasErrors = true
-  } finally {
-    // setTimeout(() => {
-    //   this.$store.commit('app/setLoading', false)
-    // }, 400)
-  }
-}
+const { onInputValue,onSubmit } = useForm(formData,$inputs,'Dextall footer')
 </script>
