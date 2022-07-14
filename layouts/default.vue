@@ -35,6 +35,7 @@ onBeforeUnmount(() => {
 
 </script>
 
+
 <template>
   <div id="app">
 
@@ -42,9 +43,31 @@ onBeforeUnmount(() => {
       <Title>Dextall</Title>
       <Meta
         name="viewport"
-        conten="width=device-width, initial-scale=1"
+        content="width=device-width, initial-scale=1"
       >
       </Meta>
+      <Meta
+        name="twitter:card"
+        content="summary_large_image"
+      >
+      </Meta>
+      <Meta
+        name="twitter:image"
+        content="/twitter.png"
+      >
+      </Meta>
+
+      <Meta
+        property="og:site_name"
+        content="Dextall"
+      >
+      </Meta>
+      <Meta
+        property="og:image"
+        content="/icon.png"
+      >
+      </Meta>
+
       <Link
         rel="icon"
         type="image/x-icon"
