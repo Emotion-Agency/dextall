@@ -261,6 +261,11 @@
 .home-1__title {
   @include h1;
   display: inline-block;
+  @media (min-width: $br1) {
+    .word {
+      display: inline;
+    }
+  }
 
   &:nth-of-type(1) {
     @media (min-width: $br1) {

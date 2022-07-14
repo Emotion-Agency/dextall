@@ -137,7 +137,5 @@ body {
 }
 
 .word {
-  @media (max-width: $br1) {
-    display: inline-block;
-  }
+  display: inline-block;
 }
