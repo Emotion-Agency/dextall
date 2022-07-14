@@ -22,7 +22,7 @@ onMounted(async () => {
     mobile: props.mobile || false,
     breakpoint: props.breakpoint ?? 1060,
     passive: props.passive || false,
-    isFixed: props.isFixed || false,
+    isFixed: props.isFixed || true,
     friction: props.friction ?? 0.07,
     stepSize: props.stepSize ?? 0.9,
     scrollbar: props.scrollbar || true,

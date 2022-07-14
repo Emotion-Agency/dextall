@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  color: var(--black);
+  color: var(--main);
   background-color: var(--bg);
   font-size: 1rem;
   height: 100vh;
@@ -23,6 +23,7 @@ body {
   position: relative;
   overscroll-behavior-y: none;
   @include smooth-font;
+  @include reg;
 
   @media (min-width: 1060px) {
     overflow: hidden;

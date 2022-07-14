@@ -52,6 +52,7 @@ onBeforeUnmount(() => {
       >
       </Link>
     </Head>
+    <AppLoader />
     <AppGrid />
     <UiLoader />
     <SmoothScroll>

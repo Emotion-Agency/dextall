@@ -117,7 +117,11 @@ const getTransformedLink = useTransformLink()
     </section>
 
     <section class="section home-2 scroll-sequence__container">
-      <div class="home-2__background scroll-sequence"></div>
+      <div
+        data-spli
+        data-loaded="0"
+        class="home-2__background scroll-sequence"
+      ></div>
       <div class="container">
         <div class="home-2__wrapper">
           <div class="home-2__block">

@@ -1,0 +1,27 @@
+.loader {
+  @include coverdiv(fixed);
+  z-index: 10000;
+  background-color: var(--bg);
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.loader__container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader__percent {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.loader__progress {
+  width: 2px;
+  height: 0%;
+  align-self: flex-end;
+  background-color: var(--main);
+}

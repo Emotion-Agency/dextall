@@ -43,6 +43,11 @@ export class ImgLoader extends EventEmitter {
       }
     } else if (this.loadingQueue.length) {
       this.loadImage(this.loadingQueue.shift())
+
+      const percent =
+        100 - (this.loadingQueue.length / this.sequenceLength) * 100
+
+      this.emit('PROGRESS', percent)
     } else {
       this.complete = true
       this.emit('IMAGES_LOADED')

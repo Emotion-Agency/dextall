@@ -52,6 +52,10 @@ export class ScrollSequence {
       raf.on(this.changeOnWindowScroll)
       console.log('Sequence Loaded')
     })
+
+    this.loader.on('PROGRESS', percent => {
+      this.container.setAttribute('data-loaded', percent)
+    })
   }
 
   changeOnWindowScroll() {

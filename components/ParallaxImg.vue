@@ -10,13 +10,15 @@ interface iProps {
   scale?: number
   width?: number
   height?: number
+  isLazy?: boolean
 }
 
 
 const props = withDefaults(defineProps<iProps>(),{
   transform: true,
   withBorderRadius: true,
-  scale: 1.07
+  scale: 1.07,
+  isLazy: true
 })
 
 const width = props.width ?? 0
@@ -63,6 +65,7 @@ const src = props.transform ? transformedSrc : props.src
         :alt="alt"
         data-parallax="0.06"
         :data-scale="scale"
+        data-pli
       />
     </div>
   </div>
