@@ -46,6 +46,13 @@
   }
 }
 
+.header__logo {
+  display: block;
+  @media (max-width: $br1) {
+    width: 40px;
+  }
+}
+
 .header__logo-mob {
   display: none;
   width: 100%;
