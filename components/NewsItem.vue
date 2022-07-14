@@ -22,13 +22,16 @@ const formattedDate = useFormattedDate(props.date)
       class="news-images__link"
     >
       <time class="news-images__date">{{ formattedDate }}</time>
-      <ParallaxImg
-        class="news-images__img"
-        :src="img"
-        :width="500"
-        :height="500"
-        :scale="1.2"
-      />
+      <div class="news-images-img-wrap">
+
+        <ParallaxImg
+          class="news-images__img"
+          :src="img"
+          :width="500"
+          :height="500"
+          :scale="1.2"
+        />
+      </div>
       <h2 class="news-images__name">{{ name }}</h2>
     </NuxtLink>
   </li>

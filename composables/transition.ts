@@ -21,6 +21,8 @@ export const useTransition = () => {
 
   onMounted(async () => {
     setTimeout(() => {
+      window.ss.reset()
+      window.ss.isFixed = false
       window.parallax && window.parallax.update()
     }, 0)
 
@@ -28,12 +30,8 @@ export const useTransition = () => {
       const { appAnimation } = await import('~/scripts/utils/appAnimation')
       setTimeout(() => {
         appAnimation()
-      }, 250)
+      }, 800)
     }
-    setTimeout(() => {
-      window.ss.reset()
-      window.ss.isFixed = false
-    }, 500)
   })
 
   const route = useRoute()
@@ -48,10 +46,6 @@ export const useTransition = () => {
         window.ss.reset()
         window.ss.isFixed = false
       }, 500)
-
-      setTimeout(() => {
-        window.parallax && window.parallax.update()
-      }, 0)
     },
     onLeave(el, done) {
       setTimeout(() => {
@@ -61,7 +55,7 @@ export const useTransition = () => {
       gsap.fromTo(
         el,
         { opacity: 1 },
-        { duration: 0.5, opacity: 0, onComplete: done }
+        { duration: 0.5, opacity: 0, y: -100, onComplete: done }
       )
     },
   }
