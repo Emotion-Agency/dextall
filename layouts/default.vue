@@ -60,5 +60,6 @@ onBeforeUnmount(() => {
       <TheContacts />
       <TheFooter />
     </SmoothScroll>
+    <AppToast />
   </div>
 </template>

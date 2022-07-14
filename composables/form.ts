@@ -1,9 +1,11 @@
 import { iInputData } from '~~/composables/input'
 import { useAppStore } from '~/store/app'
 import { delayPromise } from '~~/scripts/utils/ea'
+import { ToastColor } from './toasts'
 
 export const useForm = (formData, $inputs, from = 'Dextall Website') => {
   const appStore = useAppStore()
+  const { addToast } = useToasts()
 
   const emmitError = () => {
     $inputs.value.forEach(input => input.throwError())
@@ -26,33 +28,46 @@ export const useForm = (formData, $inputs, from = 'Dextall Website') => {
   }
 
   const onSubmit = async () => {
-    const inputs = formData.inputs
-    const isError = inputs.find(el => el.error)
+    return new Promise(async (resolve, reject) => {
+      const inputs = formData.inputs
+      const isError = inputs.find(el => el.error)
 
-    if (isError) {
-      emmitError()
-      return
-    }
+      if (isError) {
+        emmitError()
+        return
+      }
 
-    const formSendData = new FormData()
-    formSendData.append('From:', from)
-    inputs.forEach(el => {
-      formSendData.append(el.name, el.value)
+      const formSendData = new FormData()
+      formSendData.append('From:', from)
+      inputs.forEach(el => {
+        formSendData.append(el.name, el.value)
+      })
+
+      try {
+        appStore.setLoading(true)
+        await delayPromise(2000)
+        resolve(inputs)
+        addToast({
+          color: ToastColor.success,
+          id: Date.now().toString(),
+          text: 'Form was successfully submitted',
+        })
+        resetForm()
+      } catch (error) {
+        console.log(error.message)
+        formData.hasErrors = true
+        reject(error.message)
+        addToast({
+          color: ToastColor.danger,
+          id: Date.now().toString(),
+          text: 'An error has occurred:(',
+        })
+      } finally {
+        setTimeout(() => {
+          appStore.setLoading(false)
+        }, 400)
+      }
     })
-
-    try {
-      appStore.setLoading(true)
-      await delayPromise(2000)
-      console.log(inputs)
-      resetForm()
-    } catch (error) {
-      console.log(error.message)
-      formData.hasErrors = true
-    } finally {
-      setTimeout(() => {
-        appStore.setLoading(false)
-      }, 400)
-    }
   }
 
   return { onInputValue, onSubmit }
