@@ -47,6 +47,7 @@
         </ul>
         <button
           class="header__burger"
+          aria-label="Open menu"
           @click="open()"
         >
           <span class="header__line"></span>
@@ -55,7 +56,6 @@
       </div>
     </div>
     <button
-      aria-label="Open menu"
       class="header__btn"
       @click="openContacts"
     >

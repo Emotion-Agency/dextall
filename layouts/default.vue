@@ -33,6 +33,12 @@ onBeforeUnmount(() => {
   window.parallax && window.parallax.destroy()
 })
 
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  }
+})
+
 </script>
 
 

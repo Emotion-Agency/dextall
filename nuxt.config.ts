@@ -10,11 +10,5 @@ export default defineNuxtConfig({
     ['@storyblok/nuxt', { accessToken: 'zhpJSXvvtqH1uucLMex7UQtt' }],
   ],
 
-  head: {
-    htmlAttrs: {
-      lang: 'en',
-    },
-  },
-
   generate: { fallback: '404.html' },
 })
