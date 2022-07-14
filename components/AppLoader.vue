@@ -41,6 +41,8 @@ const emit = defineEmits(['loaded'])
 const animation = () => {
   const tl = gsap.timeline({
     onComplete: () => {
+      appStore.setLoaded(true)
+      emit('loaded')
       isCompleted.value = true
     }
   })
@@ -57,16 +59,13 @@ const animation = () => {
     ease: 'power2.inOut',
   },0.2)
   tl.to($el.value,{
-    duration: 0.2,
+    duration: 0.1,
     opacity: 0,
     ease: 'power2.inOut',
   })
-
 }
-
 const afterLoad = () => {
-  appStore.setLoaded(true)
-  emit('loaded')
+
   animation()
   window.ss && (window.ss.isFixed = false)
 }

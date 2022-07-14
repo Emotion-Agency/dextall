@@ -25,6 +25,9 @@ const onSubmit = (title: string) => {
   formText.value = title
   openPopup()
 }
+
+const splitText = useSplitText()
+
 </script>
 
 <template>
@@ -32,9 +35,16 @@ const onSubmit = (title: string) => {
     <section class="section section--nm careers-1">
       <div class="container careers-1__wrapper">
         <div class="careers-1__text-block">
-          <h1 class="careers-1__title">{{ story.Screen_1[0].title }}</h1>
+          <h1
+            class="careers-1__title"
+            data-a-h
+            v-html="splitText(story.Screen_1[0].title)"
+          />
         </div>
-        <p class="careers-1__desc">
+        <p
+          data-a-t
+          class="careers-1__desc"
+        >
           {{ story.Screen_1[0].description }}
         </p>
       </div>

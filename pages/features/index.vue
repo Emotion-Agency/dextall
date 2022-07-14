@@ -6,6 +6,8 @@ useTransition()
 useObserver('.section')
 
 const { stories,story } = await useFeaturesStories()
+const splitText = useSplitText()
+
 </script>
 
 <template>
@@ -16,10 +18,17 @@ const { stories,story } = await useFeaturesStories()
     />
     <section class="section section--nm news-1">
       <div class="container news-1__wrapper">
-        <h1 class="news-1__title">Dextall Studio Growing Features list</h1>
+        <h1
+          class="news-1__title"
+          data-a-h
+          v-html="splitText('Dextall Studio Growing Features list')"
+        />
       </div>
     </section>
-    <section class="section news-2">
+    <section
+      data-a-o
+      class="section news-2"
+    >
       <div class="container news-2__wrapper">
         <ul class="grid news-images">
           <NewsItem

@@ -6,6 +6,8 @@ useTransition()
 useObserver('.section')
 
 const { stories,story } = await useNewsStories()
+
+const splitText = useSplitText()
 </script>
 
 <template>
@@ -16,7 +18,11 @@ const { stories,story } = await useNewsStories()
     />
     <section class="section section--nm news-1">
       <div class="container news-1__wrapper">
-        <h1 class="news-1__title">Latest news</h1>
+        <h1
+          class="news-1__title"
+          data-a-h
+          v-html="splitText('Latest news')"
+        />
       </div>
     </section>
     <section class="section news-2">

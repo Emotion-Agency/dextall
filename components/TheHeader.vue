@@ -1,5 +1,8 @@
 <template>
-  <header class="header navbar container">
+  <header
+    ref="$el"
+    class="header loading navbar container"
+  >
     <div class="header__wrapper">
       <NuxtLink
         to="/"
@@ -68,6 +71,23 @@
 
 
 <script setup lang="ts">
+import { useAppStore } from '~/store/app'
+
+const $el = ref(null)
+
+const appStore = useAppStore()
+
+const pageLoaded = computed(() => {
+  return appStore.loaded
+})
+
+watch(pageLoaded,() => {
+  if (pageLoaded.value) {
+    $el.value.classList.remove('loading')
+  }
+})
+
+
 const isNavOpen = ref(false)
 
 const open = () => {
@@ -88,6 +108,11 @@ onMounted(async () => {
   const { default: NavbarPos } = await import('~/scripts/utils/navbarPos')
   navbarPos = new NavbarPos()
   navbarPos.init()
+
+  if (pageLoaded.value) {
+    $el.value.classList.remove('loading')
+
+  }
 })
 
 onBeforeUnmount(() => {

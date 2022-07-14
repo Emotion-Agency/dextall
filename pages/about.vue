@@ -17,6 +17,9 @@ const get3Title = (string: string) => {
   return words.join(' ')
 }
 
+const splitText = useSplitText()
+
+
 </script>
 
 <template>
@@ -27,22 +30,25 @@ const get3Title = (string: string) => {
     />
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
-        <!-- <img
-          v-for="(_,idx) in 4"
-          :key="idx"
-          :data-parallax="(4 - idx) * 0.08"
-          :data-parallax-dir="-1"
-          class="about-1__img"
-          :src="`/images/about/${idx + 1}.jpg`"
-          alt="Building"
-        /> -->
         <div class="about-1__text-block">
           <h1 class="about-1__title">
-            <span class="about-1__span-title">Our</span>
-            <span class="about-1__span-title"> mission</span>
+            <span
+              data-a-h
+              class="about-1__span-title"
+              v-html="splitText('Our ')"
+            />
+
+            <span
+              data-a-h
+              class="about-1__span-title"
+              v-html="splitText('mission')"
+            />
           </h1>
         </div>
-        <p class="about-1__desc">{{ story.Screen_1[0].description }}</p>
+        <p
+          data-a-t
+          class="about-1__desc"
+        >{{ story.Screen_1[0].description }}</p>
       </div>
     </section>
     <section class="section about-2">

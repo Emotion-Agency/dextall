@@ -47,6 +47,8 @@ const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ..
 
 const getTransformedImage = useTransformedImage()
 const getTransformedLink = useTransformLink()
+const splitText = useSplitText()
+
 
 </script>
 
@@ -58,7 +60,10 @@ const getTransformedLink = useTransformLink()
     />
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
-        <div class="grid container products-1__image-block">
+        <div
+          data-a-t
+          class="grid container products-1__image-block"
+        >
           <ParallaxImg
             v-for="(item,idx) in firstScreenImages"
             :key="idx"
@@ -73,15 +78,31 @@ const getTransformedLink = useTransformLink()
         </div>
         <div class="products-1__text-block">
           <h1 class="products-1__title">
-            <span class="products-1__span-title">D Wall</span>
-            <span class="products-1__span-title"> non-load</span>
-            <span class="products-1__span-title"> Bearing System</span>
+            <span
+              data-a-h
+              class="products-1__span-title"
+              v-html="splitText('D Wall')"
+            />
+            <span
+              data-a-h
+              class="products-1__span-title"
+              v-html="splitText('non-load')"
+            />
+            <span
+              data-a-h
+              class="products-1__span-title"
+              v-html="splitText('Bearing System')"
+            />
           </h1>
-          <p class="products-1__desc">
+          <p
+            data-a-t
+            class="products-1__desc"
+          >
             {{ story.screen_1[0].description }}
           </p>
         </div>
         <CircleButton
+          data-a-t
           class="products-1__btn"
           @click="goToProducts"
         > Show products </CircleButton>

@@ -54,6 +54,9 @@ const imagesSlides = computed(() => {
     ),
   }))
 })
+
+const splitText = useSplitText()
+
 </script>
 
 <template>
@@ -65,6 +68,7 @@ const imagesSlides = computed(() => {
     />
     <section class="section section--nm project-1">
       <ParallaxImg
+        data-a-o
         class="project-1__bg"
         :src="story.Screen_1[0].main_image.filename"
         :width="1920"
@@ -73,14 +77,22 @@ const imagesSlides = computed(() => {
       />
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">
-          <p class="project-1__text">
+          <p
+            data-a-t
+            class="project-1__text"
+          >
             {{ story.Screen_1[0].small_text }}
           </p>
-          <h1 class="project-1__title">
-            {{ story.Screen_1[0].project_name }}
-          </h1>
+          <h1
+            data-a-h
+            class="project-1__title"
+            v-html="splitText(story.Screen_1[0].project_name)"
+          />
         </div>
-        <p class="project-1__desc">
+        <p
+          data-a-t
+          class="project-1__desc"
+        >
           {{ story.Screen_1[0].project_description }}
         </p>
       </div>

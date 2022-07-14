@@ -1,24 +1,49 @@
 import gsap from 'gsap'
+
 import { TransitionProps } from 'nuxt/dist/app/compat/capi'
+import { useAppStore } from '~/store/app'
 
 export const useTransition = () => {
-  onMounted(() => {
+  const appStore = useAppStore()
+
+  const pageLoaded = computed(() => {
+    return appStore.loaded
+  })
+
+  watch(pageLoaded, async () => {
+    if (pageLoaded.value) {
+      const { appAnimation } = await import('~/scripts/utils/appAnimation')
+      setTimeout(() => {
+        appAnimation()
+      }, 150)
+    }
+  })
+
+  onMounted(async () => {
+    setTimeout(() => {
+      window.parallax && window.parallax.update()
+    }, 0)
+
+    if (pageLoaded.value) {
+      const { appAnimation } = await import('~/scripts/utils/appAnimation')
+      setTimeout(() => {
+        appAnimation()
+      }, 250)
+    }
     setTimeout(() => {
       window.ss.reset()
       window.ss.isFixed = false
     }, 500)
-
-    setTimeout(() => {
-      window.parallax && window.parallax.update()
-    }, 0)
   })
+
   const route = useRoute()
   const pageTransition: TransitionProps = {
-    duration: 250,
     mode: 'in-out',
     css: false,
     appear: true,
-    onEnter(el, done) {
+    onEnter(_, done) {
+      done()
+
       setTimeout(() => {
         window.ss.reset()
         window.ss.isFixed = false
@@ -27,12 +52,6 @@ export const useTransition = () => {
       setTimeout(() => {
         window.parallax && window.parallax.update()
       }, 0)
-
-      gsap.fromTo(
-        el,
-        { opacity: 0 },
-        { duration: 0.5, opacity: 1, onComplete: done }
-      )
     },
     onLeave(el, done) {
       setTimeout(() => {

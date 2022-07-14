@@ -10,9 +10,9 @@ export class ScrollSequence {
       cover: false,
       ...opts,
     }
-    this.container = document.querySelector(opts.container)
+    this.container = opts.container
 
-    this.scrollWith = document.querySelector(opts.container)
+    this.scrollWith = opts.container
 
     const imgs = this.opts.images.map(img => img.filename)
 
@@ -50,7 +50,6 @@ export class ScrollSequence {
 
     this.loader.once('IMAGES_LOADED', () => {
       raf.on(this.changeOnWindowScroll)
-      console.log('Sequence Loaded')
     })
 
     this.loader.on('PROGRESS', percent => {
@@ -73,51 +72,3 @@ export class ScrollSequence {
     raf.off(this.changeOnWindowScroll)
   }
 }
-
-// export class ScrollSequence {
-//   constructor($el) {
-//     this.$el = document.querySelector($el)
-//     this.scroller = new Scrolling(this.$el, this.$el.parentElement)
-//     this.changeOnWindowScroll = this.changeOnWindowScroll.bind(this)
-//     this.init = this.init.bind(this)
-
-//     this.$el.pause()
-//     this.$el.load()
-
-//     this.$el.addEventListener('loadeddata', this.init)
-//   }
-
-//   init() {
-//     // this.$el.play()
-//     raf.on(this.changeOnWindowScroll)
-//   }
-
-//   changeOnWindowScroll() {
-//     if (this.$el.buffered.length === 0) return
-
-//     const bufferedSeconds =
-//       this.$el.buffered.end(0) - this.$el.buffered.start(0)
-
-//     console.log(bufferedSeconds)
-//     const current = (this.$el.duration * this.percentScrolled) / 100
-//     this.$el.currentTime = current
-//     console.log(current)
-//     // this.$el.duration
-//     // const step = 100 / (this.images.length - 1)
-//     // const mapToIndex = Math.floor(this.percentScrolled / step)
-
-//     // this.canvas.renderIndex(mapToIndex)
-//   }
-
-//   get percentScrolled() {
-//     return this.scroller.percentScrolled * 100
-//   }
-
-//   destroy() {
-//     raf.off(this.changeOnWindowScroll)
-//   }
-
-//   destroy() {
-//     raf.off(this.changeOnWindowScroll)
-//   }
-// }

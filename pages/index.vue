@@ -29,10 +29,11 @@ const $slides2 = ref(null)
 const { onSliderNavigationClick,activeIdx } = useSlider($slides1,$slides2)
 
 let scrollSequence
+const $sequenceContainer = ref(null)
 onMounted(async () => {
   const { ScrollSequence } = await import('~/scripts/PlaySequence')
   scrollSequence = new ScrollSequence({
-    container: '.scroll-sequence',
+    container: $sequenceContainer.value,
     images: story.value?.home_screen_2[0]?.frames,
     priorityFrames: [],
     cover: true,
@@ -45,6 +46,7 @@ onBeforeUnmount(() => {
 
 const getTransformedImage = useTransformedImage()
 const getTransformedLink = useTransformLink()
+const splitText = useSplitText()
 </script>
 
 <template>
@@ -57,7 +59,10 @@ const getTransformedLink = useTransformLink()
     <section class="section section--nm home-1">
       <div class="container home-1__wrapper">
         <div class="grid home-1__top-block">
-          <div class="home-1__elements-left">
+          <div
+            data-a-t
+            class="home-1__elements-left"
+          >
             <div
               v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
               ref="$slides1"
@@ -71,7 +76,10 @@ const getTransformedLink = useTransformLink()
               ></div>
             </div>
           </div>
-          <div class="home-1__elements-right">
+          <div
+            data-a-t
+            class="home-1__elements-right"
+          >
             <div class="home-1__right-image">
               <div
                 v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
@@ -86,7 +94,10 @@ const getTransformedLink = useTransformLink()
                 ></div>
               </div>
             </div>
-            <ul class="grid home-1__small-buildings">
+            <ul
+              data-a-o
+              class="grid home-1__small-buildings"
+            >
               <li
                 v-for="(img,idx) in story.home_screen_1[0].Images[0].home_slider_image"
                 :key="img._uid"
@@ -103,21 +114,46 @@ const getTransformedLink = useTransformLink()
             </ul>
           </div>
         </div>
-        <p class="home-1__desc">
+        <p
+          data-a-t
+          class="home-1__desc"
+        >
           {{ story.home_screen_1[0].Description }}
         </p>
         <h1 class="grid home-1__bottom-block">
-          <span class="home-1__title">Unitized</span>
-          <span class="home-1__title"> prefabricated</span>
-          <span class="home-1__title"> exterior</span>
-          <span class="home-1__title"> wall</span>
-          <span class="home-1__title"> system</span>
+          <span
+            data-a-h
+            class="home-1__title"
+            v-html="splitText('Unitized')"
+          />
+          <span
+            data-a-h
+            class="home-1__title"
+            v-html="splitText('prefabricated')"
+          />
+          <span
+            data-a-h
+            class="home-1__title"
+            v-html="splitText('exterior')"
+          />
+          <span
+            data-a-h
+            class="home-1__title"
+            v-html="splitText('wall')"
+          />
+          <span
+            data-a-h
+            class="home-1__title"
+            v-html="splitText('system')"
+          />
+
         </h1>
       </div>
     </section>
 
     <section class="section home-2 scroll-sequence__container">
       <div
+        ref="$sequenceContainer"
         data-spli
         data-loaded="0"
         class="home-2__background scroll-sequence"

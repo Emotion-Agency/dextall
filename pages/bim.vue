@@ -17,6 +17,9 @@ onMounted(async () => {
   carousel.init()
 })
 
+const { open: openPopup } = useFormPopup()
+
+
 </script>
 
 <template>
@@ -28,18 +31,26 @@ onMounted(async () => {
     <section class="section section--nm bim-1">
       <div class="container bim-1__wrapper">
         <div class="bim-1__text-block">
-          <p class="bim-1__top-text">{{ story.Screen_1[0].short_text }}</p>
+          <p
+            data-a-t
+            class="bim-1__top-text"
+          >{{ story.Screen_1[0].short_text }}</p>
           <TheTicker
+            data-a-t
             :text="story.Screen_1[0].moving_title"
             class="bim-1__ticker"
           />
-          <p class="bim-1__bottom-text">
+          <p
+            data-a-t
+            class="bim-1__bottom-text"
+          >
             {{ story.Screen_1[0].description }}
           </p>
         </div>
         <CircleButton
-          v-bind="getTransformedLink(story.Screen_1[0].button[0].link)"
+          data-a-t
           class="bim-1__btn"
+          @click="openPopup()"
         >
           {{ story.Screen_1[0].button[0].text_button }}
         </CircleButton>
@@ -62,7 +73,7 @@ onMounted(async () => {
           </p>
           <TextButton
             class="bim-2__btn"
-            v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
+            @click="openPopup"
           >{{
               story.Screen_2[0].button[0].text_button
           }}</TextButton>
@@ -256,5 +267,9 @@ onMounted(async () => {
         }}</CircleButton>
       </div>
     </section>
+    <FormPopup
+      title="Get access"
+      form-title="Bim request access"
+    />
   </main>
 </template>

@@ -11,24 +11,27 @@ interface iProps {
 
 const props = defineProps<iProps>()
 
-
-
 const formattedDate = useFormattedDate(props.date)
 
 const getTransformedLink = useTransformLink()
+const splitText = useSplitText()
+
 </script>
 
 <template>
   <article>
     <div class="section section--nm internal-news-1">
       <div class="container internal-news-1__wrapper">
-        <h1 class="internal-news-1__title">
-          {{ title }}
-        </h1>
+        <h1
+          class="internal-news-1__title"
+          data-a-h
+          v-html="splitText(title)"
+        />
       </div>
 
       <ParallaxImg
         v-if="image"
+        data-a-o
         class="internal-news-1__bg"
         :with-border-radius="false"
         :src="image"
