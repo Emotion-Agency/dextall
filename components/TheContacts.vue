@@ -116,7 +116,7 @@ const formData = reactive({
   ],
 })
 
-const { onInputValue,onSubmit } = useForm(formData,$inputs,'Dextall footer')
+const { onInputValue,onSubmit } = useForm(formData,$inputs)
 
 const updatedSubmit = async () => {
   await onSubmit()

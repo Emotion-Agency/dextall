@@ -1,7 +1,8 @@
 import { iInputData } from '~~/composables/input'
 import { useAppStore } from '~/store/app'
-import { delayPromise } from '~~/scripts/utils/ea'
 import { ToastColor } from './toasts'
+
+const URL = 'https://formspree.io/f/mdobrvja'
 
 export const useForm = (formData, $inputs, from = 'Dextall Website') => {
   const appStore = useAppStore()
@@ -45,7 +46,11 @@ export const useForm = (formData, $inputs, from = 'Dextall Website') => {
 
       try {
         appStore.setLoading(true)
-        await delayPromise(2000)
+        await fetch(URL, {
+          method: 'POST',
+          body: formSendData,
+          mode: 'no-cors',
+        })
         resolve(inputs)
         addToast({
           color: ToastColor.success,
