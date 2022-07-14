@@ -27,6 +27,7 @@ const href = props.tag === 'a' ? props.href : undefined
     :class="[isWhite && 'circle-button--white']"
     :to="to"
     :href="href"
+    aria-label="link"
     :target="props.tag === 'a' ? '_blank' : undefined"
     :rel="props.tag === 'a' ? 'noreferer noopener' : undefined"
     :type="props.type"
