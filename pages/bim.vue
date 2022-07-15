@@ -73,7 +73,7 @@ const { open: openPopup } = useFormPopup()
           </p>
           <TextButton
             class="bim-2__btn"
-            @click="openPopup"
+            v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
           >{{
               story.Screen_2[0].button[0].text_button
           }}</TextButton>
@@ -261,7 +261,7 @@ const { open: openPopup } = useFormPopup()
         <CircleButton
           class="bim-5__btn"
           :is-white="true"
-          v-bind="getTransformedLink(story.Screen_4[0].button[0].link)"
+          @click="openPopup()"
         >{{
             story.Screen_4[0].button[0].text_button
         }}</CircleButton>
