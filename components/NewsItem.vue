@@ -4,6 +4,7 @@ import { useFormattedDate } from '~/composables/computeDate'
 interface iProps {
   name: string
   date: string
+  idx: number
   img: string
   description?: string
   link: string
@@ -11,12 +12,45 @@ interface iProps {
 
 const props = defineProps<iProps>()
 
+const idx = props.idx + 1
+
+const row = computed(() => {
+  // if (idx % 6 === 1) {
+  //   return Math.round(idx / 6 * 3)
+  // }
+  // if (idx % 6 === 2) {
+  //   return Math.round(idx / 6 * 3)
+  // }
+  // if (idx % 6 === 3) {
+  //   return Math.round(idx / 6 * 3)
+  // }
+  // if (idx % 6 === 4) {
+  //   return Math.round(idx / 6 * 3)
+  // }
+  //   if (idx % 6 === 0) {
+  //   return Math.round(idx / 6 * 3)
+  // }
+  if (idx % 6 === 5) {
+    return Math.round(idx / 6 * 3) - 1
+  } else {
+    return Math.round(idx / 6 * 3)
+
+  }
+
+})
+
+console.log(row.value)
+
+
 const formattedDate = useFormattedDate(props.date)
 
 </script>
 
 <template>
-  <li class="news-images__li">
+  <li
+    class="news-images__li"
+    :style="`--row: ${row}`"
+  >
     <NuxtLink
       :to="link"
       class="news-images__link"

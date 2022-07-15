@@ -265,8 +265,9 @@ const splitText = useSplitText()
 
           <ul class="grid news-images">
             <NewsItem
-              v-for="item in filteredStories"
+              v-for="(item,idx) in filteredStories"
               :key="item._uid"
+              :idx="idx"
               :date="item.first_published_at || item.created_at"
               :name="item.name"
               :link="'/projects/' + item.slug + '/'"

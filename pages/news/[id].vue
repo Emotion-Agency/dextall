@@ -43,8 +43,9 @@ const date = story.value?.first_published_at || story.value?.created_at
 
           <ul class="grid news-images">
             <NewsItem
-              v-for="item in filteredStories"
+              v-for="(item,idx) in filteredStories"
               :key="item._uid"
+              :idx="idx"
               :date="item.first_published_at || item.created_at"
               :name="item.name"
               :link="'/news/' + item.slug + '/'"
