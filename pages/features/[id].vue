@@ -48,7 +48,7 @@ const date = story.value?.first_published_at || story.value?.created_at
               :idx="idx"
               :date="item.first_published_at || item.created_at"
               :name="item.name"
-              :link="'/news/' + item.slug + '/'"
+              :link="'/features/' + item.slug + '/'"
               :img="item?.content?.big_image?.filename"
             />
           </ul>
