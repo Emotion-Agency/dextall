@@ -1,7 +1,6 @@
 .news-images {
   @media (min-width: $br1) {
     row-gap: vw(100);
-    grid-template-rows: repeat(3, 1fr);
   }
 
   @media (max-width: $br1) {

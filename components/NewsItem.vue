@@ -39,8 +39,6 @@ const row = computed(() => {
 
 })
 
-console.log(row.value)
-
 
 const formattedDate = useFormattedDate(props.date)
 
