@@ -28,7 +28,7 @@ let scrollSequence
 const $sequenceContainer = ref(null)
 onMounted(async () => {
   const initImages = story.value?.home_screen_2[0]?.frames
-  const images = initImages?.sort((a,b) => a.filename.slice(-8).localeCompare(b.filename.slice(-8)))
+  const images = initImages?.sort((a,b) => a?.filename.slice(-8).localeCompare(b?.filename.slice(-8)))
 
   const { ScrollSequence } = await import('~/scripts/PlaySequence')
   scrollSequence = new ScrollSequence({
@@ -167,7 +167,7 @@ const splitText = useSplitText()
           </ul>
         </div>
         <ParallaxImg
-          :src="story.home_screen_3[0].image.filename"
+          :src="story.home_screen_3[0].image?.filename"
           :width="816"
           :height="800"
           img-class="home-3__img"
@@ -192,7 +192,7 @@ const splitText = useSplitText()
           >
 
             <img
-              :src="item.image_1.filename"
+              :src="item.image_1?.filename"
               alt=""
             >
           </FloatingCard>
@@ -238,7 +238,7 @@ const splitText = useSplitText()
         </div>
 
         <ParallaxImg
-          :src="story.home_screen_6[0].small_image.filename"
+          :src="story.home_screen_6[0].small_image?.filename"
           :width="815"
           :height="899"
           img-class="home-6__img"
@@ -246,7 +246,7 @@ const splitText = useSplitText()
         />
 
         <ParallaxImg
-          :src="story.home_screen_6[0].big_image.filename"
+          :src="story.home_screen_6[0].big_image?.filename"
           :width="1173"
           :height="899"
           img-class="home-6__img"
@@ -336,7 +336,7 @@ const splitText = useSplitText()
           > {{ story.home_screen_9[0].button[0].text_button }} </CircleButton>
         </div>
         <ParallaxImg
-          :src="story.home_screen_9[0].small_image.filename"
+          :src="story.home_screen_9[0].small_image?.filename"
           img-class="home-9__img"
           :width="815"
           :height="1021"
@@ -344,7 +344,7 @@ const splitText = useSplitText()
         />
 
         <ParallaxImg
-          :src="story.home_screen_9[0].big_image.filename"
+          :src="story.home_screen_9[0].big_image?.filename"
           :width="1172"
           :height="899"
           img-class="home-9__img"

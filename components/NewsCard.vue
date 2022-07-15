@@ -52,8 +52,9 @@ onBeforeUnmount(() => {
       <div class="cards__line"></div>
     </div>
     <div
+      v-if="img?.filename"
       class="cards__image-block"
-      :style="`background-image: url('${getTransformedImage(img.filename,800)}')`"
+      :style="`background-image: url('${getTransformedImage(img?.filename,800)}')`"
     ></div>
   </li>
 </template>
