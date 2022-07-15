@@ -87,6 +87,7 @@
   width: vw(338);
   height: vw(338);
   margin-top: vw(15);
+  isolation: isolate;
 
   @media (max-width: $br1) {
     margin-top: 10px;

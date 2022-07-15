@@ -24,7 +24,7 @@ export const useTransition = () => {
       window.ss.reset()
       window.ss.isFixed = false
       window.parallax && window.parallax.update()
-    }, 0)
+    }, 500)
 
     if (pageLoaded.value) {
       const { appAnimation } = await import('~/scripts/utils/appAnimation')
