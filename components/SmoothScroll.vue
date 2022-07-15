@@ -20,7 +20,7 @@ onMounted(async () => {
   window.ss = new SmoothScroll({
     el: document.querySelector(props.el) ?? undefined,
     mobile: props.mobile || false,
-    breakpoint: props.breakpoint ?? 960,
+    breakpoint: props.breakpoint ?? 1060,
     passive: props.passive || false,
     isFixed: props.isFixed || true,
     friction: props.friction ?? 0.07,
