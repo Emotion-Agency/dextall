@@ -150,7 +150,7 @@ onMounted(() => {
   $navItems.value = document.querySelectorAll('[data-nav]')
 })
 
-const isAnimating = ref(false)
+
 
 const isOpen = computed(() => {
   return props.isOpen
@@ -158,12 +158,8 @@ const isOpen = computed(() => {
 
 watch(isOpen,() => {
   if (isOpen.value === true) {
-    isAnimating.value = true
-    const tl = gsap.timeline({
-      onComplete: () => {
-        isAnimating.value = false
-      }
-    })
+
+    const tl = gsap.timeline()
     const ease = 'power3.inOut'
 
     tl.fromTo($navLeft.value,{ y: '100%' },{ duration: 1,y: '0%',ease },0)
@@ -177,14 +173,12 @@ watch(isOpen,() => {
 })
 
 const close = () => {
-  if (isAnimating.value) {
-    return
-  }
 
-  isAnimating.value = true
+
+
   const tl = gsap.timeline({
     onComplete: () => {
-      isAnimating.value = false
+
       emit('close')
     }
   })

@@ -2,6 +2,7 @@ import gsap from 'gsap'
 
 import { TransitionProps } from 'nuxt/dist/app/compat/capi'
 import { useAppStore } from '~/store/app'
+import { resetScroll } from '~~/scripts/utils/resetScroll'
 
 export const useTransition = () => {
   const appStore = useAppStore()
@@ -21,9 +22,7 @@ export const useTransition = () => {
 
   onMounted(async () => {
     setTimeout(() => {
-      window.ss.reset()
-      window.ss.isFixed = false
-      window.parallax && window.parallax.update()
+      resetScroll()
     }, 500)
 
     if (pageLoaded.value) {
@@ -43,9 +42,8 @@ export const useTransition = () => {
       done()
 
       setTimeout(() => {
-        window.ss.reset()
-        window.ss.isFixed = false
-      }, 500)
+        resetScroll()
+      }, 300)
     },
     onLeave(el, done) {
       setTimeout(() => {
