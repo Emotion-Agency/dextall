@@ -27,10 +27,13 @@ news.value = newsData.stories.value.filter((_,idx) => idx <= 2)
 let scrollSequence
 const $sequenceContainer = ref(null)
 onMounted(async () => {
+  const initImages = story.value?.home_screen_2[0]?.frames
+  const images = initImages?.sort((a,b) => a.filename.slice(-8).localeCompare(b.filename.slice(-8)))
+
   const { ScrollSequence } = await import('~/scripts/PlaySequence')
   scrollSequence = new ScrollSequence({
     container: $sequenceContainer.value,
-    images: story.value?.home_screen_2[0]?.frames,
+    images,
     priorityFrames: [],
     cover: true,
   })
