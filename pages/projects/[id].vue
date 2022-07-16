@@ -189,6 +189,8 @@ const darken = computed(() => {
       <ParallaxImg
         class="project-5__bg"
         :src="story.Screen_4[0].image.filename"
+        :width="1920"
+        :height="1080"
         :with-border-radius="false"
       />
       <div class="container grid project-5__wrapper">
