@@ -7,6 +7,14 @@ useObserver('.section')
 
 const { stories,story } = await useProjectsStories()
 
+
+const sortedStories = computed(() => {
+  return [...stories.value].sort((a,b) => {
+    return +a.content.order - b.content.order
+  }
+  )
+})
+
 const splitText = useSplitText()
 
 </script>
@@ -40,7 +48,7 @@ const splitText = useSplitText()
       <div class="container">
         <ul class="grid news-images projects-list">
           <NewsItem
-            v-for="(item,idx) in stories"
+            v-for="(item,idx) in sortedStories"
             :key="item._uid"
             :idx="idx"
             :date="item.first_published_at || item.created_at"

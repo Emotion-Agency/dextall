@@ -22,6 +22,7 @@ export interface iStory {
   slug: string
   created_at: string
   first_published_at: string
+  published_at: number
   name: string
   _uid: string
   id: number

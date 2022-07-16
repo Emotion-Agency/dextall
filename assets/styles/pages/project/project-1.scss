@@ -30,7 +30,7 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, var(--darken));
   }
   @media (max-width: $br1) {
     height: 100vh;

@@ -20,6 +20,8 @@ const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
 })
 
+
+
 const getTransformedImage = useTransformedImage()
 
 onMounted(async () => {
@@ -56,6 +58,11 @@ const imagesSlides = computed(() => {
 })
 
 const splitText = useSplitText()
+
+const darken = computed(() => {
+  return story.value?.Screen_1[0]?.main_image_darken ?? 20
+})
+
 </script>
 
 <template>
@@ -73,6 +80,7 @@ const splitText = useSplitText()
         :width="1920"
         :height="1080"
         :with-border-radius="false"
+        :style="`--darken: ${darken / 100}`"
       />
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">
