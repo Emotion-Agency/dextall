@@ -200,9 +200,7 @@ const splitText = useSplitText()
           {{ story.Screen_4[0].marked_list[0].H1_title }}
         </h2>
         <p class="about-7__desc">
-          We bridge the gap between the design of prefabricated exteriors within
-          the AEC industry and the final exterior wall execution at the job site
-          through automation, cost optimization and transparent practices.
+          {{ story.Screen_4[0].marked_list[0].description }}
         </p>
         <ul class="about-7__list">
           <li class="about-7__li">
@@ -340,7 +338,7 @@ const splitText = useSplitText()
                 class="block-img about-8__image"
                 :src="story.Screen_5[0].third_image.filename"
                 :width="935"
-                :height="804"
+                :height="976"
               />
             </div>
           </li>
