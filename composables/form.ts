@@ -2,7 +2,7 @@ import { iInputData } from '~~/composables/input'
 import { useAppStore } from '~/store/app'
 import { ToastColor } from './toasts'
 
-const URL = 'https://formspree.io/f/mdobrvja'
+const URL = 'https://formspree.io/f/mdobqoyj'
 
 export const useForm = (formData, $inputs, from = 'Dextall Website') => {
   const appStore = useAppStore()
