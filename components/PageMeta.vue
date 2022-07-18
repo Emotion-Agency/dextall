@@ -23,6 +23,11 @@ defineProps<iProps>()
       :content="meta?.title.trim()"
     />
     <Meta
+      name="title"
+      property="og:title"
+      :content="meta?.title.trim()"
+    />
+    <Meta
       name="og:description"
       :content="meta?.description.trim()"
     />
