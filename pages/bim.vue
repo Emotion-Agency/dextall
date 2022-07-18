@@ -25,8 +25,8 @@ const { open: openPopup } = useFormPopup()
 <template>
   <main>
     <PageMeta
-      :title="story.meta[0].title"
-      :description="story.meta[0].description"
+      v-if="story.meta.length"
+      :meta="story.meta[0]"
     />
     <section class="section section--nm bim-1">
       <div class="container bim-1__wrapper">

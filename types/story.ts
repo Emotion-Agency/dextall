@@ -1,8 +1,12 @@
 import { Richtext } from 'storyblok-js-client'
 
-interface iMeta {
+export interface iMeta {
   title: string
-  description: string
+  description?: string
+  image?: {
+    _uid: string
+    filename: string
+  }
 }
 
 export interface iLink {

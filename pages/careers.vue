@@ -32,6 +32,10 @@ const splitText = useSplitText()
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.meta.length"
+      :meta="story.meta[0]"
+    />
     <section class="section section--nm careers-1">
       <div class="container careers-1__wrapper">
         <div class="careers-1__text-block">

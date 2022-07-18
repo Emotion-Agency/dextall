@@ -25,8 +25,8 @@ const splitText = useSplitText()
 <template>
   <main>
     <PageMeta
-      :title="story.meta[0].title"
-      :description="story.meta[0].description"
+      v-if="story.meta.length"
+      :meta="story.meta[0]"
     />
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">

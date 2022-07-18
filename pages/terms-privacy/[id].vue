@@ -20,8 +20,8 @@ const date = story.first_published_at || story.created_at
 <template>
   <main>
     <PageMeta
-      :title="story.content.meta[0].title"
-      :description="story.content.meta[0].description"
+      v-if="story.content.meta.length"
+      :meta="story.content.meta[0]"
     />
     <PostItem
       :title="story.content.title"

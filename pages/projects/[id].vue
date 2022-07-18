@@ -69,8 +69,7 @@ const darken = computed(() => {
   <main>
     <PageMeta
       v-if="story.meta.length"
-      :title="story.meta[0].title"
-      :description="story.meta[0].description"
+      :meta="story.meta[0]"
     />
     <section class="section section--nm project-1">
       <ParallaxImg

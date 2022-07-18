@@ -13,8 +13,8 @@ const splitText = useSplitText()
 <template>
   <main>
     <PageMeta
-      :title="story.content.meta[0].title"
-      :description="story.content.meta[0].description"
+      v-if="story.content.meta.length"
+      :meta="story.content.meta[0]"
     />
     <section class="section section--nm news-1">
       <div class="container news-1__wrapper">
