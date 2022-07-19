@@ -1,5 +1,13 @@
+<script setup>
+defineProps({
+  error: Object
+})
+
+const handleError = () => clearError({ redirect: '/' })
+</script>
+
 <template>
-  <NuxtLayout name="empty">
+  <NuxtLayout name="default">
     <main>
       <section class="error-page">
         <TheTicker
@@ -8,8 +16,8 @@
         />
         <CircleButton
           class="error-page__btn"
-          tag="nuxt-link"
-          to="/"
+          tag="button"
+          @click="handleError"
         >
           Back to home
         </CircleButton>
