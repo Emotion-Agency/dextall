@@ -30,16 +30,15 @@ const splitText = useSplitText()
       class="section news-2"
     >
       <div class="container news-2__wrapper">
-        <ul class="grid news-images">
-          <NewsItem
+        <ul class="features-items">
+          <FeatureItem
             v-for="(item,idx) in stories"
             :key="item._uid"
             :idx="idx"
-            :date="item.first_published_at || item.created_at"
-            :name="item.name"
+            :title="item.name"
             :link="'/features/' + item.slug + '/'"
-            :img="item?.content?.big_image?.filename"
-            :description="item.content.description"
+            :text="item.content.description"
+            :is-last="idx + 1 === stories.length"
           />
         </ul>
       </div>
