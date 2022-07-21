@@ -53,12 +53,12 @@ const splitText = useSplitText()
               :key="block._uid"
               class="internal-news-2__block"
             >
-              <div class="internal-news-2__block-text">
-                <RichText
-                  v-if="block.text_formatting"
-                  :text="block.text_formatting"
-                />
-              </div>
+
+              <RichText
+                v-if="block.text_formatting"
+                :text="block.text_formatting"
+              />
+
               <CircleButton
                 v-if="block?.button && block.button[0]"
                 v-bind="getTransformedLink(block.button[0].link)"

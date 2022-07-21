@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useProjectsStories } from '~/composables/stories/projects.story'
-import { keysGenerator } from '~~/scripts/utils/ea'
+import { delayPromise,keysGenerator } from '~~/scripts/utils/ea'
 
 useTransition()
 useObserver('.section')
@@ -25,6 +25,11 @@ const filteredStories = computed(() => {
 const getTransformedImage = useTransformedImage()
 
 onMounted(async () => {
+  const w = screen.width
+  if (story.value.Screen_2[0].gallery.length < 5 && w > 1024) {
+    return
+  }
+  await delayPromise(2000)
   const { Carousel } = await import('~/scripts/Carousel')
 
   const carousel = new Carousel()
@@ -127,11 +132,14 @@ const darken = computed(() => {
         >Full screen mode</CircleButton>
       </div>
       <div
+        v-if="story.Screen_2[0].gallery.length"
         data-slider
         dragable="false"
+        :class="story.Screen_2[0].gallery.length < 5 && 'project-3__img-list-wrapper'"
       >
         <ul
           class="project-3__img-list"
+          :class="story.Screen_2[0].gallery.length < 5 && 'project-3__img-list--center'"
           data-slider-inner
         >
           <li
@@ -277,7 +285,6 @@ const darken = computed(() => {
               v-for="(item,idx) in filteredStories"
               :key="item._uid"
               :idx="idx"
-              :date="item.first_published_at || item.created_at"
               :name="item.name"
               :link="'/projects/' + item.slug + '/'"
               :img="item?.content?.Screen_1[0].main_image.filename"

@@ -30,7 +30,7 @@
   }
 }
 
-[data-slider] {
+[data-slider]:not(.project-3__img-list-wrapper) {
   cursor: grab;
   user-select: none;
   &.is-grabbing {
@@ -48,6 +48,12 @@
   margin-top: vw(150);
   padding-left: $g-offset;
   padding-right: 20px;
+  &--center {
+    @media (min-width: $br1) {
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
   @media (max-width: $br1) {
     column-gap: 15px;

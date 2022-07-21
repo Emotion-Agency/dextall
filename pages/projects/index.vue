@@ -51,7 +51,6 @@ const splitText = useSplitText()
             v-for="(item,idx) in sortedStories"
             :key="item._uid"
             :idx="idx"
-            :date="item.first_published_at || item.created_at"
             :name="item.name"
             :link="'/projects/' + item.slug + '/'"
             :img="item.content.Screen_1[0].main_image.filename"

@@ -3,7 +3,7 @@ import { useFormattedDate } from '~/composables/computeDate'
 
 interface iProps {
   name: string
-  date: string
+  date?: string
   idx: number
   img: string
   description?: string
@@ -53,7 +53,14 @@ const formattedDate = useFormattedDate(props.date)
       :to="link"
       class="news-images__link"
     >
-      <time class="news-images__date">{{ formattedDate }}</time>
+      <time
+        v-if="date"
+        class="news-images__date"
+      >{{ formattedDate }}</time>
+      <small
+        v-else
+        class="news-images__date"
+      >0{{ idx }}</small>
       <div class="news-images-img-wrap">
 
         <ParallaxImg

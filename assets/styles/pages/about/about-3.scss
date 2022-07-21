@@ -15,7 +15,7 @@
 
 .about-3__title {
   @include default;
-  font-size: vw(70);
+  font-size: 3.6vw;
   margin-top: vw(20);
 
   @media (min-width: $br1) {
