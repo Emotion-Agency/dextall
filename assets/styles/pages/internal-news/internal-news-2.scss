@@ -21,7 +21,7 @@
     margin-top: 0;
   }
 
-  * {
+  *:not(.circle-button__bg) {
     margin-top: 20px;
     @include default;
     font-size: 16px;
