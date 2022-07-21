@@ -21,7 +21,7 @@
     margin-top: 0;
   }
 
-  *:not(.circle-button__bg) {
+  * {
     margin-top: 20px;
     @include default;
     font-size: 16px;
@@ -65,6 +65,10 @@
     display: block;
     max-width: 100%;
     border-radius: 10px;
+  }
+
+  .circle-button__bg {
+    margin-top: 0px;
   }
 }
 
