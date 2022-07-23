@@ -40,8 +40,14 @@ export interface iImage {
   }
 }
 
+interface iBlogVideo {
+  _uid: string
+  video_id: string
+}
+
 export interface iPostBlock {
   _uid: string
   text_formatting: Richtext
   button: iButton[]
+  youtube_video: iBlogVideo[]
 }

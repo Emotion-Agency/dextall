@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { iPostBlock } from '~/types/story'
+import YoutubeVideo from './YoutubeVideo.vue';
 
 interface iProps {
   date?: string
@@ -7,6 +8,7 @@ interface iProps {
   image?: string
   blocks: iPostBlock[]
 }
+
 
 
 const props = defineProps<iProps>()
@@ -58,6 +60,13 @@ const splitText = useSplitText()
                 v-if="block.text_formatting"
                 :text="block.text_formatting"
               />
+              <div v-if="block?.youtube_video?.length">
+                <YoutubeVideo
+                  v-for="video in block?.youtube_video"
+                  :key="video._uid"
+                  :video-id="video.video_id"
+                />
+              </div>
 
               <CircleButton
                 v-if="block?.button && block.button[0]"
