@@ -1,0 +1,104 @@
+.webinars-1 {
+  position: relative;
+  padding-top: vw(160);
+  background-color: var(--bg);
+
+  @media (max-width: $br1) {
+    padding-top: 120px;
+  }
+}
+
+.webinars-1__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  @media (max-width: $br1) {
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+
+.webinars-1__title {
+  @include reg;
+  color: var(--main);
+  font-size: vw(120);
+  line-height: 110%;
+  text-transform: uppercase;
+  max-width: vw(1400);
+
+  @media (max-width: $br1) {
+    max-width: 100%;
+    font-size: size(120, 36);
+  }
+
+  @media (max-width: $br4) {
+    font-size: 36px;
+  }
+}
+
+.webinars-1__desc {
+  @include default;
+  margin-top: vw(35);
+
+  @media (max-width: $br1) {
+    margin-top: 10px;
+  }
+}
+
+.webinars-1__form {
+  margin-top: vw(65);
+
+  @media (max-width: $br1) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+  }
+}
+
+.webinars-1__input {
+  &:nth-of-type(1) {
+    @media (min-width: $br1) {
+      @include col(1, 7);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @media (min-width: $br1) {
+      @include col(9, 15);
+    }
+  }
+
+  &:nth-of-type(3) {
+    @media (min-width: $br1) {
+      @include col(1, 7);
+      @include row(2, 2);
+      margin-top: vw(100);
+    }
+  }
+
+  &:nth-of-type(4) {
+    @media (min-width: $br1) {
+      @include col(9, 15);
+      @include row(2, 2);
+      margin-top: vw(100);
+    }
+  }
+}
+
+.webinars-1__btn {
+  width: fit-content;
+
+  @media (min-width: $br1) {
+    @include col(14, 15);
+    @include row(3, 3);
+    margin-top: vw(50);
+  }
+
+  @media (max-width: $br1) {
+    align-self: end;
+  }
+}
