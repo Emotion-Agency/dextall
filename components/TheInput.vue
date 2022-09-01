@@ -4,7 +4,25 @@
       class="input-wrapper"
       :class="[inputFocus && 'js-focus',error && 'js-error']"
     >
+      <select
+        v-if="type === 'select'"
+        :id="id"
+        ref="input"
+        v-model="inputValue"
+        :name="name"
+        class="input select"
+        placeholder="Select a webinar"
+        @focus="onFocus"
+        @blur="onBlur"
+        @change="onInput"
+      >
+        <option
+          v-for="option of options"
+          :key="option"
+        >{{ option }}</option>
+      </select>
       <input
+        v-else
         :id="id"
         ref="$input"
         v-model="inputValue"
@@ -45,6 +63,7 @@ interface iProps {
   name?: string
   validation?: string | undefined | unknown
   validationText?: string | undefined | unknown
+  options?: string[]
 }
 
 const props = defineProps<iProps>()

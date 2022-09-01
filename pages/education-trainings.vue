@@ -6,14 +6,15 @@ useObserver('.section')
 
 
 const { story } = await useLibraryStory()
-const { open: openPopup } = useFormPopup()
+
+const router = useRouter()
 
 
 const date = story.value.first_published_at || story.value.created_at
 
 const onRegistration = (e: Event) => {
   e.preventDefault()
-  openPopup()
+  router.push('/webinars/')
 }
 
 onMounted(() => {
@@ -50,11 +51,11 @@ onBeforeUnmount(() => {
       :image="story.content.big_image.filename"
       :blocks="story.content.blog_section"
     />
-    <teleport to='body'>
+    <!-- <teleport to='body'>
       <FormPopup
         title="Registration request"
         form-title="EDUCATION & TRAINING Registration"
       />
-    </teleport>
+    </teleport> -->
   </main>
 </template>
