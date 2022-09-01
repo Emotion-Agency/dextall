@@ -48,8 +48,6 @@ import { useWebinarsStory } from '~/composables/stories/webinars.story'
 
 const { story } = await useWebinarsStory()
 
-console.log(story.value)
-
 const $inputs = ref([])
 const formData = reactive({
   hasErrors: true,
