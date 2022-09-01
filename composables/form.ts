@@ -4,7 +4,13 @@ import { ToastColor } from './toasts'
 
 const URL = 'https://formspree.io/f/mdobqoyj'
 
-export const useForm = (formData, $inputs, from = 'Dextall Website') => {
+export const useForm = (
+  formData,
+  $inputs,
+  from = 'Dextall Website',
+  URLS = []
+) => {
+  const FINAL_URLS = [URL, ...URLS]
   const appStore = useAppStore()
   const { addToast } = useToasts()
 
@@ -46,10 +52,13 @@ export const useForm = (formData, $inputs, from = 'Dextall Website') => {
 
       try {
         appStore.setLoading(true)
-        await fetch(URL, {
-          method: 'POST',
-          body: formSendData,
-          mode: 'no-cors',
+
+        FINAL_URLS.forEach(async url => {
+          await fetch(url, {
+            method: 'POST',
+            body: formSendData,
+            mode: 'no-cors',
+          })
         })
         resolve(inputs)
         addToast({

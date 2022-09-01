@@ -7,13 +7,13 @@
           <h2
             data-a-h
             class="webinars-1__title"
-            v-html="splitText('Become a Building Performance Pro')"
+            v-html="splitText(story.title)"
           />
           <p
             data-a-t
             class="webinars-1__desc"
           >
-            Our client services team would love to hear from you
+            {{story.text}}
           </p>
         </div>
         <form
@@ -44,6 +44,12 @@
 </template>
 
 <script setup lang="ts">
+import { useWebinarsStory } from '~/composables/stories/webinars.story'
+
+const { story } = await useWebinarsStory()
+
+console.log(story.value)
+
 const $inputs = ref([])
 const formData = reactive({
   hasErrors: true,
@@ -57,10 +63,7 @@ const formData = reactive({
       label: 'Select webinar',
       type: 'select',
       error: true,
-      options: [
-        'Webinar 1',
-        'Test'
-      ],
+      options: story.value?.webinars?.map(el => `${el.webinar_name}: ${el.webinar_date}`),
       value: '',
     },
     {
@@ -97,7 +100,6 @@ const formData = reactive({
       type: 'text',
       error: true,
       options: [],
-
       value: '',
     },
     {
@@ -115,7 +117,9 @@ const formData = reactive({
   ],
 })
 
-const { onInputValue, onSubmit } = useForm(formData, $inputs)
+const SHEET_URL = 'https://sheetdb.io/api/v1/0188ljhbx52ho'
+const { onInputValue, onSubmit } = useForm(formData, $inputs, 'Webinars page', [SHEET_URL])
+
 
 const updatedSubmit = async () => {
   await onSubmit()
@@ -131,4 +135,6 @@ const meta = {
   title: 'Webinar registration',
   description: 'Webinar registration'
 }
+
+
 </script>
