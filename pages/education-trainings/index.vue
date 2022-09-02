@@ -25,12 +25,6 @@ const date = story.value.first_published_at || story.value.created_at
       :image="story.content.big_image.filename"
       :blocks="story.content.blog_section"
     />
-    <!-- <teleport to='body'>
-        <FormPopup
-          title="Registration request"
-          form-title="EDUCATION & TRAINING Registration"
-        />
-      </teleport> -->
   </main>
 </template>
   

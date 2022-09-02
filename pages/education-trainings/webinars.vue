@@ -121,7 +121,6 @@ const { onInputValue, onSubmit } = useForm(formData, $inputs, 'Webinars page', [
 
 const updatedSubmit = async () => {
   await onSubmit()
-  close()
 }
 
 useTransition()
