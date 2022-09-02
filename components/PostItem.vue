@@ -41,7 +41,10 @@ const splitText = useSplitText()
         :height="1080"
       />
     </div>
-    <div class="section internal-news-2">
+    <div
+      data-a-o
+      class="section internal-news-2"
+    >
       <div class="container internal-news-2__wrapper">
         <div class="internal-news-2__line"></div>
         <div class="grid internal-news-2__content-wrapper">
