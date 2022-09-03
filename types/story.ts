@@ -18,6 +18,7 @@ export interface iLink {
 interface iButton {
   link: iLink
   text_button: string
+  action?: string
 }
 
 export interface iStory {

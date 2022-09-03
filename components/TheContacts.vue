@@ -85,12 +85,14 @@ const formData = reactive({
   hasErrors: true,
   inputs: [
     {
-      required: false,
+      required: true,
+      validation: 'required',
+      validationText: 'this field is required',
       id: 'name',
       name: 'Name',
       label: 'Your Name',
       type: 'text',
-      error: false,
+      error: true,
       value: '',
     },
     {
@@ -105,12 +107,14 @@ const formData = reactive({
       value: '',
     },
     {
-      required: false,
+      required: true,
+      validation: 'required',
+      validationText: 'this field is required',
       id: 'message',
       name: 'Message',
       label: 'Your Message',
       type: 'text',
-      error: false,
+      error: true,
       value: '',
     },
   ],

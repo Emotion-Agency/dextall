@@ -75,6 +75,7 @@ const splitText = useSplitText()
                 v-if="block?.button && block.button[0]"
                 v-bind="getTransformedLink(block.button[0].link)"
                 class="internal-news-2__btn"
+                :data-action="block?.button && block.button[0] && block.button[0].action"
               > {{ block.button[0].text_button }}
               </CircleButton>
             </div>
