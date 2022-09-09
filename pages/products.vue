@@ -7,7 +7,6 @@ useObserver('.section')
 
 const { story } = await useProductsStory()
 
-
 const goToProducts = () => {
   const $products = document.querySelector('#products') as HTMLElement
 
@@ -18,36 +17,49 @@ const goToProducts = () => {
   const goToAnchor = useAnchorScroll()
 
   goToAnchor($products)
-
 }
 const breakLine = useBreakLine()
 
 const firstScreenImageSizes = [
   {
     width: 217,
-    height: 305
+    height: 305,
   },
   {
     width: 340,
-    height: 400
+    height: 400,
   },
   {
     width: 338,
-    height: 305
+    height: 305,
   },
   {
     width: 340,
-    height: 274
-  }
+    height: 274,
+  },
 ]
-const firstScreenImages = story.value.screen_1[0].images.map((item,idx) => ({ ...item,...firstScreenImageSizes[idx] }))
-
+const firstScreenImages = story.value.screen_1[0].images.map((item, idx) => ({
+  ...item,
+  ...firstScreenImageSizes[idx],
+}))
 
 const getTransformedImage = useTransformedImage()
 const getTransformedLink = useTransformLink()
 const splitText = useSplitText()
 
+const $images = ref(null)
 
+const onMouseEnter = (e: MouseEvent) => {
+  const target = e.currentTarget as HTMLElement
+  const idx = target.dataset.hoverIdx
+
+  $images.value.forEach(el => el.classList.remove('active'))
+  $images.value[idx].classList.add('active')
+}
+
+const onMouseLeave = () => {
+  $images.value.forEach(el => el.classList.remove('active'))
+}
 </script>
 
 <template>
@@ -63,7 +75,7 @@ const splitText = useSplitText()
           class="grid container products-1__image-block"
         >
           <ParallaxImg
-            v-for="(item,idx) in firstScreenImages"
+            v-for="(item, idx) in firstScreenImages"
             :key="idx"
             :src="item.image.filename"
             :width="item.width"
@@ -103,7 +115,9 @@ const splitText = useSplitText()
           data-a-t
           class="products-1__btn"
           @click="goToProducts"
-        > Show products </CircleButton>
+        >
+          Show products
+        </CircleButton>
       </div>
     </section>
     <section class="section products-2">
@@ -117,7 +131,7 @@ const splitText = useSplitText()
           {{ story.screen_2[0].description }}
         </p>
         <FloatingCard
-          v-for="(item,idx) in story.screen_2[0].cards"
+          v-for="(item, idx) in story.screen_2[0].cards"
           :key="item._uid"
           tag="div"
           :parallax="story.screen_2[0].cards.length - idx"
@@ -135,7 +149,6 @@ const splitText = useSplitText()
             </p>
           </div>
         </FloatingCard>
-
       </div>
     </section>
     <section class="section products-3">
@@ -149,11 +162,16 @@ const splitText = useSplitText()
       />
       <div class="container products-3__wrapper">
         <div class="grid products-3__content">
-          <ul class="products-3__list">
+          <ul
+            class="products-3__list"
+            @mouseleave="onMouseLeave"
+          >
             <li
-              v-for="(item,idx) in story.screen_3[0].panel_compound"
+              v-for="(item, idx) in story.screen_3[0].panel_compound"
               :key="item._uid"
+              :data-hover-idx="idx"
               class="products-3__li"
+              @mouseenter="onMouseEnter"
             >
               <div class="products-3__line"></div>
               <div class="products-3__text-wrapper">
@@ -172,8 +190,21 @@ const splitText = useSplitText()
           </ul>
           <div class="products-3__image-wrapper">
             <img
+              class="products-3__img products-3__img--main"
+              :src="
+                getTransformedImage(
+                  story.screen_3[0].panel_images[0].image.filename,
+                  694,
+                  867
+                )
+              "
+            />
+            <img
+              v-for="item in story.screen_3[0].panel_compound"
+              :key="item._uid"
+              ref="$images"
               class="products-3__img"
-              :src="getTransformedImage(story.screen_3[0].panel_images[0].image.filename,694,867)"
+              :src="getTransformedImage(item.image.filename, 694, 867)"
             />
           </div>
         </div>
@@ -218,7 +249,13 @@ const splitText = useSplitText()
                 <div class="products-4__img-wrapper">
                   <img
                     class="products-4__img"
-                    :src="getTransformedImage(story.screen_4[0].product_1[0].image_video.filename,696,410)"
+                    :src="
+                      getTransformedImage(
+                        story.screen_4[0].product_1[0].image_video.filename,
+                        696,
+                        410
+                      )
+                    "
                     alt="Building"
                   />
                 </div>
@@ -306,7 +343,13 @@ const splitText = useSplitText()
                 <div class="products-4__img-wrapper">
                   <img
                     class="products-4__img"
-                    :src="getTransformedImage(story.screen_4[0].product_2[0].image_video.filename,696,410)"
+                    :src="
+                      getTransformedImage(
+                        story.screen_4[0].product_2[0].image_video.filename,
+                        696,
+                        410
+                      )
+                    "
                     alt="Building"
                   />
                 </div>
@@ -389,7 +432,11 @@ const splitText = useSplitText()
           />
 
           <CircleButton
-            v-bind="getTransformedLink(story.screen_5[0].news_section[0].button[0].link)"
+            v-bind="
+              getTransformedLink(
+                story.screen_5[0].news_section[0].button[0].link
+              )
+            "
             class="products-6__btn"
           >
             {{ story.screen_5[0].news_section[0].button[0].text_button }}
