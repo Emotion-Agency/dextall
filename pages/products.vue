@@ -48,6 +48,7 @@ const getTransformedLink = useTransformLink()
 const splitText = useSplitText()
 
 const $images = ref(null)
+const $mainImage = ref(null)
 
 const onMouseEnter = (e: MouseEvent) => {
   const target = e.currentTarget as HTMLElement
@@ -55,10 +56,13 @@ const onMouseEnter = (e: MouseEvent) => {
 
   $images.value.forEach(el => el.classList.remove('active'))
   $images.value[idx].classList.add('active')
+  $mainImage.value.style.opacity = 0.3
 }
 
 const onMouseLeave = () => {
   $images.value.forEach(el => el.classList.remove('active'))
+  $mainImage.value.style.opacity = 1
+
 }
 </script>
 
@@ -190,6 +194,7 @@ const onMouseLeave = () => {
           </ul>
           <div class="products-3__image-wrapper">
             <img
+              ref="$mainImage"
               class="products-3__img products-3__img--main"
               :src="
                 getTransformedImage(
@@ -200,10 +205,11 @@ const onMouseLeave = () => {
               "
             />
             <img
-              v-for="item in story.screen_3[0].panel_compound"
+              v-for="(item, idx) in story.screen_3[0].panel_compound"
               :key="item._uid"
               ref="$images"
               class="products-3__img"
+              :class="`products-3__img--${idx + 1}`"
               :src="getTransformedImage(item.image.filename, 694, 867)"
             />
           </div>
