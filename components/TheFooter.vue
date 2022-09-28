@@ -60,11 +60,11 @@
       <div class="grid footer__bottom-wrapper">
         <p class="footer__date">©2022 DEXTALL</p>
         <NuxtLink
-          to="/terms-privacy/terms-conditions"
+          to="/terms-privacy/terms-conditions/"
           class="footer__rules"
         >Terms and conditions</NuxtLink>
         <NuxtLink
-          to="/terms-privacy/privacy-policy"
+          to="/terms-privacy/privacy-policy/"
           class="footer__rules"
         >Privacy Policy</NuxtLink>
         <a

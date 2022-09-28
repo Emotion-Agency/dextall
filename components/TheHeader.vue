@@ -114,7 +114,6 @@ onMounted(async () => {
 
   if (pageLoaded.value) {
     $el.value.classList.remove('loading')
-
   }
 })
 
