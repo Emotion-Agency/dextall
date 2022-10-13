@@ -254,15 +254,20 @@ const onMouseLeave = () => {
                 <div class="products-4__line"></div>
                 <div class="products-4__img-wrapper">
                   <img
+                    v-if="story.screen_4[0].product_1[0].image?.filename"
                     class="products-4__img"
                     :src="
                       getTransformedImage(
-                        story.screen_4[0].product_1[0].image_video.filename,
+                        story.screen_4[0].product_1[0].image.filename,
                         696,
                         410
                       )
                     "
                     alt="Building"
+                  />
+                  <YoutubeVideo
+                    v-if="story.screen_4[0].product_1[0].video"
+                    :video-id="story.screen_4[0].product_1[0].video"
                   />
                 </div>
                 <p class="products-4__img-text">
@@ -348,15 +353,20 @@ const onMouseLeave = () => {
                 <div class="products-4__line"></div>
                 <div class="products-4__img-wrapper">
                   <img
+                    v-if="story.screen_4[0].product_2[0].image?.filename"
                     class="products-4__img"
                     :src="
                       getTransformedImage(
-                        story.screen_4[0].product_2[0].image_video.filename,
+                        story.screen_4[0].product_2[0].image.filename,
                         696,
                         410
                       )
                     "
                     alt="Building"
+                  />
+                  <YoutubeVideo
+                    v-if="story.screen_4[0].product_2[0].video"
+                    :video-id="story.screen_4[0].product_2[0].video"
                   />
                 </div>
                 <div class="products-4__line"></div>
