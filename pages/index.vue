@@ -27,16 +27,18 @@ news.value = newsData.stories.value.filter((_,idx) => idx <= 2)
 let scrollSequence
 const $sequenceContainer = ref(null)
 onMounted(async () => {
-  const initImages = story.value?.home_screen_2[0]?.frames
-  const images = initImages?.sort((a,b) => a?.filename.slice(-8).localeCompare(b?.filename.slice(-8)))
+  // const initImages = story.value?.home_screen_2[0]?.frames
+  // const images = initImages?.sort((a,b) => a?.filename.slice(-8).localeCompare(b?.filename.slice(-8)))
 
-  const { ScrollSequence } = await import('~/scripts/PlaySequence')
-  scrollSequence = new ScrollSequence({
-    container: $sequenceContainer.value,
-    images,
-    priorityFrames: [],
-    cover: true,
-  })
+  // const { ScrollSequence } = await import('~/scripts/PlaySequence')
+  // scrollSequence = new ScrollSequence({
+  //   container: $sequenceContainer.value,
+  //   images,
+  //   priorityFrames: [],
+  //   cover: true,
+  // })
+
+
 })
 
 onBeforeUnmount(() => {
@@ -96,10 +98,11 @@ const splitText = useSplitText()
     <section class="section home-2 scroll-sequence__container">
       <div
         ref="$sequenceContainer"
-        data-spli
         data-loaded="0"
         class="home-2__background scroll-sequence"
-      ></div>
+        :style="{backgroundImage: `url(${story?.home_screen_2[0]?.image?.filename})`}"
+      >
+      </div>
       <div class="container">
         <div class="home-2__wrapper">
           <div class="home-2__block">
