@@ -19,7 +19,6 @@ onMounted(async () => {
 
 const { open: openPopup } = useFormPopup()
 
-
 </script>
 
 <template>
@@ -47,13 +46,26 @@ const { open: openPopup } = useFormPopup()
             {{ story.Screen_1[0].description }}
           </p>
         </div>
-        <CircleButton
-          data-a-t
-          class="bim-1__btn"
-          @click="openPopup()"
-        >
-          {{ story.Screen_1[0].button[0].text_button }}
-        </CircleButton>
+        <div class="bim-1__btns">
+          <CircleButton
+            data-a-t
+            class="bim-1__btn"
+            @click="openPopup()"
+          >
+            {{ story.Screen_1[0].button[0].text_button }}
+          </CircleButton>
+          <CircleButton
+            v-if="story.Screen_1[0]?.button[1].link?.cached_url"
+            data-a-t
+            class="bim-1__btn"
+            tag="a"
+            :href="story.Screen_1[0].button[1].link.cached_url"
+            target="_blank"
+            rel="noreferer noopener"
+          >
+            {{ story.Screen_1[0].button[1].text_button }}
+          </CircleButton>
+        </div>
       </div>
     </section>
     <section class="section bim-2">
@@ -75,7 +87,7 @@ const { open: openPopup } = useFormPopup()
             class="bim-2__btn"
             v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
           >{{
-              story.Screen_2[0].button[0].text_button
+          story.Screen_2[0].button[0].text_button
           }}</TextButton>
         </div>
       </div>
@@ -153,7 +165,7 @@ const { open: openPopup } = useFormPopup()
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                      story.Screen_3[0].results_list_benefits[0].description_title
+                  story.Screen_3[0].results_list_benefits[0].description_title
                   }}
                 </p>
               </div>
@@ -162,8 +174,8 @@ const { open: openPopup } = useFormPopup()
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
                     {{
-                        story.Screen_3[0].results_list_benefits[0].text_point[0]
-                          .text
+                    story.Screen_3[0].results_list_benefits[0].text_point[0]
+                    .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -171,8 +183,8 @@ const { open: openPopup } = useFormPopup()
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[0].text_point[1]
-                          .text
+                    story.Screen_3[0].results_list_benefits[0].text_point[1]
+                    .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -180,8 +192,8 @@ const { open: openPopup } = useFormPopup()
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[0].text_point[2]
-                          .text
+                    story.Screen_3[0].results_list_benefits[0].text_point[2]
+                    .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -198,7 +210,7 @@ const { open: openPopup } = useFormPopup()
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                      story.Screen_3[0].results_list_benefits[1].description_title
+                  story.Screen_3[0].results_list_benefits[1].description_title
                   }}
                 </p>
               </div>
@@ -207,8 +219,8 @@ const { open: openPopup } = useFormPopup()
                   <div class="bim-4__mob-line"></div>
                   <p class="bim-4__content-text bim-4__content-text--nm">
                     {{
-                        story.Screen_3[0].results_list_benefits[1].text_point[0]
-                          .text
+                    story.Screen_3[0].results_list_benefits[1].text_point[0]
+                    .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -216,8 +228,8 @@ const { open: openPopup } = useFormPopup()
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[1].text_point[1]
-                          .text
+                    story.Screen_3[0].results_list_benefits[1].text_point[1]
+                    .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -225,14 +237,14 @@ const { open: openPopup } = useFormPopup()
                 <li class="bim-4__content-li">
                   <p class="bim-4__content-text">
                     {{
-                        story.Screen_3[0].results_list_benefits[1].text_point[2]
-                          .text
+                    story.Screen_3[0].results_list_benefits[1].text_point[2]
+                    .text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
                   <p class="bim-4__about-text">
                     {{
-                        story.Screen_3[0].marked_list_benefits[0].uppercase_text
+                    story.Screen_3[0].marked_list_benefits[0].uppercase_text
                     }}
                   </p>
                 </li>
@@ -263,7 +275,7 @@ const { open: openPopup } = useFormPopup()
           :is-white="true"
           @click="openPopup()"
         >{{
-            story.Screen_4[0].button[0].text_button
+        story.Screen_4[0].button[0].text_button
         }}</CircleButton>
       </div>
     </section>

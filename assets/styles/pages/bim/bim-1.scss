@@ -64,11 +64,19 @@
   }
 }
 
-.bim-1__btn {
-  align-self: center;
+.bim-1__btns {
   margin-top: auto;
-  max-width: fit-content;
   margin-bottom: vw(20);
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: vw(40);
+}
+
+.bim-1__btn {
+  max-width: fit-content;
+  white-space: nowrap;
 
   @media (max-width: $br1) {
     margin-bottom: 20px;
