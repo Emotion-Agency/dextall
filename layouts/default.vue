@@ -36,9 +36,10 @@ onMounted(async () => {
 
   setTimeout(() => {
     const sbBridge = new window.StoryblokBridge()
-
+    console.log(sbBridge)
     sbBridge.on(['input', 'published', 'change'], event => {
       emitter.emit('storyChange', event.story)
+      console.log(event)
     })
 
     // sbBridge.pingEditor(() => {
