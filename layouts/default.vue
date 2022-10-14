@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
 import { useFonts } from '~/composables/fonts'
+import emitter from 'tiny-emitter/instance.js'
+
 
 const GOOGLE_TM_ID = 'GTM-PGTGL5W'
+
 
 useFonts()
 
@@ -29,6 +32,21 @@ onMounted(async () => {
   resize.on(winSizes)
 
   await parallaxInit()
+
+
+  setTimeout(() => {
+    const sbBridge = new window.StoryblokBridge()
+
+    sbBridge.on(['input', 'published', 'change'], event => {
+      emitter.emit('storyChange', event.story)
+    })
+
+    // sbBridge.pingEditor(() => {
+    //   if (sbBridge.isInEditor()) {
+    //     isInEditor.value = true
+    //   }
+    // })
+  }, 200)
 })
 
 onBeforeUnmount(() => {

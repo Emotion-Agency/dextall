@@ -4,6 +4,7 @@ import { iStory } from '~/types/story'
 type tFeaturesStories = () => Promise<{
   stories: Ref<iStory[]>
   story: Ref<iStory>
+  listenStory: (arg0: string | string[]) => void
 }>
 
 export const useFeaturesStories: tFeaturesStories = async () => {
@@ -22,18 +23,17 @@ export const useFeaturesStories: tFeaturesStories = async () => {
     console.log(e.message)
   }
 
-  useStoryblokBridge(story.value.id, evStory => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    story.value = evStory as any
+  useCustomBridge(story.value.id, evStory => {
+    story.value = evStory
   })
 
-  stories.value = stories.value.map(s => {
-    useStoryblokBridge(s.id, evStory => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      s = evStory as any
+  const listenStory = (slug: string) => {
+    const currentStory = stories.value.find(story => story.slug === slug)
+    useCustomBridge(currentStory.id, evStory => {
+      stories.value = stories.value.filter(story => story.slug !== slug)
+      stories.value = [...stories.value, evStory]
     })
-    return s
-  })
+  }
 
-  return { stories, story }
+  return { stories, story, listenStory }
 }

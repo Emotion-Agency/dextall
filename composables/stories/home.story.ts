@@ -1,3 +1,5 @@
+import { useCustomBridge } from '../customBridge'
+
 export const useHomeStory = async () => {
   const initStory = ref(null)
   const storyapi = useStoryblokApi()
@@ -33,7 +35,7 @@ export const useHomeStory = async () => {
     return words.join(' ')
   }
 
-  useStoryblokBridge(initStory.value.id, evStory => {
+  useCustomBridge(initStory.value.id, evStory => {
     initStory.value = evStory
   })
 

@@ -5,10 +5,13 @@ useTransition()
 useObserver('.section')
 
 
-const { stories } = await usePrivacyStory()
+const { stories, listenStory } = await usePrivacyStory()
 
 
 const slug = useRoute().params.id
+
+listenStory(slug)
+
 
 
 const story = stories.value.find(story => story.slug === slug)

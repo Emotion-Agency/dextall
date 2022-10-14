@@ -4,10 +4,12 @@ import { useFeaturesStories } from '~/composables/stories/features.story'
 useTransition()
 useObserver('.section')
 
-const { stories } = await useFeaturesStories()
+const { stories, listenStory } = await useFeaturesStories()
 
 
 const slug = useRoute().params.id
+
+listenStory(slug)
 
 
 const story = computed(() => {

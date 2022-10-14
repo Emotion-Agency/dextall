@@ -11,7 +11,7 @@ export const useBimStory = async () => {
     console.log(e.message)
   }
 
-  useStoryblokBridge(initStory.value.id, evStory => {
+  useCustomBridge(initStory.value.id, evStory => {
     initStory.value = evStory
   })
 

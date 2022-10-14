@@ -22,7 +22,10 @@
         </button>
         <div class="contacts__top">
           <h2 class="contacts__title">Contact us</h2>
-          <p class="contacts__desc">
+          <p
+            v-if="story?.main_text"
+            class="contacts__desc"
+          >
             {{ story.main_text }}
           </p>
           <form

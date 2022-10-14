@@ -6,12 +6,14 @@ interface iProps {
   date?: string
   title?: string
   image?: string
-  blocks: iPostBlock[]
+  blocks?: iPostBlock[]
 }
 
 
 
 const props = defineProps<iProps>()
+
+
 
 const formattedDate = useFormattedDate(props.date)
 
@@ -25,6 +27,7 @@ const splitText = useSplitText()
     <div class="section section--nm internal-news-1">
       <div class="container internal-news-1__wrapper">
         <h1
+          v-if="title"
           class="internal-news-1__title"
           data-a-h
           v-html="splitText(title)"
@@ -51,7 +54,10 @@ const splitText = useSplitText()
           <time class="internal-news-2__date">
             {{ formattedDate }}
           </time>
-          <div class="internal-news-2__content">
+          <div
+            v-if="blocks?.length"
+            class="internal-news-2__content"
+          >
 
             <div
               v-for="block in blocks"

@@ -4,10 +4,12 @@ import { useNewsStories } from '~/composables/stories/news.story'
 useTransition()
 useObserver('.section')
 
-const { stories } = await useNewsStories()
+const { stories, listenStory } = await useNewsStories()
 
 
 const slug = useRoute().params.id
+
+listenStory(slug)
 
 
 const story = computed(() => {

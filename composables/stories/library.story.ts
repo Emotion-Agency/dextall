@@ -1,18 +1,22 @@
 export const useLibraryStory = async () => {
-  const story = ref(null)
+  const initStory = ref(null)
   const storyapi = useStoryblokApi()
 
   try {
     const { data } = await storyapi.get('cdn/stories/education-trainings', {
       version: 'draft',
     })
-    story.value = data.story
+    initStory.value = data.story
   } catch (e) {
     console.log(e.message)
   }
 
-  useStoryblokBridge(story.value.id, evStory => {
-    story.value = evStory
+  useCustomBridge(initStory.value.id, evStory => {
+    initStory.value = evStory
+  })
+
+  const story = computed(() => {
+    return initStory.value
   })
 
   return { story }

@@ -6,9 +6,11 @@ import { delayPromise,keysGenerator } from '~~/scripts/utils/ea'
 useTransition()
 useObserver('.section')
 
-const { stories } = await useProjectsStories()
+const { stories, listenStory } = await useProjectsStories()
 
 const slug = useRoute().params.id
+
+listenStory(slug)
 
 
 
@@ -252,7 +254,10 @@ const darken = computed(() => {
           <h2 class="project-7__big-text">
             Interesting facts about the project
           </h2>
-          <p class="project-7__desc">
+          <p
+            v-if="story.Screen_5[0].main_text"
+            class="project-7__desc"
+          >
             {{ story.Screen_5[0].main_text }}
           </p>
         </div>

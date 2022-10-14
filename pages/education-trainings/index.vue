@@ -10,7 +10,6 @@ const { open: openPopup } = useFormPopup()
 
 
 
-
 const date = story.value.first_published_at || story.value.created_at
 
 const onRegistration = (e: Event) => {
@@ -25,6 +24,9 @@ const onRegistration = (e: Event) => {
 
 onMounted(() => {
   const $content = document.querySelector('.internal-news-2__content')
+  if (!$content) {
+    return
+  } 
   const $btns = $content.querySelectorAll('.circle-button')
   $btns.forEach(el => {
     el.addEventListener('click',onRegistration)
@@ -40,17 +42,17 @@ onBeforeUnmount(() => {
 
 </script>
   
-  <template>
+<template>
   <main>
     <PageMeta
-      v-if="story.content.meta.length"
+      v-if="story?.content?.meta.length"
       :meta="story.content.meta[0]"
     />
     <PostItem
-      :title="story.content.title"
+      :title="story?.content?.title"
       :date="date"
-      :image="story.content.big_image.filename"
-      :blocks="story.content.blog_section"
+      :image="story?.content?.big_image?.filename"
+      :blocks="story?.content?.blog_section"
     />
     <teleport to='body'>
       <FormPopup

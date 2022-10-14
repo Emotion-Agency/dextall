@@ -319,7 +319,10 @@ const splitText = useSplitText()
                 :width="935"
                 :height="390"
               />
-              <p class="about-8__desc">
+              <p
+                v-if="story?.Screen_5[0].main_text_1"
+                class="about-8__desc"
+              >
                 {{ story.Screen_5[0].main_text_1 }}
               </p>
             </div>
@@ -329,7 +332,10 @@ const splitText = useSplitText()
               <h3 class="about-8__content-title">
                 {{ story.Screen_5[0].small_title }}
               </h3>
-              <p class="about-8__desc">
+              <p
+                v-if="story?.Screen_5[0].main_text"
+                class="about-8__desc"
+              >
                 {{ story.Screen_5[0].main_text }}
               </p>
             </div>
@@ -357,6 +363,7 @@ const splitText = useSplitText()
                 {{ story.Screen_5[0].small_title_1 }}
               </h3>
               <p
+                v-if="story?.Screen_5[0].main_text_2"
                 class="about-8__desc about-8__desc--transform"
                 v-html="breakLine(story.Screen_5[0].main_text_2)"
               />

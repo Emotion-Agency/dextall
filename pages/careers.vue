@@ -105,6 +105,7 @@ const splitText = useSplitText()
         <div class="careers-4__text-wrapper">
           <h3 class="careers-4__title">{{ story.Screen_3[0].title }}</h3>
           <p
+            v-if="story?.Screen_3[0].main_text"
             class="careers-4__text"
             v-html="breakLine(story.Screen_3[0].main_text)"
           >

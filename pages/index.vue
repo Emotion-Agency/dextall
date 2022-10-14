@@ -106,7 +106,10 @@ const splitText = useSplitText()
       <div class="container">
         <div class="home-2__wrapper">
           <div class="home-2__block">
-            <p class="home-2__text">
+            <p
+              v-if="story?.home_screen_2[0].main_text1"
+              class="home-2__text"
+            >
               {{ story.home_screen_2[0].main_text1 }}
             </p>
           </div>
@@ -116,17 +119,26 @@ const splitText = useSplitText()
               <span class="home-2__title"> In BIM</span>
               <span class="home-2__title"> Technology</span>
             </h2>
-            <p class="home-2__desc">
+            <p
+              v-if="story.home_screen_2[0].main_text_2"
+              class="home-2__desc"
+            >
               {{ story.home_screen_2[0].main_text_2 }}
             </p>
           </div>
           <div class="home-2__block">
-            <p class="home-2__text">
+            <p
+              v-if="story.home_screen_2[0].main_text_3"
+              class="home-2__text"
+            >
               {{ story.home_screen_2[0].main_text_3 }}
             </p>
           </div>
           <div class="home-2__block">
-            <p class="home-2__text">
+            <p
+              v-if="story.home_screen_2[0].main_text_4"
+              class="home-2__text"
+            >
               {{ story.home_screen_2[0].main_text_4 }}
             </p>
           </div>
@@ -137,7 +149,10 @@ const splitText = useSplitText()
       <TheTicker :text="story.home_screen_3[0].title" />
       <div class="container grid home-3__wrapper">
         <div class="home-3__left-block">
-          <p class="home-3__text">
+          <p
+            v-if="story.home_screen_3[0].main_text"
+            class="home-3__text"
+          >
             {{ story.home_screen_3[0].main_text }}
           </p>
           <ul class="home-3__list">
@@ -156,7 +171,10 @@ const splitText = useSplitText()
                   <p class="home-3__regular-text">
                     {{ item.bold_text }}
                   </p>
-                  <p class="home-3__small-text">
+                  <p
+                    v-if="item.main_text"
+                    class="home-3__small-text"
+                  >
                     {{ item.main_text }}
                   </p>
                 </div>
@@ -208,7 +226,10 @@ const splitText = useSplitText()
           <h3 class="home-5__title">
             {{ story.home_screen_5[0].Featured_news[0].title }}
           </h3>
-          <p class="home-5__desc">
+          <p
+            v-if="story.home_screen_5[0].Featured_news[0].main_text"
+            class="home-5__desc"
+          >
             {{ story.home_screen_5[0].Featured_news[0].main_text }}
           </p>
           <CircleButton
@@ -230,7 +251,10 @@ const splitText = useSplitText()
           >
 
           </h2>
-          <p class="home-6__desc">
+          <p
+            v-if="story.home_screen_6[0].main_text"
+            class="home-6__desc"
+          >
             {{ story.home_screen_6[0].main_text }}
           </p>
           <CircleButton
@@ -266,7 +290,10 @@ const splitText = useSplitText()
             <span class="home-7__span-title">our</span>
             <span class="home-7__span-title"> Projects</span>
           </h3>
-          <p class="home-7__desc">
+          <p
+            v-if="story.home_screen_7[0].main_text"
+            class="home-7__desc"
+          >
             {{ story.home_screen_7[0].main_text }}
           </p>
           <CircleButton

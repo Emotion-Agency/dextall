@@ -248,7 +248,10 @@ const onMouseLeave = () => {
                 <h4 class="products-4__content-title">
                   {{ story.screen_4[0].product_1[0].small_title }}
                 </h4>
-                <p class="products-4__content-desc">
+                <p
+                  v-if="story.screen_4[0].product_1[0].main_text"
+                  class="products-4__content-desc"
+                >
                   {{ story.screen_4[0].product_1[0].main_text }}
                 </p>
                 <div class="products-4__line"></div>
@@ -327,7 +330,10 @@ const onMouseLeave = () => {
                 <h4 class="products-4__content-title products-4__content-title--1">
                   {{ story.screen_4[0].product_1[0].title_1 }}
                 </h4>
-                <p class="products-4__content-desc">
+                <p
+                  v-if="story.screen_4[0].product_1[0].main_text1"
+                  class="products-4__content-desc"
+                >
                   {{ story.screen_4[0].product_1[0].main_text1 }}
                 </p>
                 <div class="products-4__line"></div>
@@ -347,7 +353,10 @@ const onMouseLeave = () => {
                 <h4 class="products-4__content-title">
                   {{ story.screen_4[0].product_2[0].small_title }}
                 </h4>
-                <p class="products-4__content-desc">
+                <p
+                  v-if="story.screen_4[0].product_2[0].main_text"
+                  class="products-4__content-desc"
+                >
                   {{ story.screen_4[0].product_2[0].main_text }}
                 </p>
                 <div class="products-4__line"></div>
@@ -414,7 +423,10 @@ const onMouseLeave = () => {
                     <div class="products-4__line"></div>
                   </li>
                 </ul>
-                <p class="products-4__text">
+                <p
+                  v-if="story.screen_4[0].product_2[0].main_text1"
+                  class="products-4__text"
+                >
                   {{ story.screen_4[0].product_2[0].main_text1 }}
                 </p>
                 <div class="products-4__line"></div>
@@ -443,6 +455,7 @@ const onMouseLeave = () => {
             {{ story.screen_5[0].news_section[0].title }}
           </h3>
           <p
+            v-if="story.screen_5[0].news_section[0].main_text"
             class="products-6__desc"
             v-html="breakLine(story.screen_5[0].news_section[0].main_text)"
           />
