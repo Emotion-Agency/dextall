@@ -55,7 +55,11 @@ const splitText = useSplitText()
       v-if="story.meta.length"
       :meta="story.meta[0]"
     />
-    <section class="section section--nm home-1">
+    <section
+      v-if="story.home_screen_1[0]"
+      v-editable="story.home_screen_1[0]"
+      class="section section--nm home-1"
+    >
       <div class="container home-1__wrapper">
         <HomeSlider :slides="story.home_screen_1[0].Images[0].home_slider_image" />
         <p
@@ -130,7 +134,11 @@ const splitText = useSplitText()
         </div>
       </div>
     </section>
-    <section class="section home-3">
+    <section
+      v-if="story.home_screen_3[0]"
+      v-editable="story.home_screen_3[0]"
+      class="section home-3"
+    >
       <TheTicker :text="story.home_screen_3[0].title" />
       <div class="container grid home-3__wrapper">
         <div class="home-3__left-block">
@@ -180,7 +188,11 @@ const splitText = useSplitText()
         />
       </div>
     </section>
-    <section class="section home-4">
+    <section
+      v-if="story.home_screen_4[0]"
+      v-editable="story.home_screen_4[0]"
+      class="section home-4"
+    >
       <div class="container home-4__wrapper">
         <h2 class="grid home-4__title">
           <span class="home-4__big-text">Test</span>
@@ -204,7 +216,11 @@ const splitText = useSplitText()
         </ul>
       </div>
     </section>
-    <section class="section home-5">
+    <section
+      v-if="story.home_screen_5[0]"
+      v-editable="story.home_screen_5[0]"
+      class="section home-5"
+    >
       <div class="container home-5__wrapper">
         <div class="home-5__line"></div>
         <div class="home-5__main-block">
@@ -226,7 +242,11 @@ const splitText = useSplitText()
         <div class="home-5__line"></div>
       </div>
     </section>
-    <section class="section home-6">
+    <section
+      v-if="story.home_screen_6[0]"
+      v-editable="story.home_screen_6[0]"
+      class="section home-6"
+    >
       <div class="container grid home-6__wrapper">
         <div class="home-6__text-block">
           <p class="home-6__small-text">{{ story.home_screen_6[0].small_text }}</p>
@@ -268,7 +288,11 @@ const splitText = useSplitText()
 
       </div>
     </section>
-    <section class="section home-7">
+    <section
+      v-if="story.home_screen_7[0]"
+      v-editable="story.home_screen_7[0]"
+      class="section home-7"
+    >
       <div class="container home-7__wrapper">
         <div class="home-7__main-block">
           <h3 class="home-7__title">
@@ -333,7 +357,11 @@ const splitText = useSplitText()
       </div>
 
     </section>
-    <section class="section home-9">
+    <section
+      v-if="story.home_screen_9[0]"
+      v-editable="story.home_screen_9[0]"
+      class="section home-9"
+    >
       <div class="container grid home-9__wrapper">
         <div class="home-9__text-block">
           <h2

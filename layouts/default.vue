@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useAppStore } from '~/store/app'
 import { useFonts } from '~/composables/fonts'
 import emitter from 'tiny-emitter/instance.js'
 
@@ -9,7 +8,6 @@ const GOOGLE_TM_ID = 'GTM-PGTGL5W'
 
 useFonts()
 
-const appStore = useAppStore()
 
 const parallaxInit = async () => {
   const { Parallax } = await import('@emotionagency/parallax')
@@ -17,22 +15,9 @@ const parallaxInit = async () => {
 }
 
 onMounted(async () => {
-  const { default: supportsWebP } = await import('supports-webp')
 
-  if (await supportsWebP) {
-    appStore.setIsWebp(true)
-  } else {
-    appStore.setIsWebp(false)
-  }
   const { hello } = await import('~/scripts/utils/hello')
   hello()
-
-  const { winSizes } = await import('~/scripts/utils/winSizes')
-  const { resize } = await import('@/scripts/utils/ea')
-  resize.on(winSizes)
-
-  await parallaxInit()
-
 
   setTimeout(() => {
     const sbBridge = new window.StoryblokBridge()
@@ -48,6 +33,13 @@ onMounted(async () => {
     //   }
     // })
   }, 200)
+
+  const { winSizes } = await import('~/scripts/utils/winSizes')
+  const { resize } = await import('@/scripts/utils/ea')
+  resize.on(winSizes)
+
+  await parallaxInit()
+
 })
 
 onBeforeUnmount(() => {
