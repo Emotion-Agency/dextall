@@ -95,7 +95,11 @@ const splitText = useSplitText()
       </div>
     </section>
 
-    <section class="section home-2 scroll-sequence__container">
+    <section
+      v-if="story?.home_screen_2[0]?.slides?.length"
+      v-editable="story?.home_screen_2[0]"
+      class="section home-2 scroll-sequence__container"
+    >
       <div
         ref="$sequenceContainer"
         data-loaded="0"
@@ -105,41 +109,22 @@ const splitText = useSplitText()
       </div>
       <div class="container">
         <div class="home-2__wrapper">
-          <div class="home-2__block">
-            <p
-              v-if="story?.home_screen_2[0].main_text1"
-              class="home-2__text"
+          <div
+            v-for="slide of story.home_screen_2[0].slides"
+            :key="slide._uid"
+            class="home-2__block"
+          >
+            <h2
+              v-if="slide.title"
+              class="home-2__title"
             >
-              {{ story.home_screen_2[0].main_text1 }}
-            </p>
-          </div>
-          <div class="home-2__block">
-            <h2 class="home-2__title-block">
-              <span class="home-2__title">Breakthrough</span>
-              <span class="home-2__title"> In BIM</span>
-              <span class="home-2__title"> Technology</span>
+              {{slide.title}}
             </h2>
             <p
-              v-if="story.home_screen_2[0].main_text_2"
-              class="home-2__desc"
+              v-if="slide.text"
+              :class="['home-2__desc', !slide.title && 'home-2__desc--big']"
             >
-              {{ story.home_screen_2[0].main_text_2 }}
-            </p>
-          </div>
-          <div class="home-2__block">
-            <p
-              v-if="story.home_screen_2[0].main_text_3"
-              class="home-2__text"
-            >
-              {{ story.home_screen_2[0].main_text_3 }}
-            </p>
-          </div>
-          <div class="home-2__block">
-            <p
-              v-if="story.home_screen_2[0].main_text_4"
-              class="home-2__text"
-            >
-              {{ story.home_screen_2[0].main_text_4 }}
+              {{ slide.text }}
             </p>
           </div>
         </div>
