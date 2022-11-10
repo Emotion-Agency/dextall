@@ -170,30 +170,21 @@ const { open: openPopup } = useFormPopup()
                 </p>
               </div>
               <ul class="bim-4__content-list">
-                <li class="bim-4__content-li">
-                  <div class="bim-4__mob-line"></div>
-                  <p class="bim-4__content-text bim-4__content-text--nm">
+                <li
+                  v-for="(item, idx) in story.Screen_3[0].results_list_benefits[0].text_point"
+                  :key="item._uid"
+                  class="bim-4__content-li"
+                >
+                  <div
+                    v-if="idx === 0"
+                    class="bim-4__mob-line"
+                  ></div>
+                  <p
+                    class="bim-4__content-text"
+                    :class="[idx === 0 && 'bim-4__content-text--nm']"
+                  >
                     {{
-                    story.Screen_3[0].results_list_benefits[0].text_point[0]
-                    .text
-                    }}
-                  </p>
-                  <div class="bim-4__line"></div>
-                </li>
-                <li class="bim-4__content-li">
-                  <p class="bim-4__content-text">
-                    {{
-                    story.Screen_3[0].results_list_benefits[0].text_point[1]
-                    .text
-                    }}
-                  </p>
-                  <div class="bim-4__line"></div>
-                </li>
-                <li class="bim-4__content-li">
-                  <p class="bim-4__content-text">
-                    {{
-                    story.Screen_3[0].results_list_benefits[0].text_point[2]
-                    .text
+                    item.text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
@@ -215,39 +206,26 @@ const { open: openPopup } = useFormPopup()
                 </p>
               </div>
               <ul class="bim-4__content-list">
-                <li class="bim-4__content-li">
-                  <div class="bim-4__mob-line"></div>
-                  <p class="bim-4__content-text bim-4__content-text--nm">
+                <li
+                  v-for="(item, idx) in story.Screen_3[0].results_list_benefits[1].text_point"
+                  :key="item._uid"
+                  class="bim-4__content-li"
+                >
+                  <div
+                    v-if="idx === 0"
+                    class="bim-4__mob-line"
+                  ></div>
+                  <p
+                    class="bim-4__content-text"
+                    :class="[idx === 0 && 'bim-4__content-text--nm']"
+                  >
                     {{
-                    story.Screen_3[0].results_list_benefits[1].text_point[0]
-                    .text
+                    item.text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
-                <li class="bim-4__content-li">
-                  <p class="bim-4__content-text">
-                    {{
-                    story.Screen_3[0].results_list_benefits[1].text_point[1]
-                    .text
-                    }}
-                  </p>
-                  <div class="bim-4__line"></div>
-                </li>
-                <li class="bim-4__content-li">
-                  <p class="bim-4__content-text">
-                    {{
-                    story.Screen_3[0].results_list_benefits[1].text_point[2]
-                    .text
-                    }}
-                  </p>
-                  <div class="bim-4__line"></div>
-                  <p class="bim-4__about-text">
-                    {{
-                    story.Screen_3[0].marked_list_benefits[0].uppercase_text
-                    }}
-                  </p>
-                </li>
+
               </ul>
             </div>
           </li>
