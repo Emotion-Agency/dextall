@@ -50,7 +50,10 @@ const { open: openPopup } = useFormPopup()
           <CircleButton
             data-a-t
             class="bim-1__btn"
-            @click="openPopup()"
+            tag="a"
+            :href="story.Screen_1[0].button[0].link.cached_url"
+            target="_blank"
+            rel="noreferer noopener"
           >
             {{ story.Screen_1[0].button[0].text_button }}
           </CircleButton>
