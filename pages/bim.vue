@@ -159,23 +159,27 @@ const { open: openPopup } = useFormPopup()
           {{ story.Screen_3[0].results_list_benefits[0].H1_title }}
         </h2>
         <ul class="bim-4__list">
-          <li class="bim-4__li">
+          <li
+            v-for="item in story.Screen_3[0].results_list_benefits"
+            :key="item._uid"
+            class="bim-4__li"
+          >
             <div class="bim-4__line"></div>
             <div class="grid bim-4__content-wrapper">
               <div class="bim-4__text-wrapper">
                 <h3 class="bim-4__content-title">
-                  {{ story.Screen_3[0].results_list_benefits[0].point_title }}
+                  {{ item.point_title }}
                 </h3>
                 <p class="bim-4__content-desc">
                   {{
-                  story.Screen_3[0].results_list_benefits[0].description_title
+                  item.description_title
                   }}
                 </p>
               </div>
               <ul class="bim-4__content-list">
                 <li
-                  v-for="(item, idx) in story.Screen_3[0].results_list_benefits[0].text_point"
-                  :key="item._uid"
+                  v-for="(point, idx) in item.text_point"
+                  :key="point._uid"
                   class="bim-4__content-li"
                 >
                   <div
@@ -187,48 +191,11 @@ const { open: openPopup } = useFormPopup()
                     :class="[idx === 0 && 'bim-4__content-text--nm']"
                   >
                     {{
-                    item.text
+                    point.text
                     }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
-              </ul>
-            </div>
-          </li>
-          <li class="bim-4__li">
-            <div class="bim-4__line"></div>
-            <div class="grid bim-4__content-wrapper">
-              <div class="bim-4__text-wrapper">
-                <h3 class="bim-4__content-title">
-                  {{ story.Screen_3[0].results_list_benefits[1].point_title }}
-                </h3>
-                <p class="bim-4__content-desc">
-                  {{
-                  story.Screen_3[0].results_list_benefits[1].description_title
-                  }}
-                </p>
-              </div>
-              <ul class="bim-4__content-list">
-                <li
-                  v-for="(item, idx) in story.Screen_3[0].results_list_benefits[1].text_point"
-                  :key="item._uid"
-                  class="bim-4__content-li"
-                >
-                  <div
-                    v-if="idx === 0"
-                    class="bim-4__mob-line"
-                  ></div>
-                  <p
-                    class="bim-4__content-text"
-                    :class="[idx === 0 && 'bim-4__content-text--nm']"
-                  >
-                    {{
-                    item.text
-                    }}
-                  </p>
-                  <div class="bim-4__line"></div>
-                </li>
-
               </ul>
             </div>
           </li>

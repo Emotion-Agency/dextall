@@ -20,7 +20,7 @@
 }
 
 .bim-4__li {
-  &:nth-of-type(2) {
+  + .bim-4__li {
     margin-top: vw(200);
 
     @media (max-width: $br1) {
@@ -115,7 +115,7 @@
   margin-top: vw(100);
   max-width: vw(350);
 
-  @media (max-width: $br1) {  
+  @media (max-width: $br1) {
     max-width: 100%;
     margin-top: 40px;
   }
