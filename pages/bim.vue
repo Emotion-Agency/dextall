@@ -18,31 +18,23 @@ onMounted(async () => {
 })
 
 const { open: openPopup } = useFormPopup()
-
 </script>
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.meta.length"
-      :meta="story.meta[0]"
-    />
+    <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <section class="section section--nm bim-1">
       <div class="container bim-1__wrapper">
         <div class="bim-1__text-block">
-          <p
-            data-a-t
-            class="bim-1__top-text"
-          >{{ story.Screen_1[0].short_text }}</p>
+          <p data-a-t class="bim-1__top-text">
+            {{ story.Screen_1[0].short_text }}
+          </p>
           <TheTicker
             data-a-t
             :text="story.Screen_1[0].moving_title"
             class="bim-1__ticker"
           />
-          <p
-            data-a-t
-            class="bim-1__bottom-text"
-          >
+          <p data-a-t class="bim-1__bottom-text">
             {{ story.Screen_1[0].description }}
           </p>
         </div>
@@ -50,10 +42,8 @@ const { open: openPopup } = useFormPopup()
           <CircleButton
             data-a-t
             class="bim-1__btn"
-            tag="a"
-            :href="story.Screen_1[0].button[0].link.cached_url"
-            target="_blank"
-            rel="noreferer noopener"
+            tag="button"
+            @click="openPopup"
           >
             {{ story.Screen_1[0].button[0].text_button }}
           </CircleButton>
@@ -75,7 +65,12 @@ const { open: openPopup } = useFormPopup()
       <div class="container bim-2__wrapper">
         <h2 class="bim-2__title">
           <span class="bim-2__span-title">
-            {{ story.Screen_2[0].title.replace(story.Screen_2[0].highlighted_title,'') }}
+            {{
+              story.Screen_2[0].title.replace(
+                story.Screen_2[0].highlighted_title,
+                ''
+              )
+            }}
           </span>
           {{ story.Screen_2[0].highlighted_title }}
         </h2>
@@ -89,9 +84,8 @@ const { open: openPopup } = useFormPopup()
           <TextButton
             class="bim-2__btn"
             v-bind="getTransformedLink(story.Screen_2[0].button[0].link)"
-          >{{
-          story.Screen_2[0].button[0].text_button
-          }}</TextButton>
+            >{{ story.Screen_2[0].button[0].text_button }}</TextButton
+          >
         </div>
       </div>
       <ParallaxImg
@@ -111,7 +105,7 @@ const { open: openPopup } = useFormPopup()
         </h2>
         <ul class="bim-3__list">
           <li
-            v-for="(item,idx) in story.Screen_3[0].benefits_list"
+            v-for="(item, idx) in story.Screen_3[0].benefits_list"
             :key="item._uid"
             class="bim-3__li"
           >
@@ -126,17 +120,10 @@ const { open: openPopup } = useFormPopup()
           </li>
         </ul>
       </div>
-      <div
-        data-slider
-        dragable="false"
-        class="bim-3__slider-wrapper"
-      >
-        <ul
-          class="bim-3__img-list"
-          data-slider-inner
-        >
+      <div data-slider dragable="false" class="bim-3__slider-wrapper">
+        <ul class="bim-3__img-list" data-slider-inner>
           <li
-            v-for="(img,idx) in story.Screen_3[0].gallery"
+            v-for="(img, idx) in story.Screen_3[0].gallery"
             :key="img._uid"
             class="bim-3__li"
             data-slide
@@ -144,7 +131,7 @@ const { open: openPopup } = useFormPopup()
             <div class="bim-3__img-wrapper">
               <img
                 class="bim-3__img"
-                :src="getTransformedImage(img.image.filename,577)"
+                :src="getTransformedImage(img.image.filename, 577)"
                 alt="Building"
               />
             </div>
@@ -171,9 +158,7 @@ const { open: openPopup } = useFormPopup()
                   {{ item.point_title }}
                 </h3>
                 <p class="bim-4__content-desc">
-                  {{
-                  item.description_title
-                  }}
+                  {{ item.description_title }}
                 </p>
               </div>
               <ul class="bim-4__content-list">
@@ -182,17 +167,12 @@ const { open: openPopup } = useFormPopup()
                   :key="point._uid"
                   class="bim-4__content-li"
                 >
-                  <div
-                    v-if="idx === 0"
-                    class="bim-4__mob-line"
-                  ></div>
+                  <div v-if="idx === 0" class="bim-4__mob-line"></div>
                   <p
                     class="bim-4__content-text"
                     :class="[idx === 0 && 'bim-4__content-text--nm']"
                   >
-                    {{
-                    point.text
-                    }}
+                    {{ point.text }}
                   </p>
                   <div class="bim-4__line"></div>
                 </li>
@@ -205,7 +185,7 @@ const { open: openPopup } = useFormPopup()
     <section class="section bim-5">
       <ParallaxImg
         class="bim-5__bg"
-        :src='story.Screen_4[0].big_image.filename'
+        :src="story.Screen_4[0].big_image.filename"
         :with-border-radius="false"
         :width="1920"
         :height="1080"
@@ -222,14 +202,10 @@ const { open: openPopup } = useFormPopup()
           class="bim-5__btn"
           :is-white="true"
           @click="openPopup()"
-        >{{
-        story.Screen_4[0].button[0].text_button
-        }}</CircleButton>
+          >{{ story.Screen_4[0].button[0].text_button }}</CircleButton
+        >
       </div>
     </section>
-    <FormPopup
-      title="Get access"
-      form-title="Bim request access"
-    />
+    <FormPopup title="Get access" form-title="Bim request access" />
   </main>
 </template>
