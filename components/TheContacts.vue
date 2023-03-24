@@ -1,31 +1,18 @@
 <template>
-  <div
-    class="contacts"
-    :class="[isOpen && 'contacts--open']"
-  >
-    <div
-      class="contacts__backdrop"
-      @click="close"
-    ></div>
+  <div class="contacts" :class="[isOpen && 'contacts--open']">
+    <div class="contacts__backdrop" @click="close"></div>
     <div class="contacts__content">
       <div class="contacts__line-wrapper">
-
         <div class="contacts__line"></div>
       </div>
       <div class="container contacts__window">
-        <button
-          class="contacts__close-btn"
-          @click="close"
-        >
+        <button class="contacts__close-btn" @click="close">
           <span class="contacts__btn-line"></span>
           <span class="contacts__btn-line"></span>
         </button>
         <div class="contacts__top">
           <h2 class="contacts__title">Contact us</h2>
-          <p
-            v-if="story?.main_text"
-            class="contacts__desc"
-          >
+          <p v-if="story?.main_text" class="contacts__desc">
             {{ story.main_text }}
           </p>
           <form
@@ -52,19 +39,14 @@
         <div class="grid contacts__bottom-block">
           <TheSocial class="contacts__social" />
           <div class="contacts__text-wrapper">
-            <p
-              class="contacts__text"
-              v-html="breakLine(story.contact_1)"
-            />
-            <p
-              class="contacts__text"
-              v-html="breakLine(story.contact_2)"
-            />
+            <p class="contacts__text" v-html="breakLine(story.contact_1)" />
+            <p class="contacts__text" v-html="breakLine(story.contact_2)" />
           </div>
           <TextButton
             class="contacts__text-btn"
             v-bind="getTransformedLink(story.media_button[0].link)"
-          >{{ story.media_button[0].text_button }}</TextButton>
+            >{{ story.media_button[0].text_button }}</TextButton
+          >
         </div>
       </div>
     </div>
@@ -78,10 +60,7 @@ const { story } = await useContactsStory()
 const breakLine = useBreakLine()
 const getTransformedLink = useTransformLink()
 
-
-
-const { isOpen,close } = useContacts()
-
+const { isOpen, close } = useContacts()
 
 const $inputs = ref([])
 const formData = reactive({
@@ -113,6 +92,17 @@ const formData = reactive({
       required: true,
       validation: 'required',
       validationText: 'this field is required',
+      id: 'contacts-name',
+      name: 'Phone',
+      label: 'Your Phone',
+      type: 'text',
+      error: true,
+      value: '',
+    },
+    {
+      required: true,
+      validation: 'required',
+      validationText: 'this field is required',
       id: 'message',
       name: 'Message',
       label: 'Your Message',
@@ -123,7 +113,7 @@ const formData = reactive({
   ],
 })
 
-const { onInputValue,onSubmit } = useForm(formData,$inputs)
+const { onInputValue, onSubmit } = useForm(formData, $inputs)
 
 const updatedSubmit = async () => {
   await onSubmit()
