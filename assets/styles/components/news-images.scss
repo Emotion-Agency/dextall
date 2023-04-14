@@ -1,72 +1,80 @@
 .news-images {
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
   @media (min-width: $br1) {
     row-gap: vw(100);
   }
 
   @media (max-width: $br1) {
     row-gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: $br4) {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
 .news-images__li {
-  @media (min-width: $br1) {
-    grid-row-start: var(--row);
-  }
+  width: 100%;
+  // @media (min-width: $br1) {
+  //   grid-row-start: var(--row);
+  // }
 
-  &:nth-of-type(n + 1) {
-    @media (min-width: $br1) {
-      @include col(1, 3);
-    }
+  // &:nth-of-type(n + 1) {
+  //   @media (min-width: $br1) {
+  //     @include col(1, 3);
+  //   }
 
-    @media (max-width: $br1) {
-      @include col(1, 2);
-    }
-  }
+  //   @media (max-width: $br1) {
+  //     @include col(1, 2);
+  //   }
+  // }
 
-  &:nth-of-type(6n + 2) {
-    @media (min-width: $br1) {
-      @include col(13, 15);
-    }
+  // &:nth-of-type(6n + 2) {
+  //   @media (min-width: $br1) {
+  //     @include col(13, 15);
+  //   }
 
-    @media (max-width: $br1) {
-      @include col(3, 4);
-    }
-  }
+  //   @media (max-width: $br1) {
+  //     @include col(3, 4);
+  //   }
+  // }
 
-  &:nth-of-type(6n + 3) {
-    @media (min-width: $br1) {
-      @include col(4, 6);
-    }
-  }
+  // &:nth-of-type(6n + 3) {
+  //   @media (min-width: $br1) {
+  //     @include col(4, 6);
+  //   }
+  // }
 
-  &:nth-of-type(6n + 4) {
-    @media (min-width: $br1) {
-      @include col(7, 9);
-    }
-  }
+  // &:nth-of-type(6n + 4) {
+  //   @media (min-width: $br1) {
+  //     @include col(7, 9);
+  //   }
+  // }
 
-  &:nth-of-type(6n + 5) {
-    @media (min-width: $br1) {
-      @include col(13, 15);
-    }
-  }
+  // &:nth-of-type(6n + 5) {
+  //   @media (min-width: $br1) {
+  //     @include col(13, 15);
+  //   }
+  // }
 
-  &:nth-of-type(6n + 6) {
-    @media (min-width: $br1) {
-      @include col(10, 12);
-    }
-  }
+  // &:nth-of-type(6n + 6) {
+  //   @media (min-width: $br1) {
+  //     @include col(10, 12);
+  //   }
+  // }
 }
 
 .news-images__name {
   @include default;
-
   margin-top: vw(20);
+  line-height: 110%;
+
+  @media (min-width: $br1) {
+    font-size: vw(20);
+  }
 
   @media (max-width: $br1) {
     margin-top: 15px;
@@ -80,15 +88,14 @@
 .news-images-img-wrap {
   overflow: hidden;
   border-radius: 10px;
-  width: vw(338);
-  height: vw(338);
+  width: 100%;
+  // height: vw(338);
+  aspect-ratio: 1;
   margin-top: vw(15);
   isolation: isolate;
 
   @media (max-width: $br1) {
     margin-top: 10px;
-    width: 338px;
-    height: 338px;
   }
   @media (max-width: $br4) {
     width: 100%;
