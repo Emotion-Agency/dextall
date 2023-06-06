@@ -1,9 +1,5 @@
 <template>
-  <footer class="section footer">
-    <TheTicker
-      :text="story.title"
-      class="footer__ticker"
-    ></TheTicker>
+  <footer class="section section--nm footer">
     <div class="container grid footer__top-wrapper">
       <TheSocial />
       <ul class="grid footer__nav-list">
@@ -32,14 +28,10 @@
           <NuxtLink to="/education-trainings/">Trainings</NuxtLink>
         </li>
         <li class="footer__nav-li">
-          <button @click="openContacts"> Contact us </button>
+          <button @click="openContacts">Contact us</button>
         </li>
       </ul>
-      <form
-        class="footer__form"
-        novalidate
-        @submit.prevent="onSubmit"
-      >
+      <form class="footer__form" novalidate @submit.prevent="onSubmit">
         <legend class="footer__form-title">{{ story.form_title }}</legend>
         <TheInput
           v-for="input in formData.inputs"
@@ -59,14 +51,12 @@
       </form>
       <div class="grid footer__bottom-wrapper">
         <p class="footer__date">©2022 DEXTALL</p>
-        <NuxtLink
-          to="/terms-privacy/terms-conditions/"
-          class="footer__rules"
-        >Terms and conditions</NuxtLink>
-        <NuxtLink
-          to="/terms-privacy/privacy-policy/"
-          class="footer__rules"
-        >Privacy Policy</NuxtLink>
+        <NuxtLink to="/terms-privacy/terms-conditions/" class="footer__rules"
+          >Terms and conditions</NuxtLink
+        >
+        <NuxtLink to="/terms-privacy/privacy-policy/" class="footer__rules"
+          >Privacy Policy</NuxtLink
+        >
         <a
           href="https://www.emotion-agency.com/"
           target="_blank"
@@ -105,5 +95,5 @@ const formData = reactive({
   ],
 })
 
-const { onInputValue,onSubmit } = useForm(formData,$inputs,'Dextall footer')
+const { onInputValue, onSubmit } = useForm(formData, $inputs, 'Dextall footer')
 </script>
