@@ -3,11 +3,9 @@
   font-size: vw(100);
   text-transform: uppercase;
   line-height: 110%;
-  max-width: vw(1350);
 
   @media (max-width: $br1) {
     font-size: size(100, 32);
-    max-width: 100%;
   }
 
   @media (max-width: $br4) {

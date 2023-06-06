@@ -1,60 +1,22 @@
-.floating-cards {
-  row-gap: vw(120);
-  grid-auto-flow: row;
-
-  @media (max-width: $br1) {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 26px;
-  }
-
-  @media (max-width: $br3) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 .floating-cards__li {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: vw(280);
+  height: vw(378);
   width: 100%;
   background-color: var(--main);
-  border-radius: 8px;
-
-  @media (min-width: $br1) {
-    @include col(1, 15);
-    width: vw(695);
-  }
+  border-radius: vw(10);
+  padding: vw(36);
 
   @media (max-width: $br1) {
-    padding: 45px 35px;
-    height: size(280, 126);
+    padding: 45px;
+    height: size(378, 126);
+    border-radius: 10px;
+    flex: 48%;
   }
 
   @media (max-width: $br4) {
     height: fit-content;
-  }
-
-  &:nth-of-type(4n + 1) {
-    @media (min-width: $br1) {
-      margin-left: vw(720);
-    }
-  }
-
-  &:nth-of-type(4n + 2) {
-    @media (min-width: $br1) {}
-  }
-
-  &:nth-of-type(4n + 3) {
-    @media (min-width: $br1) {
-      margin-left: vw(1075);
-    }
-  }
-
-  &:nth-of-type(4n + 4) {
-    @media (min-width: $br1) {
-      margin-left: vw(477);
-    }
   }
 
   svg {
