@@ -13,7 +13,9 @@
 }
 
 .home-4__italic-title {
-  @include italic;
+  @media (min-width: $br1) {
+    @include italic;
+  }
 }
 
 .home-4__card-list {

@@ -245,7 +245,7 @@ const splitText = useSplitText()
         <div class="home-7__main-block">
           <h3 class="home-7__title">
             <span class="home-7__span-title">our</span>
-            <span class="home-7__span-title"> Projects</span>
+            Projects
           </h3>
           <p v-if="story.home_screen_7[0].main_text" class="home-7__desc">
             {{ story.home_screen_7[0].main_text }}
