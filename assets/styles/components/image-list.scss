@@ -1,131 +1,35 @@
 .image-list {
-  margin-top: vw(90);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: vw(20);
+  margin-top: vw(122);
 
   @media (max-width: $br1) {
-    margin-top: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 36px;
+    gap: 40px;
+  }
+
+  @media (max-width: $br3) {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+  }
+}
+
+.image-list__link {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  row-gap: vw(40);
+
+  @media (max-width: $br1) {
+    row-gap: 32px;
   }
 }
 
 .image-list__li {
-  margin-top: vw(20);
-  &:nth-of-type(2) {
-    .image-list__text {
-      @media (min-width: $br1) {
-        position: absolute;
-        max-width: vw(458);
-        right: 5.3vw;
-        height: vw(346);
-      }
-    }
-    .image-list__img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-
-      @media (max-width: $br1) {
-        width: 70%;
-      }
-
-      &:nth-of-type(1) {
-        @media (min-width: $br1) {
-          @include col(1, 4);
-        }
-      }
-
-      &:nth-of-type(2) {
-        @media (min-width: $br1) {
-          @include col(5, 11);
-          @include row(1, 2);
-        }
-      }
-
-      &:nth-of-type(3) {
-        @media (min-width: $br1) {
-          @include col(12, 15);
-          @include row(2, 2);
-        }
-      }
-
-      &:nth-of-type(4) {
-        @media (min-width: $br1) {
-          @include col(5, 8);
-          @include row(3, 3);
-        }
-      }
-    }
-  }
-}
-
-.image-list__text {
-  @media (min-width: $br1) {
-    position: absolute;
-    max-width: vw(458);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: vw(380);
-  }
-}
-
-.image-list__title {
-  @include default;
-  font-size: vw(40);
-
-  @media (max-width: $br1) {
-    font-size: size(40, 20);
-  }
-
-  @media (max-width: $br4) {
-    font-size: 20px;
-  }
-}
-
-.image-list__desc-wrapper {
-  @include default;
-
-  @media (max-width: $br1) {
-    margin-top: 20px;
-    max-width: 80%;
-  }
-
-  @media (max-width: $br4) {
-    max-width: 100%;
-  }
-}
-
-.image-list__number {
-  position: relative;
-  bottom: vw(-10);
-
-  @media (max-width: $br1) {
-    bottom: -8px;
-  }
-}
-
-.image-list__desc {
-  text-indent: vw(121);
-
-  @media (max-width: $br1) {
-    text-indent: 88px;
-  }
-}
-
-.image-list__img-wrapper {
-  row-gap: vw(20);
-
-  @media (max-width: $br1) {
-    display: flex;
-    overflow: scroll;
-    margin-top: 20px;
-    width: 100vw;
-    margin-left: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  flex: 30%;
 }
 
 .image-list__img {
@@ -133,37 +37,85 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
+}
+
+.image-list__title {
+  @include reg;
+  font-size: vw(35);
+  line-height: 110%;
+  text-transform: uppercase;
+  margin-top: vw(20);
 
   @media (max-width: $br1) {
-    width: 70%;
-    flex: 1 0 70%;
+    font-size: size(35, 24);
+    margin-top: 12px;
   }
 
-  &:nth-of-type(1) {
-    @media (min-width: $br1) {
-      @include col(1, 4);
-      @include row(2, 2);
-    }
+  @media (max-width: $br4) {
+    font-size: 24px;
+  }
+}
+
+.image-list__desc {
+  @include reg;
+  font-size: vw(24);
+  line-height: 120%;
+  margin-top: vw(16);
+
+  @media (max-width: $br1) {
+    font-size: size(24, 16);
+    margin-top: 12px;
   }
 
-  &:nth-of-type(2) {
-    @media (min-width: $br1) {
-      @include col(5, 11);
-      @include row(1, 2);
-      height: 100% !important;
-    }
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}
+
+.image-list__line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--main);
+}
+
+.image-list__info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: vw(14) 0;
+
+  @media (max-width: $br1) {
+    padding: 7px;
+  }
+}
+
+.image-list__text {
+  @include reg;
+  font-size: vw(20);
+  line-height: 110%;
+  text-transform: uppercase;
+  text-shadow: 0 0 vw(0.5) var(--main);
+
+  @media (max-width: $br1) {
+    text-shadow: 0 0 0.5px var(--main);
+    font-size: size(20, 16);
   }
 
-  &:nth-of-type(3) {
-    @media (min-width: $br1) {
-      @include col(12, 15);
-    }
+  @media (max-width: $br4) {
+    font-size: 16px;
+  }
+}
+
+.image-list__quantity {
+  @include reg;
+  font-size: vw(16);
+  line-height: 110%;
+
+  @media (max-width: $br1) {
+    font-size: size(16, 14);
   }
 
-  &:nth-of-type(4) {
-    @media (min-width: $br1) {
-      @include col(8, 11);
-      @include row(3, 3);
-    }
+  @media (max-width: $br4) {
+    font-size: 14px;
   }
 }
