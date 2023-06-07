@@ -19,16 +19,19 @@
 }
 
 .home-4__card-list {
-  display: flex;
-  align-items: center;
-  column-gap: vw(24);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: vw(24);
   margin-top: vw(66);
 
   @media (max-width: $br1) {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 42px;
-    row-gap: 26px;
-    column-gap: 26px;
+    gap: 26px;
+  }
+
+  @media (max-width: $br3) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

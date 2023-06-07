@@ -62,22 +62,15 @@ const onMouseEnter = (e: MouseEvent) => {
 const onMouseLeave = () => {
   $images.value.forEach(el => el.classList.remove('active'))
   $mainImage.value.style.opacity = 1
-
 }
 </script>
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.meta.length"
-      :meta="story.meta[0]"
-    />
+    <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <section class="section section--nm products-1">
       <div class="container products-1__wrapper">
-        <div
-          data-a-t
-          class="grid container products-1__image-block"
-        >
+        <div data-a-t class="grid container products-1__image-block">
           <ParallaxImg
             v-for="(item, idx) in firstScreenImages"
             :key="idx"
@@ -108,53 +101,47 @@ const onMouseLeave = () => {
               v-html="splitText('Bearing System')"
             />
           </h1>
-          <p
-            data-a-t
-            class="products-1__desc"
-          >
+          <p data-a-t class="products-1__desc">
             {{ story.screen_1[0].description }}
           </p>
         </div>
-        <CircleButton
-          data-a-t
-          class="products-1__btn"
-          @click="goToProducts"
-        >
+        <CircleButton data-a-t class="products-1__btn" @click="goToProducts">
           Show products
         </CircleButton>
       </div>
     </section>
     <section class="section products-2">
-      <div class="container grid products-2__wrapper">
-        <h2 class="grid products-2__title">
-          <span class="products-2__big-text">TESTED</span>
-          <span class="products-2__big-text"> &</span>
-          <span class="products-2__big-text"> CERTIFIED</span>
+      <div class="container products-2__wrapper">
+        <h2 class="products-2__title">
+          Tested and
+          <span class="products-2__italic-title">Certified</span>
         </h2>
         <p class="products-2__desc">
           {{ story.screen_2[0].description }}
         </p>
-        <FloatingCard
-          v-for="(item, idx) in story.screen_2[0].cards"
-          :key="item._uid"
-          tag="div"
-          :parallax="story.screen_2[0].cards.length - idx"
-          class="home-4__floating-cards"
-        >
-          <div class="products-2__text-wrapper">
-            <h3 class="products-2__title-cards">
-              {{ item.H1 }}
-            </h3>
-            <p class="products-2__medium-text">
-              {{ item.H2 }}
-            </p>
-            <p class="products-2__small-text">
-              {{ item.H3 }}
-            </p>
-          </div>
-        </FloatingCard>
+        <ul class="products-2__card-list">
+          <FloatingCard
+            v-for="item in story.screen_2[0].cards"
+            :key="item._uid"
+            tag="div"
+            class="products-2__floating-cards"
+          >
+            <div class="products-2__text-wrapper">
+              <h3 class="products-2__title-cards">
+                {{ item.H1 }}
+              </h3>
+              <p class="products-2__medium-text">
+                {{ item.H2 }}
+              </p>
+              <p class="products-2__small-text">
+                {{ item.H3 }}
+              </p>
+            </div>
+          </FloatingCard>
+        </ul>
       </div>
     </section>
+
     <section class="section products-3">
       <div class="container products-3__wrapper">
         <p class="products-3__commentary">{{ story.screen_3[0].small_text }}</p>
@@ -166,10 +153,7 @@ const onMouseLeave = () => {
       />
       <div class="container products-3__wrapper">
         <div class="grid products-3__content">
-          <ul
-            class="products-3__list"
-            @mouseleave="onMouseLeave"
-          >
+          <ul class="products-3__list" @mouseleave="onMouseLeave">
             <li
               v-for="(item, idx) in story.screen_3[0].panel_compound"
               :key="item._uid"
@@ -230,10 +214,7 @@ const onMouseLeave = () => {
           <span class="products-4__span-text"> products</span>
         </h2>
       </div>
-      <div
-        id="products"
-        class="container products-4__wrapper"
-      >
+      <div id="products" class="container products-4__wrapper">
         <ul class="products-4__list">
           <li class="products-4__li">
             <div class="products-4__line"></div>
@@ -327,7 +308,9 @@ const onMouseLeave = () => {
                     <div class="products-4__line"></div>
                   </li>
                 </ul>
-                <h4 class="products-4__content-title products-4__content-title--1">
+                <h4
+                  class="products-4__content-title products-4__content-title--1"
+                >
                   {{ story.screen_4[0].product_1[0].title_1 }}
                 </h4>
                 <p
@@ -433,7 +416,8 @@ const onMouseLeave = () => {
                 <CircleButton
                   v-bind="getTransformedLink(story.screen_4[0].button[0].link)"
                   class="products-4__btn"
-                >{{ story.screen_4[0].button[0].text_button }}</CircleButton>
+                  >{{ story.screen_4[0].button[0].text_button }}</CircleButton
+                >
               </div>
             </div>
           </li>
