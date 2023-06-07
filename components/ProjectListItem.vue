@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import { iImage } from '~/types/story'
-
 interface iProps {
   title?: string
   number?: number
   description?: string
-  images?: iImage[]
+  image?: string
   slug?: string
 }
 
@@ -29,12 +27,11 @@ defineProps<iProps>()
 
 <template>
   <li class="image-list__li">
-    <NuxtLink :to="`/projects/${slug}/`" class="image-list__link">
+    <NuxtLink :to="slug" class="image-list__link">
       <div class="image-list__top-wrapper">
         <div class="image-list__img-wrapper">
           <ParallaxImg
-            :key="images[0].image._uid"
-            :src="images[0].image.filename"
+            :src="image"
             :width="457"
             :height="365"
             :scale="1.2"

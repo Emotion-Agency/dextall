@@ -1,7 +1,8 @@
 .image-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: vw(20);
+  column-gap: vw(20);
+  row-gap: vw(100);
   margin-top: vw(122);
 
   @media (max-width: $br1) {
@@ -26,10 +27,6 @@
   @media (max-width: $br1) {
     row-gap: 32px;
   }
-}
-
-.image-list__li {
-  flex: 30%;
 }
 
 .image-list__img {

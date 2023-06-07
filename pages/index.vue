@@ -258,7 +258,7 @@ const splitText = useSplitText()
           <ProjectListItem
             v-for="(project, idx) in projects"
             :key="project._uid"
-            :images="project.content.Screen_2[0].gallery"
+            :image="project.content.Screen_1[0].main_image.filename"
             :title="project.name"
             :description="project.content.Screen_1[0].project_description"
             :number="idx + 1"

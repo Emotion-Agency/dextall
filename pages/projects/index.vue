@@ -5,34 +5,24 @@ import { useProjectsStories } from '~/composables/stories/projects.story'
 useTransition()
 useObserver('.section')
 
-const { stories,story } = await useProjectsStories()
-
+const { stories, story } = await useProjectsStories()
 
 const sortedStories = computed(() => {
-  return [...stories.value].sort((a,b) => {
+  return [...stories.value].sort((a, b) => {
     return +a.content.order - b.content.order
-  }
-  )
+  })
 })
 
 const splitText = useSplitText()
-
 </script>
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.content.meta.length"
-      :meta="story.content.meta[0]"
-    />
+    <PageMeta v-if="story.content.meta.length" :meta="story.content.meta[0]" />
     <section class="section section--nm projects-1">
       <div class="container projects-1__wrapper">
         <h1 class="projects-1__title">
-
-          <span
-            data-a-h
-            v-html="splitText('Key Project')"
-          />
+          <span data-a-h v-html="splitText('Key Project')" />
           <span
             data-a-h
             class="projects-1__span-title"
@@ -41,19 +31,17 @@ const splitText = useSplitText()
         </h1>
       </div>
     </section>
-    <section
-      data-a-t
-      class="section projects-2"
-    >
+    <section data-a-t class="section projects-2">
       <div class="container">
-        <ul class="grid news-images projects-list">
-          <NewsItem
-            v-for="(item,idx) in sortedStories"
+        <Filters />
+        <ul class="image-list">
+          <ProjectListItem
+            v-for="(item, idx) in sortedStories"
             :key="item._uid"
-            :idx="idx"
-            :name="item.name"
-            :link="'/projects/' + item.slug + '/'"
-            :img="item.content.Screen_1[0].main_image.filename"
+            :image="item.content.Screen_1[0].main_image.filename"
+            :title="item.name"
+            :number="idx + 1"
+            :slug="`/projects/` + item.slug"
           />
         </ul>
       </div>
