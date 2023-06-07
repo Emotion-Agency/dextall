@@ -54,6 +54,7 @@ const onFilter = (cat: string) => {
     } else {
       activeFilter.value = cat
     }
+    window?.parallax && window?.parallax?.update()
     isUpdating.value = false
   }, 500)
 }
