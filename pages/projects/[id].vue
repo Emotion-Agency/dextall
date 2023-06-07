@@ -60,6 +60,12 @@ const splitText = useSplitText()
 const darken = computed(() => {
   return story.value?.Screen_1[0]?.main_image_darken ?? 20
 })
+
+const specs = computed(() => {
+  return filteredStories.value.map(story => {
+    return story.content.Screen_4[0].object_specifications.slice(0, 3)
+  })
+})
 </script>
 
 <template>
@@ -268,6 +274,7 @@ const darken = computed(() => {
               :title="item.name"
               :number="idx + 1"
               :slug="`/projects/` + item.slug"
+              :params="specs[idx]"
             />
           </ul>
         </div>

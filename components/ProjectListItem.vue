@@ -1,28 +1,22 @@
 <script lang="ts" setup>
+interface Params {
+  specification: string
+  specification_name: string
+}
+
 interface iProps {
   title?: string
   number?: number
   description?: string
   image?: string
   slug?: string
+  date?: string
+  params?: Params[]
 }
 
-const infoList = [
-  {
-    text: 'SIZE, SF:',
-    quantity: '282828',
-  },
-  {
-    text: 'SIZE, SF:',
-    quantity: '282828',
-  },
-  {
-    text: 'SIZE, SF:',
-    quantity: '282828',
-  },
-]
+const props = defineProps<iProps>()
 
-defineProps<iProps>()
+const formattedDate = useFormattedDate(props.date)
 </script>
 
 <template>
@@ -44,18 +38,23 @@ defineProps<iProps>()
         </p>
       </div>
       <div class="image-list__bottom-wrapper">
-        <ul class="image-list__info">
+        <div v-if="date" class="image-list__date-content">
+          <div class="image-list__line" />
+          <time class="image-list__date">{{ formattedDate }}</time>
+          <div class="image-list__line" />
+        </div>
+        <ul v-else class="image-list__info">
           <li
-            v-for="(el, idx) in infoList"
+            v-for="(el, idx) in params"
             :key="idx"
             class="image-list__info-wrapper"
           >
             <div class="image-list__line" />
             <div class="image-list__info-content">
-              <p class="image-list__text">{{ el.text }}</p>
-              <p class="image-list__quantity">{{ el.quantity }}</p>
+              <p class="image-list__text">{{ el.specification_name }}</p>
+              <p class="image-list__quantity">{{ el.specification }}</p>
             </div>
-            <div v-if="idx === infoList.length - 1" class="image-list__line" />
+            <div v-if="idx === params.length - 1" class="image-list__line" />
           </li>
         </ul>
       </div>

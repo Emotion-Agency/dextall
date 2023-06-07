@@ -14,6 +14,12 @@ const sortedStories = computed(() => {
 })
 
 const splitText = useSplitText()
+
+const specs = computed(() => {
+  return sortedStories.value.map(story => {
+    return story.content.Screen_4[0].object_specifications.slice(0, 3)
+  })
+})
 </script>
 
 <template>
@@ -40,6 +46,7 @@ const splitText = useSplitText()
             :key="item._uid"
             :image="item.content.Screen_1[0].main_image.filename"
             :title="item.name"
+            :params="specs[idx]"
             :number="idx + 1"
             :slug="`/projects/` + item.slug"
           />

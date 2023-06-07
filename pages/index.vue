@@ -40,6 +40,12 @@ onBeforeUnmount(() => {
 
 const getTransformedLink = useTransformLink()
 const splitText = useSplitText()
+
+const specs = computed(() => {
+  return projects.value.map(story => {
+    return story.content.Screen_4[0].object_specifications.slice(0, 3)
+  })
+})
 </script>
 
 <template>
@@ -263,6 +269,7 @@ const splitText = useSplitText()
             :description="project.content.Screen_1[0].project_description"
             :number="idx + 1"
             :slug="project.slug"
+            :params="specs[idx]"
           />
         </ul>
       </div>

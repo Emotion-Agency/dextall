@@ -75,6 +75,15 @@
   background-color: var(--main);
 }
 
+.image-list__date {
+  display: inline-block;
+  padding: vw(14) 0;
+
+  @media (max-width: $br1) {
+    padding: 7px;
+  }
+}
+
 .image-list__info-content {
   display: flex;
   justify-content: space-between;
