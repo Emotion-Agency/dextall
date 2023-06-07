@@ -13,28 +13,27 @@ interface iProps {
   isLazy?: boolean
 }
 
-
-const props = withDefaults(defineProps<iProps>(),{
+const props = withDefaults(defineProps<iProps>(), {
   transform: true,
   withBorderRadius: true,
   scale: 1.07,
   isLazy: true,
-  alt: 'Dextall'
+  alt: 'Dextall',
 })
 
 const width = props.width ?? 0
 const height = props.height ?? 0
-let transformedSrc: string
 
-if (props.width || props.height) {
-
-  transformedSrc = transformImage(props.src,{ size: `${width}x${height}` })
-} else {
-  transformedSrc = transformImage(props.src)
-}
+const transformedSrc = computed(() => {
+  if (props.width || props.height) {
+    return transformImage(props.src, { size: `${width}x${height}` })
+  } else {
+    return transformImage(props.src)
+  }
+})
 
 const getImageResolution = computed(() => {
-  const resolution = height / width * 100
+  const resolution = (height / width) * 100
   return resolution.toFixed(2) + '%'
 })
 
@@ -44,15 +43,16 @@ if (width && height) {
   resolution.value = getImageResolution
 }
 
-
-const src = props.transform ? transformedSrc : props.src
+const source = computed(() => {
+  return props.transform ? transformedSrc.value : props.src
+})
 </script>
 
 <template>
   <div
     class="p-img-wrapper"
     :class="[withBorderRadius && 'p-img-wrapper--br']"
-    :style="resolution && { paddingBottom: resolution.value,height: '0px' }"
+    :style="resolution && { paddingBottom: resolution.value, height: '0px' }"
   >
     <div
       class="p-img-container"
@@ -62,7 +62,7 @@ const src = props.transform ? transformedSrc : props.src
       <img
         class="parallax-img"
         :class="imgClass"
-        :src="src"
+        :src="source"
         :alt="alt"
         data-parallax="0.06"
         :data-scale="scale"

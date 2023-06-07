@@ -5,11 +5,25 @@
   flex-wrap: wrap;
   width: 100%;
   gap: vw(32);
+
+  transition: top 0.5s ease;
+  z-index: 5;
+  background-color: var(--bg);
+  padding-top: vw(16);
+  padding-bottom: vw(16);
+
   margin-top: vw(70);
+
+  @media (min-width: $br1) {
+    position: sticky;
+    top: var(--nav-height);
+  }
 
   @media (max-width: $br1) {
     gap: 16px;
     margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 

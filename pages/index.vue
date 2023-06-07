@@ -268,7 +268,7 @@ const specs = computed(() => {
             :title="project.name"
             :description="project.content.Screen_1[0].project_description"
             :number="idx + 1"
-            :slug="project.slug"
+            :slug="`/projects/${project.slug}`"
             :params="specs[idx]"
           />
         </ul>
