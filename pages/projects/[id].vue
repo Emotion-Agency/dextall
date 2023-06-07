@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useProjectsStories } from '~/composables/stories/projects.story'
-import { delayPromise,keysGenerator } from '~~/scripts/utils/ea'
+import { delayPromise, keysGenerator } from '~~/scripts/utils/ea'
 
 useTransition()
 useObserver('.section')
@@ -12,8 +12,6 @@ const slug = useRoute().params.id
 
 listenStory(slug)
 
-
-
 const story = computed(() => {
   return stories.value.find(story => story.slug === slug).content
 })
@@ -21,8 +19,6 @@ const story = computed(() => {
 const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
 })
-
-
 
 const getTransformedImage = useTransformedImage()
 
@@ -37,8 +33,6 @@ onMounted(async () => {
   const carousel = new Carousel()
   carousel.init()
 })
-
-
 
 const isSliderOpen = ref(false)
 const startFrom = ref(0)
@@ -57,10 +51,7 @@ const closeSlider = () => {
 const imagesSlides = computed(() => {
   return story.value.Screen_2[0].gallery.map(img => ({
     _id: keysGenerator(8),
-    img: getTransformedImage(
-      img.image.filename,
-      1920
-    ),
+    img: getTransformedImage(img.image.filename, 1920),
   }))
 })
 
@@ -69,15 +60,11 @@ const splitText = useSplitText()
 const darken = computed(() => {
   return story.value?.Screen_1[0]?.main_image_darken ?? 20
 })
-
 </script>
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.meta.length"
-      :meta="story.meta[0]"
-    />
+    <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <section class="section section--nm project-1">
       <ParallaxImg
         data-a-o
@@ -90,10 +77,7 @@ const darken = computed(() => {
       />
       <div class="container project-1__wrapper">
         <div class="project-1__text-block">
-          <p
-            data-a-t
-            class="project-1__text"
-          >
+          <p data-a-t class="project-1__text">
             {{ story.Screen_1[0].small_text }}
           </p>
           <h1
@@ -102,18 +86,12 @@ const darken = computed(() => {
             v-html="splitText(story.Screen_1[0].project_name)"
           />
         </div>
-        <p
-          data-a-t
-          class="project-1__desc"
-        >
+        <p data-a-t class="project-1__desc">
           {{ story.Screen_1[0].project_description }}
         </p>
       </div>
     </section>
-    <section
-      v-if="story.Screen_2[0].main_fact"
-      class="section project-2"
-    >
+    <section v-if="story.Screen_2[0].main_fact" class="section project-2">
       <div class="container project-2__wrapper">
         <div class="project-2__line"></div>
         <p class="project-2__text">
@@ -122,30 +100,31 @@ const darken = computed(() => {
         <div class="project-2__line"></div>
       </div>
     </section>
-    <section
-      v-if="story.Screen_2[0].gallery.length"
-      class="section project-3"
-    >
+    <section v-if="story.Screen_2[0].gallery.length" class="section project-3">
       <div class="container project-3__wrapper">
         <h2 class="project-3__title">Project Gallery</h2>
-        <CircleButton
-          class="project-3__btn"
-          @click="openSlider(0)"
-        >Full screen mode</CircleButton>
+        <CircleButton class="project-3__btn" @click="openSlider(0)"
+          >Full screen mode</CircleButton
+        >
       </div>
       <div
         v-if="story.Screen_2[0].gallery.length"
         data-slider
         dragable="false"
-        :class="story.Screen_2[0].gallery.length < 5 && 'project-3__img-list-wrapper'"
+        :class="
+          story.Screen_2[0].gallery.length < 5 && 'project-3__img-list-wrapper'
+        "
       >
         <ul
           class="project-3__img-list"
-          :class="story.Screen_2[0].gallery.length < 5 && 'project-3__img-list--center'"
+          :class="
+            story.Screen_2[0].gallery.length < 5 &&
+            'project-3__img-list--center'
+          "
           data-slider-inner
         >
           <li
-            v-for="(img,idx) in story.Screen_2[0].gallery"
+            v-for="(img, idx) in story.Screen_2[0].gallery"
             :key="img._uid"
             class="project-3__li"
             data-slide
@@ -153,7 +132,7 @@ const darken = computed(() => {
             <div class="project-3__img-wrapper">
               <img
                 class="project-3__img"
-                :src="getTransformedImage(img.image.filename,800)"
+                :src="getTransformedImage(img.image.filename, 800)"
                 alt="Building"
               />
             </div>
@@ -221,7 +200,7 @@ const darken = computed(() => {
         <div class="grid project-6__content">
           <ul class="project-6__list">
             <li
-              v-for="(item,idx) in story.Screen_4[0].object_specifications"
+              v-for="(item, idx) in story.Screen_4[0].object_specifications"
               :key="item._uid"
               class="project-6__li"
             >
@@ -231,10 +210,11 @@ const darken = computed(() => {
                 <p class="project-6__text">{{ item.specification }}</p>
               </div>
               <div
-                v-if="idx === story.Screen_4[0].object_specifications.length - 1"
+                v-if="
+                  idx === story.Screen_4[0].object_specifications.length - 1
+                "
                 class="project-6__line"
               ></div>
-
             </li>
           </ul>
 
@@ -244,7 +224,6 @@ const darken = computed(() => {
             :width="816"
             :height="1000"
           />
-
         </div>
       </div>
     </section>
@@ -254,10 +233,7 @@ const darken = computed(() => {
           <h2 class="project-7__big-text">
             Interesting facts about the project
           </h2>
-          <p
-            v-if="story.Screen_5[0].main_text"
-            class="project-7__desc"
-          >
+          <p v-if="story.Screen_5[0].main_text" class="project-7__desc">
             {{ story.Screen_5[0].main_text }}
           </p>
         </div>
@@ -284,15 +260,14 @@ const darken = computed(() => {
       <div class="container internal-news-3__wrapper">
         <h2 class="internal-news-3__title">Other projects</h2>
         <div class="internal-news-3__images">
-
-          <ul class="grid news-images">
-            <NewsItem
-              v-for="(item,idx) in filteredStories"
+          <ul class="image-list">
+            <ProjectListItem
+              v-for="(item, idx) in filteredStories"
               :key="item._uid"
-              :idx="idx"
-              :name="item.name"
-              :link="'/projects/' + item.slug + '/'"
-              :img="item?.content?.Screen_1[0].main_image.filename"
+              :image="item?.content?.Screen_1[0].main_image.filename"
+              :title="item.name"
+              :number="idx + 1"
+              :slug="`/projects/` + item.slug"
             />
           </ul>
         </div>
