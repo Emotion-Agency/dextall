@@ -1,81 +1,76 @@
 .products-2__title {
   @include default;
-  @include col(1, 15);
-  font-size: vw(200);
+  font-size: vw(100);
+  line-height: 110%;
 
   @media (max-width: $br1) {
-    display: inline;
-    font-size: size(200, 36);
-    @include col(1, 4);
+    font-size: size(100, 35);
   }
 
   @media (max-width: $br4) {
-    font-size: 36px;
+    font-size: 35px;
   }
 }
 
-.products-2__big-text {
-  &:nth-of-type(1) {
-    @media (min-width: $br1) {
-      @include col(1, 15);
-    }
-  }
-
-  &:nth-of-type(2) {
-    @media (min-width: $br1) {
-      @include col(2, 3);
-      @include row(2, 2);
-    }
-  }
-
-  &:nth-of-type(3) {
-    @media (min-width: $br1) {
-      @include col(9, 15);
-      @include row(2, 2);
-      @include italic;
-      text-transform: lowercase;
-      text-align: end;
-    }
+.products-2__italic-title {
+  @media (min-width: $br1) {
+    @include italic;
   }
 }
 
 .products-2__desc {
-  @include default;
+  @include reg;
   text-transform: none;
-
-  @media (min-width: $br1) {
-    @include col(7, 10);
-    @include row(2, 2);
-    margin-top: vw(50);
-  }
+  max-width: vw(698);
+  font-size: vw(24);
+  line-height: 120%;
+  margin-top: vw(40);
 
   @media (max-width: $br1) {
-    margin-top: 15px;
-    @include col(1, 4);
-    @include row(2, 2);
-    max-width: 70%;
+    margin-top: 26px;
+    max-width: 80%;
+    font-size: size(24, 16);
   }
 
-  @media (max-width: $br3) {
+  @media (max-width: $br4) {
     max-width: 100%;
+    font-size: 16px;
+  }
+}
+
+.products-2__card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: vw(24);
+  margin-top: vw(66);
+
+  @media (max-width: $br1) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 42px;
+    gap: 26px;
+  }
+
+  @media (max-width: $br2) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .products-2__floating-cards {
-  @include col(1, 15);
-  @include row(3, 3);
-  margin-top: vw(112);
-
-  @media (max-width: $br1) {
-    @include col(1, 4);
-    @include row(3, 3);
-    margin-top: 42px;
-  }
-}
-
-.products-2__wrapper {
-  @media (max-width: $br1) {
+  img {
     display: block;
+    max-width: 100%;
+
+    @media (min-width: $br1) {
+      height: vw(64);
+    }
+
+    @media (max-width: $br1) {
+      height: 44px;
+    }
+
+    @media (max-width: $br4) {
+      height: 36px;
+    }
   }
 }
 
@@ -114,8 +109,10 @@
   line-height: 150%;
   font-size: vw(24);
   text-transform: none;
+  max-width: vw(320);
 
   @media (max-width: $br1) {
+    max-width: 100%;
     font-size: size(24, 16);
   }
 

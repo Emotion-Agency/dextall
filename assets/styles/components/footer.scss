@@ -4,14 +4,12 @@
   justify-content: space-between;
   position: relative;
   padding-bottom: vw(27);
+  padding-top: vw(300);
 
   @media (max-width: $br1) {
     padding-bottom: 32px;
+    padding-top: 120px;
   }
-}
-
-.footer__top-wrapper {
-  margin-top: vw(170);
 }
 
 .footer__nav-list {

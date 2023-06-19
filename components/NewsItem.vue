@@ -1,4 +1,4 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
 import { useFormattedDate } from '~/composables/computeDate'
 
 interface iProps {
@@ -31,38 +31,21 @@ const row = computed(() => {
   //   return Math.round(idx / 6 * 3)
   // }
   if (idx % 6 === 5) {
-    return Math.round(idx / 6 * 3) - 1
+    return Math.round((idx / 6) * 3) - 1
   } else {
-    return Math.round(idx / 6 * 3)
-
+    return Math.round((idx / 6) * 3)
   }
-
 })
 
-
 const formattedDate = useFormattedDate(props.date)
-
 </script>
 
 <template>
-  <li
-    class="news-images__li"
-    :style="`--row: ${row}`"
-  >
-    <NuxtLink
-      :to="link"
-      class="news-images__link"
-    >
-      <time
-        v-if="date"
-        class="news-images__date"
-      >{{ formattedDate }}</time>
-      <small
-        v-else
-        class="news-images__date"
-      >0{{ idx }}</small>
+  <li class="news-images__li" :style="`--row: ${row}`">
+    <NuxtLink :to="link" class="news-images__link">
+      <time v-if="date" class="news-images__date">{{ formattedDate }}</time>
+      <small v-else class="news-images__date">0{{ idx }}</small>
       <div class="news-images-img-wrap">
-
         <ParallaxImg
           class="news-images__img"
           :src="img"
@@ -74,5 +57,4 @@ const formattedDate = useFormattedDate(props.date)
       <h2 class="news-images__name">{{ name }}</h2>
     </NuxtLink>
   </li>
-
 </template>

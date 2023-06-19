@@ -1,10 +1,10 @@
 .home-4__title {
   @include default;
-  font-size: vw(150);
+  font-size: vw(100);
+  line-height: 110%;
 
   @media (max-width: $br1) {
-    display: inline;
-    font-size: size(150, 35);
+    font-size: size(100, 35);
   }
 
   @media (max-width: $br4) {
@@ -12,59 +12,44 @@
   }
 }
 
-.home-4__big-text {
-  &:nth-of-type(1) {
-    @media (min-width: $br1) {
-      @include col(1, 4);
-    }
+.home-4__italic-title {
+  @media (min-width: $br1) {
+    @include italic;
+  }
+}
+
+.home-4__card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: vw(24);
+  margin-top: vw(66);
+
+  @media (max-width: $br1) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 42px;
+    gap: 26px;
   }
 
-  &:nth-of-type(2) {
-    @media (min-width: $br1) {
-      @include col(2, 3);
-      @include row(2, 2);
-      @include italic;
-      margin-left: vw(26);
-    }
-
-    @media (max-width: $br1) {
-      margin-left: 0;
-    }
-  }
-
-  &:nth-of-type(3) {
-    @media (min-width: $br1) {
-      @include col(7, 15);
-      @include row(2, 2);
-    }
-  }
-
-  &:nth-of-type(4) {
-    @media (min-width: $br1) {
-      @include col(1, 9);
-      @include italic;
-      text-transform: lowercase;
-    }
+  @media (max-width: $br3) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .home-4__floating-cards {
-  margin-top: vw(112);
-
-  @media (max-width: $br1) {
-    margin-top: 42px;
-  }
-
   img {
     display: block;
     max-width: 100%;
 
     @media (min-width: $br1) {
-      height: vw(80);
+      height: vw(64);
     }
 
     @media (max-width: $br1) {
-      height: 80px;
+      height: 44px;
+    }
+
+    @media (max-width: $br4) {
+      height: 36px;
     }
   }
 }

@@ -6,31 +6,24 @@ useObserver('.section')
 
 const { stories, listenStory } = await useNewsStories()
 
-
 const slug = useRoute().params.id
 
 listenStory(slug)
-
 
 const story = computed(() => {
   return stories.value.find(story => story.slug === slug)
 })
 
-
 const filteredStories = computed(() => {
   return stories.value.filter(story => story.slug !== slug)
 })
-
 
 const date = story.value?.first_published_at || story.value?.created_at
 </script>
 
 <template>
   <main v-if="story?.content">
-    <PageMeta
-      v-if="story.content.meta.length"
-      :meta="story.content.meta[0]"
-    />
+    <PageMeta v-if="story.content.meta.length" :meta="story.content.meta[0]" />
     <PostItem
       :title="story.content.title"
       :date="date"
@@ -41,16 +34,15 @@ const date = story.value?.first_published_at || story.value?.created_at
       <div class="container internal-news-3__wrapper">
         <h2 class="internal-news-3__title">Other news</h2>
         <div class="internal-news-3__images">
-
-          <ul class="grid news-images">
-            <NewsItem
-              v-for="(item,idx) in filteredStories"
+          <ul class="image-list">
+            <ProjectListItem
+              v-for="(item, idx) in filteredStories"
               :key="item._uid"
-              :idx="idx"
+              :image="item?.content?.big_image?.filename"
+              :title="item.name"
+              :number="idx + 1"
+              :slug="`/news/` + item.slug"
               :date="item.first_published_at || item.created_at"
-              :name="item.name"
-              :link="'/news/' + item.slug + '/'"
-              :img="item?.content?.big_image?.filename"
             />
           </ul>
         </div>
