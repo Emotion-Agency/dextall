@@ -94,6 +94,7 @@
   justify-content: space-between;
   align-items: center;
   padding: vw(14) 0;
+  gap: 10px;
 
   @media (max-width: $br1) {
     padding: 7px;
@@ -121,6 +122,9 @@
   @include reg;
   font-size: vw(16);
   line-height: 110%;
+  text-align: right;
+  align-self: flex-end;
+  flex: 0 1 auto;
 
   @media (max-width: $br1) {
     font-size: size(16, 14);
