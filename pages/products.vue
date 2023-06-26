@@ -110,7 +110,7 @@ const onMouseLeave = () => {
         </CircleButton>
       </div>
     </section>
-    <section class="section products-2">
+    <!-- <section class="section products-2">
       <div class="container products-2__wrapper">
         <h2 class="products-2__title">
           Tested and
@@ -137,6 +137,28 @@ const onMouseLeave = () => {
                 {{ item.H3 }}
               </p>
             </div>
+          </FloatingCard>
+        </ul>
+      </div>
+    </section> -->
+
+    <section
+      v-if="story.screen_2[0].Logotype.length"
+      v-editable="story.screen_2[0]"
+      class="section home-4"
+    >
+      <div class="container home-4__wrapper">
+        <h2 class="home-4__title">
+          Test and Engineering
+          <span class="home-4__italic-title">Accreditations</span>
+        </h2>
+        <ul class="home-4__card-list">
+          <FloatingCard
+            v-for="(item, idx) in story.screen_2[0].Logotype"
+            :key="idx"
+            class="home-4__floating-cards"
+          >
+            <img :src="item.image_1?.filename" alt="" />
           </FloatingCard>
         </ul>
       </div>

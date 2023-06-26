@@ -341,26 +341,5 @@ const specs = computed(() => {
         />
       </div>
     </section>
-    <section
-      v-if="story.home_screen_4[0]"
-      v-editable="story.home_screen_4[0]"
-      class="section home-4"
-    >
-      <div class="container home-4__wrapper">
-        <h2 class="home-4__title">
-          Test and Engineering
-          <span class="home-4__italic-title">Accreditations</span>
-        </h2>
-        <ul class="home-4__card-list">
-          <FloatingCard
-            v-for="(item, idx) in story.home_screen_4[0].Logotype"
-            :key="idx"
-            class="home-4__floating-cards"
-          >
-            <img :src="item.image_1?.filename" alt="" />
-          </FloatingCard>
-        </ul>
-      </div>
-    </section>
   </main>
 </template>
