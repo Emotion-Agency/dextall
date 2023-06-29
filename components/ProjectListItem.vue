@@ -14,9 +14,7 @@ interface iProps {
   params?: Params[]
 }
 
-const props = defineProps<iProps>()
-
-const formattedDate = useFormattedDate(props.date)
+defineProps<iProps>()
 </script>
 
 <template>
@@ -33,14 +31,13 @@ const formattedDate = useFormattedDate(props.date)
           />
         </div>
         <h4 class="image-list__title">{{ title }}</h4>
-        <p class="image-list__desc">
-          {{ description }}
-        </p>
       </div>
       <div class="image-list__bottom-wrapper">
-        <div v-if="date" class="image-list__date-content">
+        <div v-if="description" class="image-list__desc-content">
           <div class="image-list__line" />
-          <time class="image-list__date">{{ formattedDate }}</time>
+          <p class="image-list__desc">
+            {{ description }}
+          </p>
           <div class="image-list__line" />
         </div>
         <ul v-else class="image-list__info">
