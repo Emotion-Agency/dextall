@@ -8,7 +8,6 @@ useObserver('.section')
 const { stories, story } = await useNewsStories()
 
 const splitText = useSplitText()
-console.log(stories.value)
 </script>
 
 <template>
