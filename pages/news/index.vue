@@ -8,7 +8,7 @@ useObserver('.section')
 const { stories, story } = await useNewsStories()
 
 const splitText = useSplitText()
-console.log(stories)
+console.log(stories.value)
 </script>
 
 <template>
@@ -29,7 +29,7 @@ console.log(stories)
             :title="item.name"
             :number="idx + 1"
             :slug="`/news/` + item.slug"
-            :date="item.first_published_at || item.created_at"
+            :description="item.content.description"
           />
         </ul>
       </div>
