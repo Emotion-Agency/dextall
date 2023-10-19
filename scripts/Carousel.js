@@ -34,6 +34,7 @@ export class Carousel {
     }
 
     this.slider = this.opts.el
+    if (!this.slider) return
     this.sliderInner = this.slider.querySelector('[data-slider-inner]')
     this.slides = [...this.slider.querySelectorAll('[data-slide]')]
   }
@@ -53,6 +54,7 @@ export class Carousel {
   }
 
   init() {
+    if (!this.slider) return
     this.bounds()
 
     this.slider.addEventListener('mousedown', this.onMousedown, {
