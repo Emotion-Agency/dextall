@@ -27,7 +27,7 @@ const splitText = useSplitText()
 
 const specs = computed(() => {
   return sortedStories.value.map(story => {
-    return story.content.Screen_4[0].object_specifications.slice(0, 3)
+    return story.content?.Screen_4[0]?.object_specifications.slice(0, 3)
   })
 })
 
@@ -84,7 +84,7 @@ const onFilter = (cat: string) => {
           <ProjectListItem
             v-for="(item, idx) in sortedStories"
             :key="item._uid"
-            :image="item.content.Screen_1[0].main_image.filename"
+            :image="item?.content?.Screen_1[0]?.main_image?.filename"
             :title="item.name"
             :params="specs[idx]"
             :number="idx + 1"

@@ -48,8 +48,8 @@ defineProps<iProps>()
           >
             <div class="image-list__line" />
             <div class="image-list__info-content">
-              <p class="image-list__text">{{ el.specification_name }}</p>
-              <p class="image-list__quantity">{{ el.specification }}</p>
+              <p class="image-list__text">{{ el?.specification_name }}</p>
+              <p class="image-list__quantity">{{ el?.specification }}</p>
             </div>
             <div v-if="idx === params.length - 1" class="image-list__line" />
           </li>
