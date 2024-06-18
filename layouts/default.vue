@@ -63,6 +63,7 @@ useHead({
       <Title>Dextall</Title>
       <Meta name="viewport" content="width=device-width, initial-scale=1">
       </Meta>
+      <Meta name="robots" content="noindex" />
       <Meta name="twitter:card" content="summary_large_image"> </Meta>
       <Meta name="twitter:image" content="/twitter.png"> </Meta>
 
